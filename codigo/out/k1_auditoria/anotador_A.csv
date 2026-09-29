@@ -1,0 +1,51 @@
+item,id,categoria,orador_real_se_M,confianca,justificativa
+1,data_014#24,M,PRESIDENTE (Ivan Valente); PAULO CÉSAR PEREIRA MARQUES,alta,"""70 mil deslocadas"" é do Presidente, que cita defensor (Paulo César: ""não foi indenização, foi compensação""); Sampaio não trata disso."
+2,data_017#8,S,,alta,"Coelho critica harmonia virar ""convescote"" e parlamentar ser amigo íntimo de ministro do STF (frases 262-263)."
+3,data_022#10,S,,media,"Luna defende ""modelo equilibrado"" e tratamento regulatório compatível com a importância do setor; não inibir crescimento é implícito."
+4,data_023#14,M,GUSTAVO BONINI,alta,"""Trabalhar com incrementos percentuais para a descarbonização"" é frase literal de Bonini (459); Santovito não fala disso."
+5,data_029#18,S,,alta,"Major diz que o modelo de segurança pública ""precisa de ressignificações"" e propõe ressignificar a doutrina policial (376-391)."
+6,data_031#26,M,ROMILSON MARTINS SIQUEIRA,media,Diálogo e pactuação com Municípios no PARFOR é fala de Romilson; Breim só pede diálogo de adequação às redes.
+7,data_035#8,M,WALBER AGRA; RODRIGO LOPES ZILIO,media,"""Garantia republicana/transparência"" é de Walber Agra; simplificação sem perder transparência, de Zilio. Boverio só fala de simplificação."
+8,data_037#12,S,,alta,Puppio comemora a instituição da Subcomissão e promete trabalhar pelo reconhecimento e investimento no paradesporto.
+9,data_048#8,D,,alta,"Pedroso critica a ADI 4.277 (STF usurpou o Congresso, sob pressão midiática); a opinião inverte o sentido."
+10,data_057#18,S,,media,"Cara descreve violência às escolas e um conjunto integrado de ações do governo; ""ampla e integrada"" é paráfrase razoável."
+11,data_060#14,M,FERNANDO SILVEIRA,alta,Crítica à Tabela SUS e preços de dispositivos é de Fernando Silveira; Maíra defende a tabela e cita reajustes.
+12,data_062#16,S,,alta,"Fábio relata estabilidade há 6,5 anos com inotersena e diz que tafamidis ""não é o suficiente""."
+13,data_063#17,S,,alta,"Poleto: ""é dever do Estado custear o idoso institucionalizado""; critica omissão dos governos no repasse."
+14,data_069#4,S,,media,"Ministra descreve Eleitor do Futuro para crianças e jovens em vários níveis; só ""desenvolveu"" exagera autoria (projeto institucional)."
+15,data_077#10,S,,alta,"Bicalho agradece a oportunidade e elogia a ""visão clara e objetiva"" do Deputado presidente (Elias Vaz) sobre o setor."
+16,data_084#26,S,,alta,Julia: não se pode atender criança sem considerar vínculo e apego no desenvolvimento infantil (413).
+17,data_096#14,D,,media,"Cely relata a experiência com a filha, mas a ênfase em diagnóstico precoce é de Erika Kokay; acréscimo."
+18,data_101#20,M,ALCINO REIS ROCHA,alta,Capacitação das forças de segurança é fala de Alcino Reis Rocha; Sarrubbo fala de centros de inteligência e diálogo.
+19,data_102#0,S,,media,"Arnaldo Jardim presidia; turnos PRESIDENTE (287, 388) apoiam redução da pegada de carbono. Casamento só captou o requerimento nuclear."
+20,data_104#7,S,,alta,"Sandoval: tarifa ""extremamente sobrecarregada""; boa saída seria o reconhecimento e uma reforma do setor."
+21,data_108#16,S,,alta,"Goetten pede desculpas por discutirem ""um direito adquirido de vocês"" e diz discutir o PERSE envergonhadamente."
+22,data_123#3,S,,alta,"Ethel cita a meta ODS de acabar com a epidemia de AIDS, tuberculose e malária e reforça a eliminação da TB."
+23,data_130#4,S,,alta,"Frase quase literal de Marcio Fraccaroli (450); casamento por nome único, mas o conteúdo coincide."
+24,data_132#8,S,,alta,"Taís reitera a exigência de um novo decreto ""que nos dê respiro"" às rádios comunitárias (270)."
+25,data_133#29,S,,media,"Aureo diz que são cobrados pela população e ""não conseguimos dar respostas""; paráfrase próxima, sujeito ambíguo."
+26,data_145#9,S,,alta,"Dino: ""não há corte de orçamento para 2024""; emendas parlamentares ainda não foram apresentadas."
+27,data_149#17,S,,alta,"Cotta: ""essa ação transversal favorece muito"", com Ministérios e entidades; defende transversalidade efetiva (276-277)."
+28,data_151#22,D,,baixa,"Adauto só elogia que a leitura foi destacada por outros (Diógenes, Petra); opinião transforma endosso em tese própria."
+29,data_152#8,S,,alta,"Patricia defende manutenção urgente do DPVAT; vítimas precisam das indenizações ""para se manterem""."
+30,data_154#24,S,,media,"Pérola fala em trabalhar pelas mulheres na menopausa e orientá-las; ""informação"" é mais explícita em Adriana Ferreira."
+31,data_155#5,M,LUIZ LEGÑANI,alta,Maria do Carmo (9 frases) só faz saudação; revisão da pensão por morte é pedida por Luiz Legñani.
+32,data_155#14,M,RAPHAEL FRANCO CASTELO BRANCO CARVALHO,alta,Participação de universidades e sociedade civil é fala de Raphael Franco; Kalache não trata disso.
+33,data_156#8,S,,alta,"Ulysses: ""Precisamos de diretrizes que mostrem para onde queremos ir"" e papel das comunitárias num plano nacional."
+34,data_157#10,M,CELSO RUSSOMANNO,alta,"""Autorregulamentação"" só aparece em Celso Russomanno; Porto fala apenas em evitar regulação que atrase o acesso."
+35,data_166#18,S,,alta,"Caio: blockchain com smart contracts pode reduzir custos de transação e trazer eficiência (517, 577)."
+36,data_169#7,S,,alta,"Sílvio: soluções de fora do bioma, ""pensamento colonizado"", valorizar saber tradicional local (538, 546, 549)."
+37,data_173#10,S,,alta,"Cristiana cita ODS da ONU e acesso à eletricidade em áreas rurais (116, 119)."
+38,data_183#9,S,,alta,Salles: não avanço do linhão causa dano ambiental maior que o licenciamento; menciona o diesel (179-182).
+39,data_183#10,M,LAFAYETTE DE ANDRADA,media,Guiana explorando ao lado é fala de Lafayette; Salles acha adequada a posição do Ministério (sentido oposto).
+40,data_185#14,S,,media,"Bruna chama a redução do tempo de liberação dos resultados de ""grande trunfo""; ""essencial"" é leve ênfase."
+41,data_185#15,M,CARLOS GOUVÊA,baixa,"Frase quase literal de Carlos Gouvêa (cos 0,90); Bruna só lista curso de qualificação entre ações."
+42,data_190#22,S,,alta,"Rômulo: ""inserir estímulos fiscais e revisar os marcos regulatórios""; defende flexibilizar logo em seguida."
+43,data_191#14,S,,media,Cristina cita relatório da ONU sobre dieta mais variada e sistema alimentar sustentável.
+44,data_192#24,S,,alta,"Igor defende garantir por lei durabilidade e funcionalidade do software ""por um tempo"", além da garantia de 1 ano."
+45,data_200#32,S,,media,Djane: diagnóstico do lúpus é tardio e doença avançada impede tratamento; tratamento contínuo só implícito.
+46,data_201#21,D,,media,Gonçalves relata a própria angústia e a dificuldade dos presos; sofrimento das famílias é dito por Messias Donato e outros.
+47,data_203#24,S,,alta,"Lêda: ""Eu creio na rede de proteção""; independência econômica quebra o ciclo da violência."
+48,data_204#13,S,,alta,"Maria Nilde: ""A informação salva vidas. Precisamos divulgar... o que é distonia."""
+49,data_204#16,M,ROSÂNGELA MORO,alta,Acolhimento e troca de experiências nas associações é fala de Rosângela Moro (dirigida à Dra. Sara).
+50,data_206#20,S,,alta,"Márcia: a universidade precisa institucionalizar a política; Lei de Cotas diversificou a universidade (405, 411-412)."

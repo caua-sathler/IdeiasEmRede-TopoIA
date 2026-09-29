@@ -1,0 +1,16 @@
+# Pacote de reprodução de "What Aggregation Cannot See".
+# Versões com que os números do artigo foram medidos (Python 3.11).
+
+numpy==2.4.6
+pandas==3.0.5
+scipy==1.17.1
+scikit-learn==1.9.0
+
+# NLI (mDeBERTa-v3-base-xnli). Necessário para h7 — mesmo lendo do cache, ele
+# carrega o modelo na inicialização (README §8).
+torch==2.13.0
+transformers==5.14.1
+
+# Só para regenerar o dataset do zero (../dataset/init_data.py, não usado por
+# nenhum script deste pacote diretamente):
+datasets==5.0.1

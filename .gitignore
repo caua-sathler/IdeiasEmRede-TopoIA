@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# LaTeX build artifacts (compile locally; see artigo/README.md)
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.toc
+*.nav
+*.snm
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# Regenerated PublicHearingBR data hub (see dataset/README.md) — not versioned,
+# ~650MB and reproducible with `python dataset/init_data.py --models MPNET`.
+dataset/phrasal_data/
+dataset/opinions_data/
+dataset/LDS/
+dataset/NLI/
+dataset/MPNET_embeddings_phrasal_data/
+dataset/MPNET_opinion_embeddings/
+dataset/windowed_data_*/
+dataset/MPNET_embeddings_windowed_data_*/
+dataset/metrics_*.csv
+
+# OS
+.DS_Store

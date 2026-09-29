@@ -1,0 +1,452 @@
+<title>Quem Disse Isso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{
+  --bg:#f5f7fa; --surface:#ffffff; --ink:#131d2b; --ink-2:#465264; --muted:#768194;
+  --rule:#dce2ea; --grid:#e9edf2; --chip:#eef2f7;
+  --method:#2a78d6; --method-soft:rgba(42,120,214,.14);
+  --halluc:#eb6834; --base:#8b95a5; --ref:#3c4757;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --cond:"IBM Plex Sans Condensed","IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0f141b; --surface:#161d26; --ink:#eef2f7; --ink-2:#b3bdca; --muted:#8893a3;
+    --rule:#2a3441; --grid:#212a35; --chip:#1f2833;
+    --method:#3987e5; --method-soft:rgba(57,135,229,.20);
+    --halluc:#d95926; --base:#6f7a8a; --ref:#c9d1dc;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0f141b; --surface:#161d26; --ink:#eef2f7; --ink-2:#b3bdca; --muted:#8893a3;
+  --rule:#2a3441; --grid:#212a35; --chip:#1f2833;
+  --method:#3987e5; --method-soft:rgba(57,135,229,.20);
+  --halluc:#d95926; --base:#6f7a8a; --ref:#c9d1dc;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px;padding-block:28px 64px}
+header.top{display:grid;gap:14px;padding-block:8px 26px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--cond);font-weight:700;font-size:clamp(34px,5vw,54px);line-height:1.02;margin:0;text-wrap:balance;letter-spacing:-.01em}
+.lede{max-width:68ch;color:var(--ink-2);font-size:17px;margin:0}
+.kpis{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:6px}
+.kpi{display:grid;gap:0}
+.kpi b{font-family:var(--cond);font-weight:600;font-size:26px;font-variant-numeric:tabular-nums}
+.kpi span{font-size:13px;color:var(--muted)}
+nav.steps{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--rule);display:flex;gap:4px;overflow-x:auto;padding-block:10px}
+nav.steps a{flex:0 0 auto;font-size:13px;color:var(--ink-2);text-decoration:none;padding:5px 10px;border-radius:6px;white-space:nowrap}
+nav.steps a:hover,nav.steps a:focus-visible{background:var(--chip);color:var(--ink);outline:none}
+nav.steps a span{font-family:var(--mono);color:var(--muted);margin-right:6px}
+section.step{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:22px 40px;padding-block:44px;border-bottom:1px solid var(--rule);scroll-margin-top:60px}
+@media (max-width:820px){section.step{grid-template-columns:minmax(0,1fr)}}
+.txt{display:grid;gap:12px;align-content:start}
+.num{font-family:var(--mono);font-size:13px;color:var(--method)}
+h2{font-family:var(--cond);font-weight:600;font-size:28px;line-height:1.1;margin:0;text-wrap:balance}
+.txt p{margin:0;color:var(--ink-2);max-width:60ch}
+.txt p strong{color:var(--ink);font-weight:600}
+.viz{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:18px;display:grid;gap:14px;min-width:0}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.seg button,.chipbtn{font:inherit;font-size:13px;border:0;background:transparent;color:var(--ink-2);padding:6px 12px;cursor:pointer}
+.seg button+button{border-left:1px solid var(--rule)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
+.seg button:focus-visible,.chipbtn:focus-visible,input[type=range]:focus-visible{outline:2px solid var(--method);outline-offset:2px}
+.chipbtn{border:1px solid var(--rule);border-radius:999px;background:var(--surface)}
+.chipbtn[aria-pressed="true"]{border-color:var(--ink);color:var(--ink);font-weight:500}
+label.sl{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink-2);flex-wrap:wrap}
+input[type=range]{accent-color:var(--method);width:min(260px,100%)}
+.readout{display:flex;flex-wrap:wrap;gap:8px 22px}
+.readout div{display:grid}
+.readout b{font-family:var(--mono);font-weight:500;font-size:20px;font-variant-numeric:tabular-nums}
+.readout span{font-size:12px;color:var(--muted)}
+.m{color:var(--method)} .h{color:var(--halluc)}
+.quote{border-left:3px solid var(--rule);padding:4px 0 4px 14px;display:grid;gap:6px}
+.quote p{margin:0;font-size:16px;color:var(--ink)}
+.quote small{color:var(--muted);font-size:13px}
+.pill{display:inline-block;font-size:12px;font-weight:500;padding:1px 9px;border-radius:999px;border:1px solid currentColor}
+.pill.bad{color:var(--halluc)} .pill.ok{color:var(--method)}
+.marker{font-family:var(--mono);font-size:12px;color:var(--muted)}
+svg{display:block;width:100%;height:auto;overflow:visible}
+svg text{font-family:var(--sans);fill:var(--ink-2);font-size:12px}
+svg .t-muted{fill:var(--muted)} svg .t-ink{fill:var(--ink)} svg .t-mono{font-family:var(--mono)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--ink-2)}
+.legend i{display:inline-block;width:14px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.legend i.line{height:3px;border-radius:2px;vertical-align:3px}
+.legend i.dash{height:0;border-top:2px dashed var(--base);background:none;vertical-align:3px}
+.note{font-size:12px;color:var(--muted);margin:0}
+.rank{display:grid;gap:6px}
+.rank .row{display:grid;grid-template-columns:28px 1fr auto;align-items:center;gap:10px;padding:8px 12px;border:1px solid var(--rule);border-radius:8px;background:var(--bg);transition:transform .35s ease}
+.rank .row.flip{border-color:var(--halluc)}
+.rank .pos{font-family:var(--mono);color:var(--muted)}
+.rank .val{font-family:var(--mono);font-size:13px;color:var(--ink-2)}
+.tip{position:fixed;pointer-events:none;z-index:20;background:var(--ink);color:var(--surface);font-size:12px;line-height:1.4;padding:7px 9px;border-radius:6px;max-width:320px;opacity:0;transition:opacity .1s}
+.tip b{font-family:var(--mono);font-weight:500}
+table.mae{border-collapse:collapse;font-size:13px;width:100%}
+table.mae th,table.mae td{padding:5px 8px;text-align:right;border-bottom:1px solid var(--grid);font-variant-numeric:tabular-nums}
+table.mae th:first-child,table.mae td:first-child{text-align:left}
+table.mae th{font-weight:500;color:var(--muted)}
+.tablewrap{overflow-x:auto}
+footer{padding-block:28px 0;display:grid;gap:8px;font-size:13px;color:var(--muted)}
+footer a{color:var(--ink-2)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <div class="eyebrow">PublicHearingBR · Câmara dos Deputados · Ideias em Rede</div>
+  <h1>Quem disse isso? Detectando atribuições falsas com poucos juízes</h1>
+  <p class="lede">Resumos de audiências públicas atribuem opiniões a pessoas. Este painel mostra, com dados reais, as duas ideias do método: comparar a opinião com as falas de quem supostamente a disse, e usar esse sinal barato só para desempatar os juízes LLM, sem nunca contrariá-los.</p>
+  <div class="kpis">
+    <div class="kpi"><b>206</b><span>audiências</span></div>
+    <div class="kpi"><b>3.630</b><span>opiniões avaliadas</span></div>
+    <div class="kpi"><b>408</b><span>alucinações (rótulo humano)</span></div>
+    <div class="kpi"><b>12</b><span>juízes LLM com voto binário</span></div>
+  </div>
+</header>
+
+<nav class="steps" aria-label="Etapas">
+  <a href="#quem"><span>1</span>Quem disse</a>
+  <a href="#empates"><span>2</span>Empates</a>
+  <a href="#regra"><span>3</span>Somar ou desempatar</a>
+  <a href="#custo"><span>4</span>Custo</a>
+  <a href="#fila"><span>5</span>Fila de revisão</a>
+  <a href="#previsao"><span>6</span>Previsão</a>
+</nav>
+
+<section class="step" id="quem">
+  <div class="txt">
+    <div class="num">1 · o problema</div>
+    <h2>A melhor frase da audiência pode ser de outra pessoa</h2>
+    <p>Detectores baratos comparam a opinião com cada frase da transcrição e guardam a maior similaridade. Uma alucinação plausível é sobre o assunto da audiência, então essa nota sai alta.</p>
+    <p>O que muda o veredito é <strong>quem</strong> falou a frase. Comparando a opinião com os turnos do orador atribuído, e com os dos outros oradores, a AUROC sobe de <strong>0,57 para 0,76</strong> sem chamar nenhum modelo.</p>
+    <div class="readout" aria-live="polite">
+      <div><b>0,57</b><span>melhor frase da audiência</span></div>
+      <div><b class="m">0,75</b><span>só turnos do orador</span></div>
+      <div><b class="m">0,76</b><span>todas as features de orador</span></div>
+    </div>
+  </div>
+  <div class="viz">
+    <div class="controls" id="ex-btns" role="group" aria-label="Escolher exemplo"></div>
+    <div class="quote">
+      <p id="ex-op"></p>
+      <small id="ex-meta"></small>
+    </div>
+    <div>
+      <div class="marker" id="ex-strip-lbl"></div>
+      <svg id="ex-strip" viewBox="0 0 760 96" role="img" aria-label="Turnos da audiência e similaridade com a opinião"></svg>
+    </div>
+    <svg id="ex-bars" viewBox="0 0 760 240" role="img" aria-label="Melhor similaridade por orador"></svg>
+    <div class="readout" id="ex-read"></div>
+    <div class="legend"><span><i style="background:var(--method)"></i>orador atribuído</span><span><i style="background:var(--halluc)"></i>outro orador com a melhor frase</span><span><i style="background:var(--base)"></i>demais oradores</span></div>
+  </div>
+</section>
+
+<section class="step" id="empates">
+  <div class="txt">
+    <div class="num">2 · os juízes</div>
+    <h2>Os votos dos juízes empatam muitas opiniões</h2>
+    <p>Cada juiz responde sim ou não. Somando os votos de <em>k</em> juízes, a nota só pode valer de 0 a <em>k</em>, e opiniões com o mesmo número de votos ficam empatadas.</p>
+    <p>O que importa para a AUROC são os <strong>pares</strong> formados por uma alucinação e uma opinião suportada com a mesma nota. A fração desses pares, <strong>τ</strong>, é o espaço que um desempate pode aproveitar: no máximo τ/2 de AUROC.</p>
+  </div>
+  <div class="viz">
+    <div class="controls">
+      <label class="sl" for="k-emp">Juízes no comitê: <b id="k-emp-v" class="t-mono">1</b>
+        <input type="range" id="k-emp" min="1" max="12" step="1" value="1"></label>
+    </div>
+    <svg id="emp-chart" viewBox="0 0 760 290" role="img" aria-label="Distribuição dos votos por classe"></svg>
+    <div class="legend"><span><i style="background:var(--base)"></i>opiniões suportadas (% da classe)</span><span><i style="background:var(--halluc)"></i>alucinações (% da classe)</span></div>
+    <div class="readout" id="emp-read"></div>
+    <p class="note">Para cada <em>k</em>, um subconjunto típico de juízes: o de AUROC mediana entre 60 sorteios.</p>
+  </div>
+</section>
+
+<section class="step" id="regra">
+  <div class="txt">
+    <div class="num">3 · a regra</div>
+    <h2>Somar as notas inverte decisões; desempatar, não</h2>
+    <p>O caminho usual é ajustar um modelo com os votos e as features juntos. Uma soma ponderada pode colocar uma opinião com <strong>menos</strong> votos acima de outra com mais, sempre que o sinal barato discorda com força.</p>
+    <p>O desempate lexicográfico ordena primeiro pelos votos e usa o sinal barato <strong>só dentro de cada empate</strong>. Ele nunca inverte uma decisão dos juízes, e o ganho é exatamente τ·(α − ½), com α medido dentro dos empates.</p>
+  </div>
+  <div class="viz">
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Regra de combinação">
+        <button type="button" id="r-soma" aria-pressed="true">Soma ponderada</button>
+        <button type="button" id="r-lex" aria-pressed="false">Desempate lexicográfico</button>
+      </div>
+    </div>
+    <div class="rank" id="rank"></div>
+    <p class="note" id="rank-note"></p>
+    <div>
+      <div class="marker">Efeito medido nos 1.314.576 pares, comitê de 12 juízes</div>
+      <svg id="dec-chart" viewBox="0 0 760 150" role="img" aria-label="Ganho nos empates e perda por inversões"></svg>
+    </div>
+    <div class="legend"><span><i style="background:var(--method)"></i>ganho ao ordenar os empates</span><span><i style="background:var(--halluc)"></i>perda por inverter decisões dos juízes</span></div>
+  </div>
+</section>
+
+<section class="step" id="custo">
+  <div class="txt">
+    <div class="num">4 · custo</div>
+    <h2>Poucos juízes com desempate chegam perto de doze</h2>
+    <p>O desempate melhora comitês de todos os tamanhos, e ganha mais onde há menos juízes, porque aí há mais empates. Um juiz típico sobe de <strong>0,807 para 0,881</strong>; cada um dos 12 juízes melhora, com intervalos de confiança acima de zero.</p>
+    <p>Sete juízes com desempate ficam estatisticamente empatados com o comitê completo de doze. O custo extra são dez chamadas a um modelo NLI pequeno.</p>
+  </div>
+  <div class="viz">
+    <svg id="lad-chart" viewBox="0 0 760 320" role="img" aria-label="AUROC por número de juízes"></svg>
+    <div class="legend"><span><i class="line" style="background:var(--method)"></i>juízes + desempate</span><span><i class="dash"></i>só juízes</span></div>
+    <div class="readout" id="lad-read"></div>
+    <p class="note">Mediana sobre 60 subconjuntos aleatórios de juízes para cada tamanho (script j9_teto.py). Análise exploratória.</p>
+  </div>
+</section>
+
+<section class="step" id="fila">
+  <div class="txt">
+    <div class="num">5 · operação</div>
+    <h2>Na fila de revisão, o desempate encontra mais alucinações</h2>
+    <p>Um auditor revisa as opiniões da mais suspeita para a menos suspeita, até esgotar o tempo. Com um único juiz, a fila é quase toda empatada: dentro de cada resposta, a ordem é aleatória.</p>
+    <p>Revisando <strong>10%</strong> das opiniões, o melhor juiz sozinho encontra <strong>40,5%</strong> das alucinações; com o desempate, <strong>52,2%</strong>.</p>
+  </div>
+  <div class="viz">
+    <div class="controls">
+      <label class="sl" for="bud">Orçamento de revisão: <b id="bud-v" class="t-mono">10%</b>
+        <input type="range" id="bud" min="0" max="11" step="1" value="4"></label>
+    </div>
+    <svg id="q-chart" viewBox="0 0 760 330" role="img" aria-label="Alucinações encontradas por orçamento de revisão"></svg>
+    <div class="legend"><span><i class="line" style="background:var(--method)"></i>melhor juiz + desempate</span><span><i class="dash"></i>melhor juiz sozinho</span><span><i class="line" style="background:var(--ref)"></i>comitê de 12 juízes</span></div>
+    <div class="readout" id="q-read"></div>
+  </div>
+</section>
+
+<section class="step" id="previsao">
+  <div class="txt">
+    <div class="num">6 · previsão</div>
+    <h2>O ganho pode ser previsto antes de usar a regra</h2>
+    <p>Dividimos as audiências ao meio 50 vezes. Numa metade medimos α; na outra, τ vem só dos votos. A previsão τ·(α − ½) acerta o ganho observado na metade que o modelo nunca viu, sem viés, e o sinal em 99% dos 250 casos.</p>
+    <p>Usar a AUROC global do sinal barato no lugar de α superestima o ganho de 1,4 a 3 vezes.</p>
+  </div>
+  <div class="viz">
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Quantidade usada na previsão">
+        <button type="button" id="p-alpha" aria-pressed="true">Previsão com α</button>
+        <button type="button" id="p-glob" aria-pressed="false">Com AUROC global</button>
+      </div>
+    </div>
+    <svg id="p-chart" viewBox="0 0 760 330" role="img" aria-label="Ganho previsto contra ganho observado"></svg>
+    <div class="tablewrap"><table class="mae" id="p-table"></table></div>
+    <p class="note">Cada ponto é uma divisão aleatória e um tamanho de comitê (1, 3, 5, 8 ou 12 juízes). Pontos sobre a diagonal são previsões exatas (script j13_previsao.py).</p>
+  </div>
+</section>
+
+<footer>
+  <div>Dados: PublicHearingBR (Câmara dos Deputados), rótulos humanos e votos de 12 juízes LLM divulgados com o dataset. AUROC calculada nas 3.630 opiniões com orador identificado.</div>
+  <div>Código e dados do painel: <a href="https://github.com/caua-sathler/IdeiasEmRede-TopoIA" target="_blank" rel="noopener">github.com/caua-sathler/IdeiasEmRede-TopoIA</a> (scripts <span class="t-mono">k3_dashboard_dados.py</span>, <span class="t-mono">j9_teto.py</span>, <span class="t-mono">j13_previsao.py</span>).</div>
+</footer>
+</div>
+<div class="tip" id="tip" role="tooltip"></div>
+
+<script>
+const D = {"exemplos": [{"ref": "data_001", "nota": "exemplo do artigo (Figura 1)", "opiniao": "Destacou que todos os jornalistas presentes estavam em busca da verdade, independentemente de suas preferências políticas.", "atribuido": "Arlindo Chinaglia", "orador": "ARLINDO CHINAGLIA", "rotulo": "não suportada", "cos_s": 0.386, "best_other": 0.783, "melhor_outro": "MARCEL VAN HATTEM", "delta": 0.397, "oradores": [{"nome": "MARCEL VAN HATTEM", "cos": 0.783, "frase": "Inicialmente, cumpre ressaltar que todos os que estão aqui são jornalistas e estão em busca da verdade.", "n_frases": 181}, {"nome": "GLENN EDWARD GREENWALD", "cos": 0.58, "frase": "Acho que a obrigação principal dos jornalistas é evitar ser politizado, ou seja, é não ficar do lado de um partido ou de outro, de esquerda ou de direita.", "n_frases": 121}, {"nome": "GILVAN DA FEDERAL", "cos": 0.566, "frase": "Quero também prestar minha solidariedade a todos aqueles jornalistas que vêm sendo perseguidos.", "n_frases": 29}, {"nome": "MARIO FRIAS", "cos": 0.549, "frase": "Há uma turma aí entende muito bem de mentira e ignora o fato de hoje haver jornalistas cerceados do seu direito, assim como Senadores e Deputados.", "n_frases": 23}, {"nome": "ELI VIEIRA ARAUJO JÚNIOR", "cos": 0.489, "frase": "Prestei atenção detidamente em todas as falas.", "n_frases": 106}, {"nome": "GENERAL GIRÃO", "cos": 0.458, "frase": "Valorizem quem vocês são e busquem a verdade de vocês.", "n_frases": 28}, {"nome": "ARLINDO CHINAGLIA", "cos": 0.386, "frase": "Eu quero falar sobre o trabalho executado pelo jornalista Michael Shellenberger.", "n_frases": 72}], "turnos": [["PRESIDENTE", 20, 0.385], ["ARLINDO CHINAGLIA", 1, 0.171], ["PRESIDENTE", 1, 0.207], ["ARLINDO CHINAGLIA", 9, 0.309], ["PRESIDENTE", 6, 0.198], ["ELI VIEIRA ARAUJO JÚNIOR", 44, 0.353], ["PRESIDENTE", 2, 0.179], ["DAVID ÁGAPE", 72, 0.416], ["PRESIDENTE", 3, 0.185], ["DAVID ÁGAPE", 15, 0.305], ["PRESIDENTE", 4, 0.338], ["GLENN EDWARD GREENWALD", 36, 0.362], ["PRESIDENTE", 2, 0.343], ["GLENN EDWARD GREENWALD", 1, 0.205], ["PRESIDENTE", 1, 0.305], ["GLENN EDWARD GREENWALD", 28, 0.441], ["PRESIDENTE", 3, 0.212], ["MICHAEL SHELLENBERGER", 42, 0.331], ["PRESIDENTE", 2, 0.214], ["MARCEL VAN HATTEM", 5, 0.221], ["PRESIDENTE", 4, 0.28], ["MARCEL VAN HATTEM", 98, 0.401], ["PRESIDENTE", 10, 0.227], ["ARLINDO CHINAGLIA", 3, 0.225], ["PRESIDENTE", 3, 0.181], ["ARLINDO CHINAGLIA", 1, 0.12], ["PRESIDENTE", 3, 0.196], ["ARLINDO CHINAGLIA", 58, 0.386], ["PRESIDENTE", 12, 0.154], ["FLORENTINO NETO", 16, 0.295], ["PRESIDENTE", 2, 0.126], ["GENERAL GIRÃO", 23, 0.376], ["PRESIDENTE", 2, 0.166], ["GENERAL GIRÃO", 5, 0.458], ["PRESIDENTE", 5, 0.152], ["MARIO FRIAS", 23, 0.549], ["PRESIDENTE", 8, 0.312], ["LUIZ PHILIPPE DE ORLEANS E BRAGANÇA", 25, 0.341], ["PRESIDENTE", 4, 0.12], ["FILIPE BARROS", 2, 0.169], ["PRESIDENTE", 2, 0.204], ["FILIPE BARROS", 17, 0.456], ["PRESIDENTE", 2, 0.152], ["MARCELO MORAES", 18, 0.317], ["PRESIDENTE", 10, 0.183], ["BIA KICIS", 16, 0.451], ["PRESIDENTE", 7, 0.222], ["AFONSO HAMM", 37, 0.445], ["PRESIDENTE", 2, 0.185], ["ADRIANA VENTURA", 28, 0.446], ["PRESIDENTE", 5, 0.194], ["GILVAN DA FEDERAL", 29, 0.566], ["PRESIDENTE", 6, 0.194], ["ELI VIEIRA ARAUJO JÚNIOR", 62, 0.489], ["PRESIDENTE", 2, 0.202], ["DAVID ÁGAPE", 46, 0.406], ["PRESIDENTE", 2, 0.113], ["DAVID ÁGAPE", 3, 0.276], ["PRESIDENTE", 2, 0.194], ["GLENN EDWARD GREENWALD", 56, 0.58], ["PRESIDENTE", 2, 0.239], ["MICHAEL SHELLENBERGER", 37, 0.451], ["PRESIDENTE", 2, 0.209], ["MARCEL VAN HATTEM", 78, 0.783], ["PRESIDENTE", 10, 0.311]]}, {"ref": "data_185", "nota": "má-atribuição (auditoria)", "opiniao": "A educação continuada dos profissionais de saúde é vital para o sucesso da triagem neonatal.", "atribuido": "Bruna Dornelas", "orador": "BRUNA RAFAELA DORNELAS MONTEIRO", "rotulo": "não suportada", "cos_s": 0.559, "best_other": 0.9, "melhor_outro": "CARLOS GOUVÊA", "delta": 0.341, "oradores": [{"nome": "CARLOS GOUVÊA", "cos": 0.9, "frase": "Há necessidade de promover um aprimoramento daqueles que trabalham com triagem neonatal, e os profissionais precisam, sim, ter uma educação continuada.", "n_frases": 158}, {"nome": "SUHELLEN OLIVEIRA DA SILVA", "cos": 0.718, "frase": "A triagem neonatal tem extrema importância na vida dessas pessoas.", "n_frases": 144}, {"nome": "DANIELA MACHADO MENDES", "cos": 0.67, "frase": "É fundamental que os profissionais da saúde entendam a importância do Teste do Pezinho, saibam do tempo e da forma como se dá a coleta.E isso envolve todos estes profissionais inseridos no contexto: médicos, enfermeiros, nutricionistas.", "n_frases": 103}, {"nome": "AMIRA AWADA", "cos": 0.652, "frase": "E a triagem neonatal é o primeiro passo para garantir o mínimo de qualidade de vida e de inclusão a essas pessoas.", "n_frases": 82}, {"nome": "HELENA MARIA DOS SANTOS", "cos": 0.624, "frase": "Triagem neonatal não pode ser adiada.Eu ouvi a fala de vários de vocês, o que é muito importante para mim.", "n_frases": 133}, {"nome": "PRESIDENTE", "cos": 0.624, "frase": "E a triagem neonatal, realmente, passa a ser esse primeiro passo para garantirmos qualidade de vida ao cidadão.", "n_frases": 144}, {"nome": "BRUNA RAFAELA DORNELAS MONTEIRO", "cos": 0.559, "frase": "Quero enfatizar a importância desta audiência pública no fortalecimento da triagem neonatal como política pública de saúde, e dizer que o Estado de Pernambuco está aqui para partilhar, para trocar experiências e para construir junto com vocês, traçando uma lin", "n_frases": 35}], "turnos": [["PRESIDENTE", 13, 0.473], ["CARLOS GOUVÊA", 132, 0.9], ["PRESIDENTE", 6, 0.46], ["CARLOS GOUVÊA", 1, 0.084], ["FERNANDA PESSOA", 1, 0.111], ["PRESIDENTE", 1, 0.114], ["FERNANDA PESSOA", 14, 0.533], ["CARLOS GOUVÊA", 4, 0.222], ["PRESIDENTE", 5, 0.543], ["ROSEANA FANECO AMORIM", 87, 0.545], ["PRESIDENTE", 12, 0.365], ["BRUNA RAFAELA DORNELAS MONTEIRO", 31, 0.554], ["PRESIDENTE", 12, 0.494], ["AMIRA AWADA", 69, 0.652], ["PRESIDENTE", 8, 0.624], ["POLLYANA DIAS", 65, 0.591], ["PRESIDENTE", 15, 0.428], ["SUHELLEN OLIVEIRA DA SILVA", 93, 0.696], ["PRESIDENTE", 1, 0.138], ["SUHELLEN OLIVEIRA DA SILVA", 32, 0.471], ["PRESIDENTE", 15, 0.616], ["DANIELA MACHADO MENDES", 94, 0.67], ["PRESIDENTE", 16, 0.501], ["HELENA MARIA DOS SANTOS", 100, 0.624], ["PRESIDENTE", 17, 0.597], ["CARLOS GOUVÊA", 21, 0.754], ["PRESIDENTE", 2, 0.134], ["ROSEANA FANECO AMORIM", 29, 0.338], ["PRESIDENTE", 5, 0.219], ["BRUNA RAFAELA DORNELAS MONTEIRO", 4, 0.559], ["PRESIDENTE", 2, 0.255], ["AMIRA AWADA", 13, 0.543], ["PRESIDENTE", 2, 0.231], ["POLLYANA DIAS", 14, 0.334], ["PRESIDENTE", 2, 0.187], ["SUHELLEN OLIVEIRA DA SILVA", 19, 0.718], ["PRESIDENTE", 2, 0.202], ["DANIELA MACHADO MENDES", 9, 0.653], ["PRESIDENTE", 2, 0.406], ["HELENA MARIA DOS SANTOS", 33, 0.468], ["PRESIDENTE", 6, 0.175]]}, {"ref": "data_155", "nota": "má-atribuição (auditoria)", "opiniao": "Apoiou a necessidade de revisão das políticas de pensão por morte.", "atribuido": "Maria do Carmo Guido Di Lascio", "orador": "MARIA DO CARMO GUIDO DI LASCIO", "rotulo": "não suportada", "cos_s": 0.344, "best_other": 0.734, "melhor_outro": "LUIZ LEGÑANI", "delta": 0.39, "oradores": [{"nome": "LUIZ LEGÑANI", "cos": 0.734, "frase": "Ele pede que a questão da pensão por morte seja revisto, Presidente Aliel.", "n_frases": 52}, {"nome": "ANTÔNIO FERNANDES TONINHO COSTA", "cos": 0.628, "frase": "Nós defendemos uma nova revisão na forma de financiamento das Instituições de Longa Permanência para Idosos — ILPIs filantrópicas.", "n_frases": 91}, {"nome": "MARGÔ GOMES DE OLIVEIRA KARNIKOWSKI", "cos": 0.613, "frase": "Nós temos refletido muito sobre os avanços conquistados a partir do Estatuto do Idoso, que é uma lei federal e que, portanto, deve ser cumprida.", "n_frases": 32}, {"nome": "ALEXANDRE KALACHE", "cos": 0.599, "frase": "Ele foi indispensável para que essa proposta de uma política de Estado pudesse se tornar lei.", "n_frases": 87}, {"nome": "FLÁVIA MORAIS", "cos": 0.589, "frase": "Nós temos uma PEC na CCJ tornando o cuidado um direito constitucional, o que é muito importante, mas queremos trabalhar um texto, aprovar a Política Nacional de Cuidados, porque, além da pessoa com deficiência e da criança, nós sabemos que o público idoso está", "n_frases": 62}, {"nome": "ALEXANDRE DA SILVA", "cos": 0.576, "frase": "Vamos seguir na construção de políticas públicas cada vez mais efetivas para as pessoas idosas.", "n_frases": 160}, {"nome": "MARIA DO CARMO GUIDO DI LASCIO", "cos": 0.344, "frase": "E, através dessa Comissão do Idoso da Câmara Municipal de São Paulo, conseguimos levantar bandeiras, fazer pedidos de audiência pública.", "n_frases": 9}], "turnos": [["PRESIDENTE", 64, 0.532], ["ANTÔNIO FERNANDES TONINHO COSTA", 91, 0.628], ["PRESIDENTE", 9, 0.246], ["ALEXANDRE KALACHE", 87, 0.599], ["PRESIDENTE", 29, 0.4], ["ALEXANDRE DA SILVA", 142, 0.576], ["PRESIDENTE", 7, 0.375], ["FLÁVIA MORAIS", 61, 0.589], ["PRESIDENTE", 4, 0.236], ["ALEXANDRE DA SILVA", 18, 0.452], ["PRESIDENTE", 7, 0.242], ["ZECA DIRCEU", 9, 0.574], ["PRESIDENTE", 10, 0.477], ["RAPHAEL FRANCO CASTELO BRANCO CARVALHO", 1, 0.173], ["FLÁVIA MORAIS", 1, 0.138], ["PRESIDENTE", 2, 0.159], ["RAPHAEL FRANCO CASTELO BRANCO CARVALHO", 38, 0.531], ["PRESIDENTE", 5, 0.379], ["WELLINGTON EMANUEL COIMBRA DE MOURA", 195, 0.417], ["PRESIDENTE", 28, 0.395], ["MARGÔ GOMES DE OLIVEIRA KARNIKOWSKI", 32, 0.613], ["PRESIDENTE", 1, 0.159], ["LUIZ LEGÑANI", 50, 0.734], ["PRESIDENTE", 2, 0.251], ["LUIZ LEGÑANI", 2, 0.29], ["PRESIDENTE", 8, 0.4], ["MARIA DO CARMO GUIDO DI LASCIO", 9, 0.344], ["PRESIDENTE", 8, 0.3]]}, {"ref": "data_001", "nota": "opinião suportada (contraste)", "opiniao": "Defendeu que jornalistas devem evitar a politização e sempre lutar pela liberdade de expressão e contra a censura.", "atribuido": "Glenn Greenwald", "orador": "GLENN EDWARD GREENWALD", "rotulo": "suportada", "cos_s": 0.788, "best_other": 0.597, "melhor_outro": "GILVAN DA FEDERAL", "delta": -0.191, "oradores": [{"nome": "GLENN EDWARD GREENWALD", "cos": 0.788, "frase": "Mas os jornalistas têm como obrigação defender alguns valores democráticos, principalmente a liberdade de expressão e a imprensa livre, e ser contra a censura.", "n_frases": 121}, {"nome": "GILVAN DA FEDERAL", "cos": 0.597, "frase": "Quero também prestar minha solidariedade a todos aqueles jornalistas que vêm sendo perseguidos.", "n_frases": 29}, {"nome": "MARCEL VAN HATTEM", "cos": 0.576, "frase": "Não importa se eu concordo ou se eu discordo da pessoa que tem algo a dizer sobre qualquer assunto, eu quero sempre poder defender a liberdade dessa pessoa de falar sobre aquilo que bem entender.", "n_frases": 181}, {"nome": "ADRIANA VENTURA", "cos": 0.571, "frase": "Eu vou encerrar, Presidente, dizendo novamente o seguinte: não podemos admitir que, no nosso País, volte a censura e que matem a nossa democracia em nome de sua defesa.", "n_frases": 28}, {"nome": "MICHAEL SHELLENBERGER", "cos": 0.554, "frase": "A ideia de defender a democracia com censura é a forma de desinformação mais grave do mundo.É horrível a ideia de proteger a democracia com censura.", "n_frases": 79}, {"nome": "DAVID ÁGAPE", "cos": 0.55, "frase": "Empresários, jornalistas, jornais, veículos de mídia, influenciadores digitais, artistas e até mesmo religiosos foram censurados e perseguidos pelo TSE durante o período eleitoral.", "n_frases": 136}, {"nome": "FILIPE BARROS", "cos": 0.548, "frase": "Agora, a Esquerda está aqui, unida, junto com uma parcela da imprensa, o consórcio da censura, dizendo que é uma afronta à soberania nacional, quando, na verdade, Sr. Presidente, é o contrário.", "n_frases": 19}], "turnos": [["PRESIDENTE", 20, 0.29], ["ARLINDO CHINAGLIA", 1, 0.198], ["PRESIDENTE", 1, 0.28], ["ARLINDO CHINAGLIA", 9, 0.282], ["PRESIDENTE", 6, 0.186], ["ELI VIEIRA ARAUJO JÚNIOR", 44, 0.476], ["PRESIDENTE", 2, 0.182], ["DAVID ÁGAPE", 72, 0.55], ["PRESIDENTE", 3, 0.179], ["DAVID ÁGAPE", 15, 0.384], ["PRESIDENTE", 4, 0.42], ["GLENN EDWARD GREENWALD", 36, 0.528], ["PRESIDENTE", 2, 0.184], ["GLENN EDWARD GREENWALD", 1, 0.171], ["PRESIDENTE", 1, 0.258], ["GLENN EDWARD GREENWALD", 28, 0.497], ["PRESIDENTE", 3, 0.185], ["MICHAEL SHELLENBERGER", 42, 0.554], ["PRESIDENTE", 2, 0.185], ["MARCEL VAN HATTEM", 5, 0.205], ["PRESIDENTE", 4, 0.232], ["MARCEL VAN HATTEM", 98, 0.535], ["PRESIDENTE", 10, 0.222], ["ARLINDO CHINAGLIA", 3, 0.14], ["PRESIDENTE", 3, 0.2], ["ARLINDO CHINAGLIA", 1, 0.111], ["PRESIDENTE", 3, 0.168], ["ARLINDO CHINAGLIA", 58, 0.451], ["PRESIDENTE", 12, 0.164], ["FLORENTINO NETO", 16, 0.44], ["PRESIDENTE", 2, 0.131], ["GENERAL GIRÃO", 23, 0.487], ["PRESIDENTE", 2, 0.161], ["GENERAL GIRÃO", 5, 0.369], ["PRESIDENTE", 5, 0.132], ["MARIO FRIAS", 23, 0.519], ["PRESIDENTE", 8, 0.226], ["LUIZ PHILIPPE DE ORLEANS E BRAGANÇA", 25, 0.544], ["PRESIDENTE", 4, 0.166], ["FILIPE BARROS", 2, 0.255], ["PRESIDENTE", 2, 0.243], ["FILIPE BARROS", 17, 0.548], ["PRESIDENTE", 2, 0.174], ["MARCELO MORAES", 18, 0.391], ["PRESIDENTE", 10, 0.159], ["BIA KICIS", 16, 0.473], ["PRESIDENTE", 7, 0.181], ["AFONSO HAMM", 37, 0.497], ["PRESIDENTE", 2, 0.194], ["ADRIANA VENTURA", 28, 0.571], ["PRESIDENTE", 5, 0.179], ["GILVAN DA FEDERAL", 29, 0.597], ["PRESIDENTE", 6, 0.166], ["ELI VIEIRA ARAUJO JÚNIOR", 62, 0.531], ["PRESIDENTE", 2, 0.194], ["DAVID ÁGAPE", 46, 0.509], ["PRESIDENTE", 2, 0.131], ["DAVID ÁGAPE", 3, 0.452], ["PRESIDENTE", 2, 0.171], ["GLENN EDWARD GREENWALD", 56, 0.788], ["PRESIDENTE", 2, 0.192], ["MICHAEL SHELLENBERGER", 37, 0.509], ["PRESIDENTE", 2, 0.173], ["MARCEL VAN HATTEM", 78, 0.576], ["PRESIDENTE", 10, 0.39]]}], "comite": [{"k": 1, "juizes": ["p1_gpt4omini"], "pos": [153, 255], "neg": [3170, 52], "tau": 0.379, "auc": 0.8044, "auc_lex": 0.8764}, {"k": 2, "juizes": ["p3_deepseek", "p1_sabia"], "pos": [77, 137, 194], "neg": [2839, 346, 37], "tau": 0.2078, "auc": 0.8698, "auc_lex": 0.9003}, {"k": 3, "juizes": ["p1_gpt4o", "p2_gpt4o", "p2_gpt4omini"], "pos": [54, 35, 62, 257], "neg": [2639, 322, 160, 101], "tau": 0.1443, "auc": 0.8922, "auc_lex": 0.9175}, {"k": 4, "juizes": ["p3_deepseek", "p3_sabia", "p2_gpt4o", "p1_gpt4omini"], "pos": [51, 40, 50, 64, 203], "neg": [2665, 308, 165, 63, 21], "tau": 0.1253, "auc": 0.9039, "auc_lex": 0.9214}, {"k": 5, "juizes": ["p2_gpt4o", "p3_sabia", "p1_gpt4omini", "p1_sabia", "p3_gpt4o"], "pos": [40, 32, 58, 59, 40, 179], "neg": [2486, 340, 291, 63, 25, 17], "tau": 0.1027, "auc": 0.9096, "auc_lex": 0.9237}, {"k": 6, "juizes": ["p1_sabia", "p1_gpt4omini", "p3_gpt4omini", "p3_sabia", "p2_gpt4omini", "p2_deepseek"], "pos": [27, 37, 43, 56, 35, 33, 177], "neg": [2025, 781, 266, 80, 42, 13, 15], "tau": 0.0791, "auc": 0.9151, "auc_lex": 0.9235}, {"k": 7, "juizes": ["p1_sabia", "p2_sabia", "p1_gpt4o", "p1_gpt4omini", "p3_gpt4omini", "p2_deepseek", "p2_gpt4omini"], "pos": [25, 37, 35, 46, 31, 33, 32, 169], "neg": [2019, 755, 271, 81, 44, 27, 14, 11], "tau": 0.0732, "auc": 0.9177, "auc_lex": 0.926}, {"k": 8, "juizes": ["p3_deepseek", "p1_deepseek", "p1_gpt4o", "p2_gpt4omini", "p2_deepseek", "p2_sabia", "p1_gpt4omini", "p3_gpt4omini"], "pos": [24, 26, 30, 27, 41, 22, 29, 44, 165], "neg": [1994, 682, 266, 121, 65, 44, 26, 13, 11], "tau": 0.0636, "auc": 0.9207, "auc_lex": 0.9275}, {"k": 9, "juizes": ["p3_gpt4o", "p2_gpt4o", "p1_gpt4omini", "p2_deepseek", "p1_deepseek", "p3_gpt4omini", "p3_sabia", "p2_sabia", "p3_deepseek"], "pos": [20, 20, 20, 26, 26, 44, 24, 28, 33, 167], "neg": [1892, 638, 248, 184, 107, 69, 36, 25, 12, 11], "tau": 0.0532, "auc": 0.9233, "auc_lex": 0.9282}, {"k": 10, "juizes": ["p3_gpt4omini", "p3_deepseek", "p2_gpt4omini", "p3_gpt4o", "p1_deepseek", "p3_sabia", "p1_gpt4o", "p2_sabia", "p2_deepseek", "p1_sabia"], "pos": [19, 19, 16, 28, 32, 34, 30, 17, 24, 29, 160], "neg": [1884, 603, 296, 173, 105, 57, 38, 27, 16, 12, 11], "tau": 0.0504, "auc": 0.9246, "auc_lex": 0.9288}, {"k": 11, "juizes": ["p3_gpt4o", "p2_gpt4o", "p3_gpt4omini", "p1_sabia", "p2_deepseek", "p3_sabia", "p2_gpt4omini", "p1_gpt4omini", "p2_sabia", "p3_deepseek", "p1_deepseek"], "pos": [19, 18, 14, 19, 21, 25, 39, 26, 18, 21, 30, 158], "neg": [1879, 580, 258, 182, 103, 83, 52, 33, 20, 14, 8, 10], "tau": 0.0478, "auc": 0.9256, "auc_lex": 0.9297}, {"k": 12, "juizes": ["p1_gpt4omini", "p1_gpt4o", "p1_deepseek", "p1_sabia", "p2_gpt4omini", "p2_gpt4o", "p2_deepseek", "p2_sabia", "p3_gpt4omini", "p3_gpt4o", "p3_deepseek", "p3_sabia"], "pos": [19, 18, 12, 19, 16, 26, 29, 25, 19, 17, 24, 27, 157], "neg": [1878, 575, 262, 165, 104, 79, 53, 35, 25, 17, 13, 7, 9], "tau": 0.0465, "auc": 0.926, "auc_lex": 0.9301}], "totais": {"n": 3630, "pos": 408, "neg": 3222}, "escada": [{"k": 1, "so": 0.8067, "lex0": 0.8759, "lex": 0.8806}, {"k": 2, "so": 0.8746, "lex0": 0.9017, "lex": 0.9035}, {"k": 3, "so": 0.8917, "lex0": 0.9102, "lex": 0.9121}, {"k": 4, "so": 0.903, "lex0": 0.916, "lex": 0.918}, {"k": 5, "so": 0.9128, "lex0": 0.9212, "lex": 0.923}, {"k": 6, "so": 0.9148, "lex0": 0.9221, "lex": 0.9241}, {"k": 7, "so": 0.918, "lex0": 0.9248, "lex": 0.9264}, {"k": 8, "so": 0.9205, "lex0": 0.9255, "lex": 0.9272}, {"k": 9, "so": 0.9223, "lex0": 0.9265, "lex": 0.9279}, {"k": 10, "so": 0.9239, "lex0": 0.9276, "lex": 0.9291}, {"k": 11, "so": 0.9256, "lex0": 0.9286, "lex": 0.9297}, {"k": 12, "so": 0.926, "lex0": 0.929, "lex": 0.9301}], "previsao": [{"k": 1, "obs": 0.09761, "pred": 0.11536, "glob": 0.15421}, {"k": 3, "obs": 0.01521, "pred": 0.02126, "glob": 0.03956}, {"k": 5, "obs": 0.01009, "pred": 0.01928, "glob": 0.03375}, {"k": 8, "obs": 0.00703, "pred": 0.01442, "glob": 0.02824}, {"k": 12, "obs": 0.00329, "pred": 0.00782, "glob": 0.01778}, {"k": 1, "obs": 0.04607, "pred": 0.0452, "glob": 0.06712}, {"k": 3, "obs": 0.02755, "pred": 0.02336, "glob": 0.0423}, {"k": 5, "obs": 0.00946, "pred": 0.00977, "glob": 0.02171}, {"k": 8, "obs": 0.0098, "pred": 0.00563, "glob": 0.01864}, {"k": 12, "obs": 0.00412, "pred": 0.00309, "glob": 0.01035}, {"k": 1, "obs": 0.07829, "pred": 0.08357, "glob": 0.11084}, {"k": 3, "obs": 0.04084, "pred": 0.03481, "glob": 0.06084}, {"k": 5, "obs": 0.01905, "pred": 0.00643, "glob": 0.03423}, {"k": 8, "obs": 0.00714, "pred": 0.00149, "glob": 0.01768}, {"k": 12, "obs": 0.00684, "pred": -0.00021, "glob": 0.01428}, {"k": 1, "obs": 0.08153, "pred": 0.07909, "glob": 0.1056}, {"k": 3, "obs": 0.01246, "pred": 0.02297, "glob": 0.0387}, {"k": 5, "obs": 0.00566, "pred": 0.01174, "glob": 0.02417}, {"k": 8, "obs": 0.00361, "pred": 0.00605, "glob": 0.01507}, {"k": 12, "obs": 0.00282, "pred": 0.00472, "glob": 0.01224}, {"k": 1, "obs": 0.05833, "pred": 0.05424, "glob": 0.07552}, {"k": 3, "obs": 0.01477, "pred": 0.01288, "glob": 0.03293}, {"k": 5, "obs": 0.00639, "pred": 0.00779, "glob": 0.02049}, {"k": 8, "obs": 0.00806, "pred": 0.00861, "glob": 0.01928}, {"k": 12, "obs": 0.00475, "pred": 0.00393, "glob": 0.01377}, {"k": 1, "obs": 0.08575, "pred": 0.07037, "glob": 0.10066}, {"k": 3, "obs": 0.02666, "pred": 0.02484, "glob": 0.04163}, {"k": 5, "obs": 0.01071, "pred": 0.01857, "glob": 0.02672}, {"k": 8, "obs": 0.00468, "pred": 0.00728, "glob": 0.01376}, {"k": 12, "obs": 0.0035, "pred": 0.00476, "glob": 0.01127}, {"k": 1, "obs": 0.05352, "pred": 0.04461, "glob": 0.06071}, {"k": 3, "obs": 0.02192, "pred": 0.01362, "glob": 0.02933}, {"k": 5, "obs": 0.01319, "pred": 0.01107, "glob": 0.01976}, {"k": 8, "obs": 0.01358, "pred": 0.00976, "glob": 0.01937}, {"k": 12, "obs": 0.00461, "pred": 0.00332, "glob": 0.00939}, {"k": 1, "obs": 0.053, "pred": 0.04018, "glob": 0.07069}, {"k": 3, "obs": 0.03258, "pred": 0.02249, "glob": 0.04561}, {"k": 5, "obs": 0.01058, "pred": 0.01012, "glob": 0.02501}, {"k": 8, "obs": 0.00914, "pred": 0.00617, "glob": 0.01852}, {"k": 12, "obs": 0.0049, "pred": 0.00408, "glob": 0.01355}, {"k": 1, "obs": 0.0716, "pred": 0.09047, "glob": 0.11366}, {"k": 3, "obs": 0.01182, "pred": 0.02031, "glob": 0.03515}, {"k": 5, "obs": 0.03006, "pred": 0.04082, "glob": 0.06649}, {"k": 8, "obs": 0.0042, "pred": 0.00767, "glob": 0.0179}, {"k": 12, "obs": 0.00285, "pred": 0.00662, "glob": 0.01447}, {"k": 1, "obs": 0.05442, "pred": 0.05237, "glob": 0.0821}, {"k": 3, "obs": 0.01813, "pred": 0.01894, "glob": 0.0411}, {"k": 5, "obs": 0.02831, "pred": 0.03206, "glob": 0.04842}, {"k": 8, "obs": 0.00876, "pred": 0.00793, "glob": 0.02265}, {"k": 12, "obs": 0.00489, "pred": 0.00615, "glob": 0.01577}, {"k": 1, "obs": 0.05528, "pred": 0.04591, "glob": 0.06656}, {"k": 3, "obs": 0.00885, "pred": 0.01428, "glob": 0.0246}, {"k": 5, "obs": 0.00685, "pred": 0.01852, "glob": 0.02463}, {"k": 8, "obs": 0.00245, "pred": 0.00732, "glob": 0.0122}, {"k": 12, "obs": 0.00149, "pred": 0.00668, "glob": 0.01082}, {"k": 1, "obs": 0.10331, "pred": 0.10943, "glob": 0.14327}, {"k": 3, "obs": 0.03808, "pred": 0.0504, "glob": 0.07069}, {"k": 5, "obs": 0.01056, "pred": 0.01933, "glob": 0.02817}, {"k": 8, "obs": 0.00639, "pred": 0.01326, "glob": 0.02038}, {"k": 12, "obs": 0.00286, "pred": 0.00846, "glob": 0.01501}, {"k": 1, "obs": 0.05178, "pred": 0.04043, "glob": 0.06543}, {"k": 3, "obs": 0.01968, "pred": 0.01011, "glob": 0.02883}, {"k": 5, "obs": 0.01213, "pred": 0.0072, "glob": 0.02031}, {"k": 8, "obs": 0.01036, "pred": 0.00599, "glob": 0.01688}, {"k": 12, "obs": 0.00665, "pred": 0.00163, "glob": 0.01191}, {"k": 1, "obs": 0.08898, "pred": 0.07011, "glob": 0.09518}, {"k": 3, "obs": 0.06173, "pred": 0.0499, "glob": 0.07007}, {"k": 5, "obs": 0.0357, "pred": 0.0228, "glob": 0.05266}, {"k": 8, "obs": 0.00382, "pred": 0.00486, "glob": 0.01194}, {"k": 12, "obs": 0.00173, "pred": 0.00392, "glob": 0.00914}, {"k": 1, "obs": 0.10737, "pred": 0.08476, "glob": 0.12129}, {"k": 3, "obs": 0.02706, "pred": 0.01746, "glob": 0.043}, {"k": 5, "obs": 0.0099, "pred": 0.0059, "glob": 0.02072}, {"k": 8, "obs": 0.00644, "pred": 0.00478, "glob": 0.0144}, {"k": 12, "obs": 0.00482, "pred": 0.00288, "glob": 0.01211}, {"k": 1, "obs": 0.07156, "pred": 0.07052, "glob": 0.09655}, {"k": 3, "obs": 0.01581, "pred": 0.01323, "glob": 0.03191}, {"k": 5, "obs": 0.00651, "pred": 0.00531, "glob": 0.01824}, {"k": 8, "obs": 0.00404, "pred": 0.0038, "glob": 0.01175}, {"k": 12, "obs": 0.00366, "pred": 0.00245, "glob": 0.00937}, {"k": 1, "obs": 0.0829, "pred": 0.10819, "glob": 0.14572}, {"k": 3, "obs": 0.02742, "pred": 0.02929, "glob": 0.04939}, {"k": 5, "obs": 0.0123, "pred": 0.01093, "glob": 0.02379}, {"k": 8, "obs": 0.00312, "pred": 0.00449, "glob": 0.01248}, {"k": 12, "obs": 0.00185, "pred": 0.00308, "glob": 0.00974}, {"k": 1, "obs": 0.09424, "pred": 0.10639, "glob": 0.1335}, {"k": 3, "obs": 0.04689, "pred": 0.0534, "glob": 0.08072}, {"k": 5, "obs": 0.02373, "pred": 0.02783, "glob": 0.04404}, {"k": 8, "obs": 0.006, "pred": 0.00843, "glob": 0.01705}, {"k": 12, "obs": 0.00332, "pred": 0.0049, "glob": 0.01251}, {"k": 1, "obs": 0.08927, "pred": 0.05397, "glob": 0.09374}, {"k": 3, "obs": 0.02112, "pred": 0.00733, "glob": 0.02307}, {"k": 5, "obs": 0.01534, "pred": 0.00438, "glob": 0.0213}, {"k": 8, "obs": 0.01119, "pred": 0.00226, "glob": 0.01437}, {"k": 12, "obs": 0.00618, "pred": 0.00098, "glob": 0.00759}, {"k": 1, "obs": 0.0501, "pred": 0.05562, "glob": 0.08107}, {"k": 3, "obs": 0.03817, "pred": 0.05651, "glob": 0.08288}, {"k": 5, "obs": 0.01154, "pred": 0.01774, "glob": 0.03162}, {"k": 8, "obs": 0.00687, "pred": 0.01197, "glob": 0.02039}, {"k": 12, "obs": 0.0025, "pred": 0.0064, "glob": 0.01393}, {"k": 1, "obs": 0.13374, "pred": 0.10106, "glob": 0.16441}, {"k": 3, "obs": 0.0145, "pred": 0.01401, "glob": 0.03368}, {"k": 5, "obs": 0.00951, "pred": 0.01065, "glob": 0.02446}, {"k": 8, "obs": 0.00512, "pred": 0.00735, "glob": 0.01832}, {"k": 12, "obs": 0.0038, "pred": 0.00616, "glob": 0.01443}, {"k": 1, "obs": 0.06697, "pred": 0.09558, "glob": 0.11812}, {"k": 3, "obs": 0.00529, "pred": 0.02168, "glob": 0.03288}, {"k": 5, "obs": 0.00661, "pred": 0.0199, "glob": 0.02783}, {"k": 8, "obs": 0.00078, "pred": 0.0093, "glob": 0.01592}, {"k": 12, "obs": 0.00074, "pred": 0.0086, "glob": 0.01384}, {"k": 1, "obs": 0.08332, "pred": 0.0849, "glob": 0.11037}, {"k": 3, "obs": 0.02482, "pred": 0.03427, "glob": 0.04839}, {"k": 5, "obs": 0.01287, "pred": 0.01469, "glob": 0.03055}, {"k": 8, "obs": 0.00694, "pred": 0.01793, "glob": 0.02799}, {"k": 12, "obs": 0.00341, "pred": 0.00575, "glob": 0.01404}, {"k": 1, "obs": 0.07762, "pred": 0.08028, "glob": 0.10958}, {"k": 3, "obs": 0.01646, "pred": 0.01745, "glob": 0.03481}, {"k": 5, "obs": 0.01444, "pred": 0.01546, "glob": 0.03}, {"k": 8, "obs": 0.00755, "pred": 0.0052, "glob": 0.01725}, {"k": 12, "obs": 0.00599, "pred": 0.00373, "glob": 0.01501}, {"k": 1, "obs": 0.07827, "pred": 0.08857, "glob": 0.11303}, {"k": 3, "obs": 0.05881, "pred": 0.08737, "glob": 0.10563}, {"k": 5, "obs": 0.00875, "pred": 0.02208, "glob": 0.03066}, {"k": 8, "obs": 0.00367, "pred": 0.01275, "glob": 0.01877}, {"k": 12, "obs": 0.0019, "pred": 0.00886, "glob": 0.01474}, {"k": 1, "obs": 0.07946, "pred": 0.0752, "glob": 0.10925}, {"k": 3, "obs": 0.02084, "pred": 0.02024, "glob": 0.0404}, {"k": 5, "obs": 0.00673, "pred": 0.01228, "glob": 0.02308}, {"k": 8, "obs": 0.0039, "pred": 0.00696, "glob": 0.01492}, {"k": 12, "obs": 0.00216, "pred": 0.00657, "glob": 0.0126}, {"k": 1, "obs": 0.08997, "pred": 0.08792, "glob": 0.12101}, {"k": 3, "obs": 0.02406, "pred": 0.02648, "glob": 0.04608}, {"k": 5, "obs": 0.00693, "pred": 0.00796, "glob": 0.02007}, {"k": 8, "obs": 0.01242, "pred": 0.01934, "glob": 0.02967}, {"k": 12, "obs": 0.00299, "pred": 0.00369, "glob": 0.01292}, {"k": 1, "obs": 0.07858, "pred": 0.07817, "glob": 0.12864}, {"k": 3, "obs": 0.00796, "pred": 0.01829, "glob": 0.03448}, {"k": 5, "obs": 0.0106, "pred": 0.0144, "glob": 0.03634}, {"k": 8, "obs": 0.00229, "pred": 0.00769, "glob": 0.01798}, {"k": 12, "obs": 0.00186, "pred": 0.00558, "glob": 0.01395}, {"k": 1, "obs": 0.09726, "pred": 0.08925, "glob": 0.12149}, {"k": 3, "obs": 0.02435, "pred": 0.01693, "glob": 0.03558}, {"k": 5, "obs": 0.04102, "pred": 0.02753, "glob": 0.05803}, {"k": 8, "obs": 0.00563, "pred": 0.00645, "glob": 0.0163}, {"k": 12, "obs": 0.00314, "pred": 0.00479, "glob": 0.01233}, {"k": 1, "obs": 0.07693, "pred": 0.10692, "glob": 0.12484}, {"k": 3, "obs": 0.00942, "pred": 0.01328, "glob": 0.03142}, {"k": 5, "obs": 0.02503, "pred": 0.03766, "glob": 0.05976}, {"k": 8, "obs": 0.00955, "pred": 0.01199, "glob": 0.02406}, {"k": 12, "obs": 0.00505, "pred": 0.00335, "glob": 0.0138}, {"k": 1, "obs": 0.08393, "pred": 0.08051, "glob": 0.10927}, {"k": 3, "obs": 0.03999, "pred": 0.02541, "glob": 0.05584}, {"k": 5, "obs": 0.04045, "pred": 0.02958, "glob": 0.0574}, {"k": 8, "obs": 0.01034, "pred": 0.0048, "glob": 0.02064}, {"k": 12, "obs": 0.00701, "pred": 0.00073, "glob": 0.0149}, {"k": 1, "obs": 0.05216, "pred": 0.03778, "glob": 0.06434}, {"k": 3, "obs": 0.02963, "pred": 0.01352, "glob": 0.04378}, {"k": 5, "obs": 0.01179, "pred": 0.00388, "glob": 0.01915}, {"k": 8, "obs": 0.00899, "pred": 0.00244, "glob": 0.01494}, {"k": 12, "obs": 0.00544, "pred": 0.0012, "glob": 0.01086}, {"k": 1, "obs": 0.0533, "pred": 0.05682, "glob": 0.07829}, {"k": 3, "obs": 0.07132, "pred": 0.06665, "glob": 0.10654}, {"k": 5, "obs": 0.0188, "pred": 0.02387, "glob": 0.03693}, {"k": 8, "obs": 0.00419, "pred": 0.00976, "glob": 0.01831}, {"k": 12, "obs": 0.00199, "pred": 0.00584, "glob": 0.01363}, {"k": 1, "obs": 0.04626, "pred": 0.03809, "glob": 0.06026}, {"k": 3, "obs": 0.03993, "pred": 0.02497, "glob": 0.04799}, {"k": 5, "obs": 0.01565, "pred": 0.01108, "glob": 0.02533}, {"k": 8, "obs": 0.00524, "pred": 0.00486, "glob": 0.01279}, {"k": 12, "obs": 0.00313, "pred": 0.00398, "glob": 0.00993}, {"k": 1, "obs": 0.08103, "pred": 0.08253, "glob": 0.11054}, {"k": 3, "obs": 0.04011, "pred": 0.0215, "glob": 0.05048}, {"k": 5, "obs": 0.01465, "pred": 0.00649, "glob": 0.02505}, {"k": 8, "obs": 0.01355, "pred": 0.00448, "glob": 0.02432}, {"k": 12, "obs": 0.00693, "pred": 0.00196, "glob": 0.01296}, {"k": 1, "obs": 0.05414, "pred": 0.05526, "glob": 0.08296}, {"k": 3, "obs": 0.01392, "pred": 0.01572, "glob": 0.03164}, {"k": 5, "obs": 0.02554, "pred": 0.02459, "glob": 0.04253}, {"k": 8, "obs": 0.00561, "pred": 0.00801, "glob": 0.01737}, {"k": 12, "obs": 0.00349, "pred": 0.00424, "glob": 0.01289}, {"k": 1, "obs": 0.05445, "pred": 0.05246, "glob": 0.07927}, {"k": 3, "obs": 0.02502, "pred": 0.02236, "glob": 0.04503}, {"k": 5, "obs": 0.01064, "pred": 0.006, "glob": 0.0227}, {"k": 8, "obs": 0.00759, "pred": 0.0028, "glob": 0.01644}, {"k": 12, "obs": 0.00594, "pred": 0.00151, "glob": 0.01303}, {"k": 1, "obs": 0.0452, "pred": 0.05747, "glob": 0.08445}, {"k": 3, "obs": 0.02602, "pred": 0.03209, "glob": 0.04556}, {"k": 5, "obs": 0.01462, "pred": 0.01785, "glob": 0.03459}, {"k": 8, "obs": 0.00201, "pred": 0.00595, "glob": 0.01247}, {"k": 12, "obs": 0.00071, "pred": 0.00345, "glob": 0.00929}, {"k": 1, "obs": 0.0535, "pred": 0.0528, "glob": 0.07738}, {"k": 3, "obs": 0.07166, "pred": 0.0568, "glob": 0.0998}, {"k": 5, "obs": 0.01106, "pred": 0.00621, "glob": 0.02171}, {"k": 8, "obs": 0.01437, "pred": 0.00421, "glob": 0.02421}, {"k": 12, "obs": 0.00853, "pred": 0.0011, "glob": 0.01552}, {"k": 1, "obs": 0.07071, "pred": 0.08334, "glob": 0.11008}, {"k": 3, "obs": 0.03577, "pred": 0.03032, "glob": 0.0599}, {"k": 5, "obs": 0.02256, "pred": 0.01718, "glob": 0.0451}, {"k": 8, "obs": 0.00986, "pred": 0.0084, "glob": 0.02586}, {"k": 12, "obs": 0.0056, "pred": 0.00457, "glob": 0.01759}, {"k": 1, "obs": 0.05611, "pred": 0.04041, "glob": 0.07754}, {"k": 3, "obs": 0.02866, "pred": 0.01768, "glob": 0.0542}, {"k": 5, "obs": 0.03397, "pred": 0.01984, "glob": 0.04803}, {"k": 8, "obs": 0.01474, "pred": 0.00265, "glob": 0.02374}, {"k": 12, "obs": 0.00877, "pred": 0.0012, "glob": 0.01694}, {"k": 1, "obs": 0.03995, "pred": 0.04202, "glob": 0.07107}, {"k": 3, "obs": 0.03094, "pred": 0.01991, "glob": 0.04331}, {"k": 5, "obs": 0.00701, "pred": 0.00641, "glob": 0.02158}, {"k": 8, "obs": 0.00721, "pred": 0.00445, "glob": 0.01573}, {"k": 12, "obs": 0.00612, "pred": 0.00189, "glob": 0.01306}, {"k": 1, "obs": 0.07233, "pred": 0.05187, "glob": 0.08167}, {"k": 3, "obs": 0.01946, "pred": 0.00672, "glob": 0.03047}, {"k": 5, "obs": 0.02754, "pred": 0.00663, "glob": 0.02718}, {"k": 8, "obs": 0.01323, "pred": 0.00083, "glob": 0.01339}, {"k": 12, "obs": 0.00826, "pred": -0.00046, "glob": 0.00856}, {"k": 1, "obs": 0.06455, "pred": 0.061, "glob": 0.08611}, {"k": 3, "obs": 0.03612, "pred": 0.02666, "glob": 0.04484}, {"k": 5, "obs": 0.00759, "pred": 0.00385, "glob": 0.015}, {"k": 8, "obs": 0.0163, "pred": 0.01131, "glob": 0.0254}, {"k": 12, "obs": 0.00532, "pred": 0.00235, "glob": 0.01081}, {"k": 1, "obs": 0.048, "pred": 0.05946, "glob": 0.08474}, {"k": 3, "obs": 0.02161, "pred": 0.03736, "glob": 0.0527}, {"k": 5, "obs": 0.00958, "pred": 0.02505, "glob": 0.03929}, {"k": 8, "obs": 0.00265, "pred": 0.00985, "glob": 0.01794}, {"k": 12, "obs": 0.00067, "pred": 0.00777, "glob": 0.01504}, {"k": 1, "obs": 0.05893, "pred": 0.07272, "glob": 0.10362}, {"k": 3, "obs": 0.02076, "pred": 0.01778, "glob": 0.04333}, {"k": 5, "obs": 0.01216, "pred": 0.0089, "glob": 0.02669}, {"k": 8, "obs": 0.00834, "pred": 0.00606, "glob": 0.01911}, {"k": 12, "obs": 0.00543, "pred": 0.00414, "glob": 0.01477}, {"k": 1, "obs": 0.12287, "pred": 0.09019, "glob": 0.13594}, {"k": 3, "obs": 0.05839, "pred": 0.04326, "glob": 0.08223}, {"k": 5, "obs": 0.01382, "pred": 0.00915, "glob": 0.02431}, {"k": 8, "obs": 0.00586, "pred": 0.0047, "glob": 0.01577}, {"k": 12, "obs": 0.00475, "pred": 0.00413, "glob": 0.01413}, {"k": 1, "obs": 0.09693, "pred": 0.10168, "glob": 0.12854}, {"k": 3, "obs": 0.02423, "pred": 0.02695, "glob": 0.04764}, {"k": 5, "obs": 0.00887, "pred": 0.00631, "glob": 0.01832}, {"k": 8, "obs": 0.00535, "pred": 0.00323, "glob": 0.01324}, {"k": 12, "obs": 0.00475, "pred": 0.00315, "glob": 0.01191}, {"k": 1, "obs": 0.05561, "pred": 0.06173, "glob": 0.09285}, {"k": 3, "obs": 0.01256, "pred": 0.01472, "glob": 0.03824}, {"k": 5, "obs": 0.00872, "pred": 0.00793, "glob": 0.02489}, {"k": 8, "obs": 0.0137, "pred": 0.01405, "glob": 0.03185}, {"k": 12, "obs": 0.0047, "pred": 0.00411, "glob": 0.01651}, {"k": 1, "obs": 0.05565, "pred": 0.04404, "glob": 0.07678}, {"k": 3, "obs": 0.04216, "pred": 0.0425, "glob": 0.07083}, {"k": 5, "obs": 0.01217, "pred": 0.00925, "glob": 0.02774}, {"k": 8, "obs": 0.00908, "pred": 0.00676, "glob": 0.01946}, {"k": 12, "obs": 0.00486, "pred": 0.0052, "glob": 0.01473}], "fila": {"budget": [2, 4, 6, 8, 10, 13, 16, 20, 25, 30, 40, 50], "curvas": [{"id": "cos", "nome": "Similaridade global (0 chamadas)", "y": [2.9, 6.6, 10.3, 12.3, 13.7, 17.6, 22.5, 28.2, 34.1, 38.5, 46.8, 57.4]}, {"id": "fam", "nome": "Features de orador (0 chamadas)", "y": [10.8, 19.1, 26.5, 33.6, 38.0, 45.1, 50.7, 56.1, 61.5, 65.9, 73.8, 81.1]}, {"id": "juiz", "nome": "Melhor juiz sozinho (1 chamada)", "y": [8.1, 16.3, 24.4, 32.3, 40.5, 52.9, 65.1, 81.4, 82.8, 83.9, 86.2, 88.4]}, {"id": "lex", "nome": "Melhor juiz + desempate (1 chamada)", "y": [15.0, 26.2, 37.0, 46.6, 52.2, 61.0, 71.1, 81.1, 85.0, 87.5, 90.4, 93.1]}, {"id": "comite", "nome": "Comitê de 12 juízes", "y": [16.9, 33.6, 48.0, 57.2, 64.7, 74.0, 80.0, 84.4, 88.4, 90.3, 93.3, 95.6]}]}, "mecanismo": {"pares": 1314576, "separados": 0.954, "empatados": 0.046, "comite": {"auc": 0.926, "sep": 0.9027, "emp": 0.0232, "inv": 0.0}, "stacking": {"auc": 0.9262, "sep": 0.9013, "emp": 0.0249, "inv": 1.33}, "lex": {"auc": 0.93, "sep": 0.9027, "emp": 0.0272, "inv": 0.0}}};
+const NS = "http://www.w3.org/2000/svg";
+const $ = id => document.getElementById(id);
+const fmt = (v, d=3) => v.toFixed(d).replace(".", ",");
+const pct = v => (v).toFixed(1).replace(".", ",") + "%";
+function el(tag, attrs={}, parent){ const e=document.createElementNS(NS,tag); for(const k in attrs) e.setAttribute(k,attrs[k]); if(parent) parent.appendChild(e); return e; }
+function txt(parent,x,y,s,attrs={}){ const t=el("text",Object.assign({x,y},attrs),parent); t.textContent=s; return t; }
+const tip=$("tip");
+function showTip(ev,html){ tip.innerHTML=html; tip.style.opacity=1; const x=Math.min(ev.clientX+14, innerWidth-tip.offsetWidth-8); const y=Math.min(ev.clientY+14, innerHeight-tip.offsetHeight-8); tip.style.left=x+"px"; tip.style.top=y+"px"; }
+function hideTip(){ tip.style.opacity=0; }
+function hover(node,html){ node.addEventListener("pointermove",e=>showTip(e,html())); node.addEventListener("pointerleave",hideTip); }
+const nome = s => (s||"(sem marcador)").toLowerCase().replace(/(^|\s|-)(\p{L})/gu,(m,a,b)=>a+b.toUpperCase()).replace(/\b(Da|De|Do|Dos|Das|E)\b/g,w=>w.toLowerCase());
+function press(btns, on){ btns.forEach(b=>b.setAttribute("aria-pressed", String(b===on))); }
+
+/* ---------- 1. who said it ---------- */
+let exI = 0;
+const exBtns = $("ex-btns");
+D.exemplos.forEach((e,i)=>{
+  const b=document.createElement("button"); b.type="button"; b.className="chipbtn"; b.id="ex-"+i;
+  b.textContent = nome(e.atribuido).split(" ").slice(0,2).join(" ") + (e.rotulo==="suportada"?" · suportada":"");
+  b.addEventListener("click",()=>{ exI=i; drawEx(); }); exBtns.appendChild(b);
+});
+function drawEx(){
+  const e = D.exemplos[exI];
+  press([...exBtns.children], exBtns.children[exI]);
+  $("ex-op").textContent = "“" + e.opiniao + "”";
+  $("ex-meta").innerHTML = `Atribuída a <b>${nome(e.atribuido)}</b> · audiência ${e.ref} · rótulo humano <span class="pill ${e.rotulo==="suportada"?"ok":"bad"}">${e.rotulo}</span>`;
+  // strip
+  const s=$("ex-strip"); s.innerHTML=""; const W=760, H=96, top=8, base=80;
+  const tot=e.turnos.reduce((a,r)=>a+r[1],0); let x=0;
+  $("ex-strip-lbl").textContent = `Transcrição: ${tot} frases em ${e.turnos.length} turnos · altura = maior similaridade com a opinião no turno`;
+  el("line",{x1:0,x2:W,y1:base,y2:base,stroke:"var(--rule)"},s);
+  e.turnos.forEach(r=>{
+    const w=Math.max(1,(r[1]/tot)*W-1), c=r[2]; const h=Math.max(2,(Math.max(0,c-0.1)/0.85)*(base-top));
+    const role = r[0]===e.orador?"var(--method)":(r[0]===e.melhor_outro?"var(--halluc)":"var(--base)");
+    const rect=el("rect",{x:x,y:base-h,width:w,height:h,fill:role,rx:1,opacity:r[0]===e.orador||r[0]===e.melhor_outro?1:.55},s);
+    hover(rect,()=>`<div>${nome(r[0])}</div><div>${r[1]} frases · melhor similaridade <b>${fmt(c)}</b></div>`);
+    x+=(r[1]/tot)*W;
+  });
+  txt(s,0,H-2,"início da audiência",{class:"t-muted","font-size":11});
+  txt(s,W,H-2,"fim",{class:"t-muted","font-size":11,"text-anchor":"end"});
+  // bars
+  const b=$("ex-bars"); b.innerHTML=""; const rows=e.oradores, L=190, R=60, BW=760-L-R, rh=30;
+  b.setAttribute("viewBox",`0 0 760 ${rows.length*rh+30}`);
+  [0,.25,.5,.75,1].forEach(t=>{ const gx=L+t*BW; el("line",{x1:gx,x2:gx,y1:0,y2:rows.length*rh,stroke:"var(--grid)"},b); txt(b,gx,rows.length*rh+18,fmt(t,2),{class:"t-muted","text-anchor":"middle","font-size":11}); });
+  rows.forEach((o,i)=>{
+    const y=i*rh+5, w=o.cos*BW;
+    const role = o.nome===e.orador?"var(--method)":(o.nome===e.melhor_outro?"var(--halluc)":"var(--base)");
+    txt(b,L-10,y+15,nome(o.nome).slice(0,26),{"text-anchor":"end",class:o.nome===e.orador||o.nome===e.melhor_outro?"t-ink":"", "font-weight":o.nome===e.orador?600:400});
+    const r=el("rect",{x:L,y:y+3,width:Math.max(2,w),height:rh-12,rx:3,fill:role},b);
+    txt(b,L+w+6,y+15,fmt(o.cos),{class:"t-mono","font-size":12});
+    hover(r,()=>`<div><b>${nome(o.nome)}</b> · ${o.n_frases} frases</div><div style="margin-top:4px">“${o.frase}”</div><div style="margin-top:4px">similaridade <b>${fmt(o.cos)}</b></div>`);
+  });
+  $("ex-read").innerHTML = `<div><b>${fmt(Math.max(e.cos_s,e.best_other))}</b><span>nota de quem olha a audiência inteira</span></div>
+    <div><b class="m">${fmt(e.cos_s)}</b><span>melhor frase de ${nome(e.atribuido).split(" ")[0]}</span></div>
+    <div><b class="${e.delta>0?"h":"m"}">${e.delta>0?"+":""}${fmt(e.delta,2)}</b><span>Δ: quanto outro orador apoia melhor</span></div>`;
+}
+drawEx();
+
+/* ---------- 2. ties ---------- */
+function drawEmp(k){
+  const c=D.comite[k-1], P=D.totais.pos, N=D.totais.neg;
+  $("k-emp-v").textContent=k;
+  const s=$("emp-chart"); s.innerHTML=""; const W=760,H=290,L=46,B=250,T=12;
+  const pp=c.pos.map(v=>100*v/P), nn=c.neg.map(v=>100*v/N);
+  const ymax=Math.ceil(Math.max(...pp,...nn)/20)*20||20;
+  const y=v=>B-(v/ymax)*(B-T);
+  for(let g=0; g<=ymax; g+= (ymax>60?20:10)){ el("line",{x1:L,x2:W,y1:y(g),y2:y(g),stroke:"var(--grid)"},s); txt(s,L-8,y(g)+4,g+"%",{"text-anchor":"end",class:"t-muted","font-size":11}); }
+  const n=k+1, slot=(W-L)/n, bw=Math.min(28,slot*0.36);
+  for(let i=0;i<n;i++){
+    const cx=L+slot*(i+.5);
+    const r1=el("rect",{x:cx-bw-1,y:y(nn[i]),width:bw,height:B-y(nn[i]),fill:"var(--base)",rx:2},s);
+    const r2=el("rect",{x:cx+1,y:y(pp[i]),width:bw,height:B-y(pp[i]),fill:"var(--halluc)",rx:2},s);
+    const pairs=c.pos[i]*c.neg[i];
+    [r1,r2].forEach(r=>hover(r,()=>`<div><b>${i} voto${i===1?"":"s"}</b></div><div>${c.neg[i].toLocaleString("pt-BR")} suportadas (${pct(nn[i])})</div><div>${c.pos[i]} alucinações (${pct(pp[i])})</div><div>pares empatados: <b>${pairs.toLocaleString("pt-BR")}</b></div>`));
+    txt(s,cx,B+16,String(i),{"text-anchor":"middle",class:"t-muted","font-size":11});
+  }
+  el("line",{x1:L,x2:W,y1:B,y2:B,stroke:"var(--rule)"},s);
+  txt(s,(L+W)/2,B+34,"votos recebidos",{"text-anchor":"middle",class:"t-muted","font-size":11});
+  $("emp-read").innerHTML=`<div><b>${fmt(100*c.tau,1)}%</b><span>τ: pares alucinação–suportada empatados</span></div>
+    <div><b>${fmt(c.auc)}</b><span>AUROC só com os votos</span></div>
+    <div><b class="m">${fmt(c.tau/2,3)}</b><span>ganho máximo de um desempate (τ/2)</span></div>`;
+}
+$("k-emp").addEventListener("input",e=>drawEmp(+e.target.value));
+drawEmp(1);
+
+/* ---------- 3. sum vs lexicographic ---------- */
+const items=[{id:"x",v:4,s:.95},{id:"y",v:5,s:.10},{id:"z",v:5,s:.90}];
+function drawRank(mode){
+  press([$("r-soma"),$("r-lex")], mode==="soma"?$("r-soma"):$("r-lex"));
+  const sc = mode==="soma" ? (it=>it.v/12+it.s) : (it=>it.v*10+it.s);
+  const order=[...items].sort((a,b)=>sc(b)-sc(a));
+  const box=$("rank"); box.innerHTML="";
+  order.forEach((it,i)=>{
+    const flip = mode==="soma" && it.id==="x";
+    const d=document.createElement("div"); d.className="row"+(flip?" flip":"");
+    d.innerHTML=`<span class="pos">${i+1}º</span><span>Opinião <b>${it.id}</b> · ${it.v} votos de 12 · sinal barato ${fmt(it.s,2)}</span><span class="val">${mode==="soma"?"soma "+fmt(sc(it),2):"("+it.v+"; "+fmt(it.s,2)+")"}</span>`;
+    box.appendChild(d);
+  });
+  $("rank-note").innerHTML = mode==="soma"
+    ? `<span class="h">A opinião x, com 4 votos, passou à frente de y, com 5.</span> A soma inverteu uma decisão dos juízes porque o sinal barato discordou.`
+    : `<span class="m">A ordem dos votos é mantida.</span> O sinal barato só separa y de z, que os juízes haviam empatado com 5 votos.`;
+}
+$("r-soma").addEventListener("click",()=>drawRank("soma"));
+$("r-lex").addEventListener("click",()=>drawRank("lex"));
+drawRank("soma");
+(function(){
+  const s=$("dec-chart"), W=760, L=170, R=40, z=L+(W-L-R)*0.4, sc=(W-L-R)*0.6/0.005;
+  const rows=[{n:"Soma (stacking)",g:.0017,l:-.0014},{n:"Desempate lexicográfico",g:.0040,l:0}];
+  el("line",{x1:z,x2:z,y1:0,y2:120,stroke:"var(--ink-2)"},s);
+  [-.002,0,.002,.004].forEach(t=>{ const x=z+t*sc; el("line",{x1:x,x2:x,y1:0,y2:120,stroke:"var(--grid)"},s); txt(s,x,138,(t>0?"+":"")+fmt(t,3),{"text-anchor":"middle",class:"t-muted","font-size":11}); });
+  rows.forEach((r,i)=>{
+    const y=12+i*52;
+    txt(s,L-12,y+22,r.n,{"text-anchor":"end",class:"t-ink"});
+    const g=el("rect",{x:z,y:y+4,width:r.g*sc,height:16,rx:3,fill:"var(--method)"},s);
+    hover(g,()=>`ganho nos empates <b>+${fmt(r.g,4)}</b>`);
+    if(r.l<0){ const l=el("rect",{x:z+r.l*sc,y:y+24,width:-r.l*sc,height:16,rx:3,fill:"var(--halluc)"},s); hover(l,()=>`perda por inversões <b>${fmt(r.l,4)}</b> (1,33% dos pares invertidos)`); }
+    txt(s,z+Math.max(r.g,0)*sc+8,y+16,"líquido "+(r.g+r.l>=0?"+":"")+fmt(r.g+r.l,4),{class:"t-mono","font-size":12});
+    if(r.l===0) txt(s,z+6,y+36,"0 inversões",{class:"t-muted","font-size":11});
+  });
+})();
+
+/* ---------- 4. cost ladder ---------- */
+(function(){
+  const s=$("lad-chart"), W=760,H=320,L=52,R=150,T=14,B=276, E=D.escada;
+  const x=k=>L+(k-1)/11*(W-L-R), y=v=>B-(v-.80)/(.94-.80)*(B-T);
+  [.80,.82,.84,.86,.88,.90,.92,.94].forEach(g=>{ el("line",{x1:L,x2:W-R,y1:y(g),y2:y(g),stroke:"var(--grid)"},s); txt(s,L-8,y(g)+4,fmt(g,2),{"text-anchor":"end",class:"t-muted","font-size":11}); });
+  E.forEach(e=>txt(s,x(e.k),B+18,String(e.k),{"text-anchor":"middle",class:"t-muted","font-size":11}));
+  txt(s,(L+W-R)/2,B+36,"juízes LLM por opinião",{"text-anchor":"middle",class:"t-muted","font-size":11});
+  el("line",{x1:L,x2:W-R,y1:y(.926),y2:y(.926),stroke:"var(--ref)","stroke-dasharray":"2 4"},s);
+  txt(s,W-R+8,y(.926)+4,"12 juízes: 0,926",{class:"t-muted","font-size":11});
+  let area="M"+E.map(e=>`${x(e.k)},${y(e.lex)}`).join("L")+"L"+[...E].reverse().map(e=>`${x(e.k)},${y(e.so)}`).join("L")+"Z";
+  el("path",{d:area,fill:"var(--method-soft)"},s);
+  el("path",{d:"M"+E.map(e=>`${x(e.k)},${y(e.so)}`).join("L"),fill:"none",stroke:"var(--base)","stroke-width":2,"stroke-dasharray":"6 4"},s);
+  el("path",{d:"M"+E.map(e=>`${x(e.k)},${y(e.lex)}`).join("L"),fill:"none",stroke:"var(--method)","stroke-width":2.5},s);
+  txt(s,W-R+8,y(E[11].lex)-6,"com desempate",{class:"t-ink","font-size":12});
+  const cross=el("line",{x1:0,x2:0,y1:T,y2:B,stroke:"var(--ink-2)",opacity:0},s);
+  const d1=el("circle",{r:5,fill:"var(--method)",stroke:"var(--surface)","stroke-width":2,opacity:0},s);
+  const d2=el("circle",{r:5,fill:"var(--base)",stroke:"var(--surface)","stroke-width":2,opacity:0},s);
+  function read(k){ const e=E[k-1];
+    $("lad-read").innerHTML=`<div><b>${k}</b><span>juíz${k===1?"":"es"}</span></div><div><b>${fmt(e.so)}</b><span>só juízes</span></div><div><b class="m">${fmt(e.lex)}</b><span>com desempate</span></div><div><b class="m">+${fmt(e.lex-e.so)}</b><span>ganho</span></div>`;
+    [cross,d1,d2].forEach(n=>n.setAttribute("opacity",1)); cross.setAttribute("x1",x(k)); cross.setAttribute("x2",x(k));
+    d1.setAttribute("cx",x(k)); d1.setAttribute("cy",y(e.lex)); d2.setAttribute("cx",x(k)); d2.setAttribute("cy",y(e.so)); }
+  const hit=el("rect",{x:L,y:T,width:W-L-R,height:B-T,fill:"transparent"},s);
+  hit.addEventListener("pointermove",ev=>{ const p=s.createSVGPoint(); p.x=ev.clientX; p.y=ev.clientY; const q=p.matrixTransform(s.getScreenCTM().inverse()); const k=Math.max(1,Math.min(12,Math.round((q.x-L)/(W-L-R)*11+1))); read(k); const e=E[k-1]; showTip(ev,`<b>${k}</b> juíz${k===1?"":"es"}<br>só juízes <b>${fmt(e.so)}</b><br>com desempate <b>${fmt(e.lex)}</b>`); });
+  hit.addEventListener("pointerleave",hideTip);
+  read(1);
+})();
+
+/* ---------- 5. review queue ---------- */
+(function(){
+  const s=$("q-chart"), F=D.fila, W=760,L=48,R=20,T=10,B=286;
+  const x=v=>L+v/50*(W-L-R), y=v=>B-v/100*(B-T);
+  [0,20,40,60,80,100].forEach(g=>{ el("line",{x1:L,x2:W-R,y1:y(g),y2:y(g),stroke:"var(--grid)"},s); txt(s,L-8,y(g)+4,g+"%",{"text-anchor":"end",class:"t-muted","font-size":11}); });
+  [0,10,20,30,40,50].forEach(g=>txt(s,x(g),B+18,g+"%",{"text-anchor":"middle",class:"t-muted","font-size":11}));
+  txt(s,(L+W-R)/2,B+36,"parcela das opiniões enviadas a um revisor humano",{"text-anchor":"middle",class:"t-muted","font-size":11});
+  const cur=id=>F.curvas.find(c=>c.id===id);
+  const path=c=>"M"+x(0)+","+y(0)+"L"+F.budget.map((b,i)=>`${x(b)},${y(c.y[i])}`).join("L");
+  el("path",{d:path(cur("comite")),fill:"none",stroke:"var(--ref)","stroke-width":1.5,opacity:.7},s);
+  el("path",{d:path(cur("juiz")),fill:"none",stroke:"var(--base)","stroke-width":2,"stroke-dasharray":"6 4"},s);
+  el("path",{d:path(cur("lex")),fill:"none",stroke:"var(--method)","stroke-width":2.5},s);
+  const vl=el("line",{y1:T,y2:B,stroke:"var(--ink-2)","stroke-dasharray":"2 3"},s);
+  const a=el("circle",{r:5,fill:"var(--method)",stroke:"var(--surface)","stroke-width":2},s);
+  const b=el("circle",{r:5,fill:"var(--base)",stroke:"var(--surface)","stroke-width":2},s);
+  function upd(i){ const bud=F.budget[i], j=cur("juiz").y[i], l=cur("lex").y[i], c=cur("comite").y[i];
+    $("bud-v").textContent=bud+"%"; vl.setAttribute("x1",x(bud)); vl.setAttribute("x2",x(bud));
+    a.setAttribute("cx",x(bud)); a.setAttribute("cy",y(l)); b.setAttribute("cx",x(bud)); b.setAttribute("cy",y(j));
+    $("q-read").innerHTML=`<div><b>${pct(j)}</b><span>melhor juiz sozinho</span></div><div><b class="m">${pct(l)}</b><span>com desempate (1 chamada)</span></div><div><b class="m">${l>=j?"+":""}${fmt(l-j,1)} pp</b><span>diferença</span></div><div><b>${pct(c)}</b><span>comitê de 12 (referência)</span></div>`; }
+  $("bud").addEventListener("input",e=>upd(+e.target.value));
+  upd(4);
+})();
+
+/* ---------- 6. forecast ---------- */
+(function(){
+  const s=$("p-chart"), P=D.previsao, W=760,L=58,R=20,T=10,B=286, M=.16;
+  const x=v=>L+(v+.01)/(M+.01)*(W-L-R), y=v=>B-(v+.01)/(M+.01)*(B-T);
+  [0,.04,.08,.12,.16].forEach(g=>{ el("line",{x1:L,x2:W-R,y1:y(g),y2:y(g),stroke:"var(--grid)"},s); txt(s,L-8,y(g)+4,fmt(g,2),{"text-anchor":"end",class:"t-muted","font-size":11}); txt(s,x(g),B+18,fmt(g,2),{"text-anchor":"middle",class:"t-muted","font-size":11}); });
+  txt(s,(L+W-R)/2,B+36,"ganho previsto (AUROC)",{"text-anchor":"middle",class:"t-muted","font-size":11});
+  txt(s,14,(T+B)/2,"ganho observado",{"text-anchor":"middle",class:"t-muted","font-size":11,transform:`rotate(-90 14 ${(T+B)/2})`});
+  el("line",{x1:x(-.01),y1:y(-.01),x2:x(M),y2:y(M),stroke:"var(--ink-2)","stroke-dasharray":"4 4"},s);
+  txt(s,x(.115),y(.125)-4,"previsão exata",{class:"t-muted","font-size":11,transform:`rotate(-33 ${x(.115)} ${y(.125)})`});
+  const g=el("g",{},s);
+  function draw(mode){
+    press([$("p-alpha"),$("p-glob")], mode==="a"?$("p-alpha"):$("p-glob"));
+    g.innerHTML="";
+    P.forEach(p=>{ const pv=mode==="a"?p.pred:p.glob;
+      const c=el("circle",{cx:x(pv),cy:y(p.obs),r:4.5,fill:mode==="a"?"var(--method)":"var(--halluc)","fill-opacity":.55,stroke:"var(--surface)","stroke-width":1},g);
+      hover(c,()=>`${p.k} juíz${p.k===1?"":"es"}<br>previsto <b>${fmt(pv,4)}</b><br>observado <b>${fmt(p.obs,4)}</b>`); });
+    const ks=[1,3,5,8,12];
+    let h=`<thead><tr><th>Juízes</th><th>ganho observado</th><th>previsto (média)</th><th>erro absoluto médio</th></tr></thead><tbody>`;
+    ks.forEach(k=>{ const r=P.filter(p=>p.k===k); const mo=r.reduce((a,p)=>a+p.obs,0)/r.length; const mp=r.reduce((a,p)=>a+(mode==="a"?p.pred:p.glob),0)/r.length; const mae=r.reduce((a,p)=>a+Math.abs((mode==="a"?p.pred:p.glob)-p.obs),0)/r.length;
+      h+=`<tr><td>${k}</td><td>+${fmt(mo,4)}</td><td class="${mode==="a"?"m":"h"}">+${fmt(mp,4)}</td><td>${fmt(mae,4)}</td></tr>`; });
+    $("p-table").innerHTML=h+"</tbody>";
+  }
+  $("p-alpha").addEventListener("click",()=>draw("a"));
+  $("p-glob").addEventListener("click",()=>draw("g"));
+  draw("a");
+})();
+</script>

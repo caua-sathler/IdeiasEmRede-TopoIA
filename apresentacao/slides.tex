@@ -1,0 +1,391 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+% --- Idioma e codificação ---
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% --- Tema ---
+\usetheme{Boadilla}
+\usecolortheme{whale}
+\definecolor{NavyMain}{RGB}{18,42,80}
+\definecolor{TealAccent}{RGB}{0,128,128}
+\definecolor{GoldHighlight}{RGB}{210,140,15}
+\definecolor{DarkSlate}{RGB}{35,45,55}
+\definecolor{CardBg}{RGB}{246,248,252}
+% cores dos gráficos (as mesmas do painel interativo)
+\definecolor{Metodo}{HTML}{2A78D6}
+\definecolor{Aluc}{HTML}{EB6834}
+\definecolor{Base}{HTML}{8B95A5}
+
+\setbeamercolor{palette primary}{bg=NavyMain,fg=white}
+\setbeamercolor{palette secondary}{bg=TealAccent,fg=white}
+\setbeamercolor{palette tertiary}{bg=DarkSlate,fg=white}
+\setbeamercolor{structure}{fg=NavyMain}
+\setbeamercolor{frametitle}{bg=NavyMain,fg=white}
+\setbeamercolor{block title}{bg=NavyMain,fg=white}
+\setbeamercolor{block body}{bg=CardBg,fg=black}
+\setbeamercolor{block title example}{bg=TealAccent,fg=white}
+\setbeamercolor{block body example}{bg=CardBg,fg=black}
+\setbeamercolor{block title alerted}{bg=GoldHighlight,fg=white}
+\setbeamercolor{block body alerted}{bg=CardBg,fg=black}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+\newcommand{\AUC}{\mathrm{AUROC}}
+\newcommand{\lex}{\preceq_{\mathrm{lex}}}
+
+\title[\textbf{Quem disse isso?}]{\textbf{Quem disse isso?}}
+\subtitle{Verificação condicionada ao orador e desempate lexicográfico\\para detectar alucinações em audiências públicas}
+\author[Gabriel Ribeiro]{\textbf{Gabriel Ribeiro}}
+\institute[Colab UFMG]{Colab UFMG --- Universidade Federal de Minas Gerais\\[2pt]
+\small Desafio \textbf{Ideias em Rede (1ª Edição)} --- Instituto Kunumi}
+\date{Setembro de 2026}
+
+\begin{document}
+
+% -----------------------------------------------------------------------------
+\begin{frame}[plain]
+  \vspace{0.4cm}
+  \begin{center}
+    \includegraphics[height=1.0cm]{figuras/kunumi-logo.png}\hspace{1.5cm}
+    \includegraphics[height=1.0cm]{figuras/logo_ufmg.png}
+  \end{center}
+  \vspace{0.2cm}
+  \titlepage
+\end{frame}
+
+% -----------------------------------------------------------------------------
+\begin{frame}{O problema: opiniões atribuídas à pessoa errada}
+  \begin{center}
+    \Large Um resumo diz que o deputado X defendeu Y. Ele disse mesmo?
+  \end{center}
+  \vspace{0.3cm}
+  \begin{columns}[T]
+    \begin{column}{0.23\textwidth}
+      \begin{block}{\centering 206 audiências}\centering\small Transcrições da Câmara dos Deputados\end{block}
+    \end{column}
+    \begin{column}{0.23\textwidth}
+      \begin{block}{\centering 4.238 opiniões}\centering\small Cada uma atribuída a um participante\end{block}
+    \end{column}
+    \begin{column}{0.23\textwidth}
+      \begin{alertblock}{\centering 11,9\% alucinações}\centering\small Não suportadas pela transcrição (rótulo humano)\end{alertblock}
+    \end{column}
+    \begin{column}{0.23\textwidth}
+      \begin{block}{\centering 12 juízes LLM}\centering\small Voto binário; comitê: AUROC 0,926\end{block}
+    \end{column}
+  \end{columns}
+  \vspace{0.4cm}
+  \centering\small Métrica: \textbf{AUROC}, a chance de uma alucinação receber nota mais alta que uma opinião suportada (0,5 = acaso; 1 = perfeito).
+\end{frame}
+
+% -----------------------------------------------------------------------------
+\begin{frame}{Por que detectores baratos falham: a melhor frase é de outra pessoa}
+  \centering
+  \begin{tikzpicture}[x=1cm,y=1cm,font=\scriptsize,
+    seg/.style={draw,minimum height=0.5cm,minimum width=0.72cm,inner sep=0pt,anchor=west},
+    arr/.style={-{Stealth[length=5pt]},thick}]
+  \foreach \i/\t/\f in {0/O/black!8,1/O/black!8,2/V/black!35,3/C/white,
+      4/O/black!8,5/V/black!35,6/V/black!35,7/O/black!8,8/C/white,9/C/white,
+      10/O/black!8,11/V/black!35,12/O/black!8}{
+    \node[seg,fill=\f] (s\i) at (\i*0.78,0) {\t};
+  }
+  \foreach \i in {3,8,9}{\draw[very thick] (s\i.south west) rectangle (s\i.north east);}
+  \node[anchor=east] at (-0.1,0) {transcrição};
+  \node[draw,rounded corners,fill=white,text width=7.4cm,align=center,inner sep=3pt]
+    (op) at (4.95,2.35) {Opinião atribuída a \textbf{Arlindo Chinaglia}: ``Destacou que todos os
+    jornalistas presentes estavam em busca da verdade\ldots''\\
+    \emph{rótulo humano: não suportada}};
+  \draw[arr,Aluc] (op.south) ++(-1.2,0) -- node[left,align=right,pos=.45,black]
+    {melhor frase da audiência inteira\\(Marcel van Hattem): \textbf{0,783}} (s5.north);
+  \draw[arr,dashed,Metodo] (op.south) ++(1.2,0) -- node[right,align=left,pos=.45,black]
+    {melhor frase nos turnos\\de Chinaglia: \textbf{0,386}} (s8.north);
+  \node[seg,fill=white,very thick,minimum width=0.45cm] (l1) at (1.2,-0.85) {C};
+  \node[anchor=west] at (l1.east) {Chinaglia (atribuído)};
+  \node[seg,fill=black!35,minimum width=0.45cm] (l2) at (4.6,-0.85) {V};
+  \node[anchor=west] at (l2.east) {van Hattem};
+  \node[seg,fill=black!8,minimum width=0.45cm] (l3) at (7.0,-0.85) {O};
+  \node[anchor=west] at (l3.east) {outros};
+  \end{tikzpicture}
+  \vspace{0.3cm}
+  \begin{exampleblock}{Observação (cegueira de incidência)}
+    Máximo, média ou top-$k$ sobre as frases não sabem \emph{quem} falou cada frase:
+    trocar os nomes dos oradores não muda a nota. Por isso ficam em 0,57 (similaridade) e 0,58 (NLI).
+  \end{exampleblock}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+\begin{frame}{Ideia 1: comparar a opinião com as falas de quem supostamente a disse}
+  \begin{columns}[c]
+    \begin{column}{0.56\textwidth}
+      \begin{table}\centering\small
+      \resizebox{\linewidth}{!}{%
+      \begin{tabular}{@{}lcc@{}}
+        \toprule
+        \textbf{Sinal} & \textbf{Custo} & \textbf{AUROC} \\
+        \midrule
+        Melhor frase da audiência (baseline) & 0 & 0,568 \\
+        Melhor entailment da audiência (baseline) & 10 NLI & 0,583 \\
+        \midrule
+        Melhor frase \textbf{do orador atribuído} & 0 & \textbf{0,746} \\
+        Escore de má-atribuição $\Delta$ & 0 & 0,760 \\
+        Todas as features de orador & 0 & \textbf{0,761} \\
+        \quad + 2 features NLI & 10 NLI & \textbf{0,779} \\
+        \bottomrule
+      \end{tabular}}
+      \end{table}
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      \begin{block}{Controles}\small
+        Orador \emph{aleatório} da mesma audiência: 0,521 (acaso).\\[2pt]
+        O sinal vem de \textbf{quem} falou, não de quanto falou.
+      \end{block}
+      \begin{exampleblock}{Auditoria de 50 positivos}\small
+        Cerca de \textbf{1 em cada 4} alucinações é má-atribuição; nelas $\Delta > 0$ sempre.
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+  \vspace{0.2cm}
+  \centering\textbf{+0,18 de AUROC sem chamar nenhum modelo.}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+\begin{frame}{Os juízes empatam: o espaço que um desempate pode usar}
+  \begin{columns}[c]
+    \begin{column}{0.58\textwidth}
+      \centering
+      \begin{tikzpicture}[x=0.44cm, y=0.052cm, font=\scriptsize]
+        \draw[gray!25] (-0.6,0) grid[xstep=20, ystep=20] (12.6,60);
+        \draw (-0.6,0) -- (12.6,0);
+        \foreach \k in {0,...,12} \node[below=1pt] at (\k,0) {\k};
+        \foreach \yy in {0,20,40,60} \node[left=1pt] at (-0.6,\yy) {\yy\%};
+        \node[below=9pt] at (6,0) {votos recebidos (de 12)};
+        \foreach \k/\h in {0/58.3,1/17.8,2/8.1,3/5.1,4/3.2,5/2.5,6/1.6,7/1.1,8/0.8,9/0.5,10/0.4,11/0.2,12/0.3}
+          \fill[Base] (\k-0.42,0) rectangle (\k,\h);
+        \foreach \k/\h in {0/4.7,1/4.4,2/2.9,3/4.7,4/3.9,5/6.4,6/7.1,7/6.1,8/4.7,9/4.2,10/5.9,11/6.6,12/38.5}
+          \fill[Aluc] (\k,0) rectangle (\k+0.42,\h);
+        \node[anchor=west,align=left] at (2.2,50) {\textbf{0 votos:} 1.878 suportadas\\ mas só 19 alucinações};
+        \fill[Base] (5.2,36) rectangle (5.8,40); \node[anchor=west] at (5.9,38) {suportadas};
+        \fill[Aluc] (5.2,28) rectangle (5.8,32); \node[anchor=west] at (5.9,30) {alucinações};
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      \small
+      Soma de 12 votos binários: só 13 valores possíveis.\\[4pt]
+      Um par (alucinação, suportada) com o mesmo número de votos está \textbf{empatado}.\\[4pt]
+      \begin{alertblock}{\centering $\tau = 4{,}65\%$ dos pares}
+        \centering Ganho máximo de um desempate: $\tau/2 = 0{,}023$
+      \end{alertblock}
+      Com \textbf{1 juiz}, $\tau$ chega a $\approx 26$--$38\%$: muito mais espaço.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+\begin{frame}{Somar as notas inverte decisões; desempatar, não}
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \begin{table}\centering\small
+      \begin{tabular}{@{}lccc@{}}
+        \toprule
+        & $x$ & $y$ & $z$ \\
+        \midrule
+        votos dos juízes & 4 & 5 & 5 \\
+        sinal barato & 0,95 & 0,10 & 0,90 \\
+        \midrule
+        soma ponderada & 1,28 & 0,52 & 1,32 \\
+        \multicolumn{4}{@{}l}{\color{Aluc}\quad $\Rightarrow$ $x$ (4 votos) passa à frente de $y$ (5 votos)} \\
+        lexicográfico & (4; 0,95) & (5; 0,10) & (5; 0,90) \\
+        \multicolumn{4}{@{}l}{\color{Metodo}\quad $\Rightarrow$ mantém os votos; só separa $y$ e $z$} \\
+        \bottomrule
+      \end{tabular}
+      \end{table}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \begin{block}{Nos 1,3 milhão de pares (12 juízes)}\small
+        \textbf{Stacking:} ganha $+0{,}0017$ nos empates, perde $-0{,}0014$ invertendo $1{,}33\%$ dos pares $\Rightarrow$ $+0{,}0002$.\\[4pt]
+        \textbf{Lexicográfico:} $+0{,}0040$, \textbf{zero} inversões.
+      \end{block}
+      \small Mesma informação; a diferença é poder ou não contrariar os juízes.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+\begin{frame}{Ideia 2: o desempate lexicográfico e o seu ganho exato}
+  \begin{block}{Regra}
+    Ordene pelos votos dos juízes; entre opiniões com o mesmo número de votos, ordene pelo sinal barato.
+  \end{block}
+  \vspace{0.2cm}
+  \begin{exampleblock}{Decomposição (elementar) do AUROC}
+    $$\AUC(\text{juízes} \lex \text{sinal}) \;=\; \AUC(\text{juízes}) \;+\; \tau\,\Big(\alpha - \tfrac{1}{2}\Big)$$
+    \small $\tau$: fração de pares empatados (vem só dos votos). \quad
+    $\alpha$: AUROC do sinal barato \textbf{dentro dos empates}.
+  \end{exampleblock}
+  \vspace{0.2cm}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{\centering Comitê de 12 juízes}\centering
+        $0{,}9260 \to \mathbf{0{,}9300}$\\ \small acima do comitê em 20 de 20 partições (stacking: 1 de 20)
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{\centering O que importa é $\alpha$}\centering\small
+        A AUROC global do sinal barato não entra na fórmula.
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+\begin{frame}{O resultado principal: poucos juízes com desempate chegam perto de doze}
+  \begin{columns}[c]
+    \begin{column}{0.60\textwidth}
+      \centering
+      \begin{tikzpicture}
+      \begin{axis}[width=\linewidth,height=5.6cm,xmin=0.5,xmax=12.5,ymin=0.80,ymax=0.94,
+        xtick={1,...,12},ytick={0.80,0.84,0.88,0.92},
+        yticklabel style={/pgf/number format/.cd,fixed,precision=2,use comma},
+        xlabel={juízes LLM por opinião},ylabel={AUROC},
+        grid=major,grid style={gray!20},tick label style={font=\scriptsize},
+        label style={font=\scriptsize},legend style={font=\scriptsize,at={(0.98,0.03)},anchor=south east}]
+        \addplot[Metodo,very thick,mark=*,mark size=1.2pt] coordinates {(1,.8806)(2,.9035)(3,.9121)(4,.9180)(5,.9230)(6,.9241)(7,.9264)(8,.9272)(9,.9279)(10,.9291)(11,.9297)(12,.9301)};
+        \addlegendentry{juízes + desempate}
+        \addplot[Base,thick,dashed,mark=o,mark size=1.2pt] coordinates {(1,.8067)(2,.8746)(3,.8917)(4,.9030)(5,.9128)(6,.9148)(7,.9180)(8,.9205)(9,.9223)(10,.9239)(11,.9256)(12,.9260)};
+        \addlegendentry{só juízes}
+        \addplot[black!60,densely dotted] coordinates {(0.5,.926)(12.5,.926)};
+      \end{axis}
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.38\textwidth}
+      \begin{alertblock}{\centering 1 juiz}
+        \centering $0{,}807 \to \mathbf{0{,}881}$\\ \small todos os 12 juízes melhoram (+0,046 a +0,102; IC $>0$)
+      \end{alertblock}
+      \begin{exampleblock}{\centering 7 juízes + desempate}
+        \centering\small estatisticamente empatado com os 12 ($+0{,}0001$, IC $[-0{,}005;\,+0{,}005]$)
+      \end{exampleblock}
+      \scriptsize Medianas sobre 60 subconjuntos aleatórios de juízes; análise exploratória.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+\begin{frame}{Na fila de revisão, o desempate encontra mais alucinações}
+  \begin{columns}[c]
+    \begin{column}{0.58\textwidth}
+      \centering
+      \begin{tikzpicture}
+      \begin{axis}[width=\linewidth,height=5.6cm,xmin=0,xmax=50,ymin=0,ymax=100,
+        xlabel={\% das opiniões revisadas},ylabel={\% das alucinações encontradas},
+        grid=major,grid style={gray!20},tick label style={font=\scriptsize},label style={font=\scriptsize},
+        legend style={font=\scriptsize,at={(0.98,0.03)},anchor=south east}]
+        \addplot[Metodo,very thick] coordinates {(0,0)(2,15.0)(4,26.2)(6,37.0)(8,46.6)(10,52.2)(13,61.0)(16,71.1)(20,81.1)(25,85.0)(30,87.5)(40,90.4)(50,93.1)};
+        \addlegendentry{melhor juiz + desempate}
+        \addplot[Base,thick,dashed] coordinates {(0,0)(2,8.1)(4,16.3)(6,24.4)(8,32.3)(10,40.5)(13,52.9)(16,65.1)(20,81.4)(25,82.8)(30,83.9)(40,86.2)(50,88.4)};
+        \addlegendentry{melhor juiz sozinho}
+        \addplot[black!60] coordinates {(0,0)(2,16.9)(4,33.6)(6,48.0)(8,57.2)(10,64.7)(13,74.0)(16,80.0)(20,84.4)(25,88.4)(30,90.3)(40,93.3)(50,95.6)};
+        \addlegendentry{comitê de 12}
+        \draw[black!50,dotted] (axis cs:10,0) -- (axis cs:10,100);
+      \end{axis}
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      \begin{alertblock}{\centering Revisando 10\% da fila}
+        \centering $40{,}5\% \to \mathbf{52{,}2\%}$ das alucinações\\ \small com uma única chamada de juiz
+      \end{alertblock}
+      \small Um voto binário não ordena as opiniões dentro de cada resposta: sem o desempate, a fila é aleatória ali.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+\begin{frame}{O ganho pode ser previsto antes de usar a regra}
+  \begin{columns}[c]
+    \begin{column}{0.56\textwidth}
+      \begin{table}\centering\small
+      \resizebox{\linewidth}{!}{%
+      \begin{tabular}{@{}lccc@{}}
+        \toprule
+        \textbf{Juízes} & \textbf{observado} & \textbf{previsto com $\alpha$} & \textbf{com AUROC global} \\
+        \midrule
+        1  & +0,072 & \color{Metodo}\textbf{+0,071} & \color{Aluc}+0,100 \\
+        3  & +0,028 & \color{Metodo}\textbf{+0,027} & \color{Aluc}+0,049 \\
+        5  & +0,015 & \color{Metodo}\textbf{+0,015} & \color{Aluc}+0,031 \\
+        8  & +0,008 & \color{Metodo}\textbf{+0,007} & \color{Aluc}+0,019 \\
+        12 & +0,004 & \color{Metodo}\textbf{+0,004} & \color{Aluc}+0,013 \\
+        \bottomrule
+      \end{tabular}}
+      \end{table}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \small
+      50 divisões aleatórias das audiências: $\alpha$ medido numa metade, $\tau$ e o ganho observados na outra.\\[4pt]
+      \begin{exampleblock}{\centering Sem viés}
+        \centering Sinal do ganho certo em 99\% dos 250 casos.
+      \end{exampleblock}
+      Usar a AUROC global superestima o ganho de 1,4 a 3 vezes.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+\begin{frame}{O que não funcionou e os limites}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Resultados negativos (reportados)}\small
+        \begin{itemize}\setlength{\itemsep}{3pt}
+          \item 5 features estruturais (homologia, Hodge\ldots): nada acrescentam ao comitê.
+          \item 6 tentativas de melhorar $\alpha$: todas pioram.
+          \item Com 12 juízes, a fila de revisão não melhora de forma mensurável.
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{alertblock}{Limites}\small
+        \begin{itemize}\setlength{\itemsep}{3pt}
+          \item Rótulos do PublicHearingBR usados como dados.
+          \item Ganho sobre os 12 juízes é pequeno (+0,004), mas consistente.
+          \item Onde o comitê erra, o sinal barato erra junto (0,47).
+        \end{itemize}
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+  \vspace{0.3cm}
+  \centering\small Predições registradas no repositório antes de cada experimento.
+\end{frame}
+
+% -----------------------------------------------------------------------------
+\begin{frame}[plain]
+  \vspace{0.6cm}
+  \begin{center}
+    {\Large\textbf{Detecção confiável com uma fração do custo}}\\[0.4cm]
+    \begin{columns}[T]
+      \begin{column}{0.46\textwidth}
+        \begin{block}{\centering Contribuições}\small
+          1. Features de orador: 0,57 $\to$ 0,76 sem LLM.\\
+          2. Desempate que nunca contraria os juízes.\\
+          3. Ganho exato e previsível: $\tau(\alpha - \frac12)$.\\
+          4. 1 juiz: 0,81 $\to$ 0,88; 7 juízes $\approx$ 12.
+        \end{block}
+      \end{column}
+      \begin{column}{0.46\textwidth}
+        \begin{exampleblock}{\centering Materiais}\small
+          Artigo, código e dados em\\
+          \texttt{github.com/caua-sathler/}\\\texttt{IdeiasEmRede-TopoIA}\\[3pt]
+          Painel interativo: \texttt{apresentacao/dashboard}
+        \end{exampleblock}
+      \end{column}
+    \end{columns}
+    \vspace{0.5cm}
+    \textbf{Muito obrigado!}\\[2pt]
+    \small Gabriel Ribeiro --- Colab UFMG --- \texttt{gabe.11@icloud.com}
+  \end{center}
+\end{frame}
+
+\end{document}
