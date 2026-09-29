@@ -22,11 +22,20 @@ Duas ideias, nessa ordem:
    0,88 — e sete juízes com a regra ficam estatisticamente indistinguíveis do
    comitê de doze.
 
+## Autores
+
+| autor | instituição | Colab | contato |
+|---|---|---|---|
+| Gabriel Ribeiro | Departamento de Ciência da Computação, Universidade Federal de Minas Gerais (DCC-UFMG) | Domain-Specific Foundation Models | gabriel.ribeiro@dcc.ufmg.br |
+| Cauã Sathler | Departamento de Ciência da Computação, Universidade Federal de Minas Gerais (DCC-UFMG) | Agentic AutoML for Data Science | cauasathler@ufmg.br |
+| Arthur Gonçalves | Departamento de Ciência da Computação, Universidade Federal de Minas Gerais (DCC-UFMG) | Domain-Specific Foundation Models | afariag72@gmail.com |
+| Jordan Elias | Universidade Federal do Ceará (UFC) | SLMs for Process Automation | jordanelias@alu.ufc.br |
+
 ## Estrutura
 
 | diretório | conteúdo |
 |---|---|
-| [`artigo/`](artigo/) | o artigo (`main.tex`, versão de 15 páginas; `main_10p.tex`, versão de 10), bibliografia, classe da competição e figuras. |
+| [`artigo/`](artigo/) | o artigo (`main.tex`), bibliografia, classe da competição e figuras. |
 | [`codigo/`](codigo/) | pacote de reprodução dos experimentos — todo número do artigo sai daqui. Tem README próprio com a ordem de execução e a correspondência seção → script. |
 | [`dataset/`](dataset/) | script para baixar e processar o PublicHearingBR (`init_data.py`); os dados processados (~650MB) não são versionados, ver `dataset/README.md`. |
 | [`apresentacao/`](apresentacao/) | slides, roteiro e painel interativo (`dashboard/`) para o vídeo de até 5 minutos. |
@@ -45,15 +54,6 @@ python j6_estabilidade.py     # 20 particionamentos + placar final (Tab. 6)
 python j7_mecanismo.py        # decomposição exata do AUROC (Tab. 5, 8)
 ```
 
-Para regenerar do zero, inclusive as *features* de incidência por orador
-(trilha A), veja `codigo/README.md` (ordem completa de execução, tempos e
-correspondência artigo → script) e `dataset/README.md` (como obter o
+Para regenerar do zero, inclusive as *features* de incidência por orador, veja `codigo/README.md` (ordem completa de execução, tempos ecorrespondência artigo → script) e `dataset/README.md` (como obter o
 PublicHearingBR processado).
-
-## Compilar o artigo
-
-```bash
-cd artigo
-pdflatex -interaction=nonstopmode main && bibtex main && \
-  pdflatex -interaction=nonstopmode main && pdflatex -interaction=nonstopmode main
 ```

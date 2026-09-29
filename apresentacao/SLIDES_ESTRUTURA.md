@@ -4,7 +4,7 @@ Os slides acompanham o [`ROTEIRO_VIDEO_5MIN.md`](ROTEIRO_VIDEO_5MIN.md) e usam a
 
 | # | Título | Conteúdo | Bloco do roteiro |
 |---|---|---|---|
-| 1 | Capa | título, autor, logos | 1 |
+| 1 | Capa | título, os quatro autores e seus Colabs, logos | 1 |
 | 2 | O problema | 206 audiências, 4.238 opiniões, 11,9%, 12 juízes (0,926); o que é AUROC | 1 |
 | 3 | Por que detectores baratos falham | exemplo real (Chinaglia: 0,783 × 0,386) e a observação de cegueira de incidência | 2 |
 | 4 | Ideia 1 | tabela de AUROC: 0,568 → 0,746 → 0,761 → 0,779; controle do orador aleatório; auditoria (1 em 4) | 2 |

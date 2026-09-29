@@ -244,6 +244,7 @@ footer a{color:var(--ink-2)}
 </section>
 
 <footer>
+  <div>Autores: Gabriel Ribeiro e Arthur Gonçalves (Colab Domain-Specific Foundation Models, DCC-UFMG), Cauã Sathler (Colab Agentic AutoML for Data Science, DCC-UFMG) e Jordan Elias (Colab SLMs for Process Automation, UFC).</div>
   <div>Dados: PublicHearingBR (Câmara dos Deputados), rótulos humanos e votos de 12 juízes LLM divulgados com o dataset. AUROC calculada nas 3.630 opiniões com orador identificado.</div>
   <div>Código e dados do painel: <a href="https://github.com/caua-sathler/IdeiasEmRede-TopoIA" target="_blank" rel="noopener">github.com/caua-sathler/IdeiasEmRede-TopoIA</a> (scripts <span class="t-mono">k3_dashboard_dados.py</span>, <span class="t-mono">j9_teto.py</span>, <span class="t-mono">j13_previsao.py</span>).</div>
 </footer>
@@ -270,7 +271,8 @@ let exI = 0;
 const exBtns = $("ex-btns");
 D.exemplos.forEach((e,i)=>{
   const b=document.createElement("button"); b.type="button"; b.className="chipbtn"; b.id="ex-"+i;
-  b.textContent = nome(e.atribuido).split(" ").slice(0,2).join(" ") + (e.rotulo==="suportada"?" · suportada":"");
+  const w = nome(e.atribuido).split(" ");
+  b.textContent = w.slice(0, /^(da|de|do|das|dos|e)$/.test(w[1]) ? 3 : 2).join(" ") + (e.rotulo==="suportada"?" · suportada":"");
   b.addEventListener("click",()=>{ exI=i; drawEx(); }); exBtns.appendChild(b);
 });
 function drawEx(){
