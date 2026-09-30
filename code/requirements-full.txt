@@ -1,0 +1,7 @@
+-r requirements.txt
+
+# Feature extraction and CPU measurement only.
+torch==2.13.0
+transformers==5.14.1
+datasets==5.0.1
+huggingface_hub>=1.0

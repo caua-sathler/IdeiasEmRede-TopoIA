@@ -1,7 +1,7 @@
 # Who Said It? Speaker-Conditioned Verification and Lexicographic Tie-Breaking
 
 Submission repository — *Ideias em Rede, 1st edition (TopoAI)*.  
-Low-cost hallucination detection for summaries of Brazilian Chamber of Deputies hearings (PublicHearingBR):
+Low-cost screening of possible hallucinations for summaries of Brazilian Chamber of Deputies hearings (PublicHearingBR):
 (1) verify an attributed opinion against the turns of the **attributed speaker**;
 (2) use that cheap signal **only to break ties** of a 12-judge LLM committee.
 
@@ -33,6 +33,21 @@ Logs go to `code/results/logs/`.
 Public data only. Parliamentarians are pseudonymised ("Deputy A/B") in the paper and in every shipped
 artifact; the audit sheets that contain names are **not** versioned (LGPD). The detector flags
 *opinions* for human review; it does not classify or profile individuals.
+
+## Evaluation scope and supporting material
+
+The target is the official four-chunk NLI annotation, not a new exhaustive judgement
+of each transcript. Main results use 3,630 matched-speaker opinions (408 positives).
+The judges are four models with three prompts each, using released votes.
+
+- [Feature and metric definitions](code/FEATURES.md)
+- [Exploratory audit protocol](code/AUDIT_PROTOCOL.md)
+- [Research hypotheses and provenance](code/predictions/README.md)
+- [Five-minute pitch script and recording guide](video/pitch_script.md)
+
+For feature extraction / timing: `pip install -r code/requirements-full.txt`.
+The dashboards demonstrate precomputed benchmark results; they do not run live
+inference on newly supplied hearings.
 
 ## Authors
 

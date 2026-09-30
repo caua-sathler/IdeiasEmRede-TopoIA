@@ -1,0 +1,8 @@
+{
+  "model_family": "Claude",
+  "source_sha256": {
+    "anotador_A.csv": "3bb709651d09a83fefadd2fab421f6450e1d28936aed7a467e6e9b1793506b3c",
+    "anotador_B.csv": "60240e2de32ceda85db31570a965563a4e9aaa78da45738ba7abc7bac37ebfad"
+  },
+  "aggregation": "identical categories only; disagreements unresolved"
+}

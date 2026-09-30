@@ -6,10 +6,11 @@ on short sentence pairs (10 per opinion in the full detector), and the number of
 a judge reads (4 retrieved chunks + opinion; XLM-R tokenizer as a proxy) against the
 tokens of a whole transcript. Monetary cost is NOT measured: provider prices change.
 
-    python measured_cost.py            # writes results/measured_cost.csv
+    python measured_cost.py            # writes results/measured_cost_local.csv
 """
 from __future__ import annotations
 
+import argparse
 import os
 import platform
 import sys
@@ -32,6 +33,9 @@ warnings.filterwarnings("ignore")
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=E0.OUT / "measured_cost_local.csv")
+    args = parser.parse_args()
     E0.banner("M4 — custo medido")
     hw = f"{platform.machine()}, {os.cpu_count()} vCPU, sem GPU"
     rows = []
@@ -135,7 +139,9 @@ def main() -> None:
         tt.append(sum(len(tk(s, add_special_tokens=False)["input_ids"]) for s in fr[:4000]))
     add("tokens de uma transcricao inteira (media, 40 audiencias)", "tokens", float(np.mean(tt)),
         "para contraste: os juizes do dataset NAO leem isto")
-    pd.DataFrame(rows).to_csv(E0.OUT / "measured_cost.csv", index=False)
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    pd.DataFrame(rows).to_csv(args.output, index=False)
+    print(f"Local measurements: {args.output}")
 
 
 if __name__ == "__main__":

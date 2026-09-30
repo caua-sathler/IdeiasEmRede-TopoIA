@@ -1,9 +1,8 @@
 """K1 — PLANILHA DA AUDITORIA DE ROTULOS (ma-atribuicao entre as alucinacoes).
 
-Pergunta: das opinioes-ouro marcadas como NAO SUPORTADAS pelo rotulo humano do
+Pergunta: das opinioes geradas marcadas como NAO SUPORTADAS pelo rotulo humano do
 PublicHearingBR, quantas sao MA-ATRIBUICOES (o conteudo foi dito na audiencia,
-mas por outra pessoa)? Este script so MONTA a planilha cega para o auditor
-humano; nao classifica nada.
+mas por outra pessoa)? Este script so MONTA a planilha de evidencias para anotacao; nao classifica nada.
 
 Universo: exatamente o do incidence_features/nli_features — opinioes com rotulo e com o `envolvido`
 casado a um orador da transcricao (`speaker_incidence.match_gold` sobre os marcadores
@@ -21,7 +20,7 @@ casado; top-5 frases do orador atribuido e top-5 globais (com orador), cosseno
 MPNet; 1 frase de contexto antes/depois da melhor global e da melhor do orador;
 cos_s, best_other, Delta = best_other - cos_s (definicoes do incidence_features.py), cos_g.
 
-Custo: zero chamadas de modelo (embeddings MPNET ja versionados em dataset/).
+Custo: zero chamadas de modelo (embeddings MPNET ja calculados em dataset/).
 
     python audit_sample.py [DIR_SAIDA]     # padrao: /tmp/audit
 """

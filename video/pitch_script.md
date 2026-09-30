@@ -1,7 +1,7 @@
 # Roteiro Oficial do Vídeo de Pitch (Apresentação Baseada no Dashboard)
 
 **Duração Alvo:** 4 minutos e 30 segundos (Teto regulamentar: **5 minutos estritos**).  
-**Formato Visual:** Gravação de tela navegando e interagindo diretamente com o [**`dashboard/pt-br-dashboard.html`**](../dashboard/pt-br-dashboard.html) (com corte rápido de 10s no terminal mostrando `./run_all.sh`).  
+**Formato Visual:** Gravação de tela do [**`dashboard/pt-br-dashboard.html#slides`**](../dashboard/pt-br-dashboard.html) no modo apresentação (ver tabela abaixo) (com corte rápido de 10s no terminal mostrando `./run_all.sh`).  
 **Estratégia de Pitch:** Alinhamento explícito e agressivo com os **4 Critérios Oficiais de Avaliação**:
 - **Inovação e Originalidade (40%)**: Verificação condicionada ao orador + desempate lexicográfico não destrutivo.
 - **Rigor Metodológico (30%)**: Identidade matemática analítica $\tau(\alpha - 1/2)$, 20 partições GroupKFold, erro de previsão out-of-sample < 5%.
@@ -20,6 +20,22 @@
 | **4. Eficiência & Menos Juízes** | 2:30 – 3:30 | `#juizes` + `#custo` | Mostrar a curva da escada de juízes (1 a 12) e a tabela de custos em CPU sem GPU. | **Eficiência (Trilha D) & Impacto** |
 | **5. Impacto Real & Fila Cívica** | 3:30 – 4:15 | `#fila` | Mover o slider interativo do orçamento do auditor humano de 10% para 20%; apontar conformidade LGPD. | **Impacto & Aplicabilidade (10%)** |
 | **6. Reprodutibilidade & Fechamento** | 4:15 – 4:30 | Terminal / Rodapé | Cortar brevemente para o terminal rodando `./run_all.sh` com as saídas geradas; fechar no repositório. | **Qualidade de Código (20%)** |
+
+### Gravação no modo apresentação
+
+Abra `dashboard/pt-br-dashboard.html#slides` em tela cheia (`F`). A seta `→` (ou o passador de slides) primeiro executa as interações do slide e só depois passa para o próximo; os pontinhos no canto superior direito mostram quantas interações faltam. `←` volta e reinicia o slide, `H` esconde contador e barra de progresso, `C` mostra a área reservada para a câmera (canto inferior esquerdo) para alinhar o OBS.
+
+| Slide | Bloco | O que cada `→` faz |
+|---|---|---|
+| 1 · Título e KPIs | 1 | — (os números contam na entrada) |
+| 2 · Quem disse | 1 | Má-atribuição 1 → Má-atribuição 2 → Opinião suportada |
+| 3 · Empates | 2 | comitê cresce de 1 para 12 juízes |
+| 4 · Somar ou desempatar | 2 | troca soma ponderada → desempate lexicográfico (as linhas trocam de posição) |
+| 5 · Previsão | 3 | previsão com AUROC global → volta para α |
+| 6 · Menos juízes | 4 | marcador em 5 → 8 → 12 juízes |
+| 7 · Custo medido | 4 | 12 → 8 juízes → 1 juiz |
+| 8 · Fila de revisão | 5 | orçamento de 10% → 20% |
+| 9 · Código aberto | 6 | — |
 
 ---
 

@@ -1,7 +1,7 @@
-"""Inter-annotator agreement for the 50-positive audit (Section 'What kind of error are the positives?').
+"""Agreement between two Claude annotation passes for the 50-positive audit (Section 'What kind of error are the positives?').
 
 Reads results/audit_labels.csv: for each of the 50 sampled positives, the category
-assigned by each of the two independent LLM-assisted passes (M = misattributed to
+assigned by each of the two recorded Claude passes (M = misattributed to
 another participant, S = supported/discussed by the attributed speaker, ...) and the
 speaker-incidence features of the opinion (cos_s, best_other, delta). The sheet with
 opinion texts is NOT versioned (it contains named individuals); `audit_sample.py`

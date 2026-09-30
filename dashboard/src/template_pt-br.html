@@ -106,6 +106,7 @@ footer a{color:var(--ink-2)}
 .langsw a{color:var(--method);text-decoration:none}
 .langsw a:hover,.langsw a:focus-visible{text-decoration:underline}
 .quote small span[lang]{font-style:italic}
+/*__DECK_CSS__*/
 </style>
 </head>
 <body>
@@ -297,6 +298,7 @@ footer a{color:var(--ink-2)}
 <script>
 const D = __DATA__;
 const L = {
+  deck: {link: "Modo apresentação", exit: "Sair da apresentação", cam: "câmera", endTitle: "Código aberto e reprodutível", hint: "→ avançar · ← voltar · C câmera · H ocultar · T tema · F tela cheia · P sair"},
   dec: ",", loc: "pt-BR", ord: "º", orig: "Original:",
   exLabel: {figura: "Exemplo do artigo (Fig. 1)", ma: "Má-atribuição", suportada: "Opinião suportada"},
   rot: {"não suportada": "não suportada", "suportada": "suportada"},
@@ -337,6 +339,7 @@ const L = {
 };
 const NS = "http://www.w3.org/2000/svg";
 const $ = id => document.getElementById(id);
+const HOOK = {};   // hooks used by the presentation mode (deck.js)
 const fmt = (v, d=3) => v.toFixed(d).replace(".", L.dec);
 const nf = v => v.toLocaleString(L.loc);
 const pct = v => fmt(v, 1) + "%";
@@ -485,6 +488,7 @@ drawRank("soma");
   hit.addEventListener("pointermove",ev=>{ const p=s.createSVGPoint(); p.x=ev.clientX; p.y=ev.clientY; const q=p.matrixTransform(s.getScreenCTM().inverse()); const k=Math.max(1,Math.min(12,Math.round((q.x-Lf)/(W-Lf-R)*11+1))); read(k); const e=E[k-1]; showTip(ev,`<b>${k}</b> ${L.judges(k)}<br>${L.onlyJ} <b>${fmt(e.so,4)}</b><br>${L.withTbNli} <b>${fmt(e.lex,4)}</b>`); });
   hit.addEventListener("pointerleave",hideTip);
   read(1);
+  HOOK.lad = read;
 })();
 
 /* ---------- 5. measured cost ---------- */
@@ -570,6 +574,9 @@ drawRank("soma");
   $("p-glob").addEventListener("click",()=>draw("g"));
   draw("a");
 })();
+</script>
+<script>
+/*__DECK_JS__*/
 </script>
 </body>
 </html>
