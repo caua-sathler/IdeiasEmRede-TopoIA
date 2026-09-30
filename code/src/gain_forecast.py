@@ -122,7 +122,8 @@ def main() -> None:
                              pred=tau_t * (a2 - 0.5),
                              pred_glob=tau_t * (ag - 0.5),
                              tau_dev=tau_d,
-                             pred_dev=tau_d * (a2 - 0.5)))
+                             pred_dev=tau_d * (a2 - 0.5),
+                             pred_glob_dev=tau_d * (ag - 0.5)))
     D = pd.DataFrame(rows)
     D.to_csv(E0.OUT / "gain_forecast.csv", index=False)
 
@@ -154,6 +155,12 @@ def main() -> None:
     print(f"  fully prospective forecast: MAE "
           f"{(D.pred_dev - D.obs).abs().mean():.4f} · sign correct in "
           f"{okd:.1%} of {len(D)} cases")
+
+    print("\n  PAPER TABLE: fully prospective forecasts (development data only)")
+    for k, g in D.groupby("k"):
+        print(f"  {k}: observed {g.obs.mean():.4f}; forecast {g.pred_dev.mean():.4f}; "
+              f"MAE {(g.pred_dev-g.obs).abs().mean():.4f}; global forecast "
+              f"{g.pred_glob_dev.mean():.4f}; MAE {(g.pred_glob_dev-g.obs).abs().mean():.4f}")
 
     # ------------------------------------------------------------------ (B)
     E0.banner("(B) GAIN OVER EACH SINGLE JUDGE, HEARING-CLUSTERED 95% CI")

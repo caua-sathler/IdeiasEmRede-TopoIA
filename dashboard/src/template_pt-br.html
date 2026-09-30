@@ -106,6 +106,7 @@ footer a{color:var(--ink-2)}
 .langsw a{color:var(--method);text-decoration:none}
 .langsw a:hover,.langsw a:focus-visible{text-decoration:underline}
 .quote small span[lang]{font-style:italic}
+/*__DECK_CSS__*/
 </style>
 </head>
 <body>
@@ -113,16 +114,17 @@ footer a{color:var(--ink-2)}
 <header class="top">
   <div class="eyebrow">PublicHearingBR · Câmara dos Deputados · Ideias em Rede <span class="langsw"><a href="en-dashboard.html" hreflang="en" lang="en">English version</a></span></div>
   <h1>Quem disse isso? Detectando atribuições falsas com poucos juízes</h1>
-  <p class="lede">Resumos de audiências públicas atribuem opiniões a pessoas. Este painel mostra, com dados reais, as duas ideias do método: comparar a opinião com as falas de quem supostamente a disse, e usar esse sinal barato só para desempatar os juízes LLM, sem nunca contrariá-los.</p>
+  <p class="lede">Resumos de audiências públicas atribuem opiniões a pessoas. Este painel mostra, com dados reais, as duas ideias do método: comparar a opinião com as falas de quem supostamente a disse, e usar esse sinal barato só para desempatar os juízes LLM, preservando sua ordenação por número de votos.</p>
   <div class="kpis">
     <div class="kpi"><b>206</b><span>audiências</span></div>
     <div class="kpi"><b>3.630</b><span>opiniões avaliadas</span></div>
-    <div class="kpi"><b>408</b><span>alucinações (rótulo humano)</span></div>
+    <div class="kpi"><b>408</b><span>positivos no protocolo de quatro trechos</span></div>
     <div class="kpi"><b>12</b><span>juízes LLM com voto binário</span></div>
     <div class="kpi"><b>0</b><span>chamadas de LLM no sinal barato</span></div>
   </div>
 </header>
 
+<p class="note">Demonstração de resultados pré-calculados, sem inferência ao vivo. Os rótulos humanos avaliam suporte em quatro trechos recuperados, não em toda a transcrição.</p>
 <nav class="steps" aria-label="Etapas">
   <a href="#quem"><span>1</span>Quem disse</a>
   <a href="#empates"><span>2</span>Empates</a>
@@ -138,13 +140,13 @@ footer a{color:var(--ink-2)}
     <div class="num">1 · o problema</div>
     <h2>A melhor frase da audiência pode ser de outra pessoa</h2>
     <p>Detectores baratos comparam a opinião com cada frase da transcrição e guardam a maior similaridade. Uma alucinação plausível é sobre o assunto da audiência, então essa nota sai alta.</p>
-    <p>O que muda o veredito é <strong>quem</strong> falou a frase. Comparando a opinião com os turnos do orador atribuído, e com os dos outros oradores, a AUROC sobe de <strong>0,57 para 0,76</strong> sem chamar nenhum modelo.</p>
+    <p>O que muda o veredito é <strong>quem</strong> falou a frase. Comparando a opinião com os turnos do orador atribuído, e com os dos outros oradores, a AUROC sobe de <strong>0,57 para 0,76</strong> sem chamadas a juízes LLM, usando embeddings pré-calculados. O protocolo original já recupera evidências por orador; aqui avaliamos sinais baratos para triagem.</p>
     <div class="readout" aria-live="polite">
       <div><b>0,57</b><span>melhor frase da audiência</span></div>
       <div><b class="m">0,75</b><span>só turnos do orador</span></div>
       <div><b class="m">0,76</b><span>todas as features de orador</span></div>
     </div>
-    <p class="note">Participantes pseudonimizados (LGPD): o orador atribuído é sempre o <b>Orador A</b> e quem tem a melhor frase é o <b>Orador B</b>; as letras valem só dentro de cada exemplo e a audiência não é identificada.</p>
+    <p class="note">Participantes pseudonimizados: o orador atribuído é sempre o <b>Orador A</b> e quem tem a melhor frase é o <b>Orador B</b>; as letras valem só dentro de cada exemplo e a audiência não é identificada.</p>
   </div>
   <div class="viz">
     <div class="controls" id="ex-btns" role="group" aria-label="Escolher exemplo"></div>
@@ -184,9 +186,9 @@ footer a{color:var(--ink-2)}
 <section class="step" id="regra">
   <div class="txt">
     <div class="num">3 · a regra</div>
-    <h2>Somar as notas inverte decisões; desempatar, não</h2>
+    <h2>Somar pode inverter a ordem dos votos; desempatar a preserva</h2>
     <p>O caminho usual é ajustar um modelo com os votos e as features juntos. Uma soma ponderada pode colocar uma opinião com <strong>menos</strong> votos acima de outra com mais, sempre que o sinal barato discorda com força. Nesses dados, esse modelo fica abaixo do comitê em 19 de 20 partições.</p>
-    <p>O desempate lexicográfico ordena primeiro pelos votos e usa o sinal barato <strong>só dentro de cada empate</strong>. Ele nunca inverte uma decisão dos juízes, e o ganho é exatamente τ·(α − ½), com α medido dentro dos empates. O comitê de 12 sobe de <strong>0,926 para 0,930</strong> nas 20 partições.</p>
+    <p>O desempate lexicográfico ordena primeiro pelos votos e usa o sinal barato <strong>só dentro de cada empate</strong>. Ele preserva toda ordenação estrita do comitê, e o ganho é exatamente τ·(α − ½), com α medido dentro dos empates. O comitê de 12 sobe de <strong>0,926 para 0,930</strong> nas 20 partições.</p>
   </div>
   <div class="viz">
     <div class="controls">
@@ -201,7 +203,8 @@ footer a{color:var(--ink-2)}
       <div class="marker">Efeito medido nos 1.314.576 pares, comitê de 12 juízes</div>
       <svg id="dec-chart" viewBox="0 0 760 150" role="img" aria-label="Ganho nos empates e perda por inversões"></svg>
     </div>
-    <div class="legend"><span><i style="background:var(--method)"></i>ganho ao ordenar os empates</span><span><i style="background:var(--halluc)"></i>perda por inverter decisões dos juízes</span></div>
+    <p class="note">Controle simples: desempatar diretamente pela diferença de similaridade Δ já alcança AUROC 0,9294, sem treinamento nem NLI (artigo, tabela de controles simples).</p>
+    <div class="legend"><span><i style="background:var(--method)"></i>ganho ao ordenar os empates</span><span><i style="background:var(--halluc)"></i>perda por inverter a ordem dos votos</span></div>
   </div>
 </section>
 
@@ -210,13 +213,13 @@ footer a{color:var(--ink-2)}
     <div class="num">4 · menos juízes</div>
     <h2>Poucos juízes com desempate chegam perto de doze</h2>
     <p>O desempate melhora comitês de todos os tamanhos, e ganha mais onde há menos juízes, porque aí há mais empates. Um juiz típico sobe de <strong>0,807 para 0,879</strong>, recuperando cerca de 60% da distância até o comitê completo com um doze avos das chamadas. Cada um dos 12 juízes melhora, de +0,046 a +0,101, com intervalos de confiança acima de zero.</p>
-    <p>Cinco juízes com desempate (0,923) superam oito sem ele (0,921). Numa análise exploratória, <strong>oito juízes com desempate são não inferiores ao comitê de doze</strong> (margem de 0,0040): um terço a menos de chamadas. Com sete, não é possível afirmar isso.</p>
+    <p>Cinco juízes com desempate (0,923) superam oito sem ele (0,921). Numa análise exploratória, <strong>um subconjunto selecionado de oito juízes com desempate atende ao critério de não inferioridade</strong> (margem de 0,0040). A seleção posterior aos resultados indica potencial de poupar um terço das chamadas; uma política de seleção prospectiva ainda precisa ser validada.</p>
   </div>
   <div class="viz">
     <svg id="lad-chart" viewBox="0 0 760 320" role="img" aria-label="AUROC por número de juízes"></svg>
     <div class="legend"><span><i class="line" style="background:var(--method)"></i>juízes + desempate (10 chamadas NLI)</span><span><i class="line" style="background:var(--method);opacity:.45"></i>juízes + desempate (0 chamadas NLI)</span><span><i class="dash"></i>só juízes</span></div>
     <div class="readout" id="lad-read"></div>
-    <p class="note">Mediana sobre 60 subconjuntos aleatórios de juízes para cada tamanho, numa partição representativa (Tabela 7 do artigo; script judge_budget.py). Passe o cursor sobre o gráfico.</p>
+    <p class="note">Mediana sobre 60 subconjuntos aleatórios de juízes para cada tamanho, numa partição representativa (tabela de escala de juízes do artigo; script judge_budget.py). Passe o cursor sobre o gráfico.</p>
   </div>
 </section>
 
@@ -252,7 +255,7 @@ footer a{color:var(--ink-2)}
     <div class="num">6 · operação</div>
     <h2>Na fila de revisão, o desempate encontra mais alucinações</h2>
     <p>Um auditor revisa as opiniões da mais suspeita para a menos suspeita, até esgotar o tempo. Com um único juiz, a fila é quase toda empatada: dentro de cada resposta, a ordem é aleatória.</p>
-    <p>Revisando <strong>10%</strong> das opiniões, o melhor juiz sozinho encontra <strong>40,5%</strong> das alucinações; com o desempate, <strong>52,2%</strong>, com a mesma única chamada. Com 12 juízes a diferença na fila não é mensurável: os empates do comitê ficam no fim da fila.</p>
+    <p>Na análise exploratória, revisando <strong>10%</strong> das opiniões, o melhor juiz deste benchmark sozinho encontra <strong>40,5%</strong> dos positivos do benchmark; com o desempate, <strong>52,2%</strong>, com a mesma única chamada de juiz e o detector local com NLI. Com 12 juízes a diferença na fila não é mensurável: os empates do comitê ficam no fim da fila.</p>
   </div>
   <div class="viz">
     <div class="controls">
@@ -270,8 +273,8 @@ footer a{color:var(--ink-2)}
   <div class="txt">
     <div class="num">7 · previsão</div>
     <h2>O ganho pode ser previsto antes de usar a regra</h2>
-    <p>Dividimos as audiências ao meio 50 vezes. Numa metade medimos α; na outra, τ vem só dos votos e dos rótulos. Em todo tamanho de comitê, a previsão média τ·(α − ½) fica entre <strong>95% e 98%</strong> do ganho observado na metade que o detector nunca viu, e acerta o sinal em <strong>249 dos 250</strong> casos.</p>
-    <p>Usar a AUROC global do sinal barato no lugar de α superestima o ganho de 1,4 a 3,1 vezes.</p>
+    <p>Dividimos as audiências ao meio 50 vezes. Estimamos τ e α apenas na metade de desenvolvimento e prevemos o ganho na outra metade. A previsão média fica entre <strong>92% e 98%</strong> do ganho médio observado e acerta o sinal em <strong>249 dos 250</strong> casos.</p>
+    <p>A previsão é uma estimativa: com 12 juízes, o erro absoluto médio é 0,0033 para um ganho médio de 0,0042. Usar a AUROC global no lugar de α superestima o ganho.</p>
   </div>
   <div class="viz">
     <div class="controls">
@@ -297,6 +300,7 @@ footer a{color:var(--ink-2)}
 <script>
 const D = __DATA__;
 const L = {
+  deck: {link: "Modo apresentação", exit: "Sair da apresentação", cam: "câmera", endTitle: "Código aberto e reprodutível", hint: "→ avançar · ← voltar · C câmera · H ocultar · T tema · F tela cheia · P sair"},
   dec: ",", loc: "pt-BR", ord: "º", orig: "Original:",
   exLabel: {figura: "Exemplo do artigo (Fig. 1)", ma: "Má-atribuição", suportada: "Opinião suportada"},
   rot: {"não suportada": "não suportada", "suportada": "suportada"},
@@ -312,7 +316,7 @@ const L = {
   votesAxis: "votos recebidos",
   tau: "τ: pares alucinação–suportada empatados", aucVotes: "AUROC só com os votos", maxGain: "ganho máximo de um desempate (τ/2)",
   opinion: "Opinião", votesOf: "votos de 12", cheap: "sinal barato", sum: "soma",
-  noteSum: `<span class="h">A opinião x, com 4 votos, passou à frente de y, com 5.</span> A soma inverteu uma decisão dos juízes porque o sinal barato discordou.`,
+  noteSum: `<span class="h">A opinião x, com 4 votos, passou à frente de y, com 5.</span> A soma inverteu a ordem dos votos porque o sinal barato discordou.`,
   noteLex: `<span class="m">A ordem dos votos é mantida.</span> O sinal barato só separa y de z, que os juízes haviam empatado com 5 votos.`,
   decRows: ["Soma (stacking)", "Desempate lexicográfico"], gainTies: "ganho nos empates", lossInv: "perda por inversões", pairsInv: "1,33% dos pares invertidos",
   net: "líquido", zeroInv: "0 inversões",
@@ -333,10 +337,11 @@ const L = {
     ["NLI, dez pares de frases", `≈${fmt(c.nli_s, 1)} s / opinião`],
     ["tokens lidos por um juiz (4 trechos + opinião)", `${nf(c.tok_med)} (mediana), ${nf(c.tok_p95)} (p95)`],
     ["tokens de uma transcrição inteira, para contraste (média, 40 audiências)", nf(c.tok_transc)]],
-  costNote: c => `Hardware: ${c.hw}. Tokens contados com o tokenizador XLM-R como aproximação, sem o texto fixo do prompt dos juízes. Tabela 9 do artigo (script measured_cost.py).`
+  costNote: c => `Hardware: ${c.hw}. Tokens contados com o tokenizador XLM-R como aproximação, sem o texto fixo do prompt dos juízes. Medições por componente; não incluem embedding da opinião nem recuperação/indexação. Script measured_cost.py.`
 };
 const NS = "http://www.w3.org/2000/svg";
 const $ = id => document.getElementById(id);
+const HOOK = {};   // hooks used by the presentation mode (deck.js)
 const fmt = (v, d=3) => v.toFixed(d).replace(".", L.dec);
 const nf = v => v.toLocaleString(L.loc);
 const pct = v => fmt(v, 1) + "%";
@@ -485,6 +490,7 @@ drawRank("soma");
   hit.addEventListener("pointermove",ev=>{ const p=s.createSVGPoint(); p.x=ev.clientX; p.y=ev.clientY; const q=p.matrixTransform(s.getScreenCTM().inverse()); const k=Math.max(1,Math.min(12,Math.round((q.x-Lf)/(W-Lf-R)*11+1))); read(k); const e=E[k-1]; showTip(ev,`<b>${k}</b> ${L.judges(k)}<br>${L.onlyJ} <b>${fmt(e.so,4)}</b><br>${L.withTbNli} <b>${fmt(e.lex,4)}</b>`); });
   hit.addEventListener("pointerleave",hideTip);
   read(1);
+  HOOK.lad = read;
 })();
 
 /* ---------- 5. measured cost ---------- */
@@ -570,6 +576,9 @@ drawRank("soma");
   $("p-glob").addEventListener("click",()=>draw("g"));
   draw("a");
 })();
+</script>
+<script>
+/*__DECK_JS__*/
 </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Reproduce every number reported in the paper.
+# Reproduce the numerical analyses from the paper.
 #
 #   ./run_all.sh                 analysis only, from the precomputed tables in results/
 #                                (no dataset, no model download; ~15 min on a laptop CPU)
@@ -26,9 +26,18 @@ run() {                       # run <script.py> [args...]  -> terminal + log
     python "$@" 2>&1 | tee "$LOGS/$name.txt"
 }
 
-MODE="${1:-}"
+FROM_SCRATCH=0
+COST=0
+for arg in "$@"; do
+    case "$arg" in
+        --from-scratch) FROM_SCRATCH=1 ;;
+        --cost) COST=1 ;;
+        --help|-h) echo "Usage: ./run_all.sh [--from-scratch] [--cost]"; exit 0 ;;
+        *) echo "Unknown option: $arg" >&2; exit 2 ;;
+    esac
+done
 
-if [[ "$MODE" == "--from-scratch" ]]; then
+if (( FROM_SCRATCH )); then
     # 1. data: download and embed PublicHearingBR (MPNet embeddings of sentences and opinions)
     (cd "$HERE/../dataset" && python init_data.py --models MPNET)
     # 2. tables the analyses read
@@ -37,22 +46,23 @@ if [[ "$MODE" == "--from-scratch" ]]; then
     run speaker_controls.py       # size / identity / clustered-inference controls
     run incidence_features.py     # results/incidence_features.csv
     run nli_features.py           # results/nli_features.csv (mDeBERTa, ~29k pairs)
-    run audit_sample.py "$HERE/results/audit_local"   # blind sheet for the 50-positive audit
+    run audit_sample.py "$HERE/results/audit_local"   # evidence sheet for the 50-positive audit
 fi
 
-if [[ "$MODE" == "--cost" ]]; then
+if (( COST )); then
     run official_chunks.py        # the 4 chunks a judge reads (official NLI split)
-    run measured_cost.py          # results/measured_cost.csv
+    run measured_cost.py          # results/measured_cost_local.csv
 fi
 
-# ---- analyses (read only results/*.csv) --------------------------------------------------
+# ---- analyses (read precomputed tables; forecast/baselines also save summaries) --------------------------------------------------
 run audit_agreement.py                          # audit: agreement and kappa
 run lexicographic_combination.py                # tau, ceiling, rule vs sum, vs the committee
 run tiebreak_controls.py                        # random tie-break null, controls
 run fold_stability.py                           # 20 fold partitions (stability table)
 run pair_decomposition.py                       # exact AUROC decomposition by type of pair
+run simple_tiebreak_baselines.py                # no-training, no-NLI controls
 run committee_histogram.py                      # committee vote levels (figure data)
-run secondary_detector_attempts.py --full       # six attempts to raise alpha (all fail)
+run secondary_detector_attempts.py --full       # six attempts to raise alpha
 run judge_budget.py --robustez                  # gap analysis, judge-call ladder, non-inferiority
 run gamma_sweep.py                              # f_gamma family: overruling the committee
 run review_queue.py                             # human review queue (figure data)

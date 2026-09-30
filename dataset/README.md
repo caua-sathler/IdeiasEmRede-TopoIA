@@ -25,7 +25,7 @@ dataset/
 │       └── article_embeddings_XXX.npy          # Article sentence embeddings
 ├── MPNET_opinion_embeddings/
 │   └── data_XXX/
-│       └── opinion_embeddings_XXX.npy          # Gold-opinion embeddings (n_opinions, 768)
+│       └── opinion_embeddings_XXX.npy          # Generated-opinion embeddings (n_opinions, 768)
 ├── windowed_data_<CFG>/                        # (Optional, --windows) Sliding-window text chunks
 ├── MPNET_embeddings_windowed_data_<CFG>/       # (Optional, --windows) Window embeddings
 └── metrics_MPNET.csv                           # ROUGE & centroid/grounding cosine similarities
@@ -41,7 +41,7 @@ dataset/
 Deep learning dependencies (`torch`, `transformers`, `datasets`, `huggingface_hub`) are required:
 
 ```bash
-pip install -r ../code/requirements.txt
+pip install -r ../code/requirements-full.txt
 ```
 
 > [!NOTE]

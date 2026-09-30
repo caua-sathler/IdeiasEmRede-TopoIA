@@ -236,9 +236,8 @@ def main() -> None:
         st = "*" if (lo > 0 or hi < 0) else " "
         print(f"  {k:3d} {a_med:16.4f} "
               f"{mu:+18.4f} [{lo:+.4f},{hi:+.4f}]{st}")
-    print("\n  '*' = IC exclui zero. Sem estrela e EMPATE ESTATISTICO com o")
-    print("  comite de 12 — que e exatamente a alegacao: mesma exatidao, menos")
-    print("  chamadas. Nao e preciso SUPERAR o comite para economiza-lo.")
+    print("\n  '*' = IC exclui zero. Ausencia de significancia NAO prova equivalencia.")
+    print("  A analise exploratoria de nao inferioridade aparece em D2.")
 
     if "--robustez" not in sys.argv:
         print("\n  (rode com --robustez para o estresse: dobras, equivalencia,")
@@ -288,9 +287,9 @@ def main() -> None:
     print("  dobra). 'dp subc.' = desvio das medias por subconjunto (QUAIS")
     print("  juizes). Se a segunda dominar, a alegacao depende da escolha.")
 
-    E0.banner("(D2) EQUIVALENCIA DE VERDADE (TOST), nao 'falha em rejeitar'")
+    E0.banner("(D2) NAO INFERIORIDADE EXPLORATORIA — subconjunto escolhido apos observar resultados")
     print("  Um IC que contem zero NAO prova equivalencia. A alegacao correta e")
-    print("  que o IC inteiro cabe dentro de uma margem declarada. Usamos duas:")
+    print("  nao inferioridade: limite inferior do IC95 > -margem. Margens pos-hoc:")
     print("  0,0040 (o proprio ganho que o artigo reivindica) e 0,0100.")
     print(f"\n  {'k':>3s} {'dif. vs comite12':>18s} {'IC95':>22s} "
           f"{'|0,0040':>8s} {'|0,0100':>8s}")
@@ -302,8 +301,8 @@ def main() -> None:
         ix = subsets[k][int(np.argsort(med_por_sub)[len(med_por_sub) // 2])]
         z = join(V[:, ix].sum(1), finos[0])
         mu, lo, hi = dcl(z, base, nb=5000)
-        e40 = "sim" if (lo > -0.0040 and hi < 0.0040) else "nao"
-        e100 = "sim" if (lo > -0.0100 and hi < 0.0100) else "nao"
+        e40 = "sim" if lo > -0.0040 else "nao"
+        e100 = "sim" if lo > -0.0100 else "nao"
         print(f"  {k:3d} {mu:+18.4f} [{lo:+.4f},{hi:+.4f}] "
               f"{e40:>8s} {e100:>8s}")
 
@@ -317,7 +316,7 @@ def main() -> None:
         modelos.setdefault(m, []).append(i)
     estrut = {f"prompt p{p} (4 modelos)": ix for p, ix in prompts.items()}
     estrut.update({f"modelo {m} (3 prompts)": ix for m, ix in modelos.items()})
-    # top-k por AUROC individual, escolhido nas dobras de TREINO (honesto)
+    # Exploratorio: top-k escolhido no conjunto avaliado, NAO apenas no treino.
     ordem = np.argsort([-E0.auc(y, V[:, i]) for i in range(len(JU))])
     for k in (5, 7):
         estrut[f"melhores {k} juizes (por AUROC)"] = ordem[:k]

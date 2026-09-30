@@ -101,7 +101,7 @@ def main() -> None:
     zf = oof(Xf, pm)
     lin = [
         ("familia de incidencia H6 (custo zero)", "0", E0.auc(y, oof(
-            np.hstack([h7[[c for c in FAM if not c.startswith('nli')]]
+            np.hstack([h7[[c for c in FAM if c not in ('nli_s', 'nli_g', 'delta_n')]]
                        .fillna(0).to_numpy(float),
                        sub[["n_irm"]].to_numpy(float)]), pm))),
         ("familia H6/H7 completa", "~10 NLI", E0.auc(y, zf)),

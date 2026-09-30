@@ -7,6 +7,7 @@ dashboard/ is read.
   dashboard_data.json                      pseudonymised (LGPD) snapshot of the paper's numbers
                                            (the "_fonte" key lists the paper table / script of origin)
   template_pt-br.html, template_en.html    page templates
+  deck.css, deck.js                        presentation mode (#slides) shared by both pages
 
 Outputs (written to dashboard/, one level up)
   pt-br-dashboard.html, en-dashboard.html
@@ -68,8 +69,13 @@ def ascii_page(html):
 
 def main():
     blob = json.dumps(load_data(), ensure_ascii=True, separators=(",", ":")).replace("</", "<\\/")
+    deck_css = (SRC / "deck.css").read_text(encoding="utf-8")
+    deck_js = (SRC / "deck.js").read_text(encoding="utf-8")
+    assert deck_css.isascii() and deck_js.isascii(), "deck.css / deck.js must be ASCII"
     for tpl, dst in PAGES:
         html = (SRC / tpl).read_text(encoding="utf-8")
+        assert html.count("/*__DECK_CSS__*/") == 1 and html.count("/*__DECK_JS__*/") == 1
+        html = html.replace("/*__DECK_CSS__*/", deck_css).replace("/*__DECK_JS__*/", deck_js)
         assert html.count("__DATA__") == 1
         page = ascii_page(html.replace("__DATA__", blob))
         (OUT / dst).write_text(page, encoding="ascii", newline="\n")

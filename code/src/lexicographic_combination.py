@@ -37,7 +37,8 @@ SEED = 42
 
 def deficit(y: np.ndarray, s: np.ndarray) -> tuple[float, float, float]:
     """(tau, teto, AUROC): tau = fracao dos pares (pos,neg) EMPATADOS; o teto
-    1 - tau/2 e exato e e o maximo que qualquer desempatador pode alcancar."""
+    1 - tau/2 limita um escore com esta fracao de empates; o teto de
+    um desempatador que preserva as ordens estritas e AUROC(s) + tau/2."""
     sp, sn = s[y], s[~y]
     tot = len(sp) * len(sn)
     if tot == 0:
@@ -118,7 +119,7 @@ def main() -> None:
         tau, teto, a = deficit(y, s)
         print(f"  {nome:30s} {len(np.unique(s)):7d} {tau:8.1%} {teto:8.4f} "
               f"{a:8.4f} {teto-a:8.4f}")
-    print("\n  Um juiz emite um VOTO BINARIO: 2 niveis, tau ~ 100%, teto ~ 0,75.")
+    print("\n  Um juiz emite um VOTO BINARIO; tau depende dos votos e dos rotulos.")
     print("  O teto e da GROSSURA da ordem induzida, nao da qualidade do julgamento.")
 
     E0.banner("(3)/(4) JOIN vs SOMA — cada juiz sozinho")
