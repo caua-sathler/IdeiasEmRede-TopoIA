@@ -118,12 +118,13 @@ footer a{color:var(--ink-2)}
   <div class="kpis">
     <div class="kpi"><b>206</b><span>hearings</span></div>
     <div class="kpi"><b>3,630</b><span>opinions evaluated</span></div>
-    <div class="kpi"><b>408</b><span>hallucinations (human label)</span></div>
+    <div class="kpi"><b>408</b><span>positives under the four-chunk protocol</span></div>
     <div class="kpi"><b>12</b><span>LLM judges with a binary vote</span></div>
     <div class="kpi"><b>0</b><span>LLM calls in the inexpensive signal</span></div>
   </div>
 </header>
 
+<p class="note">Precomputed benchmark demonstration, without live inference. Human labels assess support in four retrieved chunks, not the entire transcript.</p>
 <nav class="steps" aria-label="Steps">
   <a href="#quem"><span>1</span>Who said it</a>
   <a href="#empates"><span>2</span>Ties</a>
@@ -139,7 +140,7 @@ footer a{color:var(--ink-2)}
     <div class="num">1 · the problem</div>
     <h2>The best match in the hearing may belong to someone else</h2>
     <p>Inexpensive detectors compare the opinion with every sentence of the transcript and keep the highest similarity. A plausible hallucination is on the topic of the hearing, so that score comes out high.</p>
-    <p>What changes the verdict is <strong>who</strong> said the sentence. Comparing the opinion with the attributed speaker's turns, and with the other speakers' turns, raises the AUROC from <strong>0.57 to 0.76</strong> without calling any model.</p>
+    <p>What changes the verdict is <strong>who</strong> said the sentence. Comparing the opinion with the attributed speaker's turns, and with the other speakers' turns, raises the AUROC from <strong>0.57 to 0.76</strong> without LLM-judge calls, using precomputed embeddings. The original protocol already retrieves evidence by speaker; here we evaluate inexpensive triage signals.</p>
     <div class="readout" aria-live="polite">
       <div><b>0.57</b><span>best sentence in the hearing</span></div>
       <div><b class="m">0.75</b><span>speaker's turns only</span></div>
@@ -185,9 +186,9 @@ footer a{color:var(--ink-2)}
 <section class="step" id="regra">
   <div class="txt">
     <div class="num">3 · the rule</div>
-    <h2>Summing scores reverses decisions; tie-breaking does not</h2>
+    <h2>Summing can reverse vote order; tie-breaking preserves it</h2>
     <p>The usual approach fits a model on the votes and the features together. A weighted sum can place an opinion with <strong>fewer</strong> votes above one with more whenever the inexpensive signal disagrees strongly enough. On this data, that model falls below the committee in 19 of 20 fold partitions.</p>
-    <p>Lexicographic tie-breaking ranks by votes first and uses the inexpensive signal <strong>only within each tie</strong>. It never reverses a judge decision, and its gain is exactly τ·(α − ½), with α measured on the tied pairs. The 12-judge committee rises from <strong>0.926 to 0.930</strong> in all 20 partitions.</p>
+    <p>Lexicographic tie-breaking ranks by votes first and uses the inexpensive signal <strong>only within each tie</strong>. It preserves every strict committee ordering, and its gain is exactly τ·(α − ½), with α measured on the tied pairs. The 12-judge committee rises from <strong>0.926 to 0.930</strong> in all 20 partitions.</p>
   </div>
   <div class="viz">
     <div class="controls">
@@ -202,7 +203,8 @@ footer a{color:var(--ink-2)}
       <div class="marker">Effect measured on the 1,314,576 pairs, 12-judge committee</div>
       <svg id="dec-chart" viewBox="0 0 760 150" role="img" aria-label="Gain on ties and loss from reversals"></svg>
     </div>
-    <div class="legend"><span><i style="background:var(--method)"></i>gain from ordering the ties</span><span><i style="background:var(--halluc)"></i>loss from reversing judge decisions</span></div>
+    <p class="note">Simple control: breaking ties directly with similarity difference Δ reaches AUROC 0.9294, without training or NLI (paper, simple-controls table).</p>
+    <div class="legend"><span><i style="background:var(--method)"></i>gain from ordering the ties</span><span><i style="background:var(--halluc)"></i>loss from reversing vote order</span></div>
   </div>
 </section>
 
@@ -211,13 +213,13 @@ footer a{color:var(--ink-2)}
     <div class="num">4 · fewer judges</div>
     <h2>A few judges with tie-breaking come close to twelve</h2>
     <p>Tie-breaking improves committees of every size, and gains most where judges are fewest, because that is where ties are most common. A typical judge rises from <strong>0.807 to 0.879</strong>, recovering about 60% of the gap to the full committee with one twelfth of its calls. Every one of the 12 judges improves, by +0.046 to +0.101, with confidence intervals above zero.</p>
-    <p>Five judges with tie-breaking (0.923) beat eight without it (0.921). In an exploratory analysis, <strong>eight judges with tie-breaking are non-inferior to the twelve-judge committee</strong> (margin 0.0040): a third fewer calls. With seven, this cannot be claimed.</p>
+    <p>Five judges with tie-breaking (0.923) beat eight without it (0.921). In an exploratory analysis, <strong>a selected eight-judge subset with tie-breaking meets the non-inferiority criterion</strong> (margin 0.0040). Selection after observing results indicates potential for a third fewer calls; a prospective selection policy remains to be validated.</p>
   </div>
   <div class="viz">
     <svg id="lad-chart" viewBox="0 0 760 320" role="img" aria-label="AUROC by number of judges"></svg>
     <div class="legend"><span><i class="line" style="background:var(--method)"></i>judges + tie-break (10 NLI calls)</span><span><i class="line" style="background:var(--method);opacity:.45"></i>judges + tie-break (0 NLI calls)</span><span><i class="dash"></i>judges only</span></div>
     <div class="readout" id="lad-read"></div>
-    <p class="note">Median over 60 random subsets of judges for each size, on one representative fold partition (Table 7 of the paper; script judge_budget.py). Hover over the chart.</p>
+    <p class="note">Median over 60 random subsets of judges for each size, on one representative fold partition (paper judge-call ladder table; script judge_budget.py). Hover over the chart.</p>
   </div>
 </section>
 
@@ -253,7 +255,7 @@ footer a{color:var(--ink-2)}
     <div class="num">6 · operations</div>
     <h2>In the review queue, tie-breaking finds more hallucinations</h2>
     <p>An auditor reviews opinions from the most to the least suspect until time runs out. With a single judge, the queue is almost entirely tied: within each answer, the order is random.</p>
-    <p>Reviewing <strong>10%</strong> of the opinions, the best judge alone finds <strong>40.5%</strong> of the hallucinations; with tie-breaking, <strong>52.2%</strong>, with the same single call. With 12 judges the difference in the queue is not measurable: the committee's ties sit at the end of the queue.</p>
+    <p>In the exploratory analysis, reviewing <strong>10%</strong> of the opinions, the best judge in this benchmark alone finds <strong>40.5%</strong> of benchmark positives; with tie-breaking, <strong>52.2%</strong>, with the same single judge call and the local NLI detector. With 12 judges the difference in the queue is not measurable: the committee's ties sit at the end of the queue.</p>
   </div>
   <div class="viz">
     <div class="controls">
@@ -271,8 +273,8 @@ footer a{color:var(--ink-2)}
   <div class="txt">
     <div class="num">7 · forecast</div>
     <h2>The gain can be forecast before the rule is used</h2>
-    <p>We split the hearings in half 50 times. On one half we measure α; on the other, τ comes only from the votes and the labels. At every committee size, the mean forecast τ·(α − ½) is between <strong>95% and 98%</strong> of the gain observed on the half the detector never saw, and it has the right sign in <strong>249 of 250</strong> cases.</p>
-    <p>Using the global AUROC of the inexpensive signal instead of α overestimates the gain by a factor of 1.4 to 3.1.</p>
+    <p>We split the hearings in half 50 times. Both τ and α are estimated on the development half to forecast gains on the other half. Mean forecasts are <strong>92% to 98%</strong> of mean observed gains, with the correct sign in <strong>249 of 250</strong> cases.</p>
+    <p>Forecasts are estimates: with 12 judges, mean absolute error is 0.0033 for a mean observed gain of 0.0042. Using global AUROC instead of α overestimates the gain.</p>
   </div>
   <div class="viz">
     <div class="controls">
@@ -314,7 +316,7 @@ const L = {
   votesAxis: "votes received",
   tau: "τ: tied hallucination–grounded pairs", aucVotes: "AUROC from the votes alone", maxGain: "maximum gain of a tie-breaker (τ/2)",
   opinion: "Opinion", votesOf: "votes out of 12", cheap: "inexpensive signal", sum: "sum",
-  noteSum: `<span class="h">Opinion x, with 4 votes, moved ahead of y, with 5.</span> The sum reversed a judge decision because the inexpensive signal disagreed.`,
+  noteSum: `<span class="h">Opinion x, with 4 votes, moved ahead of y, with 5.</span> The sum reversed the vote order because the inexpensive signal disagreed.`,
   noteLex: `<span class="m">The vote order is kept.</span> The inexpensive signal only separates y from z, which the judges had tied at 5 votes.`,
   decRows: ["Sum (stacking)", "Lexicographic tie-break"], gainTies: "gain on the ties", lossInv: "loss from reversals", pairsInv: "1.33% of pairs reversed",
   net: "net", zeroInv: "0 reversals",
@@ -335,7 +337,7 @@ const L = {
     ["NLI, ten sentence pairs", `≈${fmt(c.nli_s, 1)} s / opinion`],
     ["tokens read by one judge (4 chunks + opinion)", `${nf(c.tok_med)} (median), ${nf(c.tok_p95)} (p95)`],
     ["tokens of a whole transcript, for contrast (mean, 40 hearings)", nf(c.tok_transc)]],
-  costNote: c => `Hardware: ${c.hw_en}. Tokens counted with the XLM-R tokenizer as a proxy, excluding the judges' fixed prompt text. Table 9 of the paper (script measured_cost.py).`
+  costNote: c => `Hardware: ${c.hw_en}. Tokens counted with the XLM-R tokenizer as a proxy, excluding the judges' fixed prompt text. Component benchmarks exclude opinion embedding and retrieval/indexing. Script measured_cost.py.`
 };
 const NS = "http://www.w3.org/2000/svg";
 const $ = id => document.getElementById(id);

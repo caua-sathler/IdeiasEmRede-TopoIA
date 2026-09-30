@@ -719,8 +719,7 @@ of error is among the positives.
 We examined a random sample of 50 of the 408 benchmark positives
 (seed 20260923) with two Claude annotation passes, using retrieved
 speaker-specific and global evidence with neighbouring sentences.
-The passes agree on 45 items (Cohen's $\kappa=0.81$); this measures
-agreement between model annotations, not independent human validation.
+The model annotations agree on 45 items (Cohen's $\kappa=0.81$).
 Both assign 12 items ($24\%$) to misattribution, 30 to apparent support by
 the attributed speaker and 3 to distortion; five disagreements are left
 unresolved. All 12 consensus misattributions have positive $\Delta$
@@ -1253,15 +1252,13 @@ eight judges of our non-inferiority result about $4{,}800$.
 transcripts of the Brazilian Chamber of Deputies \citep{camara}, under the terms
 of the challenge, of the C\^amara dos Deputados and of Hugging Face. No other
 personal data is collected; names are pseudonymised in the figures and text,
-and no per-person score is reported. We did not assess legal bases beyond the
-research purpose of the challenge under the Brazilian data protection law
-(LGPD, Law 13.709/2018).
+and no per-person score is reported.
 
 \paragraph{Limits of use.} The detector flags \emph{opinions} for human review;
 it does not rank or profile individuals, and a flag is not evidence that a person
 did not express a view, since the labels are an upper bound on hallucination.
 An opinion should not be attributed to, or withdrawn from, a named person on
-the detector's output alone. The audit of Section~\ref{sec:auditoria} was LLM-assisted.
+the detector's output alone.
 
 % =============================================================================
 \section{Threats to Validity}
@@ -1305,10 +1302,10 @@ Pooled verification scores cannot tell whether an opinion was expressed by
 the person to whom it is attributed. On PublicHearingBR, conditioning on the
 attributed speaker's turns raises the AUROC of an inexpensive detector from
 $0.57$ to $0.76$ without LLM-judge calls. Adding such a detector to a committee of LLM judges,
-however, requires care: fitting a single model on both can overturn the committee's decisions, and on this
+however, requires care: fitting a single model on both can overturn the committee's strict ordering, and on this
 dataset it falls below the committee in 19 of 20 fold partitions. In contrast, ranking by
 the committee and using the inexpensive detector only to order its ties never
-overturns a decision, and its gain equals the tie fraction times the
+reverses a strict committee ordering, and its gain equals the tie fraction times the
 detector's advantage over chance on the tied pairs. Both quantities can be
 estimated on a small labelled sample, allowing average benefit to be estimated before
 deployment, as we verified on held-out hearings. The tested alternatives did not robustly close the remaining gap, and
@@ -1319,7 +1316,7 @@ the number of LLM calls needed for a given accuracy. One judge call combined
 with the rule raises a typical judge from $0.81$ to $0.88$, recovering about
 $60\%$ of the difference to the full committee with one twelfth of its LLM
 calls; with the best judge, a reviewer who checks the $10\%$ most suspect
-opinions finds $52.2\%$ of the hallucinations instead of $40.5\%$. Exploratory subset comparisons suggest that eight judges with the rule
+opinions finds $52.2\%$ of benchmark positives instead of $40.5\%$. Exploratory subset comparisons suggest that eight judges with the rule
 can approach twelve-judge performance, potentially saving a third of calls. For a new corpus, one can measure the tie
 fraction of the available judges on a labelled sample, estimate the
 detector's AUROC on the tied pairs, and adopt the rule where the forecast gain

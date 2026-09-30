@@ -18,8 +18,8 @@
 | **2. Inovação 2: A Regra** | 0:45 – 1:45 | `#empates` + `#regra` | Mostrar o histograma dos 13 níveis de voto; alternar os botões *"Empilhamento"* vs *"Desempate lexicográfico"*. | **Inovação (40%) & Rigor (30%)** |
 | **3. Rigor Teórico & Previsão** | 1:45 – 2:30 | `#previsao` | Descer para Seção 7; destacar a fórmula exata e a tabela comparativa entre previsto e observado. | **Rigor Metodológico (30%)** |
 | **4. Eficiência & Menos Juízes** | 2:30 – 3:30 | `#juizes` + `#custo` | Mostrar a curva da escada de juízes (1 a 12) e a tabela de custos em CPU sem GPU. | **Eficiência (Trilha D) & Impacto** |
-| **5. Impacto Real & Fila Cívica** | 3:30 – 4:15 | `#fila` | Mover o slider interativo do orçamento do auditor humano de 10% para 20%; apontar conformidade LGPD. | **Impacto & Aplicabilidade (10%)** |
-| **6. Reprodutibilidade & Fechamento** | 4:15 – 4:30 | Terminal / Rodapé | Cortar brevemente para o terminal rodando `./run_all.sh` com as saídas geradas; fechar no repositório. | **Qualidade de Código (20%)** |
+| **5. Impacto Real & Fila Cívica** | 3:30 – 4:15 | `#fila` | Mover o slider interativo do orçamento do auditor humano de 10% para 20%; explicar a revisão humana e a pseudonimização. | **Impacto & Aplicabilidade (10%)** |
+| **6. Reprodutibilidade & Fechamento** | 4:15 – 4:30 | Terminal / Rodapé | Cortar brevemente para o terminal rodando `./run_all.sh` com as saídas geradas; fechar no repositório. | **Qualidade da apresentação (20%)** |
 
 ### Gravação no modo apresentação
 
@@ -39,67 +39,51 @@ Abra `dashboard/pt-br-dashboard.html#slides` em tela cheia (`F`). A seta `→` (
 
 ---
 
-## Transcrição do Roteiro (Texto de Locução)
+## Transcrição do roteiro — versão alinhada ao artigo
 
-### Bloco 1 — Abertura, O Problema e Inovação 1 (0:00 – 0:45)
-**Ação na tela:** Começar no topo do Dashboard (`Quem disse isso?`), passar o mouse pelos KPIs (206 audiências, 3.630 opiniões, 12 juízes) e descer até a Seção 1 (`#quem`). Clicar entre o Exemplo 1 e o Exemplo 2.
+Texto para aproximadamente 4 a 4min30s; confirmar com ensaio cronometrado. As telas mostram resultados pré-calculados do benchmark. As seis partes podem ser distribuídas entre os integrantes.
 
-> *"Audiências públicas da Câmara dos Deputados duram até quatro horas. Quando um resumo legislativo afirma que o Deputado A defendeu determinado ponto, mas ele não disse aquilo, o sistema coloca palavras na boca de um representante público.*
-> 
-> *A forma mais comum de alucinação não é inventar um assunto do nada, mas trocar quem falou. Um RAG tradicional busca a maior similaridade na audiência inteira: ele acha a frase dita pelo Deputado B e dá nota alta, errando com AUROC de apenas 0,57.*
-> 
-> *Nossa primeira inovação ataca a raiz do problema: condicionamos a verificação estritamente aos turnos do orador atribuído. Como vemos aqui no painel, essa simples mudança eleva a AUROC de 0,57 para 0,76 — sem fazer nenhuma chamada cara a modelos de linguagem."*
+### 1 — Problema e evidência por orador (0:00–0:45)
 
----
+> Em uma audiência pública, não basta um resumo falar sobre o assunto certo: ele precisa atribuir cada opinião à pessoa certa. Confundir quem disse o quê pode distorcer a leitura de um debate público.
+>
+> Avaliamos esse problema no PublicHearingBR. Os rótulos humanos indicam se uma opinião é sustentada por quatro trechos recuperados. Analisamos 3.630 opiniões com orador identificado, em 206 audiências.
+>
+> Comparar a opinião com a melhor frase de toda a audiência alcança AUROC de 0,57. Restringir a comparação ao orador eleva o resultado para 0,75; combinar características de similaridade chega a 0,76, sem chamadas a juízes LLM. A recuperação por orador já existe no protocolo original. Nossa contribuição é quantificar e aproveitar esses sinais baratos na triagem.
 
-### Bloco 2 — Inovação 2: A Armadilha do Stacking e a Regra Lexicográfica (0:45 – 1:45)
-**Ação na tela:** Rolar para `#empates`, apontando as 13 barras do histograma de votos. Descer para `#regra` e alternar entre o botão *"Empilhamento (regressão logística)"* e o botão *"Desempate lexicográfico"*, mostrando visualmente as linhas trocando de posição.
+### 2 — A regra de combinação (0:45–1:40)
 
-> *"Para auditar essas audiências, o comitê de 12 juízes LLM atinge 0,926 de AUROC, mas gera apenas treze patamares de voto, acumulando milhares de empates.*
-> 
-> *Como combinar nosso sinal barato com esses juízes? A literatura convencional ajusta um modelo supervisionado — como uma regressão logística sobre votos e similaridades. Isso é uma armadilha metodológica: uma soma ponderada pode fazer uma opinião com 4 votos ultrapassar uma com 5 votos só porque o sinal barato discordou. Por isso, o stacking perde para o comitê em 19 de 20 partições.*
-> 
-> *Nossa segunda inovação é a Regra Lexicográfica: nós ordenamos rigorosamente pelos votos do comitê e usamos o verificador leve exclusivamente para desempatar opiniões no mesmo nível. Ela tem variabilidade sete vezes menor e nunca contraria uma decisão soberana dos juízes."*
+> O comitê de doze juízes alcança AUROC de 0,926. Mas doze votos binários produzem apenas treze notas possíveis: há muitos empates.
+>
+> Como aproveitar um sinal barato sem perder o que o comitê já faz bem? Nos nossos experimentos, uma regressão que mistura votos e características fica abaixo do comitê em dezenove de vinte particionamentos por audiência.
+>
+> A regra lexicográfica ordena primeiro pela quantidade de votos e usa o sinal secundário apenas nos empates. Assim, preserva toda ordem estrita do comitê. Com ela, a AUROC fica em torno de 0,930, acima do comitê nos vinte particionamentos.
+>
+> Há também uma versão especialmente simples: usar diretamente a diferença entre similaridade global e similaridade ao orador já alcança 0,9294. Esse desempate dispensa treinamento e NLI.
 
----
+### 3 — Explicação e previsão (1:40–2:20)
 
-### Bloco 3 — Rigor Metodológico e Previsibilidade Analítica (1:45 – 2:30)
-**Ação na tela:** Rolar para `#previsao`. Apontar a fórmula analítica no texto e a tabela de previsão out-of-sample (*Previsão vs. Observado*).
+> Além de medir, explicamos o ganho. Provamos que ele é exatamente a fração de pares empatados multiplicada pela vantagem do sinal secundário sobre o acaso nesses pares.
+>
+> A identidade descreve o resultado exato; a previsão em novos dados é uma estimativa. Em cinquenta divisões das audiências, estimamos os dois componentes em uma metade e avaliamos na outra. As previsões médias correspondem a 92 a 98 por cento dos ganhos médios observados. Isso ajuda a decidir onde vale investir em um desempate.
 
-> *"Nosso diferencial em rigor metodológico é que essa combinação não depende de tentativa e erro. Provamos formalmente uma identidade de decomposição de pares: o ganho de AUROC é exatamente igual à taxa de pares empatados vezes a vantagem do detector leve sobre o acaso nesses empates.*
-> 
-> *Isso confere previsibilidade analítica: estimando essa vantagem em metade das audiências, conseguimos prever com precisão matemática o ganho exato na outra metade dos dados, com erro relativo inferior a 5%. É ciência com garantias teóricas antes da implantação."*
+### 4 — Eficiência (2:20–3:10)
 
----
+> O benefício cresce quando há poucos juízes: um juiz típico passa de 0,807 para 0,879 com o detector completo. Subconjuntos de oito juízes com desempate alcançam mediana de 0,9272, indicando potencial para reduzir chamadas. A escolha de quais juízes usar ainda precisa de validação prospectiva.
+>
+> Medimos também os componentes de custo em CPU. Com os embeddings prontos, as características de similaridade levam menos de um milissegundo por opinião no ambiente medido. Produzir embeddings e executar NLI têm custos próprios, documentados separadamente. A versão simples de desempate evita o NLI.
 
-### Bloco 4 — Eficiência Extrema e a Escada de Juízes (2:30 – 3:30)
-**Ação na tela:** Rolar para `#juizes`, passando o mouse pelos pontos da curva (1, 3, 5, 8, 12 juízes). Em seguida, rolar para `#custo`, mostrando a tabela de latência e custo em CPU.
+### 5 — Impacto e fila de revisão (3:10–3:55)
 
-> *"Na Trilha de Eficiência e Otimização do edital, o ganho prático é transformador. Quando o orçamento é escasso, nossa regra brilha:*
-> 
-> *Cada um dos doze juízes individuais salta de 0,81 para 0,88 de AUROC com uma única chamada de LLM. Mais impressionante ainda: oito juízes com o nosso desempate são estatisticamente não-inferiores ao comitê completo de doze juízes, poupando um terço de todas as chamadas.*
-> 
-> *E o custo computacional medido é ínfimo: em CPU comum de notebook, sem qualquer acelerador gráfico, montar as features leva menos de 1 milissegundo por opinião. Uma economia superior a 95% de tokens comparada a pipelines tradicionais de LLM."*
+> O uso proposto é priorizar revisão humana. Neste benchmark, ao revisar dez por cento das opiniões, o melhor juiz sozinho recupera 40,5 por cento dos casos positivos. Com o desempate completo, recupera 52,2 por cento, mantendo uma chamada de juiz por opinião.
+>
+> É um resultado exploratório que mostra uma aplicação concreta: ajudar uma equipe com tempo limitado a encontrar mais casos que merecem conferência. O painel permite explorar essa fila e mostra exemplos com participantes pseudonimizados. O sinal serve para revisão, não para julgar pessoas.
 
----
+### 6 — Entrega e fechamento (3:55–4:20)
 
-### Bloco 5 — Impacto na Esfera Pública e Fila de Auditoria Cívica (3:30 – 4:15)
-**Ação na tela:** Rolar para `#fila`. Mover o slider interativo do orçamento de revisão de 10% para 15% e depois 20%, mostrando o percentual de alucinações capturadas subindo em tempo real.
-
-> *"Para a esfera pública — em órgãos de controle como TCU, controladorias ou agências de checagem —, o tempo do auditor humano é o recurso mais valioso.*
-> 
-> *Aqui no simulador da fila de revisão, vemos o impacto direto: com o melhor juiz sozinho, revisar os 10% mais suspeitos captura 40% dos erros. Com o nosso desempate lexicográfico, o mesmo auditor encontra mais da metade — 52,2% de todas as alucinações.*
-> 
-> *Tudo isso operando com estrita conformidade à LGPD: pseudonimizamos todos os parlamentares para 'Deputado A e B' e auditamos a fidedignidade da informação, sem perfilar indivíduos."*
-
----
-
-### Bloco 6 — Reprodutibilidade e Conclusão (4:15 – 4:35)
-**Ação na tela:** Cortar brevemente para uma janela de terminal limpo executando `./run_all.sh` (mostrando a execução rápida em CPU) e retornar ao rodapé do Dashboard ou página do repositório GitHub.
-
-> *"Todo o pipeline é 100% aberto e reprodutível: basta clonar o repositório e executar `./run_all.sh` para reconstruir todas as tabelas em poucos minutos em CPU.*
-> 
-> *Aliamos inovação arquitetural, rigor analítico comprovado, custo quase nulo e alto impacto na transparência pública brasileira. Muito obrigado!"*
+> Entregamos o artigo, o código das análises, as tabelas, os registros da auditoria e este painel em português e inglês. Os experimentos separam audiências entre treino e teste, e as comparações principais incluem intervalos de confiança.
+>
+> Nossa proposta combina uma regra simples, uma explicação matemática e evidência experimental: aproveitar melhor os votos já disponíveis e sinais locais baratos para tornar a revisão de resumos públicos mais eficiente. Obrigado!
 
 ---
 
@@ -107,5 +91,7 @@ Abra `dashboard/pt-br-dashboard.html#slides` em tela cheia (`F`). A seta `→` (
 
 1. **Resolução e Janela:** Grave o navegador em janela cheia (1080p, 1920x1080).
 2. **Cursor do Mouse:** Use o cursor do mouse como ponteiro laser: aponte para os KPIs, clique nos botões de exemplo e arraste o slider da fila suavemente durante a fala.
-3. **Cronômetro:** Mantenha um cronômetro na sua frente. O texto tem ~630 palavras faladas. No ritmo de 140 palavras/min, a locução dura exatamente **4m30s**, garantindo 30 segundos de margem de segurança abaixo dos 5m00s do edital.
+3. **Cronômetro:** Ensaiar a locução e as interações juntas. Buscar 4min30s e conferir que o arquivo final tem menos de 5 minutos; o tempo depende do ritmo e das pausas.
 4. **Áudio:** Use microfone dedicado sem eco ambiente.
+
+5. **Antes do envio:** conferir áudio, legibilidade, duração, acesso ao link do vídeo e correspondência dos números com `paper/main.pdf`. A gravação e o link final ainda estão pendentes.

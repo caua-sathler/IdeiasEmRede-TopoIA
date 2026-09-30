@@ -64,3 +64,6 @@ auxiliary-reports/consistency/code/results/domain_conflict.csv
 auxiliary-reports/consistency/code/results/sentence_intervention.csv
 
 docs/
+
+# Hardware-specific remeasurements preserve the published reference benchmark.
+code/results/measured_cost_local.csv

@@ -87,12 +87,12 @@ python judge_budget.py --robustez
 
 The `results/` and `cache/` directories contain the following key files:
 
-- **`results/opinion_table.csv`**: Main dataset containing one row per labelled opinion with ground truth, embeddings, and judge predictions.
+- **`results/opinion_table.csv`**: One row per labelled opinion with benchmark labels, similarity summaries and judge votes.
 - **`results/incidence_features.csv`**: Speaker-level and sentence-level incidence features.
 - **`results/speaker_controls.csv`**: Controls for speaker size, identity, and clustered inference.
 - **`results/nli_features.csv`**: Features derived from natural language inference models.
-- **`results/audit_labels.csv`**: Human annotation labels for the 50-opinion audit sample.
-- **`results/official_chunks.csv`**: Official text chunks read by judges for NLI splitting.
+- **`results/audit_labels.csv`**: Recorded model-pass categories and consensus for the exploratory 50-opinion audit.
+- **`results/official_chunks.csv`**: Numeric alignment and length checks for the official four-chunk evidence (no raw text).
 - **`results/measured_cost.csv`**: CPU inference runtime benchmarks and token counts.
 - **`results/gain_forecast.csv`**: Projected gains on held-out public hearings.
 - **`cache/nli_pairs.npz`**: Compressed binary array caching mDeBERTa pair-level scores.
