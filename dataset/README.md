@@ -1,20 +1,19 @@
-# `dataset/` — PublicHearingBR processado
+# `dataset/` — processed PublicHearingBR
 
-Este diretório não vem com os dados prontos: os embeddings MPNet do corpus
-inteiro somam ~650MB, e o resultado principal do artigo (trilha C, ver
-`../codigo/README.md`) não precisa deles — os CSV intermediários que ele lê já
-vêm versionados em `../codigo/out/`. Estes dados só são necessários para
-regenerar as *features* de incidência por orador do zero (trilha A).
+The processed corpus is **not versioned** (the MPNet embeddings of the whole corpus are ~650 MB).
+It is only needed to rebuild the speaker-incidence features from scratch
+(`code/run_all.sh --from-scratch`); every table that the analyses read already ships in
+`code/results/`.
 
-## Gerar
+## Build
 
 ```bash
-pip install -r ../codigo/requirements.txt   # numpy, pandas, torch, transformers, datasets
+pip install -r ../code/requirements.txt
 python init_data.py --models MPNET
 ```
 
-Baixa o PublicHearingBR do Hugging Face (`unicamp-dl/PublicHearingBR`) e
-escreve, dentro deste diretório:
+This downloads PublicHearingBR from the Hugging Face Hub (`unicamp-dl/PublicHearingBR`) and writes,
+inside this directory:
 
 ```
 phrasal_data/data_XXX/phrases_XXX.csv
@@ -24,13 +23,15 @@ MPNET_opinion_embeddings/data_XXX/opinion_embeddings_XXX.npy
 metrics_MPNET.csv
 ```
 
-`comum.py` (em `../codigo/`) encontra este diretório automaticamente por estar
-no mesmo nível de `codigo/`; para apontar para uma cópia em outro lugar, use
-`export PHBR_DATA=/caminho/para/dataset`.
+The scripts in `code/src/` find this directory automatically (it is a sibling of `code/`). To use a copy
+elsewhere: `export PHBR_DATA=/path/to/dataset`.
 
-`init_data.py` também sabe gerar embeddings para outros modelos (BERT,
-MINILM, NOMIC — ver `--list-models`); nenhuma linha deste pacote de
-reprodução os usa, então `--models MPNET` é suficiente e mais rápido.
+Check the build with `python ../code/src/dataset_readers.py` (it should print `audiencias utilizaveis: 206`).
 
-Confira com `python ../codigo/dados.py` (deve imprimir `audiencias
-utilizaveis: 206`).
+## Source and use
+
+PublicHearingBR is built from official public records of the Brazilian Chamber of Deputies
+(Fernandes et al., 2024). We use it only for the research purpose of the challenge; see the
+*Ethics, Data Use and Limits of Use* section of the paper (LGPD, Law 13.709/2018). The repository
+does not redistribute transcripts or opinions: the tables in `code/results/` hold scores, verdicts and
+judge votes only.
