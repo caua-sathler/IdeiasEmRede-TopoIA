@@ -10,7 +10,8 @@ Low-cost hallucination detection for summaries of Brazilian Chamber of Deputies 
 | Path | Content |
 |---|---|
 | `paper/` | LaTeX source (`main.tex`, `references.bib`, template class), figures and compiled `main.pdf` (15 pages) |
-| `code/` | Everything needed to reproduce the paper's numbers: `run_all.sh`, `src/`, `results/`, `predictions/`, `requirements.txt` (see `code/README.md`) |
+| `dashboard/` | Interactive dashboard, pseudonymised: `pt-br-dashboard.html` and `en-dashboard.html` (open either file in any browser); templates, data and `build.py` in `dashboard/src/` |
+| `code/` | Everything needed to reproduce the paper's numbers: `run_all.sh`, `src/`, `results/`, `requirements.txt` (see `code/README.md`) |
 | `dataset/` | How to obtain/process PublicHearingBR (`init_data.py`) |
 | `auxiliary-reports/` | Companion report(s) (item 8.2 of the call): `consistency/` has the PDF, LaTeX source and its own `code/run_all.sh` |
 | `video/` | Pitch script (< 5 min) and recording checklist |
@@ -27,7 +28,7 @@ pip install -r requirements.txt          # pinned: results match the paper exact
 ./run_all.sh --cost                      # re-measure the CPU cost table
 ```
 
-Logs go to `code/results/logs/`; printed tables/summaries are also stored in `code/predictions/`.
+Logs go to `code/results/logs/`.
 
 ## Data, privacy and ethics
 

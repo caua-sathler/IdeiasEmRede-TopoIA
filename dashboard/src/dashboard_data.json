@@ -1,0 +1,3387 @@
+{
+ "_fonte": "Pseudonymised (LGPD) snapshot of the numbers reported in the paper; the only data input of build.py. Speaker letters are per example; '*' = session chair. Origins: escada = code/src/judge_budget.py section (C) (paper Table 7); previsao = code/results/gain_forecast.csv (Table 8); custo = code/results/measured_cost.csv (Table 9); comite, fila, mecanismo = committee_histogram.py, review_queue.py, pair_decomposition.py.",
+ "exemplos": [
+  {
+   "tipo": "figura",
+   "opiniao": "Destacou que todos os jornalistas presentes estavam em busca da verdade, independentemente de suas preferências políticas.",
+   "opiniao_en": "Stressed that all the journalists present were seeking the truth, regardless of their political preferences.",
+   "orador": "A",
+   "melhor_outro": "B",
+   "rotulo": "não suportada",
+   "cos_s": 0.386,
+   "best_other": 0.783,
+   "delta": 0.397,
+   "turnos": [
+    [
+     "*",
+     20,
+     0.385
+    ],
+    [
+     "A",
+     1,
+     0.171
+    ],
+    [
+     "*",
+     1,
+     0.207
+    ],
+    [
+     "A",
+     9,
+     0.309
+    ],
+    [
+     "*",
+     6,
+     0.198
+    ],
+    [
+     "F",
+     44,
+     0.353
+    ],
+    [
+     "*",
+     2,
+     0.179
+    ],
+    [
+     "H",
+     72,
+     0.416
+    ],
+    [
+     "*",
+     3,
+     0.185
+    ],
+    [
+     "H",
+     15,
+     0.305
+    ],
+    [
+     "*",
+     4,
+     0.338
+    ],
+    [
+     "C",
+     36,
+     0.362
+    ],
+    [
+     "*",
+     2,
+     0.343
+    ],
+    [
+     "C",
+     1,
+     0.205
+    ],
+    [
+     "*",
+     1,
+     0.305
+    ],
+    [
+     "C",
+     28,
+     0.441
+    ],
+    [
+     "*",
+     3,
+     0.212
+    ],
+    [
+     "I",
+     42,
+     0.331
+    ],
+    [
+     "*",
+     2,
+     0.214
+    ],
+    [
+     "B",
+     5,
+     0.221
+    ],
+    [
+     "*",
+     4,
+     0.28
+    ],
+    [
+     "B",
+     98,
+     0.401
+    ],
+    [
+     "*",
+     10,
+     0.227
+    ],
+    [
+     "A",
+     3,
+     0.225
+    ],
+    [
+     "*",
+     3,
+     0.181
+    ],
+    [
+     "A",
+     1,
+     0.12
+    ],
+    [
+     "*",
+     3,
+     0.196
+    ],
+    [
+     "A",
+     58,
+     0.386
+    ],
+    [
+     "*",
+     12,
+     0.154
+    ],
+    [
+     "J",
+     16,
+     0.295
+    ],
+    [
+     "*",
+     2,
+     0.126
+    ],
+    [
+     "G",
+     23,
+     0.376
+    ],
+    [
+     "*",
+     2,
+     0.166
+    ],
+    [
+     "G",
+     5,
+     0.458
+    ],
+    [
+     "*",
+     5,
+     0.152
+    ],
+    [
+     "E",
+     23,
+     0.549
+    ],
+    [
+     "*",
+     8,
+     0.312
+    ],
+    [
+     "K",
+     25,
+     0.341
+    ],
+    [
+     "*",
+     4,
+     0.12
+    ],
+    [
+     "L",
+     2,
+     0.169
+    ],
+    [
+     "*",
+     2,
+     0.204
+    ],
+    [
+     "L",
+     17,
+     0.456
+    ],
+    [
+     "*",
+     2,
+     0.152
+    ],
+    [
+     "M",
+     18,
+     0.317
+    ],
+    [
+     "*",
+     10,
+     0.183
+    ],
+    [
+     "N",
+     16,
+     0.451
+    ],
+    [
+     "*",
+     7,
+     0.222
+    ],
+    [
+     "O",
+     37,
+     0.445
+    ],
+    [
+     "*",
+     2,
+     0.185
+    ],
+    [
+     "P",
+     28,
+     0.446
+    ],
+    [
+     "*",
+     5,
+     0.194
+    ],
+    [
+     "D",
+     29,
+     0.566
+    ],
+    [
+     "*",
+     6,
+     0.194
+    ],
+    [
+     "F",
+     62,
+     0.489
+    ],
+    [
+     "*",
+     2,
+     0.202
+    ],
+    [
+     "H",
+     46,
+     0.406
+    ],
+    [
+     "*",
+     2,
+     0.113
+    ],
+    [
+     "H",
+     3,
+     0.276
+    ],
+    [
+     "*",
+     2,
+     0.194
+    ],
+    [
+     "C",
+     56,
+     0.58
+    ],
+    [
+     "*",
+     2,
+     0.239
+    ],
+    [
+     "I",
+     37,
+     0.451
+    ],
+    [
+     "*",
+     2,
+     0.209
+    ],
+    [
+     "B",
+     78,
+     0.783
+    ],
+    [
+     "*",
+     10,
+     0.311
+    ]
+   ],
+   "oradores": [
+    {
+     "id": "B",
+     "cos": 0.783,
+     "n_frases": 181,
+     "frase": "Inicialmente, cumpre ressaltar que todos os que estão aqui são jornalistas e estão em busca da verdade.",
+     "frase_en": "To begin with, it should be noted that everyone here is a journalist and is seeking the truth."
+    },
+    {
+     "id": "C",
+     "cos": 0.58,
+     "n_frases": 121,
+     "frase": "Acho que a obrigação principal dos jornalistas é evitar ser politizado, ou seja, é não ficar do lado de um partido ou de outro, de esquerda ou de direita.",
+     "frase_en": "I think the main duty of journalists is to avoid being politicised, that is, not to take the side of one party or another, left or right."
+    },
+    {
+     "id": "D",
+     "cos": 0.566,
+     "n_frases": 29,
+     "frase": "Quero também prestar minha solidariedade a todos aqueles jornalistas que vêm sendo perseguidos.",
+     "frase_en": "I also want to express my solidarity with all those journalists who have been persecuted."
+    },
+    {
+     "id": "E",
+     "cos": 0.549,
+     "n_frases": 23,
+     "frase": "Há uma turma aí entende muito bem de mentira e ignora o fato de hoje haver jornalistas cerceados do seu direito, assim como Senadores e Deputados.",
+     "frase_en": "There is a crowd out there that understands lying very well and ignores the fact that journalists today are restricted in their rights, as are Senators and Deputies."
+    },
+    {
+     "id": "F",
+     "cos": 0.489,
+     "n_frases": 106,
+     "frase": "Prestei atenção detidamente em todas as falas.",
+     "frase_en": "I paid close attention to every speech."
+    },
+    {
+     "id": "G",
+     "cos": 0.458,
+     "n_frases": 28,
+     "frase": "Valorizem quem vocês são e busquem a verdade de vocês.",
+     "frase_en": "Value who you are and seek your own truth."
+    },
+    {
+     "id": "A",
+     "cos": 0.386,
+     "n_frases": 72,
+     "frase": "Eu quero falar sobre o trabalho executado pelo jornalista [nome omitido].",
+     "frase_en": "I want to talk about the work carried out by the journalist [name withheld]."
+    }
+   ]
+  },
+  {
+   "tipo": "ma",
+   "opiniao": "A educação continuada dos profissionais de saúde é vital para o sucesso da triagem neonatal.",
+   "opiniao_en": "Continuing education of health professionals is vital to the success of newborn screening.",
+   "orador": "A",
+   "melhor_outro": "B",
+   "rotulo": "não suportada",
+   "cos_s": 0.559,
+   "best_other": 0.9,
+   "delta": 0.341,
+   "turnos": [
+    [
+     "*",
+     13,
+     0.473
+    ],
+    [
+     "B",
+     132,
+     0.9
+    ],
+    [
+     "*",
+     6,
+     0.46
+    ],
+    [
+     "B",
+     1,
+     0.084
+    ],
+    [
+     "G",
+     1,
+     0.111
+    ],
+    [
+     "*",
+     1,
+     0.114
+    ],
+    [
+     "G",
+     14,
+     0.533
+    ],
+    [
+     "B",
+     4,
+     0.222
+    ],
+    [
+     "*",
+     5,
+     0.543
+    ],
+    [
+     "H",
+     87,
+     0.545
+    ],
+    [
+     "*",
+     12,
+     0.365
+    ],
+    [
+     "A",
+     31,
+     0.554
+    ],
+    [
+     "*",
+     12,
+     0.494
+    ],
+    [
+     "E",
+     69,
+     0.652
+    ],
+    [
+     "*",
+     8,
+     0.624
+    ],
+    [
+     "I",
+     65,
+     0.591
+    ],
+    [
+     "*",
+     15,
+     0.428
+    ],
+    [
+     "C",
+     93,
+     0.696
+    ],
+    [
+     "*",
+     1,
+     0.138
+    ],
+    [
+     "C",
+     32,
+     0.471
+    ],
+    [
+     "*",
+     15,
+     0.616
+    ],
+    [
+     "D",
+     94,
+     0.67
+    ],
+    [
+     "*",
+     16,
+     0.501
+    ],
+    [
+     "F",
+     100,
+     0.624
+    ],
+    [
+     "*",
+     17,
+     0.597
+    ],
+    [
+     "B",
+     21,
+     0.754
+    ],
+    [
+     "*",
+     2,
+     0.134
+    ],
+    [
+     "H",
+     29,
+     0.338
+    ],
+    [
+     "*",
+     5,
+     0.219
+    ],
+    [
+     "A",
+     4,
+     0.559
+    ],
+    [
+     "*",
+     2,
+     0.255
+    ],
+    [
+     "E",
+     13,
+     0.543
+    ],
+    [
+     "*",
+     2,
+     0.231
+    ],
+    [
+     "I",
+     14,
+     0.334
+    ],
+    [
+     "*",
+     2,
+     0.187
+    ],
+    [
+     "C",
+     19,
+     0.718
+    ],
+    [
+     "*",
+     2,
+     0.202
+    ],
+    [
+     "D",
+     9,
+     0.653
+    ],
+    [
+     "*",
+     2,
+     0.406
+    ],
+    [
+     "F",
+     33,
+     0.468
+    ],
+    [
+     "*",
+     6,
+     0.175
+    ]
+   ],
+   "oradores": [
+    {
+     "id": "B",
+     "cos": 0.9,
+     "n_frases": 158,
+     "frase": "Há necessidade de promover um aprimoramento daqueles que trabalham com triagem neonatal, e os profissionais precisam, sim, ter uma educação continuada.",
+     "frase_en": "There is a need to improve the training of those who work in newborn screening, and professionals do need continuing education."
+    },
+    {
+     "id": "C",
+     "cos": 0.718,
+     "n_frases": 144,
+     "frase": "A triagem neonatal tem extrema importância na vida dessas pessoas.",
+     "frase_en": "Newborn screening is extremely important in these people's lives."
+    },
+    {
+     "id": "D",
+     "cos": 0.67,
+     "n_frases": 103,
+     "frase": "É fundamental que os profissionais da saúde entendam a importância do Teste do Pezinho, saibam do tempo e da forma como se dá a coleta. E isso envolve todos estes profissionais inseridos no contexto: médicos, enfermeiros, nutricionistas.",
+     "frase_en": "It is essential that health professionals understand the importance of the heel-prick test and know when and how the sample is collected. And this involves all the professionals in this context: doctors, nurses, nutritionists."
+    },
+    {
+     "id": "E",
+     "cos": 0.652,
+     "n_frases": 82,
+     "frase": "E a triagem neonatal é o primeiro passo para garantir o mínimo de qualidade de vida e de inclusão a essas pessoas.",
+     "frase_en": "And newborn screening is the first step to guarantee a minimum of quality of life and inclusion for these people."
+    },
+    {
+     "id": "F",
+     "cos": 0.624,
+     "n_frases": 133,
+     "frase": "Triagem neonatal não pode ser adiada. Eu ouvi a fala de vários de vocês, o que é muito importante para mim.",
+     "frase_en": "Newborn screening cannot be postponed. I heard several of you speak, which is very important to me."
+    },
+    {
+     "id": "*",
+     "cos": 0.624,
+     "n_frases": 144,
+     "frase": "E a triagem neonatal, realmente, passa a ser esse primeiro passo para garantirmos qualidade de vida ao cidadão.",
+     "frase_en": "And newborn screening really becomes this first step for us to guarantee quality of life for citizens."
+    },
+    {
+     "id": "A",
+     "cos": 0.559,
+     "n_frases": 35,
+     "frase": "Quero enfatizar a importância desta audiência pública no fortalecimento da triagem neonatal como política pública de saúde, e dizer que o Estado de Pernambuco está aqui para partilhar, para trocar experiências e para construir junto com vocês, traçando uma…",
+     "frase_en": "I want to stress the importance of this public hearing in strengthening newborn screening as a public health policy, and to say that the State of Pernambuco is here to share, to exchange experiences and to build together with you, charting a…"
+    }
+   ]
+  },
+  {
+   "tipo": "ma",
+   "opiniao": "Apoiou a necessidade de revisão das políticas de pensão por morte.",
+   "opiniao_en": "Supported the need to review survivor's pension policies.",
+   "orador": "A",
+   "melhor_outro": "B",
+   "rotulo": "não suportada",
+   "cos_s": 0.344,
+   "best_other": 0.734,
+   "delta": 0.39,
+   "turnos": [
+    [
+     "*",
+     64,
+     0.532
+    ],
+    [
+     "C",
+     91,
+     0.628
+    ],
+    [
+     "*",
+     9,
+     0.246
+    ],
+    [
+     "E",
+     87,
+     0.599
+    ],
+    [
+     "*",
+     29,
+     0.4
+    ],
+    [
+     "G",
+     142,
+     0.576
+    ],
+    [
+     "*",
+     7,
+     0.375
+    ],
+    [
+     "F",
+     61,
+     0.589
+    ],
+    [
+     "*",
+     4,
+     0.236
+    ],
+    [
+     "G",
+     18,
+     0.452
+    ],
+    [
+     "*",
+     7,
+     0.242
+    ],
+    [
+     "H",
+     9,
+     0.574
+    ],
+    [
+     "*",
+     10,
+     0.477
+    ],
+    [
+     "I",
+     1,
+     0.173
+    ],
+    [
+     "F",
+     1,
+     0.138
+    ],
+    [
+     "*",
+     2,
+     0.159
+    ],
+    [
+     "I",
+     38,
+     0.531
+    ],
+    [
+     "*",
+     5,
+     0.379
+    ],
+    [
+     "J",
+     195,
+     0.417
+    ],
+    [
+     "*",
+     28,
+     0.395
+    ],
+    [
+     "D",
+     32,
+     0.613
+    ],
+    [
+     "*",
+     1,
+     0.159
+    ],
+    [
+     "B",
+     50,
+     0.734
+    ],
+    [
+     "*",
+     2,
+     0.251
+    ],
+    [
+     "B",
+     2,
+     0.29
+    ],
+    [
+     "*",
+     8,
+     0.4
+    ],
+    [
+     "A",
+     9,
+     0.344
+    ],
+    [
+     "*",
+     8,
+     0.3
+    ]
+   ],
+   "oradores": [
+    {
+     "id": "B",
+     "cos": 0.734,
+     "n_frases": 52,
+     "frase": "Ele pede que a questão da pensão por morte seja revisto, Presidente [nome omitido].",
+     "frase_en": "He asks that the question of the survivor's pension be reviewed, Chair [name withheld]."
+    },
+    {
+     "id": "C",
+     "cos": 0.628,
+     "n_frases": 91,
+     "frase": "Nós defendemos uma nova revisão na forma de financiamento das Instituições de Longa Permanência para Idosos — ILPIs filantrópicas.",
+     "frase_en": "We advocate a new review of how philanthropic long-term care institutions for older people (ILPIs) are funded."
+    },
+    {
+     "id": "D",
+     "cos": 0.613,
+     "n_frases": 32,
+     "frase": "Nós temos refletido muito sobre os avanços conquistados a partir do Estatuto do Idoso, que é uma lei federal e que, portanto, deve ser cumprida.",
+     "frase_en": "We have reflected a great deal on the progress achieved since the Statute of Older Persons, which is a federal law and must therefore be complied with."
+    },
+    {
+     "id": "E",
+     "cos": 0.599,
+     "n_frases": 87,
+     "frase": "Ele foi indispensável para que essa proposta de uma política de Estado pudesse se tornar lei.",
+     "frase_en": "He was indispensable for this proposal of a State policy to become law."
+    },
+    {
+     "id": "F",
+     "cos": 0.589,
+     "n_frases": 62,
+     "frase": "Nós temos uma PEC na CCJ tornando o cuidado um direito constitucional, o que é muito importante, mas queremos trabalhar um texto, aprovar a Política Nacional de Cuidados, porque, além da pessoa com deficiência e da criança, nós sabemos que o público idoso está…",
+     "frase_en": "We have a constitutional amendment (PEC) in the Constitution and Justice Committee making care a constitutional right, which is very important, but we want to work on a text and pass the National Care Policy because, besides people with disabilities and children, we know that the older public is…"
+    },
+    {
+     "id": "G",
+     "cos": 0.576,
+     "n_frases": 160,
+     "frase": "Vamos seguir na construção de políticas públicas cada vez mais efetivas para as pessoas idosas.",
+     "frase_en": "Let us keep building ever more effective public policies for older people."
+    },
+    {
+     "id": "A",
+     "cos": 0.344,
+     "n_frases": 9,
+     "frase": "E, através dessa Comissão do Idoso da Câmara Municipal de São Paulo, conseguimos levantar bandeiras, fazer pedidos de audiência pública.",
+     "frase_en": "And, through this Committee on Older Persons of the São Paulo City Council, we managed to raise causes and request public hearings."
+    }
+   ]
+  },
+  {
+   "tipo": "suportada",
+   "opiniao": "Defendeu que jornalistas devem evitar a politização e sempre lutar pela liberdade de expressão e contra a censura.",
+   "opiniao_en": "Argued that journalists should avoid politicisation and always fight for freedom of expression and against censorship.",
+   "orador": "A",
+   "melhor_outro": "B",
+   "rotulo": "suportada",
+   "cos_s": 0.788,
+   "best_other": 0.597,
+   "delta": -0.191,
+   "turnos": [
+    [
+     "*",
+     20,
+     0.29
+    ],
+    [
+     "H",
+     1,
+     0.198
+    ],
+    [
+     "*",
+     1,
+     0.28
+    ],
+    [
+     "H",
+     9,
+     0.282
+    ],
+    [
+     "*",
+     6,
+     0.186
+    ],
+    [
+     "I",
+     44,
+     0.476
+    ],
+    [
+     "*",
+     2,
+     0.182
+    ],
+    [
+     "F",
+     72,
+     0.55
+    ],
+    [
+     "*",
+     3,
+     0.179
+    ],
+    [
+     "F",
+     15,
+     0.384
+    ],
+    [
+     "*",
+     4,
+     0.42
+    ],
+    [
+     "A",
+     36,
+     0.528
+    ],
+    [
+     "*",
+     2,
+     0.184
+    ],
+    [
+     "A",
+     1,
+     0.171
+    ],
+    [
+     "*",
+     1,
+     0.258
+    ],
+    [
+     "A",
+     28,
+     0.497
+    ],
+    [
+     "*",
+     3,
+     0.185
+    ],
+    [
+     "E",
+     42,
+     0.554
+    ],
+    [
+     "*",
+     2,
+     0.185
+    ],
+    [
+     "C",
+     5,
+     0.205
+    ],
+    [
+     "*",
+     4,
+     0.232
+    ],
+    [
+     "C",
+     98,
+     0.535
+    ],
+    [
+     "*",
+     10,
+     0.222
+    ],
+    [
+     "H",
+     3,
+     0.14
+    ],
+    [
+     "*",
+     3,
+     0.2
+    ],
+    [
+     "H",
+     1,
+     0.111
+    ],
+    [
+     "*",
+     3,
+     0.168
+    ],
+    [
+     "H",
+     58,
+     0.451
+    ],
+    [
+     "*",
+     12,
+     0.164
+    ],
+    [
+     "J",
+     16,
+     0.44
+    ],
+    [
+     "*",
+     2,
+     0.131
+    ],
+    [
+     "K",
+     23,
+     0.487
+    ],
+    [
+     "*",
+     2,
+     0.161
+    ],
+    [
+     "K",
+     5,
+     0.369
+    ],
+    [
+     "*",
+     5,
+     0.132
+    ],
+    [
+     "L",
+     23,
+     0.519
+    ],
+    [
+     "*",
+     8,
+     0.226
+    ],
+    [
+     "M",
+     25,
+     0.544
+    ],
+    [
+     "*",
+     4,
+     0.166
+    ],
+    [
+     "G",
+     2,
+     0.255
+    ],
+    [
+     "*",
+     2,
+     0.243
+    ],
+    [
+     "G",
+     17,
+     0.548
+    ],
+    [
+     "*",
+     2,
+     0.174
+    ],
+    [
+     "N",
+     18,
+     0.391
+    ],
+    [
+     "*",
+     10,
+     0.159
+    ],
+    [
+     "O",
+     16,
+     0.473
+    ],
+    [
+     "*",
+     7,
+     0.181
+    ],
+    [
+     "P",
+     37,
+     0.497
+    ],
+    [
+     "*",
+     2,
+     0.194
+    ],
+    [
+     "D",
+     28,
+     0.571
+    ],
+    [
+     "*",
+     5,
+     0.179
+    ],
+    [
+     "B",
+     29,
+     0.597
+    ],
+    [
+     "*",
+     6,
+     0.166
+    ],
+    [
+     "I",
+     62,
+     0.531
+    ],
+    [
+     "*",
+     2,
+     0.194
+    ],
+    [
+     "F",
+     46,
+     0.509
+    ],
+    [
+     "*",
+     2,
+     0.131
+    ],
+    [
+     "F",
+     3,
+     0.452
+    ],
+    [
+     "*",
+     2,
+     0.171
+    ],
+    [
+     "A",
+     56,
+     0.788
+    ],
+    [
+     "*",
+     2,
+     0.192
+    ],
+    [
+     "E",
+     37,
+     0.509
+    ],
+    [
+     "*",
+     2,
+     0.173
+    ],
+    [
+     "C",
+     78,
+     0.576
+    ],
+    [
+     "*",
+     10,
+     0.39
+    ]
+   ],
+   "oradores": [
+    {
+     "id": "A",
+     "cos": 0.788,
+     "n_frases": 121,
+     "frase": "Mas os jornalistas têm como obrigação defender alguns valores democráticos, principalmente a liberdade de expressão e a imprensa livre, e ser contra a censura.",
+     "frase_en": "But journalists have a duty to defend certain democratic values, above all freedom of expression and a free press, and to oppose censorship."
+    },
+    {
+     "id": "B",
+     "cos": 0.597,
+     "n_frases": 29,
+     "frase": "Quero também prestar minha solidariedade a todos aqueles jornalistas que vêm sendo perseguidos.",
+     "frase_en": "I also want to express my solidarity with all those journalists who have been persecuted."
+    },
+    {
+     "id": "C",
+     "cos": 0.576,
+     "n_frases": 181,
+     "frase": "Não importa se eu concordo ou se eu discordo da pessoa que tem algo a dizer sobre qualquer assunto, eu quero sempre poder defender a liberdade dessa pessoa de falar sobre aquilo que bem entender.",
+     "frase_en": "It does not matter whether I agree or disagree with the person who has something to say on any subject; I always want to be able to defend that person's freedom to speak about whatever they please."
+    },
+    {
+     "id": "D",
+     "cos": 0.571,
+     "n_frases": 28,
+     "frase": "Eu vou encerrar, Presidente, dizendo novamente o seguinte: não podemos admitir que, no nosso País, volte a censura e que matem a nossa democracia em nome de sua defesa.",
+     "frase_en": "I will close, Chair, by saying again: we cannot allow censorship to return to our country and our democracy to be killed in the name of defending it."
+    },
+    {
+     "id": "E",
+     "cos": 0.554,
+     "n_frases": 79,
+     "frase": "A ideia de defender a democracia com censura é a forma de desinformação mais grave do mundo. É horrível a ideia de proteger a democracia com censura.",
+     "frase_en": "The idea of defending democracy with censorship is the most serious form of disinformation in the world. The idea of protecting democracy with censorship is horrible."
+    },
+    {
+     "id": "F",
+     "cos": 0.55,
+     "n_frases": 136,
+     "frase": "Empresários, jornalistas, jornais, veículos de mídia, influenciadores digitais, artistas e até mesmo religiosos foram censurados e perseguidos pelo TSE durante o período eleitoral.",
+     "frase_en": "Business people, journalists, newspapers, media outlets, digital influencers, artists and even religious figures were censored and persecuted by the TSE during the election period."
+    },
+    {
+     "id": "G",
+     "cos": 0.548,
+     "n_frases": 19,
+     "frase": "Agora, a Esquerda está aqui, unida, junto com uma parcela da imprensa, o consórcio da censura, dizendo que é uma afronta à soberania nacional, quando, na verdade, Sr. Presidente, é o contrário.",
+     "frase_en": "Now the Left is here, united, together with part of the press, the censorship consortium, saying that it is an affront to national sovereignty when, in fact, Mr. Chair, it is the opposite."
+    }
+   ]
+  }
+ ],
+ "comite": [
+  {
+   "k": 1,
+   "juizes": [
+    "p1_gpt4omini"
+   ],
+   "pos": [
+    153,
+    255
+   ],
+   "neg": [
+    3170,
+    52
+   ],
+   "tau": 0.379,
+   "auc": 0.8044,
+   "auc_lex": 0.8764
+  },
+  {
+   "k": 2,
+   "juizes": [
+    "p3_deepseek",
+    "p1_sabia"
+   ],
+   "pos": [
+    77,
+    137,
+    194
+   ],
+   "neg": [
+    2839,
+    346,
+    37
+   ],
+   "tau": 0.2078,
+   "auc": 0.8698,
+   "auc_lex": 0.9003
+  },
+  {
+   "k": 3,
+   "juizes": [
+    "p1_gpt4o",
+    "p2_gpt4o",
+    "p2_gpt4omini"
+   ],
+   "pos": [
+    54,
+    35,
+    62,
+    257
+   ],
+   "neg": [
+    2639,
+    322,
+    160,
+    101
+   ],
+   "tau": 0.1443,
+   "auc": 0.8922,
+   "auc_lex": 0.9175
+  },
+  {
+   "k": 4,
+   "juizes": [
+    "p3_deepseek",
+    "p3_sabia",
+    "p2_gpt4o",
+    "p1_gpt4omini"
+   ],
+   "pos": [
+    51,
+    40,
+    50,
+    64,
+    203
+   ],
+   "neg": [
+    2665,
+    308,
+    165,
+    63,
+    21
+   ],
+   "tau": 0.1253,
+   "auc": 0.9039,
+   "auc_lex": 0.9214
+  },
+  {
+   "k": 5,
+   "juizes": [
+    "p2_gpt4o",
+    "p3_sabia",
+    "p1_gpt4omini",
+    "p1_sabia",
+    "p3_gpt4o"
+   ],
+   "pos": [
+    40,
+    32,
+    58,
+    59,
+    40,
+    179
+   ],
+   "neg": [
+    2486,
+    340,
+    291,
+    63,
+    25,
+    17
+   ],
+   "tau": 0.1027,
+   "auc": 0.9096,
+   "auc_lex": 0.9237
+  },
+  {
+   "k": 6,
+   "juizes": [
+    "p1_sabia",
+    "p1_gpt4omini",
+    "p3_gpt4omini",
+    "p3_sabia",
+    "p2_gpt4omini",
+    "p2_deepseek"
+   ],
+   "pos": [
+    27,
+    37,
+    43,
+    56,
+    35,
+    33,
+    177
+   ],
+   "neg": [
+    2025,
+    781,
+    266,
+    80,
+    42,
+    13,
+    15
+   ],
+   "tau": 0.0791,
+   "auc": 0.9151,
+   "auc_lex": 0.9235
+  },
+  {
+   "k": 7,
+   "juizes": [
+    "p1_sabia",
+    "p2_sabia",
+    "p1_gpt4o",
+    "p1_gpt4omini",
+    "p3_gpt4omini",
+    "p2_deepseek",
+    "p2_gpt4omini"
+   ],
+   "pos": [
+    25,
+    37,
+    35,
+    46,
+    31,
+    33,
+    32,
+    169
+   ],
+   "neg": [
+    2019,
+    755,
+    271,
+    81,
+    44,
+    27,
+    14,
+    11
+   ],
+   "tau": 0.0732,
+   "auc": 0.9177,
+   "auc_lex": 0.926
+  },
+  {
+   "k": 8,
+   "juizes": [
+    "p3_deepseek",
+    "p1_deepseek",
+    "p1_gpt4o",
+    "p2_gpt4omini",
+    "p2_deepseek",
+    "p2_sabia",
+    "p1_gpt4omini",
+    "p3_gpt4omini"
+   ],
+   "pos": [
+    24,
+    26,
+    30,
+    27,
+    41,
+    22,
+    29,
+    44,
+    165
+   ],
+   "neg": [
+    1994,
+    682,
+    266,
+    121,
+    65,
+    44,
+    26,
+    13,
+    11
+   ],
+   "tau": 0.0636,
+   "auc": 0.9207,
+   "auc_lex": 0.9275
+  },
+  {
+   "k": 9,
+   "juizes": [
+    "p3_gpt4o",
+    "p2_gpt4o",
+    "p1_gpt4omini",
+    "p2_deepseek",
+    "p1_deepseek",
+    "p3_gpt4omini",
+    "p3_sabia",
+    "p2_sabia",
+    "p3_deepseek"
+   ],
+   "pos": [
+    20,
+    20,
+    20,
+    26,
+    26,
+    44,
+    24,
+    28,
+    33,
+    167
+   ],
+   "neg": [
+    1892,
+    638,
+    248,
+    184,
+    107,
+    69,
+    36,
+    25,
+    12,
+    11
+   ],
+   "tau": 0.0532,
+   "auc": 0.9233,
+   "auc_lex": 0.9282
+  },
+  {
+   "k": 10,
+   "juizes": [
+    "p3_gpt4omini",
+    "p3_deepseek",
+    "p2_gpt4omini",
+    "p3_gpt4o",
+    "p1_deepseek",
+    "p3_sabia",
+    "p1_gpt4o",
+    "p2_sabia",
+    "p2_deepseek",
+    "p1_sabia"
+   ],
+   "pos": [
+    19,
+    19,
+    16,
+    28,
+    32,
+    34,
+    30,
+    17,
+    24,
+    29,
+    160
+   ],
+   "neg": [
+    1884,
+    603,
+    296,
+    173,
+    105,
+    57,
+    38,
+    27,
+    16,
+    12,
+    11
+   ],
+   "tau": 0.0504,
+   "auc": 0.9246,
+   "auc_lex": 0.9288
+  },
+  {
+   "k": 11,
+   "juizes": [
+    "p3_gpt4o",
+    "p2_gpt4o",
+    "p3_gpt4omini",
+    "p1_sabia",
+    "p2_deepseek",
+    "p3_sabia",
+    "p2_gpt4omini",
+    "p1_gpt4omini",
+    "p2_sabia",
+    "p3_deepseek",
+    "p1_deepseek"
+   ],
+   "pos": [
+    19,
+    18,
+    14,
+    19,
+    21,
+    25,
+    39,
+    26,
+    18,
+    21,
+    30,
+    158
+   ],
+   "neg": [
+    1879,
+    580,
+    258,
+    182,
+    103,
+    83,
+    52,
+    33,
+    20,
+    14,
+    8,
+    10
+   ],
+   "tau": 0.0478,
+   "auc": 0.9256,
+   "auc_lex": 0.9297
+  },
+  {
+   "k": 12,
+   "juizes": [
+    "p1_gpt4omini",
+    "p1_gpt4o",
+    "p1_deepseek",
+    "p1_sabia",
+    "p2_gpt4omini",
+    "p2_gpt4o",
+    "p2_deepseek",
+    "p2_sabia",
+    "p3_gpt4omini",
+    "p3_gpt4o",
+    "p3_deepseek",
+    "p3_sabia"
+   ],
+   "pos": [
+    19,
+    18,
+    12,
+    19,
+    16,
+    26,
+    29,
+    25,
+    19,
+    17,
+    24,
+    27,
+    157
+   ],
+   "neg": [
+    1878,
+    575,
+    262,
+    165,
+    104,
+    79,
+    53,
+    35,
+    25,
+    17,
+    13,
+    7,
+    9
+   ],
+   "tau": 0.0465,
+   "auc": 0.926,
+   "auc_lex": 0.9301
+  }
+ ],
+ "totais": {
+  "n": 3630,
+  "pos": 408,
+  "neg": 3222
+ },
+ "escada": [
+  {
+   "k": 1,
+   "so": 0.8067,
+   "lex0": 0.875,
+   "lex": 0.8791
+  },
+  {
+   "k": 2,
+   "so": 0.8746,
+   "lex0": 0.901,
+   "lex": 0.903
+  },
+  {
+   "k": 3,
+   "so": 0.8917,
+   "lex0": 0.9096,
+   "lex": 0.9114
+  },
+  {
+   "k": 4,
+   "so": 0.903,
+   "lex0": 0.9158,
+   "lex": 0.9176
+  },
+  {
+   "k": 5,
+   "so": 0.9128,
+   "lex0": 0.9209,
+   "lex": 0.9226
+  },
+  {
+   "k": 6,
+   "so": 0.9148,
+   "lex0": 0.9219,
+   "lex": 0.9238
+  },
+  {
+   "k": 7,
+   "so": 0.918,
+   "lex0": 0.9245,
+   "lex": 0.9262
+  },
+  {
+   "k": 8,
+   "so": 0.9205,
+   "lex0": 0.9253,
+   "lex": 0.9271
+  },
+  {
+   "k": 9,
+   "so": 0.9223,
+   "lex0": 0.9264,
+   "lex": 0.9277
+  },
+  {
+   "k": 10,
+   "so": 0.9239,
+   "lex0": 0.9275,
+   "lex": 0.9289
+  },
+  {
+   "k": 11,
+   "so": 0.9256,
+   "lex0": 0.9285,
+   "lex": 0.9296
+  },
+  {
+   "k": 12,
+   "so": 0.926,
+   "lex0": 0.9289,
+   "lex": 0.93
+  }
+ ],
+ "fila": {
+  "budget": [
+   2,
+   4,
+   6,
+   8,
+   10,
+   13,
+   16,
+   20,
+   25,
+   30,
+   40,
+   50
+  ],
+  "curvas": [
+   {
+    "id": "cos",
+    "nome": "Similaridade global (0 chamadas)",
+    "y": [
+     2.9,
+     6.6,
+     10.3,
+     12.3,
+     13.7,
+     17.6,
+     22.5,
+     28.2,
+     34.1,
+     38.5,
+     46.8,
+     57.4
+    ]
+   },
+   {
+    "id": "fam",
+    "nome": "Features de orador (0 chamadas)",
+    "y": [
+     10.8,
+     19.1,
+     26.5,
+     33.6,
+     38.0,
+     45.1,
+     50.7,
+     56.1,
+     61.5,
+     65.9,
+     73.8,
+     81.1
+    ]
+   },
+   {
+    "id": "juiz",
+    "nome": "Melhor juiz sozinho (1 chamada)",
+    "y": [
+     8.1,
+     16.3,
+     24.4,
+     32.3,
+     40.5,
+     52.9,
+     65.1,
+     81.4,
+     82.8,
+     83.9,
+     86.2,
+     88.4
+    ]
+   },
+   {
+    "id": "lex",
+    "nome": "Melhor juiz + desempate (1 chamada)",
+    "y": [
+     15.0,
+     26.2,
+     37.0,
+     46.6,
+     52.2,
+     61.0,
+     71.1,
+     81.1,
+     85.0,
+     87.5,
+     90.4,
+     93.1
+    ]
+   },
+   {
+    "id": "comite",
+    "nome": "Comitê de 12 juízes",
+    "y": [
+     16.9,
+     33.6,
+     48.0,
+     57.2,
+     64.7,
+     74.0,
+     80.0,
+     84.4,
+     88.4,
+     90.3,
+     93.3,
+     95.6
+    ]
+   }
+  ]
+ },
+ "mecanismo": {
+  "pares": 1314576,
+  "separados": 0.954,
+  "empatados": 0.046,
+  "comite": {
+   "auc": 0.926,
+   "sep": 0.9027,
+   "emp": 0.0232,
+   "inv": 0.0
+  },
+  "stacking": {
+   "auc": 0.9262,
+   "sep": 0.9013,
+   "emp": 0.0249,
+   "inv": 1.33
+  },
+  "lex": {
+   "auc": 0.93,
+   "sep": 0.9027,
+   "emp": 0.0272,
+   "inv": 0.0
+  }
+ },
+ "previsao": [
+  {
+   "k": 1,
+   "obs": 0.097608,
+   "pred": 0.113744,
+   "glob": 0.156222
+  },
+  {
+   "k": 3,
+   "obs": 0.015211,
+   "pred": 0.02154,
+   "glob": 0.040073
+  },
+  {
+   "k": 5,
+   "obs": 0.010088,
+   "pred": 0.016783,
+   "glob": 0.034187
+  },
+  {
+   "k": 8,
+   "obs": 0.00703,
+   "pred": 0.011497,
+   "glob": 0.02861
+  },
+  {
+   "k": 12,
+   "obs": 0.003285,
+   "pred": 0.006303,
+   "glob": 0.018015
+  },
+  {
+   "k": 1,
+   "obs": 0.046071,
+   "pred": 0.043583,
+   "glob": 0.067504
+  },
+  {
+   "k": 3,
+   "obs": 0.027554,
+   "pred": 0.022103,
+   "glob": 0.042546
+  },
+  {
+   "k": 5,
+   "obs": 0.00946,
+   "pred": 0.00934,
+   "glob": 0.021835
+  },
+  {
+   "k": 8,
+   "obs": 0.009805,
+   "pred": 0.004564,
+   "glob": 0.018747
+  },
+  {
+   "k": 12,
+   "obs": 0.004116,
+   "pred": 0.002463,
+   "glob": 0.010408
+  },
+  {
+   "k": 1,
+   "obs": 0.078286,
+   "pred": 0.085409,
+   "glob": 0.112412
+  },
+  {
+   "k": 3,
+   "obs": 0.040843,
+   "pred": 0.036273,
+   "glob": 0.0617
+  },
+  {
+   "k": 5,
+   "obs": 0.019053,
+   "pred": 0.009147,
+   "glob": 0.034712
+  },
+  {
+   "k": 8,
+   "obs": 0.00714,
+   "pred": 0.003064,
+   "glob": 0.017936
+  },
+  {
+   "k": 12,
+   "obs": 0.006842,
+   "pred": 0.001388,
+   "glob": 0.014487
+  },
+  {
+   "k": 1,
+   "obs": 0.081526,
+   "pred": 0.08349,
+   "glob": 0.108701
+  },
+  {
+   "k": 3,
+   "obs": 0.012458,
+   "pred": 0.02538,
+   "glob": 0.039839
+  },
+  {
+   "k": 5,
+   "obs": 0.005657,
+   "pred": 0.013541,
+   "glob": 0.024879
+  },
+  {
+   "k": 8,
+   "obs": 0.003608,
+   "pred": 0.007404,
+   "glob": 0.01551
+  },
+  {
+   "k": 12,
+   "obs": 0.002822,
+   "pred": 0.00587,
+   "glob": 0.012595
+  },
+  {
+   "k": 1,
+   "obs": 0.058334,
+   "pred": 0.053436,
+   "glob": 0.075515
+  },
+  {
+   "k": 3,
+   "obs": 0.014767,
+   "pred": 0.012595,
+   "glob": 0.032932
+  },
+  {
+   "k": 5,
+   "obs": 0.006394,
+   "pred": 0.007595,
+   "glob": 0.02049
+  },
+  {
+   "k": 8,
+   "obs": 0.008055,
+   "pred": 0.008388,
+   "glob": 0.019282
+  },
+  {
+   "k": 12,
+   "obs": 0.004745,
+   "pred": 0.003605,
+   "glob": 0.013771
+  },
+  {
+   "k": 1,
+   "obs": 0.08575,
+   "pred": 0.071849,
+   "glob": 0.102114
+  },
+  {
+   "k": 3,
+   "obs": 0.026657,
+   "pred": 0.026097,
+   "glob": 0.042233
+  },
+  {
+   "k": 5,
+   "obs": 0.010712,
+   "pred": 0.019159,
+   "glob": 0.027104
+  },
+  {
+   "k": 8,
+   "obs": 0.004683,
+   "pred": 0.007166,
+   "glob": 0.013964
+  },
+  {
+   "k": 12,
+   "obs": 0.003499,
+   "pred": 0.004389,
+   "glob": 0.011436
+  },
+  {
+   "k": 1,
+   "obs": 0.053523,
+   "pred": 0.043937,
+   "glob": 0.061124
+  },
+  {
+   "k": 3,
+   "obs": 0.021916,
+   "pred": 0.013186,
+   "glob": 0.029533
+  },
+  {
+   "k": 5,
+   "obs": 0.013193,
+   "pred": 0.010763,
+   "glob": 0.0199
+  },
+  {
+   "k": 8,
+   "obs": 0.013585,
+   "pred": 0.009503,
+   "glob": 0.019506
+  },
+  {
+   "k": 12,
+   "obs": 0.004611,
+   "pred": 0.003159,
+   "glob": 0.009451
+  },
+  {
+   "k": 1,
+   "obs": 0.053004,
+   "pred": 0.040432,
+   "glob": 0.071064
+  },
+  {
+   "k": 3,
+   "obs": 0.032579,
+   "pred": 0.023322,
+   "glob": 0.045857
+  },
+  {
+   "k": 5,
+   "obs": 0.010577,
+   "pred": 0.010429,
+   "glob": 0.025139
+  },
+  {
+   "k": 8,
+   "obs": 0.009139,
+   "pred": 0.00646,
+   "glob": 0.018616
+  },
+  {
+   "k": 12,
+   "obs": 0.004902,
+   "pred": 0.004188,
+   "glob": 0.013625
+  },
+  {
+   "k": 1,
+   "obs": 0.071603,
+   "pred": 0.089366,
+   "glob": 0.11258
+  },
+  {
+   "k": 3,
+   "obs": 0.011821,
+   "pred": 0.019566,
+   "glob": 0.034821
+  },
+  {
+   "k": 5,
+   "obs": 0.030063,
+   "pred": 0.037821,
+   "glob": 0.065855
+  },
+  {
+   "k": 8,
+   "obs": 0.0042,
+   "pred": 0.006106,
+   "glob": 0.017732
+  },
+  {
+   "k": 12,
+   "obs": 0.002848,
+   "pred": 0.005146,
+   "glob": 0.014337
+  },
+  {
+   "k": 1,
+   "obs": 0.054424,
+   "pred": 0.049165,
+   "glob": 0.081528
+  },
+  {
+   "k": 3,
+   "obs": 0.01813,
+   "pred": 0.017803,
+   "glob": 0.040815
+  },
+  {
+   "k": 5,
+   "obs": 0.028314,
+   "pred": 0.028582,
+   "glob": 0.04809
+  },
+  {
+   "k": 8,
+   "obs": 0.008762,
+   "pred": 0.006795,
+   "glob": 0.022492
+  },
+  {
+   "k": 12,
+   "obs": 0.004893,
+   "pred": 0.005365,
+   "glob": 0.015658
+  },
+  {
+   "k": 1,
+   "obs": 0.055277,
+   "pred": 0.047672,
+   "glob": 0.068821
+  },
+  {
+   "k": 3,
+   "obs": 0.008852,
+   "pred": 0.014653,
+   "glob": 0.025432
+  },
+  {
+   "k": 5,
+   "obs": 0.006855,
+   "pred": 0.018997,
+   "glob": 0.025469
+  },
+  {
+   "k": 8,
+   "obs": 0.002446,
+   "pred": 0.007253,
+   "glob": 0.012613
+  },
+  {
+   "k": 12,
+   "obs": 0.001492,
+   "pred": 0.00637,
+   "glob": 0.011184
+  },
+  {
+   "k": 1,
+   "obs": 0.103305,
+   "pred": 0.108153,
+   "glob": 0.141106
+  },
+  {
+   "k": 3,
+   "obs": 0.038082,
+   "pred": 0.047398,
+   "glob": 0.069617
+  },
+  {
+   "k": 5,
+   "obs": 0.010555,
+   "pred": 0.019696,
+   "glob": 0.027744
+  },
+  {
+   "k": 8,
+   "obs": 0.006394,
+   "pred": 0.013357,
+   "glob": 0.020076
+  },
+  {
+   "k": 12,
+   "obs": 0.002863,
+   "pred": 0.008787,
+   "glob": 0.014779
+  },
+  {
+   "k": 1,
+   "obs": 0.051785,
+   "pred": 0.040022,
+   "glob": 0.065092
+  },
+  {
+   "k": 3,
+   "obs": 0.019679,
+   "pred": 0.010306,
+   "glob": 0.02868
+  },
+  {
+   "k": 5,
+   "obs": 0.012134,
+   "pred": 0.006866,
+   "glob": 0.020203
+  },
+  {
+   "k": 8,
+   "obs": 0.010365,
+   "pred": 0.005804,
+   "glob": 0.016794
+  },
+  {
+   "k": 12,
+   "obs": 0.006652,
+   "pred": 0.001569,
+   "glob": 0.011849
+  },
+  {
+   "k": 1,
+   "obs": 0.088982,
+   "pred": 0.069993,
+   "glob": 0.094705
+  },
+  {
+   "k": 3,
+   "obs": 0.061733,
+   "pred": 0.047365,
+   "glob": 0.069723
+  },
+  {
+   "k": 5,
+   "obs": 0.035704,
+   "pred": 0.020733,
+   "glob": 0.0524
+  },
+  {
+   "k": 8,
+   "obs": 0.00382,
+   "pred": 0.004293,
+   "glob": 0.011877
+  },
+  {
+   "k": 12,
+   "obs": 0.00173,
+   "pred": 0.003312,
+   "glob": 0.009097
+  },
+  {
+   "k": 1,
+   "obs": 0.107368,
+   "pred": 0.088626,
+   "glob": 0.125777
+  },
+  {
+   "k": 3,
+   "obs": 0.027061,
+   "pred": 0.018113,
+   "glob": 0.044589
+  },
+  {
+   "k": 5,
+   "obs": 0.009899,
+   "pred": 0.005241,
+   "glob": 0.021488
+  },
+  {
+   "k": 8,
+   "obs": 0.006439,
+   "pred": 0.004109,
+   "glob": 0.014932
+  },
+  {
+   "k": 12,
+   "obs": 0.004821,
+   "pred": 0.002221,
+   "glob": 0.012556
+  },
+  {
+   "k": 1,
+   "obs": 0.071562,
+   "pred": 0.068148,
+   "glob": 0.094985
+  },
+  {
+   "k": 3,
+   "obs": 0.015814,
+   "pred": 0.012092,
+   "glob": 0.031396
+  },
+  {
+   "k": 5,
+   "obs": 0.006506,
+   "pred": 0.004684,
+   "glob": 0.017942
+  },
+  {
+   "k": 8,
+   "obs": 0.004042,
+   "pred": 0.003547,
+   "glob": 0.011562
+  },
+  {
+   "k": 12,
+   "obs": 0.003659,
+   "pred": 0.002197,
+   "glob": 0.009216
+  },
+  {
+   "k": 1,
+   "obs": 0.082901,
+   "pred": 0.107216,
+   "glob": 0.145573
+  },
+  {
+   "k": 3,
+   "obs": 0.027422,
+   "pred": 0.028736,
+   "glob": 0.049336
+  },
+  {
+   "k": 5,
+   "obs": 0.012302,
+   "pred": 0.010749,
+   "glob": 0.02377
+  },
+  {
+   "k": 8,
+   "obs": 0.003117,
+   "pred": 0.004642,
+   "glob": 0.01247
+  },
+  {
+   "k": 12,
+   "obs": 0.00185,
+   "pred": 0.003229,
+   "glob": 0.009733
+  },
+  {
+   "k": 1,
+   "obs": 0.094242,
+   "pred": 0.112429,
+   "glob": 0.138659
+  },
+  {
+   "k": 3,
+   "obs": 0.046892,
+   "pred": 0.056675,
+   "glob": 0.083847
+  },
+  {
+   "k": 5,
+   "obs": 0.02373,
+   "pred": 0.029837,
+   "glob": 0.045745
+  },
+  {
+   "k": 8,
+   "obs": 0.006002,
+   "pred": 0.009338,
+   "glob": 0.017708
+  },
+  {
+   "k": 12,
+   "obs": 0.003325,
+   "pred": 0.005849,
+   "glob": 0.012996
+  },
+  {
+   "k": 1,
+   "obs": 0.089272,
+   "pred": 0.050577,
+   "glob": 0.090495
+  },
+  {
+   "k": 3,
+   "obs": 0.021122,
+   "pred": 0.006242,
+   "glob": 0.022271
+  },
+  {
+   "k": 5,
+   "obs": 0.015344,
+   "pred": 0.003165,
+   "glob": 0.020558
+  },
+  {
+   "k": 8,
+   "obs": 0.011191,
+   "pred": 0.001351,
+   "glob": 0.013872
+  },
+  {
+   "k": 12,
+   "obs": 0.006176,
+   "pred": 0.000415,
+   "glob": 0.007329
+  },
+  {
+   "k": 1,
+   "obs": 0.050095,
+   "pred": 0.054017,
+   "glob": 0.080814
+  },
+  {
+   "k": 3,
+   "obs": 0.038175,
+   "pred": 0.055638,
+   "glob": 0.082613
+  },
+  {
+   "k": 5,
+   "obs": 0.01154,
+   "pred": 0.016857,
+   "glob": 0.03152
+  },
+  {
+   "k": 8,
+   "obs": 0.00687,
+   "pred": 0.011478,
+   "glob": 0.020325
+  },
+  {
+   "k": 12,
+   "obs": 0.002496,
+   "pred": 0.006047,
+   "glob": 0.013884
+  },
+  {
+   "k": 1,
+   "obs": 0.133744,
+   "pred": 0.101322,
+   "glob": 0.163964
+  },
+  {
+   "k": 3,
+   "obs": 0.014498,
+   "pred": 0.015179,
+   "glob": 0.033592
+  },
+  {
+   "k": 5,
+   "obs": 0.009508,
+   "pred": 0.011302,
+   "glob": 0.024393
+  },
+  {
+   "k": 8,
+   "obs": 0.005116,
+   "pred": 0.007938,
+   "glob": 0.01827
+  },
+  {
+   "k": 12,
+   "obs": 0.003798,
+   "pred": 0.006936,
+   "glob": 0.014388
+  },
+  {
+   "k": 1,
+   "obs": 0.066967,
+   "pred": 0.097651,
+   "glob": 0.119518
+  },
+  {
+   "k": 3,
+   "obs": 0.005292,
+   "pred": 0.022217,
+   "glob": 0.033271
+  },
+  {
+   "k": 5,
+   "obs": 0.006612,
+   "pred": 0.020409,
+   "glob": 0.028154
+  },
+  {
+   "k": 8,
+   "obs": 0.000776,
+   "pred": 0.009523,
+   "glob": 0.016109
+  },
+  {
+   "k": 12,
+   "obs": 0.000742,
+   "pred": 0.008732,
+   "glob": 0.014008
+  },
+  {
+   "k": 1,
+   "obs": 0.083322,
+   "pred": 0.085322,
+   "glob": 0.111315
+  },
+  {
+   "k": 3,
+   "obs": 0.024818,
+   "pred": 0.033442,
+   "glob": 0.048804
+  },
+  {
+   "k": 5,
+   "obs": 0.012868,
+   "pred": 0.014275,
+   "glob": 0.030815
+  },
+  {
+   "k": 8,
+   "obs": 0.006942,
+   "pred": 0.017069,
+   "glob": 0.028234
+  },
+  {
+   "k": 12,
+   "obs": 0.003408,
+   "pred": 0.005146,
+   "glob": 0.01416
+  },
+  {
+   "k": 1,
+   "obs": 0.077618,
+   "pred": 0.082327,
+   "glob": 0.110676
+  },
+  {
+   "k": 3,
+   "obs": 0.016465,
+   "pred": 0.017559,
+   "glob": 0.035158
+  },
+  {
+   "k": 5,
+   "obs": 0.014437,
+   "pred": 0.014759,
+   "glob": 0.030304
+  },
+  {
+   "k": 8,
+   "obs": 0.007548,
+   "pred": 0.005089,
+   "glob": 0.017426
+  },
+  {
+   "k": 12,
+   "obs": 0.005985,
+   "pred": 0.003734,
+   "glob": 0.015157
+  },
+  {
+   "k": 1,
+   "obs": 0.078267,
+   "pred": 0.089216,
+   "glob": 0.113825
+  },
+  {
+   "k": 3,
+   "obs": 0.058814,
+   "pred": 0.08841,
+   "glob": 0.106367
+  },
+  {
+   "k": 5,
+   "obs": 0.008745,
+   "pred": 0.022681,
+   "glob": 0.030875
+  },
+  {
+   "k": 8,
+   "obs": 0.003669,
+   "pred": 0.013096,
+   "glob": 0.018901
+  },
+  {
+   "k": 12,
+   "obs": 0.001896,
+   "pred": 0.009019,
+   "glob": 0.014846
+  },
+  {
+   "k": 1,
+   "obs": 0.079456,
+   "pred": 0.076081,
+   "glob": 0.110165
+  },
+  {
+   "k": 3,
+   "obs": 0.020843,
+   "pred": 0.021451,
+   "glob": 0.040742
+  },
+  {
+   "k": 5,
+   "obs": 0.006733,
+   "pred": 0.012961,
+   "glob": 0.023277
+  },
+  {
+   "k": 8,
+   "obs": 0.003902,
+   "pred": 0.007562,
+   "glob": 0.015046
+  },
+  {
+   "k": 12,
+   "obs": 0.002162,
+   "pred": 0.007026,
+   "glob": 0.012702
+  },
+  {
+   "k": 1,
+   "obs": 0.089973,
+   "pred": 0.087741,
+   "glob": 0.120325
+  },
+  {
+   "k": 3,
+   "obs": 0.024064,
+   "pred": 0.026087,
+   "glob": 0.045821
+  },
+  {
+   "k": 5,
+   "obs": 0.00693,
+   "pred": 0.008064,
+   "glob": 0.019954
+  },
+  {
+   "k": 8,
+   "obs": 0.012425,
+   "pred": 0.019759,
+   "glob": 0.029506
+  },
+  {
+   "k": 12,
+   "obs": 0.002994,
+   "pred": 0.003945,
+   "glob": 0.012849
+  },
+  {
+   "k": 1,
+   "obs": 0.078582,
+   "pred": 0.073153,
+   "glob": 0.124425
+  },
+  {
+   "k": 3,
+   "obs": 0.007963,
+   "pred": 0.018048,
+   "glob": 0.033354
+  },
+  {
+   "k": 5,
+   "obs": 0.010599,
+   "pred": 0.01313,
+   "glob": 0.035148
+  },
+  {
+   "k": 8,
+   "obs": 0.002286,
+   "pred": 0.007626,
+   "glob": 0.017395
+  },
+  {
+   "k": 12,
+   "obs": 0.001865,
+   "pred": 0.005555,
+   "glob": 0.013495
+  },
+  {
+   "k": 1,
+   "obs": 0.097258,
+   "pred": 0.091167,
+   "glob": 0.123412
+  },
+  {
+   "k": 3,
+   "obs": 0.024352,
+   "pred": 0.017837,
+   "glob": 0.036144
+  },
+  {
+   "k": 5,
+   "obs": 0.041024,
+   "pred": 0.030971,
+   "glob": 0.058951
+  },
+  {
+   "k": 8,
+   "obs": 0.005625,
+   "pred": 0.007524,
+   "glob": 0.016561
+  },
+  {
+   "k": 12,
+   "obs": 0.003141,
+   "pred": 0.0054,
+   "glob": 0.012523
+  },
+  {
+   "k": 1,
+   "obs": 0.07693,
+   "pred": 0.109674,
+   "glob": 0.12511
+  },
+  {
+   "k": 3,
+   "obs": 0.009416,
+   "pred": 0.013858,
+   "glob": 0.031483
+  },
+  {
+   "k": 5,
+   "obs": 0.02503,
+   "pred": 0.038936,
+   "glob": 0.059887
+  },
+  {
+   "k": 8,
+   "obs": 0.009553,
+   "pred": 0.012878,
+   "glob": 0.02411
+  },
+  {
+   "k": 12,
+   "obs": 0.005053,
+   "pred": 0.003525,
+   "glob": 0.013827
+  },
+  {
+   "k": 1,
+   "obs": 0.083926,
+   "pred": 0.083972,
+   "glob": 0.111552
+  },
+  {
+   "k": 3,
+   "obs": 0.039992,
+   "pred": 0.027239,
+   "glob": 0.057011
+  },
+  {
+   "k": 5,
+   "obs": 0.040453,
+   "pred": 0.031279,
+   "glob": 0.058603
+  },
+  {
+   "k": 8,
+   "obs": 0.010336,
+   "pred": 0.005774,
+   "glob": 0.021069
+  },
+  {
+   "k": 12,
+   "obs": 0.007013,
+   "pred": 0.001669,
+   "glob": 0.015208
+  },
+  {
+   "k": 1,
+   "obs": 0.052163,
+   "pred": 0.039255,
+   "glob": 0.066622
+  },
+  {
+   "k": 3,
+   "obs": 0.029633,
+   "pred": 0.015419,
+   "glob": 0.045335
+  },
+  {
+   "k": 5,
+   "obs": 0.011793,
+   "pred": 0.004202,
+   "glob": 0.019832
+  },
+  {
+   "k": 8,
+   "obs": 0.008989,
+   "pred": 0.002961,
+   "glob": 0.015471
+  },
+  {
+   "k": 12,
+   "obs": 0.005441,
+   "pred": 0.001584,
+   "glob": 0.011241
+  },
+  {
+   "k": 1,
+   "obs": 0.053299,
+   "pred": 0.058449,
+   "glob": 0.07883
+  },
+  {
+   "k": 3,
+   "obs": 0.071324,
+   "pred": 0.07117,
+   "glob": 0.107272
+  },
+  {
+   "k": 5,
+   "obs": 0.018801,
+   "pred": 0.025584,
+   "glob": 0.037186
+  },
+  {
+   "k": 8,
+   "obs": 0.004191,
+   "pred": 0.010769,
+   "glob": 0.018437
+  },
+  {
+   "k": 12,
+   "obs": 0.001991,
+   "pred": 0.006868,
+   "glob": 0.013724
+  },
+  {
+   "k": 1,
+   "obs": 0.046258,
+   "pred": 0.038026,
+   "glob": 0.060191
+  },
+  {
+   "k": 3,
+   "obs": 0.039929,
+   "pred": 0.024629,
+   "glob": 0.047927
+  },
+  {
+   "k": 5,
+   "obs": 0.015652,
+   "pred": 0.011154,
+   "glob": 0.025302
+  },
+  {
+   "k": 8,
+   "obs": 0.005236,
+   "pred": 0.004435,
+   "glob": 0.012771
+  },
+  {
+   "k": 12,
+   "obs": 0.003126,
+   "pred": 0.003573,
+   "glob": 0.009918
+  },
+  {
+   "k": 1,
+   "obs": 0.081027,
+   "pred": 0.083719,
+   "glob": 0.111378
+  },
+  {
+   "k": 3,
+   "obs": 0.040113,
+   "pred": 0.022732,
+   "glob": 0.050859
+  },
+  {
+   "k": 5,
+   "obs": 0.014647,
+   "pred": 0.007093,
+   "glob": 0.025244
+  },
+  {
+   "k": 8,
+   "obs": 0.013547,
+   "pred": 0.005428,
+   "glob": 0.024502
+  },
+  {
+   "k": 12,
+   "obs": 0.006932,
+   "pred": 0.002455,
+   "glob": 0.013056
+  },
+  {
+   "k": 1,
+   "obs": 0.054138,
+   "pred": 0.056068,
+   "glob": 0.083896
+  },
+  {
+   "k": 3,
+   "obs": 0.013921,
+   "pred": 0.015481,
+   "glob": 0.031994
+  },
+  {
+   "k": 5,
+   "obs": 0.025542,
+   "pred": 0.024465,
+   "glob": 0.043008
+  },
+  {
+   "k": 8,
+   "obs": 0.005608,
+   "pred": 0.00804,
+   "glob": 0.017565
+  },
+  {
+   "k": 12,
+   "obs": 0.003486,
+   "pred": 0.003828,
+   "glob": 0.01303
+  },
+  {
+   "k": 1,
+   "obs": 0.054451,
+   "pred": 0.05266,
+   "glob": 0.079246
+  },
+  {
+   "k": 3,
+   "obs": 0.025016,
+   "pred": 0.021899,
+   "glob": 0.04501
+  },
+  {
+   "k": 5,
+   "obs": 0.010641,
+   "pred": 0.006182,
+   "glob": 0.022688
+  },
+  {
+   "k": 8,
+   "obs": 0.007594,
+   "pred": 0.002788,
+   "glob": 0.016439
+  },
+  {
+   "k": 12,
+   "obs": 0.00594,
+   "pred": 0.001572,
+   "glob": 0.013027
+  },
+  {
+   "k": 1,
+   "obs": 0.045203,
+   "pred": 0.055119,
+   "glob": 0.08329
+  },
+  {
+   "k": 3,
+   "obs": 0.026017,
+   "pred": 0.031356,
+   "glob": 0.044934
+  },
+  {
+   "k": 5,
+   "obs": 0.014618,
+   "pred": 0.017465,
+   "glob": 0.034119
+  },
+  {
+   "k": 8,
+   "obs": 0.002005,
+   "pred": 0.00616,
+   "glob": 0.012301
+  },
+  {
+   "k": 12,
+   "obs": 0.000709,
+   "pred": 0.003678,
+   "glob": 0.009159
+  },
+  {
+   "k": 1,
+   "obs": 0.053502,
+   "pred": 0.050596,
+   "glob": 0.075689
+  },
+  {
+   "k": 3,
+   "obs": 0.071665,
+   "pred": 0.050989,
+   "glob": 0.097619
+  },
+  {
+   "k": 5,
+   "obs": 0.011062,
+   "pred": 0.00494,
+   "glob": 0.021238
+  },
+  {
+   "k": 8,
+   "obs": 0.014367,
+   "pred": 0.002113,
+   "glob": 0.023683
+  },
+  {
+   "k": 12,
+   "obs": 0.008528,
+   "pred": -0.000268,
+   "glob": 0.015177
+  },
+  {
+   "k": 1,
+   "obs": 0.070713,
+   "pred": 0.083639,
+   "glob": 0.108652
+  },
+  {
+   "k": 3,
+   "obs": 0.035771,
+   "pred": 0.03113,
+   "glob": 0.059124
+  },
+  {
+   "k": 5,
+   "obs": 0.02256,
+   "pred": 0.01818,
+   "glob": 0.044519
+  },
+  {
+   "k": 8,
+   "obs": 0.009861,
+   "pred": 0.009245,
+   "glob": 0.025524
+  },
+  {
+   "k": 12,
+   "obs": 0.005601,
+   "pred": 0.005363,
+   "glob": 0.017365
+  },
+  {
+   "k": 1,
+   "obs": 0.056105,
+   "pred": 0.04357,
+   "glob": 0.077347
+  },
+  {
+   "k": 3,
+   "obs": 0.028664,
+   "pred": 0.019135,
+   "glob": 0.054063
+  },
+  {
+   "k": 5,
+   "obs": 0.033974,
+   "pred": 0.022959,
+   "glob": 0.047911
+  },
+  {
+   "k": 8,
+   "obs": 0.014743,
+   "pred": 0.005135,
+   "glob": 0.023681
+  },
+  {
+   "k": 12,
+   "obs": 0.008769,
+   "pred": 0.003202,
+   "glob": 0.016902
+  },
+  {
+   "k": 1,
+   "obs": 0.03995,
+   "pred": 0.042877,
+   "glob": 0.071754
+  },
+  {
+   "k": 3,
+   "obs": 0.030935,
+   "pred": 0.019986,
+   "glob": 0.043724
+  },
+  {
+   "k": 5,
+   "obs": 0.007005,
+   "pred": 0.006592,
+   "glob": 0.021786
+  },
+  {
+   "k": 8,
+   "obs": 0.007206,
+   "pred": 0.004869,
+   "glob": 0.015882
+  },
+  {
+   "k": 12,
+   "obs": 0.006119,
+   "pred": 0.002334,
+   "glob": 0.013183
+  },
+  {
+   "k": 1,
+   "obs": 0.072329,
+   "pred": 0.057862,
+   "glob": 0.08619
+  },
+  {
+   "k": 3,
+   "obs": 0.019456,
+   "pred": 0.00907,
+   "glob": 0.032156
+  },
+  {
+   "k": 5,
+   "obs": 0.027537,
+   "pred": 0.008298,
+   "glob": 0.028685
+  },
+  {
+   "k": 8,
+   "obs": 0.013235,
+   "pred": 0.001772,
+   "glob": 0.014135
+  },
+  {
+   "k": 12,
+   "obs": 0.008263,
+   "pred": 5.9e-05,
+   "glob": 0.009035
+  },
+  {
+   "k": 1,
+   "obs": 0.064549,
+   "pred": 0.061994,
+   "glob": 0.088687
+  },
+  {
+   "k": 3,
+   "obs": 0.036119,
+   "pred": 0.02496,
+   "glob": 0.046179
+  },
+  {
+   "k": 5,
+   "obs": 0.007595,
+   "pred": 0.003466,
+   "glob": 0.015454
+  },
+  {
+   "k": 8,
+   "obs": 0.016302,
+   "pred": 0.009506,
+   "glob": 0.026163
+  },
+  {
+   "k": 12,
+   "obs": 0.00532,
+   "pred": 0.001938,
+   "glob": 0.011135
+  },
+  {
+   "k": 1,
+   "obs": 0.048001,
+   "pred": 0.061051,
+   "glob": 0.086594
+  },
+  {
+   "k": 3,
+   "obs": 0.021608,
+   "pred": 0.037786,
+   "glob": 0.053849
+  },
+  {
+   "k": 5,
+   "obs": 0.009579,
+   "pred": 0.024608,
+   "glob": 0.040149
+  },
+  {
+   "k": 8,
+   "obs": 0.002652,
+   "pred": 0.010584,
+   "glob": 0.018333
+  },
+  {
+   "k": 12,
+   "obs": 0.000675,
+   "pred": 0.008376,
+   "glob": 0.015372
+  },
+  {
+   "k": 1,
+   "obs": 0.05893,
+   "pred": 0.068656,
+   "glob": 0.09992
+  },
+  {
+   "k": 3,
+   "obs": 0.020762,
+   "pred": 0.015361,
+   "glob": 0.041784
+  },
+  {
+   "k": 5,
+   "obs": 0.012159,
+   "pred": 0.008102,
+   "glob": 0.02574
+  },
+  {
+   "k": 8,
+   "obs": 0.008344,
+   "pred": 0.005239,
+   "glob": 0.018426
+  },
+  {
+   "k": 12,
+   "obs": 0.00543,
+   "pred": 0.003159,
+   "glob": 0.014238
+  },
+  {
+   "k": 1,
+   "obs": 0.122866,
+   "pred": 0.088525,
+   "glob": 0.133348
+  },
+  {
+   "k": 3,
+   "obs": 0.058394,
+   "pred": 0.041203,
+   "glob": 0.080659
+  },
+  {
+   "k": 5,
+   "obs": 0.013817,
+   "pred": 0.00811,
+   "glob": 0.023849
+  },
+  {
+   "k": 8,
+   "obs": 0.005858,
+   "pred": 0.003272,
+   "glob": 0.015465
+  },
+  {
+   "k": 12,
+   "obs": 0.00475,
+   "pred": 0.00274,
+   "glob": 0.013863
+  },
+  {
+   "k": 1,
+   "obs": 0.09693,
+   "pred": 0.094649,
+   "glob": 0.123409
+  },
+  {
+   "k": 3,
+   "obs": 0.024231,
+   "pred": 0.025039,
+   "glob": 0.045737
+  },
+  {
+   "k": 5,
+   "obs": 0.008866,
+   "pred": 0.005528,
+   "glob": 0.017591
+  },
+  {
+   "k": 8,
+   "obs": 0.005349,
+   "pred": 0.002611,
+   "glob": 0.012706
+  },
+  {
+   "k": 12,
+   "obs": 0.004753,
+   "pred": 0.002588,
+   "glob": 0.011433
+  },
+  {
+   "k": 1,
+   "obs": 0.055615,
+   "pred": 0.059782,
+   "glob": 0.090912
+  },
+  {
+   "k": 3,
+   "obs": 0.012559,
+   "pred": 0.013911,
+   "glob": 0.037438
+  },
+  {
+   "k": 5,
+   "obs": 0.008716,
+   "pred": 0.007651,
+   "glob": 0.024367
+  },
+  {
+   "k": 8,
+   "obs": 0.013699,
+   "pred": 0.013792,
+   "glob": 0.031182
+  },
+  {
+   "k": 12,
+   "obs": 0.004703,
+   "pred": 0.00426,
+   "glob": 0.016169
+  },
+  {
+   "k": 1,
+   "obs": 0.055646,
+   "pred": 0.042386,
+   "glob": 0.076555
+  },
+  {
+   "k": 3,
+   "obs": 0.04216,
+   "pred": 0.041416,
+   "glob": 0.070627
+  },
+  {
+   "k": 5,
+   "obs": 0.012168,
+   "pred": 0.008316,
+   "glob": 0.02766
+  },
+  {
+   "k": 8,
+   "obs": 0.009083,
+   "pred": 0.006292,
+   "glob": 0.019401
+  },
+  {
+   "k": 12,
+   "obs": 0.004855,
+   "pred": 0.004972,
+   "glob": 0.014685
+  }
+ ],
+ "custo": {
+  "feat_ms": 0.1734612312042786,
+  "emb_aud_s": 38.85142597087379,
+  "op_por_aud": 20.57281553398058,
+  "emb_op_s": 1.888483659745163,
+  "nli_s": 3.1950160786000197,
+  "total_s": 5.0836731995763875,
+  "frases_aud": 981.5097087378641,
+  "tok_med": 600,
+  "tok_juiz": 600,
+  "tok_p95": 875,
+  "tok_transc": 27283,
+  "hw": "aarch64, 4 vCPU, sem GPU",
+  "hw_en": "aarch64, 4 vCPU, no GPU"
+ }
+}

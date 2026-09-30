@@ -15,7 +15,6 @@ contradictions in the retrieved evidence do **not** indicate hallucination in Pu
 | `code/src/` | The scripts |
 | `code/cache/` | Precomputed generations and NLI scores (2.3 MB) — the reason everything runs offline |
 | `code/results/` | `opinions_meta.csv` and `incoherent_support.csv` (inputs shipped); the other tables are regenerated |
-| `code/predictions/` | `registered_predictions.md` — predictions P1–P8 registered on 2026-08-03, before the measurements (not edited) |
 | `code/expected_outputs/` | Reference output of each script, used by `./run_all.sh --check` |
 
 ## Reproduce

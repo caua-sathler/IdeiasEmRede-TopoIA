@@ -1,6 +1,6 @@
 """H3 — COLETA + ANÁLISE: a relação de conflito nos quatro domínios.
 
-O QUE ESTÁ EM JOGO (predições predictions/registered_predictions.md, registradas antes):
+O QUE ESTÁ EM JOGO (predições registradas antes):
 
     P6  intervenção (f7): NENHUM invariante de mundos separa braço A de B —
         o limite da F8 é do paradigma de auto-consistência inteiro.

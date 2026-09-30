@@ -1,6 +1,6 @@
 """H2 — O PILOTO DECISIVO: mundos possíveis no TriviaQA, 100% offline do cache.
 
-AS PREDIÇÕES ESTÃO REGISTRADAS EM predictions/registered_predictions.md (2026-08-03), ANTES desta
+AS PREDIÇÕES FORAM REGISTRADAS (2026-08-03) ANTES desta
 análise. Resumo do que está em jogo:
 
     P1  sanidade: reproduzir SE ~ 0,811 do f12 a partir do MESMO cache
