@@ -1,15 +1,19 @@
-# Fonte do dashboard
+# Dashboard Source Files
 
-Arquivos usados para gerar `../pt-br-dashboard.html` e `../en-dashboard.html`.
+Source templates and build scripts used to compile [`../pt-br-dashboard.html`](../pt-br-dashboard.html) and [`../en-dashboard.html`](../en-dashboard.html).
 
-| Arquivo | Conteúdo |
+## Files
+
+| File | Content |
 |---|---|
-| `dashboard_data.json` | Números do artigo, pseudonimizados (LGPD). É a única fonte de dados; a chave `_fonte` indica a tabela/script de origem de cada bloco |
-| `template_pt-br.html`, `template_en.html` | Texto e código das duas versões |
-| `build.py` | Injeta os dados nos templates e grava as páginas em `dashboard/` (só biblioteca padrão; não lê nada fora de `dashboard/`) |
+| `dashboard_data.json` | Pseudonymised (LGPD) snapshot of the paper's data. Serves as the single data input for the build; the `_fonte` key indicates the source script/table for each block. |
+| `template_pt-br.html`, `template_en.html` | Page markup, CSS styles, and vanilla JavaScript visualization logic for both language versions. |
+| `build.py` | Injects `dashboard_data.json` into both templates and writes the standalone ASCII pages to `../` (uses only Python standard library; reads nothing outside `dashboard/`). |
+
+## Compilation
 
 ```bash
-cd dashboard/src && python build.py
+python build.py
 ```
 
-As páginas geradas são 100% ASCII (acentos como entidades HTML), então abrem corretamente em qualquer navegador.
+Generated HTML pages are 100% ASCII-compatible (accents converted to HTML entities and JS unicode escapes), ensuring identical rendering across all browsers and file servers.

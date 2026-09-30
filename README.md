@@ -1,8 +1,8 @@
 # Who Said It? Speaker-Conditioned Verification and Lexicographic Tie-Breaking
 
-Submission repository — *Ideias em Rede, 1st edition (TopoAI)*.
-Low-cost hallucination detection for summaries of Brazilian Chamber of Deputies hearings
-(PublicHearingBR): (1) verify an attributed opinion against the turns of the **attributed speaker**;
+Submission repository — *Ideias em Rede, 1st edition (TopoAI)*.  
+Low-cost hallucination detection for summaries of Brazilian Chamber of Deputies hearings (PublicHearingBR):
+(1) verify an attributed opinion against the turns of the **attributed speaker**;
 (2) use that cheap signal **only to break ties** of a 12-judge LLM committee.
 
 ## Layout
@@ -12,10 +12,8 @@ Low-cost hallucination detection for summaries of Brazilian Chamber of Deputies 
 | `paper/` | LaTeX source (`main.tex`, `references.bib`, template class), figures and compiled `main.pdf` (15 pages) |
 | `dashboard/` | Interactive dashboard, pseudonymised: `pt-br-dashboard.html` and `en-dashboard.html` (open either file in any browser); templates, data and `build.py` in `dashboard/src/` |
 | `code/` | Everything needed to reproduce the paper's numbers: `run_all.sh`, `src/`, `results/`, `requirements.txt` (see `code/README.md`) |
-| `dataset/` | How to obtain/process PublicHearingBR (`init_data.py`) |
+| `dataset/` | How to obtain/process PublicHearingBR (`init_data.py`, see `dataset/README.md`) |
 | `auxiliary-reports/` | Companion report(s) (item 8.2 of the call): `consistency/` has the PDF, LaTeX source and its own `code/run_all.sh` |
-| `video/` | Pitch script (< 5 min) and recording checklist |
-| `docs/` | Call for submissions and rules |
 
 ## Quick reproduction
 
@@ -40,7 +38,7 @@ artifact; the audit sheets that contain names are **not** versioned (LGPD). The 
 
 | Author | Affiliation | Contact |
 |---|---|---|
-| Gabriel Ribeiro | DCC-UFMG | gabriel.ribeiro@dcc.ufmg.br |
+| Gabriel Ribeiro | DMAT-UFMG | gabriel.ribeiro@dcc.ufmg.br |
 | Cauã Sathler | DCC-UFMG | cauasathler@ufmg.br |
 | Arthur Gonçalves | DCC-UFMG | afariag72@gmail.com |
-| Jordan Elias | UFC | jordanelias@alu.ufc.br |
+| Jordan Elias | DGEO-UFC | jordanelias@alu.ufc.br |

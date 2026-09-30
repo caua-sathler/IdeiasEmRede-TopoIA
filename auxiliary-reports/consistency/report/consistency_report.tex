@@ -55,24 +55,23 @@
 \subtitle{{\normalsize\mdseries Auxiliary report to the paper \emph{Who Said It? Speaker-Conditioned Verification and Lexicographic Tie-Breaking for Low-Cost Hallucination Detection in Legislative Hearings}}}
 
 \authors{%
-  Gabriel Ribeiro\textsuperscript{1}, Cau\~a Sathler\textsuperscript{2},
-  Arthur Gon\c{c}alves\textsuperscript{1}, Jordan Elias\textsuperscript{3}%
+  Gabriel Ribeiro\textsuperscript{1,a}, Cau\~a Sathler\textsuperscript{2,b},
+  Arthur Gon\c{c}alves\textsuperscript{1,b}, Jordan Elias\textsuperscript{3,c}%
 }
 
 \affiliations{%
-  \textsuperscript{1}Colab Domain-Specific Foundation Models, Departamento de
-  Ci\^encia da Computa\c{c}\~ao, Universidade Federal de Minas Gerais (DCC-UFMG)\\
-  \textsuperscript{2}Colab Agentic AutoML for Data Science, Departamento de
-  Ci\^encia da Computa\c{c}\~ao, Universidade Federal de Minas Gerais (DCC-UFMG)\\
-  \textsuperscript{3}Colab SLMs for Process Automation, Universidade Federal do
-  Cear\'a (UFC)\\[2pt]
-  \texttt{gabriel.ribeiro@dcc.ufmg.br}, \texttt{cauasathler@ufmg.br},\\
+  \textsuperscript{1}Colab Domain-Specific Foundation Models \quad
+  \textsuperscript{2}Colab Agentic AutoML for Data Science \quad
+  \textsuperscript{3}Colab SLMs for Process Automation\\[2pt]
+  \textsuperscript{a}Departamento de Matem\'atica, \textsuperscript{b}Departamento de Ci\^encia da Computa\c{c}\~ao --- Universidade Federal de Minas Gerais (UFMG)\\
+  \textsuperscript{c}Departamento de Geografia --- Universidade Federal do Cear\'a (DGEO-UFC)\\[2pt]
+  \texttt{gabriel.ribeiro@dcc.ufmg.br}, \texttt{cauasathler@ufmg.br},
   \texttt{afariag72@gmail.com}, \texttt{jordanelias@alu.ufc.br}%
 }
 
-\keywords{semantic entropy; natural language inference; contradiction; possible worlds; event structures; uncertainty quantification; hallucination detection}
+\keywords{Semantic entropy; Natural language inference; Contradiction; Possible worlds; Event structures; Uncertainty quantification; Hallucination detection}
 
-\abstracttext{Sampling-based uncertainty methods such as semantic entropy group a model's sampled answers into classes of equivalent meaning and read many classes as a sign that the model does not know the answer. This report, which accompanies our paper on hallucination detection in PublicHearingBR, examines a distinction these methods do not make: two answers can differ because they contradict each other or because both can be true. Using the contradiction probabilities that the natural language inference model already computes, we represent an answer set as an event structure whose maximal consistent subsets, its possible worlds, can be enumerated exactly. We show that semantic entropy and every quantity derived from the entailment order are blind to this distinction, and we measure it in three settings. On TriviaQA, the model's answer is correct $81\%$ of the time when its samples share one meaning, $44\%$ when they differ but fit in a single world ($n=18$) and $22\%$ when they span several worlds ($n=125$), although the last two rates do not differ significantly. The share of multi-class answer sets that form a single world, which we call the conflation rate, is $12.6\%$ in short-answer question answering and $78.5\%$ in closed-book statements about hearings. Asking the same TriviaQA questions for full-sentence answers raises the conflation rate to $29.0\%$ and lowers the AUROC of semantic entropy from $0.816$ to $0.721$ (paired difference $-0.095$, $95\%$ CI $[-0.175,-0.016]$). Entropy over worlds does not outperform semantic entropy where the latter works, and consistency features do not detect hallucinations in PublicHearingBR; we report both negative results in full.}
+\abstracttext{Sampling-based uncertainty methods such as semantic entropy group a model's sampled answers into classes of equivalent meaning and read many classes as a sign that the model does not know the answer. This report, which accompanies our paper on hallucination detection in PublicHearingBR, examines a distinction these methods do not make: two answers can differ because they contradict each other or because both can be true. Using the contradiction probabilities that the natural language inference model already computes, we represent an answer set as an event structure whose maximal consistent subsets, its possible worlds, can be enumerated exactly. We show that semantic entropy and every quantity derived from the entailment order are blind to this distinction, and we measure it in three settings. On TriviaQA, the model's answer is correct $81\%$ of the time when its samples share one meaning, $44\%$ when they differ but fit in a single world ($n=18$) and $22\%$ when they span several worlds ($n=125$), although the last two rates do not differ significantly. The share of multi-class answer sets that form a single world, which we call the conflation rate, is $12.6\%$ in short-answer question answering and $78.5\%$ in closed-book statements about hearings. Asking the same TriviaQA questions for full-sentence answers raises the conflation rate to $29.0\%$ and lowers the Area Under the Receiver Operating Characteristic Curve (AUROC) of semantic entropy from $0.816$ to $0.721$ (paired difference $-0.095$, $95\%$ CI $[-0.175,-0.016]$). Entropy over worlds does not outperform semantic entropy where the latter works, and consistency features do not detect hallucinations in PublicHearingBR; we report both negative results in full.}
 
 \begin{document}
 \raggedbottom
@@ -102,7 +101,7 @@ of answers that entail each other, according to a natural language inference
 (NLI) model, and computes the entropy of the class frequencies. One class means
 that the samples agree; many classes are read as a sign that the model does not
 know. On short-answer question answering this works well: on TriviaQA
-\citep{joshi2017triviaqa}, semantic entropy reaches an AUROC of $0.811$ in our
+\citep{joshi2017triviaqa}, semantic entropy reaches an Area Under the Receiver Operating Characteristic Curve (AUROC) of $0.811$ in our
 setup (Section~\ref{sec:res-p3}).
 
 Two answers can fall into different classes for three reasons. They can

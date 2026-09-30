@@ -50,24 +50,23 @@
 \title{Who Said It? Speaker-Conditioned Verification and Lexicographic Tie-Breaking for Low-Cost Hallucination Detection in Legislative Hearings}
 
 \authors{%
-  Gabriel Ribeiro\textsuperscript{1}, Cau\~a Sathler\textsuperscript{2},
-  Arthur Gon\c{c}alves\textsuperscript{1}, Jordan Elias\textsuperscript{3}%
+  Gabriel Ribeiro\textsuperscript{1,a}, Cau\~a Sathler\textsuperscript{2,b},
+  Arthur Gon\c{c}alves\textsuperscript{1,b}, Jordan Elias\textsuperscript{3,c}%
 }
 
 \affiliations{%
-  \textsuperscript{1}Colab Domain-Specific Foundation Models, Departamento de
-  Ci\^encia da Computa\c{c}\~ao, Universidade Federal de Minas Gerais (DCC-UFMG)\\
-  \textsuperscript{2}Colab Agentic AutoML for Data Science, Departamento de
-  Ci\^encia da Computa\c{c}\~ao, Universidade Federal de Minas Gerais (DCC-UFMG)\\
-  \textsuperscript{3}Colab SLMs for Process Automation, Universidade Federal do
-  Cear\'a (UFC)\\[2pt]
-  \texttt{gabriel.ribeiro@dcc.ufmg.br}, \texttt{cauasathler@ufmg.br},\\
+  \textsuperscript{1}Colab Domain-Specific Foundation Models \quad
+  \textsuperscript{2}Colab Agentic AutoML for Data Science \quad
+  \textsuperscript{3}Colab SLMs for Process Automation\\[2pt]
+  \textsuperscript{a}Departamento de Matem\'atica, \textsuperscript{b}Departamento de Ci\^encia da Computa\c{c}\~ao --- Universidade Federal de Minas Gerais (UFMG)\\
+  \textsuperscript{c}Departamento de Geografia --- Universidade Federal do Cear\'a (DGEO-UFC)\\[2pt]
+  \texttt{gabriel.ribeiro@dcc.ufmg.br}, \texttt{cauasathler@ufmg.br},
   \texttt{afariag72@gmail.com}, \texttt{jordanelias@alu.ufc.br}%
 }
 
-\keywords{hallucination detection; LLM judges; speaker attribution; AUROC ties; lexicographic combination; inference cost; PublicHearingBR}
+\keywords{Hallucination detection; Large language model judges; Speaker attribution; Lexicographic tie-breaking; Inference cost}
 
-\abstracttext{Summaries of legislative public hearings attribute opinions to named participants, and some of these attributions are not supported by what the participants actually said. We study how to detect such errors on PublicHearingBR, a dataset of Brazilian Chamber of Deputies hearings with a human verdict for every summary opinion. We first show that standard verification scores, which compare an opinion with the whole transcript and keep the best match, cannot distinguish an opinion expressed by the attributed speaker from the same opinion expressed by someone else. Comparing the opinion with the attributed speaker's own turns raises the AUROC from $0.57$ to $0.76$ without any language-model call. We then study how to add such an inexpensive detector to a committee of twelve LLM judges. A model fitted on the votes and the features together falls below the committee in 19 of 20 fold partitions, because a weighted sum can overturn the committee's decisions. Using the inexpensive score only to order opinions that received the same number of votes cannot do so, and its gain equals the fraction of tied pairs times the detector's advantage over chance on those pairs. With that advantage estimated on half of the hearings, this identity forecasts the average gain on the other half to within about $5\%$. The rule improves every committee size we tested, most where judges are fewest: each of the twelve judges gains $0.046$ to $0.101$ AUROC (a typical judge rises from $0.81$ to $0.88$), and, in an exploratory analysis, eight judges with the rule are non-inferior to the full committee of twelve. The full committee itself rises from $0.926$ to $0.930$ in all twenty fold partitions.}
+\abstracttext{Summaries of legislative public hearings attribute opinions to named participants, and some of these attributions are not supported by what the participants actually said. We study how to detect such errors on PublicHearingBR, a dataset of Brazilian Chamber of Deputies hearings with a human verdict for every summary opinion. We first show that standard verification scores, which compare an opinion with the whole transcript and keep the best match, cannot distinguish an opinion expressed by the attributed speaker from the same opinion expressed by someone else. Comparing the opinion with the attributed speaker's own turns raises the Area Under the Receiver Operating Characteristic Curve (AUROC) from $0.57$ to $0.76$ without any language-model call. We then study how to add such an inexpensive detector to a committee of twelve LLM judges. A model fitted on the votes and the features together falls below the committee in 19 of 20 fold partitions, because a weighted sum can overturn the committee's decisions. Using the inexpensive score only to order opinions that received the same number of votes cannot do so, and its gain equals the fraction of tied pairs times the detector's advantage over chance on those pairs. With that advantage estimated on half of the hearings, this identity forecasts the average gain on the other half to within about $5\%$. The rule improves every committee size we tested, most where judges are fewest: each of the twelve judges gains $0.046$ to $0.101$ AUROC (a typical judge rises from $0.81$ to $0.88$), and, in an exploratory analysis, eight judges with the rule are non-inferior to the full committee of twelve. The full committee itself rises from $0.926$ to $0.930$ in all twenty fold partitions.}
 
 % Ambientes de teorema e displays: espacamento vertical reduzido (o artigo tem
 % 17 ambientes de teorema); corpo de texto, tabelas e figuras ficam intactos.
@@ -96,7 +95,6 @@ sentence usually attributes an opinion to a named participant. An opinion that
 the participant did not express is a hallucination with public consequences:
 it attributes words to an identifiable person. Detecting such errors requires
 comparing each attributed opinion with what that person actually said.
-
 PublicHearingBR \citep{publichearingbr} makes this problem measurable. It
 contains 206 transcripts of public hearings of the Brazilian Chamber of
 Deputies, a structured summary of each hearing, and a human verdict for each of
@@ -104,21 +102,18 @@ the $4{,}238$ summary opinions: 504 of them ($11.9\%$) are marked as not
 supported by the transcript. The dataset also provides the verdicts of twelve
 LLM judges (three prompts applied to four models); each judge is a language
 model asked whether the opinion is supported, and it returns a binary vote.
-We measure detection quality by the AUROC (Section~\ref{sec:auroc-pairwise}). A
+We measure detection quality by the Area Under the Receiver Operating Characteristic Curve (AUROC; formal definition in Section~\ref{sec:auroc-pairwise}). A
 single judge reaches an AUROC between $0.734$ and $0.847$, and the sum of
 the twelve votes, which we compute from the released verdicts, reaches
 $0.926$, the strongest result we are aware of on this task. Unless stated
 otherwise, every AUROC in this paper is computed on the $3{,}630$ opinions
 whose speaker could be identified in the transcript (Section~\ref{sec:dados}). Each judge call has a
 cost, however, and it is not known how inexpensive signals should be used
-alongside the judges.
-
-Inexpensive detectors compare the opinion with each sentence of the
+alongside the judges. Inexpensive detectors compare the opinion with each sentence of the
 transcript, using embedding similarity or natural language inference (NLI),
-and keep the best match. On this task they reach an AUROC of $0.57$
+and keep the best match. On this task they reach an AUROC of only $0.57$
 (similarity) and $0.58$ (entailment) (Section~\ref{sec:res-orador}), far below
-the judges. The reason is that a
-plausible hallucination is on topic: the hearing did discuss the subject, so
+the judges, because a plausible hallucination is on topic: the hearing did discuss the subject, so
 some sentence of the transcript resembles the opinion.
 
 \begin{figure}[t]
@@ -170,15 +165,13 @@ of $0.783$, but it was spoken by Deputy~B. The most similar
 sentence among Deputy~A's own turns scores $0.386$ and concerns a different
 point. A score computed over the whole transcript sees a well-supported
 opinion; a score computed over the attributed speaker's turns sees an
-unsupported one.
-
-The case is not isolated (Section~\ref{sec:auditoria}), and it cannot be
-fixed by a better similarity measure. Any score that combines sentence-level
+unsupported one. This case is not isolated (Section~\ref{sec:auditoria}), and it cannot be
+fixed by a better similarity measure: any score that combines sentence-level
 scores through a maximum, a mean or a similar function ignores which speaker
 produced each sentence, and therefore cannot separate the two situations
-(Observation~\ref{prop:incidencia}). This observation raises two questions,
-which organise the paper.
+(Observation~\ref{prop:incidencia}).
 
+This observation raises two central questions, which organise the paper.
 The first question is how much conditioning on the speaker helps, and at what cost. We compare
 the opinion with the attributed speaker's turns and with the other speakers'
 turns, and use these comparisons as features. We call them
@@ -186,12 +179,11 @@ turns, and use these comparisons as features. We call them
 each sentence. The best match in the attributed speaker's turns alone raises
 the AUROC from $0.57$ to $0.75$, and a logistic regression on all the features
 reaches $0.76$, without any model call.
-
-The second question is how such a detector should be combined with the
-judges. The usual approach fits a model, such as a logistic regression, on
+The second question is how such an inexpensive detector should be combined with the
+costly committee of judges. The usual approach fits a model, such as a logistic regression, on
 the judges' votes and the new features together. On this dataset it does not
 improve the committee: its AUROC falls below the committee's in 19 of 20
-random assignments of hearings to folds. The reason is structural. The
+random assignments of hearings to folds. The reason is structural: the
 committee's vote count takes only thirteen values, so many opinions are tied,
 and a second detector could usefully order them. A weighted sum, however, does
 more than order the ties: it can also reverse two opinions that the committee
@@ -749,11 +741,10 @@ the effect is not an artefact of taking a maximum over fewer sentences.
 \textbf{Features beyond the single score.} Out of fold, the full set of
 features improves on the best single conditioned score, from $0.7447$ to
 $0.7605$, a paired difference of $+0.0159$ $[+0.0028, +0.0298]$.
-
-Two further observations. First, a failed speaker match is informative
-(hallucination rate $15.8\%$ vs.\ $11.2\%$), and using it as a feature extends
-the detector to all $4{,}238$ opinions ($0.7435$ out of fold). Second,
-conditioning also helps entailment: $\mathrm{nli}_s$ improves on
+Additionally, two complementary findings emerge from the data: first, a failed speaker match is informative
+(hallucination rate $15.8\%$ vs.\ $11.2\%$), and using it as an indicator feature extends
+the detector to all $4{,}238$ opinions ($0.7435$ out of fold); second,
+conditioning on the speaker also benefits entailment, where $\mathrm{nli}_s$ improves on
 $\mathrm{nli}_g$ by $+0.1264$ $[+0.0928,+0.1614]$. Contrary to our pre-specified
 prediction, however, $\mathrm{nli}_s$ alone ($0.7095$) does not outperform
 $\mathrm{cos}_s$ ($0.7455$); entailment adds value only in combination with
@@ -907,6 +898,15 @@ no pair and raises the contribution of the tied pairs to $0.0272$ ($+0.0040$).
 \subsection{Main comparison}
 \label{sec:res-principal}
 
+Table~\ref{tab:estab} evaluates the combinations across twenty independent
+\texttt{GroupKFold} partitions, supporting two main conclusions. First, stacking is worse than
+the committee in median, and it is unstable: its result varies by $0.0087$
+depending only on the fold assignment, a range that includes the committee's
+value, so a single run may report either a gain or a loss. Second, the
+lexicographic combination varies by $0.0012$, seven times less, and always
+exceeds the committee in all partitions. Table~\ref{tab:pareadas} gives the paired comparisons on the representative
+partition.
+
 \begin{table}[!ht]
   \centering
   \caption{AUROC over twenty independent \texttt{GroupKFold} partitions. The
@@ -927,14 +927,6 @@ no pair and raises the contribution of the tied pairs to $0.0272$ ($+0.0040$).
     \bottomrule
   \end{tabular}
 \end{table}
-
-Table~\ref{tab:estab} supports two conclusions. First, stacking is worse than
-the committee in median, and it is unstable: its result varies by $0.0087$
-depending only on the fold assignment, a range that includes the committee's
-value, so a single run may report either a gain or a loss. Second, the
-lexicographic combination varies by $0.0012$, seven times less, and always
-exceeds the committee. Table~\ref{tab:pareadas} gives the paired comparisons on the representative
-partition.
 
 \begin{table}[!ht]
   \centering
@@ -1360,17 +1352,15 @@ Section~\ref{sec:res-orcamento} and the audit are exploratory.
 Pooled verification scores cannot tell whether an opinion was expressed by
 the person to whom it is attributed. On PublicHearingBR, conditioning on the
 attributed speaker's turns raises the AUROC of an inexpensive detector from
-$0.57$ to $0.76$ without any model call.
-
-Adding such a detector to a committee of LLM judges requires care. Fitting a
-single model on both can overturn the committee's decisions, and on this
-dataset it falls below the committee in 19 of 20 fold partitions. Ranking by
+$0.57$ to $0.76$ without any model call. Adding such a detector to a committee of LLM judges,
+however, requires care: fitting a single model on both can overturn the committee's decisions, and on this
+dataset it falls below the committee in 19 of 20 fold partitions. In contrast, ranking by
 the committee and using the inexpensive detector only to order its ties never
 overturns a decision, and its gain equals the tie fraction times the
 detector's advantage over chance on the tied pairs. Both quantities can be
-estimated on a small labelled sample, so the gain can be forecast before
+estimated on a small labelled sample, allowing the gain to be reliably forecast before
 deployment, as we verified on held-out hearings. The remaining gap cannot be
-closed with these features, since they perform below chance on the pairs that
+closed with these features alone, since they perform below chance on the pairs that
 the committee orders incorrectly.
 
 \paragraph{Practical implications.} The main consequence is a reduction in
@@ -1380,15 +1370,14 @@ $60\%$ of the difference to the full committee with one twelfth of its LLM
 calls; with the best judge, a reviewer who checks the $10\%$ most suspect
 opinions finds $52.2\%$ of the hallucinations instead of $40.5\%$. In an
 exploratory analysis, eight judges with the rule are non-inferior to the
-committee of twelve, a third fewer calls. For a new corpus, measure the tie
+committee of twelve, saving a third of calls. For a new corpus, one can measure the tie
 fraction of the available judges on a labelled sample, estimate the
 detector's AUROC on the tied pairs, and adopt the rule where the forecast gain
-$\tau(\alpha-\tfrac12)$ justifies it. Several of our predictions failed, and we report them alongside the results that held.
+$\tau(\alpha-\tfrac12)$ justifies it. Several of our pre-registered predictions failed, and we report them alongside the results that held.
 
 \medskip\noindent\textbf{Reproducibility.} All numbers in this paper are
-produced by the scripts in the \texttt{codigo/} directory of the public
-repository (\url{https://github.com/caua-sathler/IdeiasEmRede-TopoIA}),
-together with the prediction files written before each experiment. The
+produced by the scripts in the \texttt{code/} directory of the public
+repository (\url{https://github.com/caua-sathler/IdeiasEmRede-TopoIA}). The
 pipelines use fixed random seeds and run in minutes on a single laptop. We thank Instituto Kunumi
 for the \emph{Ideias em Rede} challenge and the authors of PublicHearingBR.
 
