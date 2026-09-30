@@ -1,0 +1,13 @@
+componente,unidade,valor,nota,hardware
+parsing de oradores + casamento por nome,ms/opiniao,0.09386041632885399,"1237 opinioes, 60 audiencias","aarch64, 4 vCPU, sem GPU"
+"features de incidencia (cosseno, sobre embeddings prontos)",ms/opiniao,0.0796008148754246,matriz opiniao x frases + maximos por orador,"aarch64, 4 vCPU, sem GPU"
+frases de transcricao por audiencia (media),frases,981.5097087378641,,"aarch64, 4 vCPU, sem GPU"
+frases de transcricao no corpus (206 audiencias),frases,202191.0,,"aarch64, 4 vCPU, sem GPU"
+embedding MPNet de uma frase de transcricao,ms/frase,39.583333333333336,"96 frases, bs=32","aarch64, 4 vCPU, sem GPU"
+embedding MPNet de todas as frases de uma audiencia (media),s/audiencia,38.85142597087379,feito uma vez; nao depende do numero de opinioes,"aarch64, 4 vCPU, sem GPU"
+embedding MPNet de um chunk (5 frases),ms/chunk,125.1500472032098,16948 chunks,"aarch64, 4 vCPU, sem GPU"
+embedding dos 4 chunks de uma opiniao,ms/opiniao,500.6001888128392,,"aarch64, 4 vCPU, sem GPU"
+"NLI mDeBERTa (chunk -> opiniao), 1 par",ms/par,283.31460939343873,"4237 pares, maxlen 256","aarch64, 4 vCPU, sem GPU"
+"NLI mDeBERTa, par curto (frase -> opiniao)",ms/par,319.50160786000197,200 pares,"aarch64, 4 vCPU, sem GPU"
+tokens lidos por uma chamada de juiz (4 chunks + opiniao),tokens (mediana),600.5,"tokenizador XLM-R como proxy; media 616, p95 875; sem o texto fixo do prompt","aarch64, 4 vCPU, sem GPU"
+"tokens de uma transcricao inteira (media, 40 audiencias)",tokens,27282.525,para contraste: os juizes do dataset NAO leem isto,"aarch64, 4 vCPU, sem GPU"

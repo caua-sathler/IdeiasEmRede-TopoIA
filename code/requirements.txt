@@ -1,0 +1,12 @@
+# Versions with which the numbers of the paper were measured (Python 3.11).
+# Other scikit-learn versions change the third decimal of some out-of-fold results.
+numpy==2.4.6
+pandas==3.0.5
+scipy==1.17.1
+scikit-learn==1.9.0
+
+# Only needed with --from-scratch / --cost (speaker-incidence features, NLI, cost):
+torch==2.13.0
+transformers==5.14.1
+datasets==5.0.1
+huggingface_hub>=1.0
