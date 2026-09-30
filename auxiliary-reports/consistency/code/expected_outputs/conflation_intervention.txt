@@ -1,0 +1,34 @@
+itens pareados (entidade + frase): 202
+pares NLI: 11148
+cache: 11148/11148
+
+==========================================================================
+(i) A CONFLACAO SOBE? (predicao: >= 40% contra 12,6%)
+==========================================================================
+  ENTIDADE (f11/h2)    |P|  3.57 · mundos  2.84 · SE 0.840 · WE 0.667 · conflacao  12.6%
+  FRASE (h5)           |P|  4.24 · mundos  2.63 · SE 1.106 · WE 0.645 · conflacao  29.0%
+
+==========================================================================
+(ii)/(iii) O CROSSOVER (AUROC; mesmo rotulo `ct` nos dois modos)
+==========================================================================
+  acerto do rotulo: 44.6% (n=202)
+  modo/metodo                          AUROC
+  --------------------------------------------
+  ENTIDADE: SE (SOTA)                  0.816
+  ENTIDADE: WE                         0.794
+  FRASE:    SE (SOTA)                  0.721
+  FRASE:    WE (proposta)              0.751
+  FRASE:    SE-nucleo                  0.765
+  FRASE:    n_mundos                   0.750
+
+  FRASE: WE vs SE (o crossover, iii)     +0.0302 [-0.0219,+0.0837]
+  SE: FRASE vs ENTIDADE (a queda, ii)    -0.0953 [-0.1746,-0.0157]  *
+  WE: FRASE vs ENTIDADE                  -0.0435 [-0.1187,+0.0270]
+  FRASE: WE vs SE-nucleo                 -0.0136 [-0.0529,+0.0269]
+
+==========================================================================
+VALIDADE — as frases longas ainda carregam a resposta?
+==========================================================================
+  containment medio por amostra longa: 47.7%
+  corr(ct_amostras, rotulo `ct`): +0.692
+

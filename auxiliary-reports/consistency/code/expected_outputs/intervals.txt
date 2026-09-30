@@ -1,0 +1,93 @@
+
+==========================================================================
+INVENTARIO — amostras por conjunto e maximo de classes
+==========================================================================
+  TriviaQA entidade: 233 conjuntos, 8-10 amostras
+  TriviaQA frase:    202 conjuntos, 6-8 amostras
+  audiencias, Qwen:  259 conjuntos, 8 amostras (as 8 primeiras)
+  audiencias, Llama: 70 conjuntos, 7-8 amostras
+  troca de evidencia: 80 pares, 7-8 amostras por braco
+  maior numero de classes num conjunto: 10
+
+==========================================================================
+EXEMPLO TRABALHADO (Secao 3 do relatorio)
+==========================================================================
+  SE = log 4 = 1.3863
+  conflito herdado a2 # a3: True
+  mundos: [['a1', 'a2', 'a4'], ['a3', 'a4']]  massas [0.625 0.375]
+  WE = 0.6616   (log 2 = 0.6931)
+  sem a3: SE = log 3 = 1.0986 · mundos 1 · WE -0.0000
+
+==========================================================================
+WE NAO E UMA SE DESCONTADA: pode exceder a SE
+==========================================================================
+  a#b, c#d, e#f: 8 mundos · WE = 2.0794 > SE = log 6 = 1.7918
+  cadeia u ⊑ v com u # v: mundos 1 · WE -0.0000 (u e autoconflitante)
+
+==========================================================================
+TRIVIAQA — pares em conflito, validade e estratos com intervalos
+==========================================================================
+  pares nao ordenados com contradicao >= 0,5: 3093/10315 = 30.0%
+  validade de construto (acerto misto, conflito - compativel): +0.170 [+0.113, +0.229] (IC agrupado por pergunta)
+
+  estrato                       n  acerto   IC95 (Wilson)      SE medio  WE medio
+  uma classe (SE = 0)          90   81.1%   [71.8%, 87.9%]      0.000     0.000
+  multi-classe, 1 mundo        18   44.4%   [24.6%, 66.3%]      0.626     0.000
+  multi-classe, >1 mundo      125   22.4%   [16.0%, 30.5%]      1.300     1.103
+  dos 18 conjuntos multi-classe com 1 mundo, 4 contem conflito (so com classes autoconflitantes)
+  diferenca de acerto, uma classe - 1 mundo   +0.367 [+0.122, +0.600]
+  diferenca de acerto, 1 mundo - >1 mundo     +0.220 [-0.018, +0.459]
+  P5, estrato com escada (n=28): AUROC dos mundos 0.655 [0.417, 0.873]
+  P4 combinacao, densidade + WE       AUROC 0.790 · vs densidade +0.0203 [-0.0027, +0.0451]
+  P4 combinacao, densidade + mundos   AUROC 0.788 · vs densidade +0.0186 [-0.0029, +0.0417]
+
+==========================================================================
+TAXA DE CONFLACAO — por dominio, com intervalos de Wilson
+==========================================================================
+  dominio         n   |P| mundos  >1 m.     SE     WE dens_c multi conflacao   IC95 (Wilson)   1 mundo c/ conflito   estrita
+  REAL          259  4.14   1.23  18.5%  1.112  0.125  0.103   223     78.5%   [72.6%, 83.4%]     15/175              71.7%
+  LLAMA          70  6.11   1.87  50.0%  1.644  0.393  0.230    69     49.3%   [37.8%, 60.8%]      3/34               44.9%
+  TRIVIAQA      233  3.28   2.63  53.6%  0.746  0.592  0.473   143     12.6%   [8.1%, 19.0%]      4/18                9.8%
+  MISTO         259  6.65   2.97  94.2%  1.800  0.933  0.424   259      5.8%   [3.5%, 9.3%]      6/15                3.5%
+  EMBARALHADO   259  7.91   4.06  98.5%  2.063  1.288  0.423   259      1.5%   [0.6%, 3.9%]      3/4                 0.4%
+  INTERV_A       80  3.61   1.40  31.2%  0.988  0.223  0.194    69     63.8%   [52.0%, 74.1%]      7/44               53.6%
+  INTERV_B       80  3.52   1.26  22.5%  0.977  0.143  0.203    71     74.6%   [63.4%, 83.3%]      6/53               66.2%
+  (medias por conjunto; conflacao = multi-classe com 1 mundo; '1 mundo c/
+   conflito' = desses, quantos tem conflito envolvendo classe
+   autoconflitante; 'estrita' = multi-classe sem NENHUM conflito)
+  conjuntos REAL com 1 mundo (todos, P7): 81.5%
+
+==========================================================================
+H5 — a subida da conflacao e a interacao (bootstrap pareado)
+==========================================================================
+  ENTIDADE  conflacao 17/135 = 12.6%  [8.0%, 19.2%]  · 1 mundo com conflito: 4/17 · estrita 9.6%
+  FRASE     conflacao 49/169 = 29.0%  [22.7%, 36.2%]  · 1 mundo com conflito: 8/49 · estrita 24.3%
+  subida (frase - entidade, pareada): +0.164 [+0.077, +0.250]
+  AUROC do SE-nucleo nas mesmas 202 perguntas: entidade 0.801 · frase 0.765
+  interacao (queda da SE - queda do WE): -0.0518 [-0.1096, +0.0044]
+  controle: SE do modo entidade com 8 amostras, AUROC 0.819; queda pareada da SE (frase - entidade/8) -0.0985 [-0.1756, -0.0192]
+
+==========================================================================
+TROCA DE EVIDENCIA — checagem de manipulacao (sobreposicao lexical)
+==========================================================================
+  itens 80 · A (evidencia certa) 0.1673 · B (outra audiencia) 0.0082 · razao 20.5x
+  diferenca pareada A - B: +0.1591 [+0.1324, +0.1852]
+
+==========================================================================
+H4 — AUROC com IC agrupado por AUDIENCIA (n=837, 40 audiencias)
+==========================================================================
+  feature                       AUROC   IC95 agrupado
+  NLI max (baseline)            0.598   [0.527, 0.676]
+  cosseno max                   0.544   [0.451, 0.645]
+  contradicao ativa             0.504   [0.428, 0.580]
+  |cone| tau=0,35               0.602   [0.542, 0.665]
+  mundos do cone                0.433   [0.374, 0.489]
+  WE do cone                    0.459   [0.424, 0.497]
+  flag suporte incoerente       0.457   [0.424, 0.494]
+  (reamostras validas: 5000)
+
+  suporte vazio (|cone| = 0): 21.6% das opinioes · corr(mundos, |cone|) = +0.69
+  |cone| >= 2: 495 opinioes, 44 alucinadas
+  mesmo |cone|, mundos do cone           |cone|>=2: 0.512 [0.456, 0.571] · todos os estratos: 0.504 [0.487, 0.526]
+  mesmo |cone|, WE do cone               |cone|>=2: 0.512 [0.456, 0.571] · todos os estratos: 0.504 [0.487, 0.526]
+  mesmo |cone|, flag suporte incoerente  |cone|>=2: 0.510 [0.455, 0.568] · todos os estratos: 0.504 [0.487, 0.525]

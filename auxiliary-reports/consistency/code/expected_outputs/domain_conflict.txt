@@ -1,0 +1,50 @@
+conjuntos: 1007 · pares NLI unicos: 47230
+cache h3_nli.npz: 47230/47230 feitos
+
+==========================================================================
+A LEI DE ESCOPO — estrutura de conflito por dominio
+==========================================================================
+  dominio             n   |P|  mundos  >1 mundo     SE     WE  dens_c  CONFLACAO
+  ------------------------------------------------------------------------------
+  REAL              259  4.14    1.23     18.5%  1.112  0.125   0.103      78.5%
+  LLAMA              70  6.11    1.87     50.0%  1.644  0.393   0.230      49.3%
+  MISTO             259  6.65    2.97     94.2%  1.800  0.933   0.424       5.8%
+  EMBARALHADO       259  7.91    4.06     98.5%  2.063  1.288   0.423       1.5%
+  INTERV_A           80  3.61    1.40     31.2%  0.988  0.223   0.194      63.8%
+  INTERV_B           80  3.52    1.26     22.5%  0.977  0.143   0.203      74.6%
+
+  CONFLACAO = fracao dos conjuntos multi-classe com 1 mundo so
+  (multiplicidade sem conflito: o que a SE conta e nao e discordancia).
+  Referencia TriviaQA (h2): |P| 3.28 · mundos 2.63 · >1 mundo 53.6% ·
+  conflacao 12.6% — e la a SE funciona (0.811).
+
+==========================================================================
+DIAGNOSTICOS DO VERIFICADOR (fecho de heranca, autoconflito)
+==========================================================================
+  REAL             custo_fecho  2.20% · autoconflito  3.20% · b1(Ind)>0  0.4% · b0_cons>1  6.2%
+  LLAMA            custo_fecho  4.31% · autoconflito  4.38% · b1(Ind)>0  1.4% · b0_cons>1 27.1%
+  MISTO            custo_fecho  6.03% · autoconflito  5.26% · b1(Ind)>0  2.3% · b0_cons>1 35.5%
+  EMBARALHADO      custo_fecho  4.77% · autoconflito  3.53% · b1(Ind)>0  5.8% · b0_cons>1 31.7%
+  INTERV_A         custo_fecho  2.87% · autoconflito  3.20% · b1(Ind)>0  0.0% · b0_cons>1 20.0%
+  INTERV_B         custo_fecho  5.48% · autoconflito  5.48% · b1(Ind)>0  0.0% · b0_cons>1 18.8%
+
+==========================================================================
+P6 — INTERVENCAO PAREADA (predicao registrada: NULO)
+==========================================================================
+  invariante      A (evid.)  B (troc.)  dif. pareada                   IC95
+  ------------------------------------------------------------------
+  n_mundos            1.400      1.262        +0.138 [-0.037,+0.325]
+  we                  0.223      0.143        +0.080 [-0.015,+0.172]
+  dens_c              0.194      0.203        -0.009 [-0.089,+0.068]
+  pts                 3.612      3.525        +0.087 [-0.463,+0.600]
+  se                  0.988      0.977        +0.012 [-0.160,+0.184]
+
+  * = IC95 exclui zero (se aparecer, P6 foi FALSIFICADA — noticia)
+
+==========================================================================
+DOSE-RESPOSTA (real -> misto -> embaralhado)
+==========================================================================
+  n_mundos   REAL 1.228 -> MISTO 2.973 -> EMB 4.058   (monotona)
+  we         REAL 0.125 -> MISTO 0.933 -> EMB 1.288   (monotona)
+  dens_c     REAL 0.103 -> MISTO 0.424 -> EMB 0.423   (NAO monotona)
+

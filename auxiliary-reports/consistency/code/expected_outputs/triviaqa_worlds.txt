@@ -1,0 +1,65 @@
+
+==========================================================================
+P1 — SANIDADE: reproduz o f12 a partir do mesmo cache?
+==========================================================================
+  itens 233 · acerto 46.8%
+  AUROC SE ........ 0.811   (f12: 0.811)
+  AUROC SE-nucleo . 0.796   (f12: 0.796)
+  AUROC LGU ....... 0.805   (f12: 0.805)
+
+==========================================================================
+P2 — ESTRUTURA DO CONFLITO NESTE DOMINIO
+==========================================================================
+  itens com ALGUM conflito .........  55.4%
+  mundos por item (media) .......... 2.63
+  itens com > 1 mundo ..............  53.6%
+  itens com b0_cons > 1 ............  48.5%
+  itens com b1(Ind) > 0 ............   2.1%
+  arestas de conflito: 1309  —  entre INCOMPARAVEIS  97.9%  (P2 preve >> 50%)
+  custo do fecho de heranca ........  0.81%   (P2 preve < 10%)
+  taxa de autoconflito .............  1.67%   (P2 preve < 5%)
+  conflito sob teto comum (Λ) ......   6.4% dos itens
+
+==========================================================================
+P3/P4 — O CONFRONTO (AUROC; incerteza baixa -> resposta certa)
+==========================================================================
+  metodo                                       AUROC
+  ----------------------------------------------------
+  entropia semantica (SOTA)                    0.811
+  SE-nucleo (artigo 1)                         0.796
+  LGU completo                                 0.805
+  ENTROPIA DE MUNDOS (proposta)                0.792
+  numero de mundos                             0.791
+  b0 da consistencia                           0.751
+  densidade de conflito (escalar, controle)    0.770
+  numero de classes                            0.809
+
+  comparacao pareada                      delta AUROC                   IC95
+  ----------------------------------------------------------------------------
+  WE         vs  SE (P3 primario)             -0.0191 [-0.0445,+0.0057]
+  SE-nucleo  vs  SE (ancora artigo 1)         -0.0148 [-0.0358,+0.0030]
+  WE         vs  SE-nucleo                    -0.0043 [-0.0277,+0.0185]
+  WE         vs  dens_c (P4 primario)         +0.0221 [-0.0187,+0.0646]
+  n_mundos   vs  dens_c (P4)                  +0.0214 [-0.0191,+0.0625]
+  WE         vs  LGU                          -0.0135 [-0.0329,+0.0040]
+
+  * = IC95 exclui zero
+
+==========================================================================
+P5 — EXPLORATORIO (estrato com escada; n PEQUENO, so direcao)
+==========================================================================
+  COM escada (n=28): acerto 21.4% · mundos medios 3.71 · >1 mundo: 82.1%
+      AUROC no estrato — SE 0.644 · WE 0.659 · mundos 0.655
+  SEM escada (n=205): acerto 50.2% · mundos medios 2.48 · >1 mundo: 49.8%
+      AUROC no estrato — SE 0.809 · WE 0.797 · mundos 0.797
+
+  mundos medios: certos 1.61 vs errados 3.53
+
+==========================================================================
+VALIDADE DE CONSTRUTO (rotulo so como validacao, sem rede neural)
+==========================================================================
+  pares de amostras com acerto MISTO (uma bate o alias, outra nao):
+    entre pares em CONFLITO .........  21.0%   (n=3093)
+    entre pares COMPATIVEIS .........   4.0%   (n=7222)
+    diferenca: +0.170 [+0.155, +0.185]
+

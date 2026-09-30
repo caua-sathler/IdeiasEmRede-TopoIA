@@ -1,0 +1,59 @@
+
+==========================================================================
+VALIDACAO 1 — mundos = MIS, contra enumeracao por forca bruta
+==========================================================================
+  400 grafos aleatorios (n 3-10): 0 discordancias
+
+==========================================================================
+VALIDACAO 2 — b1(Ind) contra os tipos de homotopia CONHECIDOS
+==========================================================================
+  Ind(C_n): S^0 disjunto (n=4), S^1 (n=5), S^1 v S^1 (n=6), S^1 (n=7)
+  Ind(C_4): esperado (b0=2, b1=0)  medido (b0=2, b1=0)  ok
+  Ind(C_5): esperado (b0=1, b1=1)  medido (b0=1, b1=1)  ok
+  Ind(C_6): esperado (b0=1, b1=2)  medido (b0=1, b1=2)  ok
+  Ind(C_7): esperado (b0=1, b1=1)  medido (b0=1, b1=1)  ok
+  Ind(K_6) = 6 pontos: b0 medido = 6 (esperado 6)
+  Ind(vazio) = simplexo: (b0, b1) medido = (1, 0) (esperado (1, 0))
+
+==========================================================================
+VALIDACAO 3 — apos o fecho, todo mundo e fechado p/ generalizacao
+==========================================================================
+  400 posets x conflitos aleatorios, 918 mundos: 0 violacoes de fechamento
+  (a proposicao 'mundo = MIS' depende disto; o fecho de heranca e o
+   que a garante — sem ele, MIS nao seriam configuracoes)
+
+==========================================================================
+A SEPARACAO NOVA, POR CONSTRUCAO: conflito e invisivel a TUDO da fase F
+==========================================================================
+  Duas anticadeias de 6 classes: TODOS os invariantes do artigo 1
+  (SE, SE-nucleo, |P|, nucleo, b0, b1, chi, altura) sao IDENTICOS.
+  So difere a relacao de conflito — que nenhum deles recebe.
+
+  familia                                 SE  SE-nuc  mundos      WE  b0c  b1i
+  ------------------------------------------------------------------------------
+  escada (cadeia, sem conflito)       1.7918  0.0000       1 -0.0000    1    0
+  anticadeia COMPOSSIVEL (neutra)     1.7918  1.7918       1 -0.0000    1    0
+  anticadeia CONFLITANTE              1.7918  1.7918       6  1.7918    6    0
+  coroa S^1 + 2 isoladas (s1#s2)      1.7918  1.7918       2  0.6931    1    0
+  LAMBDA/hedge: s1#s2 sob g           1.0986  0.0000       2  0.6931    1    0
+
+==========================================================================
+O QUE ISSO PROVA
+==========================================================================
+  1. As duas anticadeias: SE, SE-nucleo e toda a fase F IDENTICOS;
+     mundos 1 contra 6. Cegueira ao conflito, por construcao.
+  2. O LAMBDA e o mecanismo da derrota do nucleo no TriviaQA: o
+     nucleo colapsa o hedge (SE-nuc = 0) e destroi o sinal; os
+     mundos preservam (2 mundos, WE > 0) e colapsam a elaboracao.
+  3. A coroa: nucleo NAO distingue de anticadeia (6 = 6); mundos
+     distinguem (2 contra 6).
+
+==========================================================================
+CICLO DE CONFLITO: o b1 que a fase F nao podia ver — e seu limite
+==========================================================================
+  MINIMO — dois conflitos disjuntos (a#b, c#d): mundos = 4  b0 = 1  b1(Ind) = 1
+  (esperado: 4 mundos, b0 = 1, b1 = 1 — e ZERO ciclos de conflito)
+  pentagono de conflito (anticadeia): mundos = 5  b0 = 1  b1(Ind) = 1
+  (esperado: 5 mundos — os pares {i, i+2} —, b0 = 1, b1 = 1)
+  Limite CORRETO: b1(Ind) > 0 exige um ciclo induzido >= 4 no grafo
+  de CONSISTENCIA; entre ciclos de CONFLITO, o pentagono e o menor.

@@ -12,6 +12,7 @@ Low-cost hallucination detection for summaries of Brazilian Chamber of Deputies 
 | `paper/` | LaTeX source (`main.tex`, `references.bib`, template class), figures and compiled `main.pdf` (15 pages) |
 | `code/` | Everything needed to reproduce the paper's numbers: `run_all.sh`, `src/`, `results/`, `predictions/`, `requirements.txt` (see `code/README.md`) |
 | `dataset/` | How to obtain/process PublicHearingBR (`init_data.py`) |
+| `auxiliary-reports/` | Companion report(s) (item 8.2 of the call): `consistency/` has the PDF, LaTeX source and its own `code/run_all.sh` |
 | `video/` | Pitch script (< 5 min) and recording checklist |
 | `docs/` | Call for submissions and rules |
 

@@ -1,0 +1,38 @@
+opinioes: 837 · alucinadas: 93
+pares NLI: 41800
+cache h4_nli.npz: 41800/41800 feitos
+
+==========================================================================
+P8 — ESTRUTURA (o que existe, antes de perguntar se preve)
+==========================================================================
+  tau=0.50: cone medio 2.40 · com suporte 72.4% · INCOERENTE 12.8% (mundos medios 1.24)
+  tau=0.35: cone medio 2.97 · com suporte 78.4% · INCOERENTE 17.3% (mundos medios 1.30)
+  tau=0.20: cone medio 3.78 · com suporte 83.9% · INCOERENTE 24.6% (mundos medios 1.44)
+  contradicao ATIVA (max o<->frase): media 0.534 · >=0.5 em 53.3%
+
+==========================================================================
+P8 — AUROC contra o rotulo humano (n=837, 93 pos) — EXPLORATORIO
+==========================================================================
+  feature                                  AUROC
+  ------------------------------------------------
+  NLI max (baseline F3, la: 0.676)         0.598
+  cosseno max                              0.544
+  CONTRADICAO ATIVA (nova)                 0.504
+  |cone| tau=0.35 (F3: 0.663)              0.602
+  mundos do cone (novo)                    0.433
+  WE do cone (novo)                        0.459
+  flag suporte incoerente (novo)           0.457
+
+  combinacao por soma de postos (exploratorio):
+    nli_max + con_ativa          AUROC 0.572 · delta vs nli_max -0.0260 [-0.0695,+0.0175]
+    nli_max + WE cone            AUROC 0.565 · delta vs nli_max -0.0333 [-0.0669,+0.0038]
+    nli_max + incoerente         AUROC 0.564 · delta vs nli_max -0.0340 [-0.0678,+0.0034]
+
+==========================================================================
+GUARDA (estilo E19/E26): entre as opinioes que o NLI APROVA
+==========================================================================
+  aprova q50 (risco base 8.8%) · suporte incoerente: lift 0.63x [0.27, 1.06] (sinaliza 126/419)
+  aprova q50 (risco base 8.8%) · contradicao ativa >= 0.5: lift 1.09x [0.78, 1.40] (sinaliza 208/419)
+  aprova q70 (risco base 7.6%) · suporte incoerente: lift 0.50x [0.00, 1.08] (sinaliza 80/251)
+  aprova q70 (risco base 7.6%) · contradicao ativa >= 0.5: lift 0.85x [0.41, 1.31] (sinaliza 124/251)
+

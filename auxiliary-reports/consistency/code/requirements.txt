@@ -1,0 +1,13 @@
+# Consistency report (auxiliary-reports/consistency).
+# Versions with which the report numbers were measured (Python 3.11).
+
+numpy==2.4.6
+pandas==3.0.5
+scipy==1.17.1        # so o h4 (soma de postos)
+requests==2.34.2     # importado por f11_triviaqa -> llm.py, que h2, h5 e r1 usam
+
+# Nada abaixo e necessario para reproduzir o relatorio: os caches de NLI e de
+# geracao ja vem em cache/. Descomente so para recalcular do zero.
+# torch==2.13.0          # NLI (mDeBERTa-v3-base-xnli), se um cache for apagado
+# transformers==5.14.1
+# datasets==5.0.1        # TriviaQA rc.nocontext, para refazer a coleta do f11

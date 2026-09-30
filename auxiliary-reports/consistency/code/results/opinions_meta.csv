@@ -1,0 +1,838 @@
+ref,op,hall,texto
+data_001,0,False,Destacou a importância da audiência para discutir a censura e a liberdade de expressão no Brasil.
+data_001,1,False,Agradeceu a presença dos convidados e organizou a sequência de falas dos deputados e convidados.
+data_001,2,False,"Expressou preocupação com a censura no Brasil, mencionando que o país poderia estar à beira de um regime de censura muito severo."
+data_001,3,False,Afirmou que a liberdade de expressão é essencial e que censurar para proteger a democracia é uma forma de desinformação grave.
+data_001,4,False,Criticou o poder ilimitado de censura nas mãos do Ministro Alexandre de Moraes.
+data_001,5,False,"Apoiou o modelo americano de liberdade de expressão, que permite uma proteção mais ampla à expressão, inclusive para discursos ofensivos."
+data_001,6,False,"Criticou a violação do ordenamento jurídico brasileiro por parlamentares, promotores e ordens judiciais que coletam informações em massa sem respeitar a lei."
+data_001,7,False,"Denunciou que as ordens de censura do STF são completamente secretas, sem acusação específica e sem oportunidade de defesa."
+data_001,8,False,Criticou o uso contínuo do poder de censura pelo Ministro Alexandre de Moraes mesmo após o período eleitoral.
+data_001,9,False,Defendeu que jornalistas devem evitar a politização e sempre lutar pela liberdade de expressão e contra a censura.
+data_001,10,False,Reforçou a importância da exposição internacional dos Twitter Files para mostrar as ordens ilegais e inconstitucionais de censura no Brasil.
+data_001,11,True,Criticou a perseguição e censura promovidas pelo STF e destacou a necessidade de um novo pacto com os brasileiros para garantir a democracia e a liberdade de expressão.
+data_001,12,False,Enalteceu a defesa da liberdade de expressão pelos convidados e questionou a legalidade das ações do Ministro da Justiça e do STF.
+data_001,13,True,Defendeu que a mídia internacional e os políticos internacionais devem reagir se o Brasil não tomar providências contra a censura.
+data_001,14,False,Criticou a falta de equilíbrio na escolha dos painelistas para a audiência pública.
+data_001,15,True,"Destacou que todos os jornalistas presentes estavam em busca da verdade, independentemente de suas preferências políticas."
+data_001,16,False,Afirmou que o Brasil vive sob uma sombra de incerteza quanto aos limites da democracia.
+data_001,17,False,"Criticou a censura e defendeu que as questões de difamação e acusação devem ser tratadas juridicamente, sem a necessidade de novas leis."
+data_002,0,False,Necessidade de esclarecimento sobre o apagão e medidas preventivas.
+data_002,1,False,Importância da participação do Ministério de Minas e Energia na renovação das distribuidoras.
+data_002,2,False,Crise na mineração e a situação da Agência Nacional de Mineração (ANM).
+data_002,3,False,"Esclarecimentos sobre as ações do Ministério nos setores de energia elétrica, petróleo, gás e mineração."
+data_002,4,False,"Explicação técnica sobre o apagão, enfatizando a robustez do sistema elétrico brasileiro."
+data_002,5,False,Apoio à modernização do sistema elétrico e investimentos em novas linhas de transmissão.
+data_002,6,False,Defesa da necessidade de estabilidade regulatória e atração de investimentos.
+data_002,7,False,Preocupação com a situação da ANM e defesa da reestruturação salarial e funcional da agência.
+data_002,8,False,Detalhamento técnico sobre o apagão ocorrido em 15 de agosto.
+data_002,9,False,Afirmou que o evento foi inusitado e destacou a complexidade do sistema elétrico brasileiro.
+data_002,10,True,Defendeu a operação mais conservadora do sistema até a conclusão da análise das causas do apagão.
+data_002,11,False,Questionamento sobre a real causa do apagão e medidas para evitar futuros incidentes.
+data_002,12,False,Preocupação com a modernização do sistema elétrico e a expansão de fontes de energia renováveis.
+data_002,13,False,Preocupação com a assertividade no diagnóstico do apagão.
+data_002,14,False,Defesa da retomada do debate sobre a participação do governo na ELETROBRAS.
+data_003,0,False,Abertura da reunião e saudação aos presentes.
+data_003,1,False,Explicação sobre as normas e procedimentos da audiência.
+data_003,2,False,O Ministério do Trabalho está sendo reconstruído após ser extinto no governo anterior.
+data_003,3,False,"Estão em curso concursos para recomposição da força de trabalho, incluindo 900 vagas para auditores."
+data_003,4,False,Importância da FUNDACENTRO para estudar as condições de trabalho e propor melhorias.
+data_003,5,False,O combate ao trabalho precário e análogo à escravidão é uma missão principal.
+data_003,6,False,Necessidade de dialogar com empresas para garantir boas condições de trabalho e evitar multas.
+data_003,7,False,"Dados sobre geração de empregos e rotatividade: em 2023 foram gerados 1,5 milhão de empregos, mas houve alta rotatividade de 22 milhões."
+data_003,8,False,Necessidade de aumentar a massa salarial e o poder de compra dos salários.
+data_003,9,False,"Política de valorização do salário mínimo retomada, influenciando positivamente na massa salarial."
+data_003,10,False,"Medidas para proteção do trabalhador, como a manutenção do benefício do Bolsa Família em casos de contratos sazonais."
+data_003,11,False,"Críticas ao Saque-Aniversário do FGTS, que cria distorções para trabalhadores e diminui a capacidade de investimento do fundo."
+data_003,12,False,Proposta de oferecer alternativas de crédito mais baratas via eSocial para substituir o Saque-Aniversário.
+data_003,13,False,"Trabalho conjunto com empresas de aplicativos para regulamentar a categoria, garantindo direitos sem impor o regime da CLT."
+data_003,14,False,"Críticas ao fim do Saque-Aniversário, argumentando que beneficia os trabalhadores."
+data_003,15,False,Afirma que o Saque-Aniversário injeta dinheiro na economia e ajuda trabalhadores a pagar dívidas.
+data_003,16,False,"Apoio à melhoria do projeto, mas contra a sua extinção."
+data_003,17,False,"Preocupação com o impacto da regulamentação sobre motoristas de aplicativo, especialmente sobre a criação de sindicatos e piso para hora trabalhada."
+data_003,18,False,Defende um ambiente de negócios saudável e questiona a competitividade dos aplicativos com táxis.
+data_003,19,False,Celebra a recriação do Ministério do Trabalho e Emprego.
+data_003,20,False,"Defende a regulamentação dos trabalhadores de aplicativo, garantindo direitos trabalhistas como 13º salário e férias."
+data_003,21,False,Apoio ao patamar mínimo de remuneração para motoristas de aplicativo.
+data_003,22,False,Reflexão sobre a contradição entre a percepção da população sobre emprego e os dados econômicos positivos.
+data_003,23,False,Enfatiza a necessidade de focar no crescimento econômico.
+data_003,24,False,Defende a recriação do Ministério do Trabalho.
+data_003,25,False,Celebra os avanços no combate ao trabalho precário e à formalização do emprego.
+data_003,26,False,Importância de assegurar que o Bolsa Família não seja um impedimento para a formalização do trabalho.
+data_003,27,False,Destaca a importância da política de recuperação do poder aquisitivo do salário mínimo.
+data_003,28,True,Apoio ao aumento no número de auditores fiscais para combater o trabalho escravo.
+data_003,29,True,Defende a regulamentação dos motoristas de aplicativo.
+data_003,30,False,Critica a extinção do Ministério do Trabalho pelo governo anterior.
+data_003,31,False,Defende o retorno da ultratividade nas negociações sindicais e a homologação de rescisões nos sindicatos.
+data_003,32,False,Apoio à retomada da contribuição negocial.
+data_004,0,False,A ANATEL desempenha um papel crucial na regulamentação e supervisão do setor de telecomunicações.
+data_004,1,False,A universalização dos serviços de telecomunicações é um objetivo que precisa ser continuamente perseguido.
+data_004,2,False,A qualidade dos serviços deve ser mantida e aprimorada.
+data_004,3,False,A segurança cibernética é uma questão cada vez mais relevante.
+data_004,4,False,Garantir um ambiente de justa concorrência nos mercados de comunicação é o desafio mais relevante.
+data_004,5,False,Há uma grande assimetria regulatória entre serviços tradicionais e serviços prestados pela Internet.
+data_004,6,False,"A ANATEL precisa criar condições para uma concorrência justa, sem definir ganhadores e perdedores no mercado."
+data_004,7,False,A ANATEL está discutindo a utilização do espectro de radiofrequência para garantir que ele seja utilizado em prol do cidadão.
+data_004,8,False,A proteção do consumidor continua sendo uma pauta histórica e importante para a ANATEL.
+data_004,9,False,A questão da segurança cibernética é cada vez mais importante.
+data_004,10,False,É necessário repensar o papel do Estado no ecossistema digital.
+data_004,11,False,A ANATEL está combatendo a pirataria de equipamentos de telecomunicações e conteúdos audiovisuais.
+data_004,12,False,A ANATEL está atuando na regulamentação do uso de postes de energia elétrica para telecomunicações.
+data_004,13,False,A ANATEL trabalha para equilibrar as obrigações de radiodifusão e serviços de mídia digital.
+data_004,14,False,A revisão da legislação de telecomunicações é necessária para lidar com os desafios do século XXI.
+data_004,15,False,A ANATEL participa de debates sobre inteligência artificial no âmbito da ONU.
+data_004,16,False,A ANATEL acredita que a única forma de dar efetividade a um processo de regulação digital é por meio do acesso à infraestrutura.
+data_004,17,False,A atuação do Sr. Baigorri na presidência da ANATEL é elogiada pela elegância no atendimento aos parlamentares.
+data_004,18,True,A situação caótica dos postes de energia elétrica em São Paulo precisa ser resolvida com firmeza.
+data_005,0,False,Destaca a importância da audiência pública para debater o Dia Mundial de Conscientização sobre o Autismo.
+data_005,1,True,Ressalta a necessidade de que todas as escolas sejam inclusivas e respeitem seus projetos político-pedagógicos para incluir pessoas com autismo.
+data_005,2,True,Informa sobre a necessidade de diagnósticos e atendimentos de saúde adequados para pessoas com autismo no Distrito Federal.
+data_005,3,False,Agradece aos convidados e destaca a importância da audiência pública.
+data_005,4,False,Relata seus esforços para promover políticas públicas que garantam a inclusão e desenvolvimento das pessoas com TEA.
+data_005,5,False,"Destaca a importância da educação, saúde e oportunidades no mercado de trabalho para pessoas com TEA."
+data_005,6,False,Defende a necessidade de uma verdadeira inclusão para pessoas com autismo em todos os setores da sociedade.
+data_005,7,False,Relata o sucesso do Movimento Orgulho Autista Brasil na publicização da causa desde 2005.
+data_005,8,True,Critica a falta de suporte adequado do SUS e outras instituições para autistas de níveis 2 e 3 de suporte.
+data_005,9,True,"Apresenta a Casa do Autista, ONG que oferece mais de 2 mil atendimentos gratuitos mensais com uma renda per capita de R$ 5,33."
+data_005,10,False,Destaca os desafios de cuidar das pessoas com TEA na área da saúde.
+data_005,11,False,Fala sobre a atualização da Política Nacional de Atenção Integral à Saúde da Pessoa com Deficiência e da Rede de Cuidados à Pessoa com Deficiência no SUS.
+data_005,12,False,"Enfatiza a importância do cuidado integral, ações contra o capacitismo, interseccionalidade e qualificação dos projetos terapêuticos."
+data_005,13,False,Fala sobre a importância do autismo na perspectiva da neurodiversidade.
+data_005,14,False,Apresenta iniciativas do Plano Novo Viver sem Limite para garantir mais dignidade às pessoas com deficiência e suas famílias.
+data_005,15,False,Critica a estigmatização das pessoas autistas na sociedade.
+data_005,16,False,Comemora as vitórias e aperfeiçoamentos na inclusão de pessoas com deficiência ao longo dos anos.
+data_005,17,False,Enfatiza a importância da formação de novos profissionais para atender à crescente demanda de pessoas com deficiência.
+data_005,18,False,"Destaca a necessidade de promover a inclusão de pessoas com deficiência na educação, mercado de trabalho e esporte."
+data_006,0,False,Destacou a necessidade de investigar as operações fraudulentas da 123Milhas.
+data_006,1,False,Criticou a empresa por desrespeitar a CPI ao buscar audiência com o Ministro do Turismo no mesmo horário da audiência da Comissão.
+data_006,2,False,Questionou sobre a sustentabilidade dos pacotes da Linha Promo e a relação da empresa com as companhias aéreas.
+data_006,3,False,Expressou preocupação com o impacto negativo da suspensão de passagens sobre os consumidores.
+data_006,4,True,Enfatizou que a CPI está empenhada em ouvir todos os envolvidos e investigar profundamente os casos de fraude.
+data_006,5,False,"Mencionou a necessidade de transparência por parte dos convocados, independentemente de sua fama ou posição social."
+data_006,6,False,Destacou o caso 123Milhas como emblemático e importante para a investigação da CPI.
+data_006,7,False,"Pediu desculpas pelos transtornos causados aos ex-colaboradores, clientes, fornecedores e parceiros."
+data_006,8,False,Explicou que a ausência em sessão anterior foi devido a reuniões para buscar soluções para atender os interesses dos clientes.
+data_006,9,False,Defendeu a viabilidade da 123Milhas e a importância do diálogo com órgãos governamentais para solucionar os problemas.
+data_006,10,False,Afirmou que a empresa iniciou um processo de recuperação judicial para honrar os compromissos com credores.
+data_006,11,False,Justificou a suspensão das emissões de passagens e pacotes da Linha Promo devido ao comportamento inesperado do mercado de aviação.
+data_006,12,True,Negou a utilização de recursos de novos clientes para pagar passagens de clientes antigos.
+data_006,13,False,Explicou o funcionamento dos pacotes da Linha Promo e o momento oportuno para comprar passagens aéreas.
+data_006,14,False,Questionou sobre a transparência e a saúde financeira da 123Milhas.
+data_006,15,False,Sugeriu que a recuperação judicial poderia ser um artifício para ganhar tempo e evitar ações judiciais contra a empresa.
+data_006,16,False,Destacou a importância de tratar a questão com clareza para defender o interesse público.
+data_006,17,False,Esclareceu que a empresa é corresponsável solidária nas transações de milhas e assumiu os débitos na recuperação judicial.
+data_006,18,True,Defendeu a boa-fé da 123Milhas em buscar uma solução justa para os consumidores afetados.
+data_007,0,False,A reforma tributária é essencial para simplificar o sistema tributário e fortalecer a segurança jurídica.
+data_007,1,False,A regulamentação é um passo crucial para destravar investimentos.
+data_007,2,False,"É necessário focar para aprovar a reforma, que será um grande legado para a sociedade brasileira."
+data_007,3,False,O Brasil precisa de uma legislação compatível com a economia verde e sustentável.
+data_007,4,False,"A reforma tributária é relevante e demanda muito trabalho, diálogo e discussão."
+data_007,5,False,Destacou a importância das imunidades na exportação e do regime específico de combustíveis e biocombustíveis.
+data_007,6,False,Defendeu a redução de 60% nas alíquotas de insumos e produtos agropecuários.
+data_007,7,False,"Manifestou-se contra a teoria do cashback na tributação da cesta básica, afirmando que alimento mais barato na gôndola significa melhores preços para o consumidor."
+data_007,8,False,É essencial que os projetos complementares da reforma tributária não elevem a carga tributária atual.
+data_007,9,False,Destacou a importância da não cumulatividade de impostos.
+data_007,10,False,Enfatizou a necessidade de um amplo debate para que as sugestões da sociedade sejam analisadas e integradas à legislação.
+data_007,11,False,"Reforçou que a legislação tributária deve ser feita para o pagador de impostos, beneficiando a sociedade brasileira."
+data_007,12,False,A não cumulatividade e a manutenção da carga tributária são diretrizes importantes na regulamentação.
+data_007,13,False,O protagonismo do Parlamento foi fundamental nas reformas previdenciária e tributária.
+data_007,14,False,"O Legislativo deve manter sua prerrogativa de iniciativa e proatividade, oferecendo alternativas ao País."
+data_007,15,False,"A transição para o novo modelo tributário deve ser simplificada, objetiva e clara."
+data_007,16,False,Expressou preocupação com os impactos da transição nos municípios e na vida das empresas.
+data_007,17,False,Alertou para a necessidade de justiça fiscal e cuidado para não cometer erros que possam prejudicar o País.
+data_007,18,False,A reforma tributária deve permitir uma melhor compreensão do sistema tributário por todos os especialistas.
+data_007,19,False,Destacou a importância de um sistema que simplifique a tributação e permita uma arrecadação mais justa.
+data_007,20,False,Enfatizou a necessidade de justiça fiscal e da tramitação célere dos processos de execução fiscal para combater a sonegação.
+data_007,21,False,A construção da reforma tributária envolveu amplo diálogo e a participação de diversas frentes parlamentares.
+data_007,22,False,A regulamentação deve preservar os princípios e conceitos aprovados na emenda constitucional.
+data_007,23,False,É fundamental que o governo e o legislativo coordenem a tramitação dos projetos complementares com serenidade e segurança.
+data_007,24,False,"A reforma tributária visa criar um ambiente de negócios favorável, gerando emprego e renda, e aumentando a arrecadação para políticas sociais."
+data_008,0,False,Destacou a importância da reunião para o aprimoramento da legislação de criptomoedas sob a perspectiva dos órgãos técnicos.
+data_008,1,False,Convidou os participantes para expor suas opiniões e agradeceu pela presença.
+data_008,2,False,"A regulação de criptomoedas é um esforço em curso no Banco Central, iniciado após a aprovação da legislação pelo Congresso e designação pelo Presidente da República."
+data_008,3,False,"O mercado de criptomoedas no Brasil é diverso, com diferentes níveis de complexidade e participação de empresas que desejam ou não a regulamentação."
+data_008,4,False,"A supervisão do Banco Central incluirá aspectos como prevenção à lavagem de dinheiro, proteção ao consumidor e regras de segurança cibernética."
+data_008,5,False,"Espera-se colocar a regulamentação em consulta pública até o final do quarto trimestre de 2023, com regras definitivas até o final do primeiro semestre de 2024."
+data_008,6,False,Os desafios incluem a regulamentação de empresas offshore e a segregação patrimonial entre recursos de clientes e das instituições.
+data_008,7,False,"A regulamentação dos criptoativos é urgente e relevante, especialmente para combater crimes como esquemas de pirâmide financeira."
+data_008,8,False,A lei aprovada em dezembro de 2022 e o decreto de junho de 2023 são passos importantes para a regulação.
+data_008,9,False,A falta de regulação facilita a prática de crimes com criptoativos devido à sua natureza intangível e volatilidade.
+data_008,10,False,"A atuação do Ministério Público envolve o rastreamento e bloqueio de valores, sendo importante a colaboração com outros órgãos."
+data_008,11,False,A CVM atua em parceria com o Banco Central e o Ministério Público na regulação e supervisão do mercado financeiro.
+data_008,12,False,A regulação de criptoativos deve seguir o princípio da transparência e proteção ao investidor.
+data_008,13,False,"A CVM não tem mandato específico para regular criptoativos, mas trabalha em conjunto com outros órgãos para garantir a segurança do mercado."
+data_008,14,False,"O mercado financeiro deve estar atento à inovação e novas tecnologias, incluindo a tokenização e o uso de blockchain."
+data_009,0,False,A audiência pública foi convocada para discutir a exigência de certidão negativa de antecedentes criminais para cuidadores de pessoas idosas.
+data_009,1,False,"A população idosa está aumentando, o que torna a proteção desse grupo ainda mais importante."
+data_009,2,False,"Para cuidadores formais, a exigência de certidão negativa é viável, mas para cuidadores informais, como familiares, não é praticável."
+data_009,3,False,"Defende uma regulamentação específica para a ocupação de cuidador de idosos, incluindo capacitação em saúde, mediação de conflitos, entre outros."
+data_009,4,False,"Sugere a exigência de uma certidão de antecedentes ao invés de uma certidão negativa, permitindo que o contratante avalie a pertinência dos delitos mencionados."
+data_009,5,False,A regulamentação da profissão de cuidador de idosos é crucial para garantir um cuidado adequado e proteger tanto os idosos quanto os cuidadores.
+data_009,6,False,Enfatiza a necessidade de educação sobre envelhecimento e práticas intergeracionais para combater o idadismo.
+data_009,7,False,"Destaca que a criminalização não é a única solução, sendo necessária uma rede de proteção para prevenir violações de direitos."
+data_009,8,False,"A regulamentação da profissão de cuidador é essencial, e a exigência de certidão negativa deve ser acompanhada de uma regulamentação formal."
+data_009,9,False,A insegurança das famílias em relação aos cuidadores deve ser abordada pela exigência de certificações e regulamentações claras.
+data_009,10,False,O Fórum da Longevidade é uma iniciativa importante para debater e promover políticas de cuidado aos idosos.
+data_009,11,False,A exigência de certidão de antecedentes criminais deve equilibrar a proteção dos idosos com os direitos ao trabalho e à ressocialização dos cuidadores.
+data_009,12,False,"Destaca que muitas cuidadoras são mulheres de baixa renda e baixa instrução, e a exigência de certidão negativa pode prejudicar a sua inserção no mercado de trabalho."
+data_009,13,False,Enfatiza a importância da educação em direitos para todas as partes envolvidas no cuidado aos idosos.
+data_010,0,False,Presidiu a abertura da reunião e informou sobre a transmissão e publicação das imagens e pronunciamentos da audiência.
+data_010,1,True,Autor do requerimento que convocou a audiência.
+data_010,2,False,Acredita que o representante do Ministério do Trabalho deve ter mais tempo para explicar a proposta do Governo.
+data_010,3,False,Apresentou as premissas do Governo para eliminar o saque-aniversário e propor uma linha alternativa de financiamento.
+data_010,4,False,Afirmou que o saque-aniversário ameaça a sustentabilidade do FGTS a longo prazo.
+data_010,5,False,"Defende que o FGTS deve proteger o trabalhador em caso de dispensa imotivada e financiar habitação, saneamento e infraestrutura."
+data_010,6,False,Defende que o crédito garantido do FGTS não compromete a renda mensal do trabalhador.
+data_010,7,False,Acredita que o saque-aniversário não compromete a sustentabilidade do fundo e propôs limitações para melhorar a modalidade.
+data_010,8,False,Criticou a intervenção do Governo na liberdade de escolha do trabalhador.
+data_010,9,False,Defendeu que o saque-aniversário permite ao trabalhador trocar dívidas caras por dívidas mais baratas.
+data_010,10,False,Afirmou que o fundo não foi desequilibrado pela modalidade do saque-aniversário.
+data_010,11,False,Afirmou que o saque-aniversário destrói os pilares do FGTS e prejudica o trabalhador.
+data_010,12,False,Defendeu que o FGTS é essencial para financiar a habitação e reduzir o déficit habitacional no Brasil.
+data_010,13,False,"Apoiou a proposta do consignado do E-Social, mas defendeu a coexistência com o saque-aniversário."
+data_010,14,False,Destacou que o saque-aniversário oferece crédito acessível a trabalhadores negativados e não compromete a renda mensal.
+data_010,15,False,Defendeu que o saque-aniversário é uma política exitosa que deve ser mantida.
+data_010,16,False,Afirmou que a eliminação da modalidade vai contra os princípios de livre-iniciativa e defesa do consumidor.
+data_010,17,False,"Apoiou a eliminação do saque-aniversário, afirmando que compromete a sustentabilidade do fundo a longo prazo."
+data_010,18,False,Defendeu que o FGTS deve ser usado principalmente para proteger o trabalhador e financiar habitação e infraestrutura.
+data_011,0,True,Presidiu a audiência pública.
+data_011,1,False,Anunciou os especialistas convidados para o debate.
+data_011,2,False,"Comentou sobre a importância das informações para o planejamento dos órgãos públicos estaduais, federais e municipais."
+data_011,3,False,"Destacou a diminuição das chuvas na Região Nordeste do Brasil, especialmente nos estados da Bahia, Piauí, Tocantins e Maranhão."
+data_011,4,False,"Apresentou o Índice Integrado de Secas, que combina chuvas, umidade do solo e saúde da vegetação."
+data_011,5,False,Disse que mais de 5 milhões de pessoas estão impactadas pela seca.
+data_011,6,False,"Mostrou previsões de chuvas para as próximas semanas e meses, com uma leve melhora esperada em janeiro."
+data_011,7,False,Falou sobre a variabilidade climática no Semiárido e o impacto do El Niño.
+data_011,8,False,Destacou o histórico de chuvas em Petrolina e a variabilidade temporal associada aos eventos de El Niño.
+data_011,9,False,Enfatizou a importância da pesquisa e desenvolvimento de cultivares resistentes a condições de seca.
+data_011,10,False,Mencionou tecnologias como cisternas e barragens subterrâneas que ajudam a enfrentar a seca.
+data_011,11,False,Disse que é crucial melhorar a convivência produtiva com a seca no Semiárido.
+data_011,12,False,Alertou sobre o aumento da frequência de eventos climáticos extremos.
+data_011,13,False,Disse que 2023 foi o ano mais quente do registro histórico.
+data_011,14,False,Previu uma estação de seca muito pronunciada no Semiárido em 2024.
+data_011,15,False,Afirmou que o Semiárido deve buscar desenvolvimento sustentável.
+data_011,16,False,Discutiu a importância de explorar o potencial da biodiversidade brasileira.
+data_011,17,False,Falou sobre as dificuldades enfrentadas pelos mananciais em se recuperar de secas anteriores.
+data_011,18,False,Mencionou a importância da distribuição de água através de carros-pipa e a necessidade de fontes adequadas de alimentação para esses carros.
+data_011,19,False,Recomendou o uso de energia solar para sistemas de bombeamento e dessalinização.
+data_011,20,False,Destacou a importância de recuperar mananciais e barragens durante períodos de seca.
+data_011,21,False,Expressou preocupação com os danos econômicos causados pela seca aos municípios nordestinos.
+data_011,22,False,Disse que a Operação Carro-Pipa é crucial para o abastecimento de água em regiões afetadas.
+data_011,23,False,Comentou sobre a burocracia envolvida na decretação de situação de emergência.
+data_011,24,False,Destacou a importância de políticas de convivência com a seca em vez de combate à seca.
+data_011,25,False,Mencionou o programa Um Milhão de Cisternas como um exemplo de política bem-sucedida.
+data_011,26,False,Falou sobre a necessidade de mais tecnologias de estocagem de água para melhorar a capacidade de convivência com o Semiárido.
+data_012,0,False,Destacou a importância de discutir a violência contra mulheres com deficiência para sensibilizar a sociedade e o aparato estatal.
+data_012,1,False,Afirmou que a audiência visa discutir soluções práticas para a proteção e bem-estar dessas mulheres.
+data_012,2,False,Mencionou a importância da inclusão e da acessibilidade em todos os aspectos sociais.
+data_012,3,False,"Enfatizou a invisibilidade da violência contra mulheres com deficiência, especialmente contra aquelas com deficiência intelectual."
+data_012,4,False,Defendeu a inclusão do projeto Eu Me Protejo nas políticas públicas e sua divulgação nas escolas.
+data_012,5,False,Ressaltou a necessidade de um maior número de delegacias especializadas e varas criminais para proteção das mulheres.
+data_012,6,False,Alertou sobre a falta de pesquisas e políticas públicas direcionadas às mulheres com deficiência.
+data_012,7,False,Destacou a importância de enfrentar e prevenir a violência contra mulheres com deficiência.
+data_012,8,False,"Mencionou a invisibilidade da violência contra essas mulheres, mesmo com a obrigatoriedade de notificação prevista em lei."
+data_012,9,False,Enfatizou a necessidade de consolidar políticas públicas que garantam os direitos das mulheres com deficiência.
+data_012,10,False,"Apresentou ações do Ministério das Mulheres, como o Diálogos pela Inclusão e o Pacto Nacional de Prevenção aos Feminicídios."
+data_012,11,True,Afirmou que a violência contra mulheres com deficiência é recorrente e muitas vezes perpetrada por cuidadores ou profissionais de serviços públicos.
+data_012,12,True,Ressaltou a falta de inclusão das mulheres com deficiência nas delegacias e a subnotificação de casos de violência.
+data_012,13,False,Destacou a importância de combater o capacitismo e promover políticas públicas inclusivas.
+data_012,14,False,Mencionou o lançamento do plano Viver Sem Limite e outras ações para melhorar a qualidade de vida das pessoas com deficiência.
+data_012,15,False,Enfatizou a necessidade de revisar a Política Nacional de Saúde da Pessoa com Deficiência para incluir recortes de gênero e raça.
+data_012,16,False,Mencionou a construção de policlínicas com equipamentos acessíveis para garantir o cuidado às mulheres com deficiência.
+data_012,17,False,Defendeu a qualificação dos profissionais de saúde para identificar e notificar casos de violência.
+data_012,18,False,Afirmou a importância da intersetorialidade no cuidado das pessoas com deficiência.
+data_012,19,False,Destacou a importância da política de assistência social no atendimento a pessoas em situação de vulnerabilidade.
+data_012,20,False,Mencionou a necessidade de ampliar a cobertura da proteção social especializada.
+data_012,21,False,Enfatizou a importância da participação social e dos movimentos na construção das políticas públicas.
+data_012,22,False,Defendeu a visão sistêmica e multidimensional das vulnerabilidades e riscos sociais.
+data_012,23,False,Destacou a importância de ter dados específicos sobre a violência contra mulheres com deficiência.
+data_012,24,False,Enfatizou a necessidade de evitar a revitimização das vítimas nos órgãos públicos.
+data_012,25,False,Defendeu o fortalecimento das políticas de prevenção à violência.
+data_012,26,False,Mencionou a importância da comunicação e da educação para romper a cultura da violência contra a mulher.
+data_012,27,False,Destacou a invisibilidade da violência contra mulheres com deficiência no ambiente doméstico.
+data_012,28,False,Ressaltou a necessidade de políticas públicas interministeriais e investimentos adequados.
+data_012,29,False,Enfatizou a importância da comunicação acessível para que as mulheres com deficiência possam denunciar a violência.
+data_012,30,False,Defendeu a criação de projetos e políticas específicas para mulheres com deficiência.
+data_012,31,False,Destacou a importância da prevenção à violência através da educação.
+data_012,32,False,Mencionou que o projeto Eu Me Protejo trabalha a prevenção com foco na periferia.
+data_012,33,False,Enfatizou a necessidade de não silenciar e não duvidar das crianças e mulheres que denunciam violência.
+data_012,34,False,Ressaltou que muitas pessoas em situação de violência não se reconhecem como vítimas.
+data_013,0,False,Explicou o motivo da paralisação das negociações sobre a repactuação do acordo de Mariana.
+data_013,1,False,Destacou a diferença entre os valores oferecidos pelas empresas (42 bilhões) e o esperado pelos governos (126 bilhões).
+data_013,2,False,Criticou a postura das empresas e solicitou que o Poder Judiciário fixe prazos para a resolução.
+data_013,3,False,Afirmou que a questão de Mariana é uma prioridade e que o Ministério está focado na segurança e prevenção.
+data_013,4,False,"Defendeu um acordo célere, mas que seja justo e compatível com a tragédia ocorrida."
+data_013,5,False,Enfatizou a qualidade do texto produzido na Mesa de repactuação.
+data_013,6,False,Reiterou que o poder público não aceitará um acordo sem a contrapartida financeira adequada das empresas.
+data_013,7,False,Criticou a proposta de 42 bilhões das empresas como vergonhosa e desrespeitosa.
+data_013,8,False,Criticou a cláusula de confidencialidade que impede a participação dos atingidos.
+data_013,9,False,Defendeu que a presença da Defensoria Pública na Mesa não substitui a necessidade de participação direta dos atingidos.
+data_013,10,False,Reforçou a necessidade de uma reparação justa e efetiva.
+data_013,11,False,Informou que 27 pontos do relatório da Comissão estão contemplados na proposta de acordo.
+data_013,12,False,Defendeu a necessidade de pressão do Judiciário para que as empresas retornem à mesa de negociação.
+data_013,13,False,"Criticou a falta de seriedade das empresas na negociação, exemplificada pela disparidade entre os valores oferecidos e esperados."
+data_013,14,False,Defendeu a necessidade de um acordo que contemple a reparação ambiental e socioeconômica de forma integral e justa.
+data_013,15,False,Criticou a falta de participação efetiva dos atingidos nas negociações.
+data_013,16,False,Defendeu a utilização da Política Nacional dos Atingidos por Barragens como referência para garantir a participação dos atingidos.
+data_013,17,False,Criticou os valores apresentados pelas empresas como insuficientes.
+data_013,18,False,Reforçou a falta de participação dos atingidos nas negociações.
+data_013,19,False,Defendeu que os atingidos deveriam estar presentes na mesa de negociação para garantir uma reparação justa.
+data_013,20,False,Destacou a importância da Política Nacional dos Atingidos por Barragens como um avanço na luta dos atingidos.
+data_013,21,False,Criticou a proposta das empresas como insuficiente e defendeu a participação dos atingidos nas negociações.
+data_013,22,False,Pediu maior presença das autoridades nas comunidades atingidas para entenderem melhor a situação.
+data_013,23,False,Criticou a diferença de valores apresentados pelas empresas como uma visão díspar do que significa a reparação.
+data_013,24,False,Defendeu o reconhecimento integral do litoral do Espírito Santo como território impactado.
+data_013,25,False,Reforçou a importância da participação social na repactuação e a necessidade de mecanismos eficazes para isso.
+data_014,0,False,A questão da Braskem é mais uma crônica de desastres anunciados.
+data_014,1,False,Há uma CPI aberta no Senado Federal sobre a questão da Braskem e proposta de abertura de CPI na Câmara dos Deputados.
+data_014,2,False,"A mineração no Brasil é marcada pela impunidade das grandes empresas como Samarco, Vale e Braskem."
+data_014,3,False,"A Braskem, assim como outras grandes mineradoras, não quer prestar satisfação à Câmara dos Deputados."
+data_014,4,False,"O caso Braskem significa a maior tragédia ambiental em curso no Brasil, causando danos materiais, morais, mentais e socioemocionais."
+data_014,5,False,A Defensoria Pública da União trabalha há 5 anos para garantir reparação integral aos atingidos.
+data_014,6,False,"O primeiro acordo celebrado foi extremamente válido e histórico, garantindo a desocupação de mais de 60 mil pessoas de uma área de risco com dignidade."
+data_014,7,False,"Mais de 18 mil propostas de indenização foram aceitas, com um índice de aceitação de mais de 99%."
+data_014,8,False,As vítimas não têm participação nas decisões tomadas em nome delas.
+data_014,9,False,"O poder de negociação foi colocado nas mãos da Braskem, sem diminuição de seu poder."
+data_014,10,False,A Braskem fez propostas indecorosas e irrisórias que foram aceitas pelas vítimas em condição de alta vulnerabilidade.
+data_014,11,False,"Áreas como Flexais, Quebradas, Marquês de Abrantes, Bom Parto e Vila Saem ainda não foram adequadamente indenizadas."
+data_014,12,False,A transferência de propriedade para a Braskem é ilegal e indecorosa.
+data_014,13,False,A tragédia da Braskem em Alagoas deveu-se à extração irregular de sal-gema.
+data_014,14,False,"A realocação de mais de 60 mil pessoas foi feita durante a pandemia, agravando a situação das vítimas."
+data_014,15,True,Muitas pessoas aceitaram acordos com a Braskem devido à crise e à insegurança constante.
+data_014,16,False,Outros bairros atingidos pela Braskem ainda lutam por uma indenização justa e garantia de direitos mínimos.
+data_014,17,False,O caso da Braskem em Maceió é o maior crime socioambiental em curso no Brasil.
+data_014,18,False,"Minas Gerais, seu estado, também sofre com crimes de mineradoras, como os casos de Brumadinho e Mariana."
+data_014,19,False,"Há uma relação íntima entre os crimes ambientais em Maceió e em Minas Gerais, demonstrando um padrão criminoso e irresponsável das mineradoras."
+data_014,20,False,Os donos da Braskem deveriam estar presos pelos crimes cometidos.
+data_014,21,False,A associação entrou com uma notícia-crime contra a Braskem por crime ambiental e fraude no licenciamento ambiental.
+data_014,22,False,A Agência Nacional de Mineração foi acusada de omissão completa no processo de fiscalização.
+data_014,23,False,"O IMA emitiu licenças em desacordo com a lei, e o BNDES financiou atividades criminosas."
+data_014,24,True,"Mais de 70 mil pessoas foram deslocadas sem uma indenização adequada, apenas uma compensação limitada."
+data_014,25,False,"A atividade de mineração na região teve início nos anos 60, com concessão de lavra emitida pelo Governo Federal em 1970."
+data_014,26,False,"A mineração começou no fim de 1975, com a concessão de lavra emitida pelo DNPM, atual ANM."
+data_014,27,False,A deficiência da legislação minerária e as limitações no sistema de defesa civil dificultam a gestão de desastres crônicos.
+data_014,28,False,Destaca a importância da participação do Parlamento no processo para abordar temas de desastres ambientais crônicos.
+data_015,0,False,"É favorável à vacinação e a seus filhos são vacinados, mas defende vacinas com anos de segurança e eficácia comprovadas."
+data_015,1,False,Critica a obrigatoriedade da vacinação contra a COVID-19 para crianças e defende o direito dos pais de decidirem sobre a vacinação dos filhos.
+data_015,2,False,Repudia rótulos de negacionista e defende que o debate científico deve ser aberto e sem preconceitos.
+data_015,3,False,Defende a inclusão da vacina contra a COVID-19 no calendário vacinal brasileiro devido à sua eficácia e segurança comprovadas pela ANVISA.
+data_015,4,False,Argumenta que a vacinação tem sido crucial para controlar a COVID-19 e outras doenças infecciosas no Brasil.
+data_015,5,True,"Afirma que a COVID-19 continua a ser uma doença de alta magnitude entre crianças, justificando a vacinação obrigatória."
+data_015,6,False,Critica a falta de estudos duplo-cego randomizados que comprovem a eficácia da vacina contra a COVID-19 em reduzir a transmissão e mortalidade.
+data_015,7,False,Afirma que crianças saudáveis até 5 anos não são consideradas grupo de risco pela Organização Mundial de Saúde.
+data_015,8,False,Destaca que a COVID-19 não apresenta urgência ou emergência que justifique a obrigatoriedade da vacinação infantil.
+data_015,9,False,Não concorda que o imunizante de mRNA seja considerado uma vacina no conceito clássico.
+data_015,10,False,Destaca que as vacinas atuais contra a COVID-19 são baseadas em cepas desatualizadas do vírus.
+data_015,11,True,Argumenta que a vacinação em massa durante a pandemia pode promover mutações no vírus.
+data_015,12,False,"Afirma que a vacinação em massa promove pressão seletiva no ambiente, levando à mutação do vírus."
+data_015,13,False,Critica a falta de bom senso na criação de uma vacina baseada na proteína Spike.
+data_015,14,False,"Destaca que a vacinação deve ser recomendada com cautela devido aos riscos observados, como miocardite e trombose."
+data_016,0,False,"Aprimoramento do Programa de Proteção a Crianças e Adolescentes Ameaçados de Morte (PPCAAM), com aumento de 81% na execução orçamentária e expansão para mais estados."
+data_016,1,False,Lançamento do Plano Nacional dos Direitos da Pessoa com Deficiência e do Plano Nacional de Políticas para a População em Situação de Rua.
+data_016,2,False,"Necessidade de debater políticas públicas, proteção de defensores de direitos humanos e vítimas de violência."
+data_016,3,False,Repúdio a insinuações maliciosas e criminosas sobre o tema de direitos humanos.
+data_016,4,False,"Defesa da importância de políticas de direitos humanos para agentes de segurança pública, destacando a necessidade de valorização e proteção dos policiais."
+data_016,5,True,Questionamento sobre a condução democrática do debate.
+data_016,6,False,"Preocupação com a situação de militares da Polícia Militar do Distrito Federal afastados e sem salário, destacando isso como uma violação aos direitos humanos."
+data_016,7,False,Crítica ao Movimento Brasil Livre (MBL) por desestabilizar a democracia ao pregar o voto nulo.
+data_016,8,False,"Defesa de uma oposição mais uníssona e crítica ao governo atual, chamando a atenção para a necessidade de um debate maduro sem acusações de racismo, sexismo, misoginia ou xenofobia."
+data_016,9,False,"Crítica à lógica política da extrema direita, afirmando que há relações simbólicas e objetivas com o crime organizado."
+data_016,10,False,"Defesa da democracia e pluralidade, afirmando que a extrema direita nega a diversidade e a república."
+data_016,11,False,Parabenização ao Ministro Silvio Almeida pela atuação no Ministério dos Direitos Humanos.
+data_016,12,False,Preocupação com a população em situação de rua e a necessidade de um plano nacional para essa questão.
+data_016,13,True,"Relatório sobre a CPMI do Golpe de 8 de Janeiro, destacando a importância de políticas públicas eficazes."
+data_017,0,True,Abertura do seminário enfatizando a importância do tema 'Ativismo judicial e a legitimidade democrática'.
+data_017,1,False,Criticou o Supremo Tribunal Federal (STF) por ir além dos limites constitucionais e legais.
+data_017,2,False,"Mencionou várias decisões do STF, como a descriminalização do aborto até o terceiro mês e a proibição de operações policiais em favelas durante a pandemia, argumentando que essas decisões configuram ativismo judicial."
+data_017,3,False,"Afirmou que algumas decisões do STF vão contra a lei e a Constituição, excedendo o ativismo judicial e se tornando abuso de poder."
+data_017,4,False,"Criticou o inquérito das fake news, alegando censura e prisão arbitrária de opositores políticos."
+data_017,5,False,Argumentou que a intromissão do STF nas competências dos outros Poderes é indevida e viola a legitimidade democrática.
+data_017,6,True,"Citou casos de interferência do STF em nomeações do Executivo, como as de Lula e Cristiane Brasil, como exemplos de ativismo judicial."
+data_017,7,True,"Afirmou que a Suprema Corte está atuando como um partido político, o que considera inapropriado."
+data_017,8,True,"Criticou a relação de proximidade entre Ministros do STF e parlamentares, alegando que isso compromete a independência dos Poderes."
+data_017,9,False,Defendeu que a rigidez das constituições é uma resposta ao autoritarismo e que a constituição democrática deve incluir mecanismos de defesa contra extremismos.
+data_017,10,False,"Afirmou que o STF deve ser o guardião da Constituição e da democracia, e que o controle de constitucionalidade é fundamental para proteger os direitos."
+data_017,11,False,Criticou o uso ideológico do direito e enfatizou a necessidade de críticas construtivas e técnicas ao Judiciário.
+data_017,12,True,Defendeu que o ativismo judicial não é inerentemente negativo e pode ser necessário para lidar com pressões socioculturais e mudanças tecnológicas.
+data_017,13,False,Argumentou que um certo grau de ativismo judicial é necessário para adaptar as normas às novas realidades sociais e tecnológicas.
+data_017,14,False,"Afirmou que a discussão sobre o ativismo judicial deve focar em encontrar um equilíbrio, em vez de simplesmente criticar as decisões judiciais."
+data_018,0,False,O PIBID contribuiu enormemente para a formação e deve ser fortalecido.
+data_018,1,False,É preocupante ver pesquisas que mostram menos jovens interessados em ser professores.
+data_018,2,False,"A profissão de professor está sendo atacada, criando um estigma que criminaliza o ato de educar."
+data_018,3,False,A luta inclui a aprovação do PL 3.970/21 para tornar o PIBID uma política nacional e sua inclusão no novo Plano Nacional de Educação (PNE).
+data_018,4,False,A CAPES tem um papel fundamental na formação de professores da educação básica desde 2007.
+data_018,5,False,É importante manter a CAPES em suas atribuições de programas de formação de professores.
+data_018,6,False,"A aprovação do primeiro doutorado profissional para professores da educação básica, como o Profhistória, mostra a importância de ter doutores na sala de aula."
+data_018,7,False,É fundamental garantir a formação de professores bem preparados para alcançar uma educação de qualidade.
+data_018,8,False,"A formação docente deve ser um espaço de criatividade, autonomia e garantia de direitos de aprendizagem."
+data_018,9,True,A permanência de estudantes na universidade é crucial para o desenvolvimento do país.
+data_018,10,False,O PIBID deve ser mantido como uma política de Estado para garantir a formação de professores.
+data_018,11,True,O PIBID deve ser fortalecido e institucionalizado para garantir a formação contínua de professores.
+data_018,12,True,"É importante a plena retomada da Resolução nº 2, de 2015, que orientava o PIBID."
+data_018,13,False,A valorização do professor não coincide com a realidade enfrentada pelos docentes da educação básica.
+data_018,14,False,O fortalecimento da dotação orçamentária é essencial para a manutenção e expansão do PIBID.
+data_019,0,False,As altas velocidades nas cidades brasileiras são um dos principais fatores de mortes e lesões no trânsito.
+data_019,1,False,"A segurança viária deve ser prioridade nas ações públicas, especialmente para pedestres e ciclistas."
+data_019,2,False,"A conscientização da população é essencial para um trânsito mais seguro, além do uso de radares eletrônicos."
+data_019,3,False,Os acidentes de trânsito são um problema constante nas rodovias e nas capitais brasileiras.
+data_019,4,False,Proposições como a criação de um corredor exclusivo para motos são importantes para reduzir acidentes.
+data_019,5,False,É fundamental discutir a velocidade no trânsito para reduzir o número de acidentes e suas consequências.
+data_019,6,False,Reduzir a velocidade máxima nas vias urbanas é essencial para diminuir o número de acidentes.
+data_019,7,False,Políticas de redução de velocidade podem economizar recursos significativos para o sistema de saúde e previdência.
+data_019,8,False,"É necessário investir em calçadas, transporte alternativo, ciclovias, transporte coletivo e infraestrutura urbana."
+data_019,9,False,As lesões de trânsito estão entre as principais causas de morte e hospitalização no Brasil.
+data_019,10,False,Reduzir a velocidade nas vias urbanas é uma das medidas mais efetivas para diminuir a gravidade e o número de acidentes.
+data_019,11,False,Investimentos em infraestrutura viária e transporte coletivo são fundamentais para a prevenção de acidentes.
+data_019,12,False,A gestão de velocidades e a fiscalização por velocidade média são essenciais para acalmar o trânsito.
+data_019,13,False,A falta de fiscalização efetiva é um problema significativo na segurança viária.
+data_019,14,False,O novo PNATRANS inclui importantes medidas para a gestão de velocidades e redução de acidentes.
+data_019,15,False,A redução de velocidades urbanas está alinhada à Política Nacional de Mobilidade Urbana.
+data_019,16,False,Investimentos em capacitação e infraestrutura urbana são necessários para apoiar as cidades na implementação dessas mudanças.
+data_019,17,False,Priorizar o transporte público e modos não motorizados é essencial para a mobilidade urbana sustentável.
+data_019,18,False,A velocidade é um dos principais fatores de risco no trânsito.
+data_019,19,False,É importante conscientizar a população sobre os impactos de um trânsito violento na saúde e na economia.
+data_019,20,False,Apoiar o projeto de lei que visa a redução de velocidades nas vias urbanas é crucial para salvar vidas.
+data_019,21,False,Reduzir os limites de velocidade nas vias urbanas é essencial para atingir as metas de segurança viária.
+data_019,22,False,A readequação de velocidades nas vias urbanas pode salvar milhares de vidas e economizar bilhões de reais.
+data_019,23,False,Estudos mostram que a redução de velocidades não causa aumento significativo nos congestionamentos.
+data_019,24,False,A velocidade é um fator crucial na redução de atropelamentos e acidentes graves.
+data_019,25,False,"Investir em novas tecnologias de fiscalização, como a velocidade média, é essencial."
+data_019,26,False,A gestão eficaz dos recursos destinados à segurança viária é fundamental para atingir as metas de redução de acidentes.
+data_019,27,False,A redução de velocidade é uma prioridade para a segurança viária.
+data_019,28,False,A fiscalização eletrônica é fundamental para o controle da velocidade.
+data_019,29,False,As evidências mostram que apenas a conscientização não é suficiente; são necessárias medidas de fiscalização.
+data_020,0,False,A tese do marco temporal foi enterrada pela votação do Congresso Nacional.
+data_020,1,False,A luta pelo território indígena está diretamente ligada à luta pela educação indígena.
+data_020,2,False,A demarcação dos territórios indígenas é crucial para barrar a crise climática.
+data_020,3,False,A importância da criação de uma universidade indígena para fortalecer a educação indígena.
+data_020,4,False,O fortalecimento da universidade indígena e a formação de professores indígenas são pautas essenciais.
+data_020,5,False,A execução das políticas de educação escolar indígena enfrenta dificuldades para chegar aos territórios.
+data_020,6,False,Há a necessidade de políticas céleres para a formação de professores e jovens indígenas.
+data_020,7,False,A importância do Programa Bolsa Permanência para a permanência de estudantes indígenas na universidade.
+data_020,8,True,O desafio da permanência de estudantes indígenas em universidades não federais.
+data_020,9,False,O futuro dos povos indígenas passa pela educação.
+data_020,10,False,A educação escolar indígena não é prioridade para o Governo e nem para o movimento indígena.
+data_020,11,False,A formação de uma consciência climática deve passar pela educação.
+data_020,12,False,A importância da universidade indígena para formar cidadãos indígenas conscientes e tecnicamente capacitados.
+data_020,13,False,Criação de uma associação de pesquisadores indígenas para empoderar a luta pelos direitos dos povos indígenas.
+data_020,14,False,A importância da discussão das políticas afirmativas da educação escolar indígena.
+data_020,15,False,A reivindicação por uma universidade indígena é justa e necessária.
+data_020,16,False,A necessidade de uma estrutura para garantir a permanência de acadêmicos indígenas nas universidades.
+data_020,17,False,A Articulação dos Povos Indígenas do Brasil apoia a criação da universidade indígena.
+data_020,18,False,A educação nas aldeias guaranis em São Paulo foi uma importante experiência.
+data_020,19,False,A falta de políticas específicas para o ensino médio indígena.
+data_020,20,False,Os avanços na gestão do Presidente Lula com as cotas indígenas no ensino universitário.
+data_020,21,False,A necessidade de subsídios para materiais didáticos e a permanência dos estudantes indígenas nas universidades.
+data_020,22,False,O debate sobre a educação indígena é fundamental.
+data_020,23,False,As mudanças no ensino médio durante o Governo Temer prejudicaram a qualidade da educação.
+data_020,24,False,A necessidade de entender as especificidades da educação em um país multiétnico.
+data_020,25,False,O novo Plano Nacional de Educação deve incluir metas construídas pelos povos indígenas.
+data_020,26,False,A importância de construir coletivamente a regulamentação da educação escolar indígena.
+data_020,27,False,A atualização da Lei de Cotas é necessária para atender às especificidades dos estudantes indígenas.
+data_020,28,False,A importância de dados atualizados sobre a presença de estudantes indígenas na educação superior.
+data_020,29,False,A saúde mental dos estudantes indígenas é uma preocupação crescente.
+data_020,30,False,O maior problema na educação escolar indígena é o ensino médio.
+data_020,31,False,As universidades não estão preparadas para receber estudantes indígenas.
+data_020,32,False,A necessidade de transformar o Programa Bolsa Permanência em uma política permanente.
+data_020,33,False,A criação de um sistema próprio de educação escolar indígena é essencial.
+data_020,34,False,A falta de transparência na implementação dos recursos do FUNDEB para escolas indígenas.
+data_020,35,False,A maioria dos representantes políticos não reconhece a importância da presença indígena.
+data_020,36,False,A luta dos povos indígenas precisa continuar mesmo diante de adversidades.
+data_020,37,False,A educação deve ser uma ferramenta para mudar o modo de viver e promover o bem viver.
+data_020,38,False,A importância da educação indígena para defender os direitos coletivos dos povos indígenas.
+data_020,39,False,A necessidade de fortalecer a infraestrutura das escolas indígenas.
+data_020,40,False,A educação indígena deve valorizar e incluir a diversidade e a ancestralidade dos povos indígenas.
+data_021,0,False,É essencial discutir os possíveis impactos da transferência das operações das loterias para subsidiárias da Caixa.
+data_021,1,True,A Caixa Econômica Federal é uma instituição fundamental para a população brasileira.
+data_021,2,False,"A proposta de transferir as loterias para uma subsidiária é arriscada, pois pode facilitar a privatização sem o aval do Congresso."
+data_021,3,False,Defende que a Caixa retire a proposta para promover uma discussão mais ampla sobre o tema.
+data_021,4,False,Destaca a importância das loterias como parte intrínseca da Caixa Econômica Federal.
+data_021,5,False,A transferência das operações das loterias para uma subsidiária pode fragilizar a Caixa.
+data_021,6,False,Destaca a importância das loterias para o financiamento de programas sociais no Brasil.
+data_021,7,False,Defende a suspensão da aprovação da proposta e a abertura de um diálogo amplo sobre o tema.
+data_021,8,False,A proposta de transferência das loterias para uma subsidiária está em análise desde 2018.
+data_021,9,False,Qualquer mudança deve garantir que as ações da subsidiária sejam 100% pertencentes à Caixa.
+data_021,10,False,Destaca que a exploração de loterias é um serviço público exclusivo da União.
+data_021,11,False,A rede lotérica precisa ser fortalecida e competitiva para não ser excluída do mercado.
+data_021,12,False,Defende que a Caixa invista mais em tecnologia e priorize as loterias.
+data_021,13,True,A privatização não é necessária para tornar as loterias mais eficientes.
+data_021,14,False,A transferência das loterias para uma subsidiária pode prejudicar os empregados da Caixa e os repasses sociais.
+data_021,15,False,Defende que a Caixa invista em tecnologia e melhore sua estrutura interna.
+data_021,16,False,Solicita a suspensão da proposta e a abertura de um debate com a sociedade.
+data_021,17,False,Os empregados da Caixa devem ser consultados sobre a transferência das loterias.
+data_021,18,False,A Caixa deve investir na sua própria estrutura em vez de criar subsidiárias.
+data_021,19,False,Defende a Caixa 100% pública e o fortalecimento da empresa.
+data_021,20,False,A Caixa precisa ser ágil para competir no mercado de loterias.
+data_021,21,False,É necessário esclarecer como ficará a situação dos lotéricos no contexto da transferência.
+data_022,0,False,Destacou a importância do comércio eletrônico para a economia brasileira.
+data_022,1,False,Afirmou a necessidade de modernizar a legislação vigente para adequar-se às novas realidades do comércio digital.
+data_022,2,False,"Mencionou a perspectiva de arrecadação futura com o crescimento do e-commerce, que pode ser uma nova fonte de financiamento para políticas públicas."
+data_022,3,False,Enfatizou a preocupação com o impacto do comércio eletrônico na indústria e no varejo nacional.
+data_022,4,True,Defendeu a criação de um marco regulatório para proteger a indústria e o comércio local.
+data_022,5,True,Alertou para a perda de competitividade da indústria nacional e a evasão fiscal causada pelo e-commerce transfronteiriço.
+data_022,6,False,Destacou a importância do comércio eletrônico para a produtividade e competitividade do varejo.
+data_022,7,False,Apresentou o dashboard desenvolvido pelo MDIC para mapear o comércio eletrônico nacional.
+data_022,8,False,Ressaltou o compromisso do Ministério com a redução das assimetrias digitais e o apoio à transformação digital do comércio.
+data_022,9,False,Defendeu a importância do comércio eletrônico para a inclusão de pequenos comerciantes no mercado digital.
+data_022,10,True,Sublinhou a necessidade de uma regulamentação equilibrada que não iniba o crescimento do setor.
+data_022,11,True,"Apoiou a modernização da legislação tributária para refletir as novas realidades econômicas, sem criar barreiras excessivas ao comércio eletrônico."
+data_022,12,True,"Afirmou que o comércio eletrônico deve crescer, mas é necessário garantir a isonomia tributária."
+data_022,13,False,Destacou os desafios da sonegação fiscal e a importância de uma fiscalização efetiva das importações de pequeno valor.
+data_022,14,False,Defendeu a implementação imediata da IN 2.124 e do plano de conformidade para plataformas estrangeiras.
+data_022,15,False,Ressaltou o crescimento contínuo do comércio eletrônico e sua importância para o varejo nacional.
+data_022,16,False,Mencionou a necessidade de uma legislação tributária mais simples e eficaz para o setor.
+data_022,17,False,Propôs a responsabilização solidária dos marketplaces pelo cumprimento das obrigações tributárias dos sellers.
+data_023,0,False,Abriu a audiência pública destinada ao debate sobre a importância do biometano no transporte.
+data_023,1,False,Agradeceu a presença dos convidados e destacou a importância do biometano para a descarbonização da atmosfera.
+data_023,2,False,Destacou a importância do biometano e do gás natural como combustíveis parceiros na transição energética.
+data_023,3,False,Afirmou que o biometano é uma alternativa viável para a sustentabilidade e que não concorre com o gás natural.
+data_023,4,True,Ressaltou a importância de políticas públicas que incentivem o uso de biocombustíveis e a necessidade de infraestrutura adequada.
+data_023,5,False,Apresentou a atividade de transporte de gás natural e sua importância para o sistema energético.
+data_023,6,False,Destacou a necessidade de investimentos e a importância da compatibilidade do sistema de transporte com o biometano.
+data_023,7,False,"Enfatizou que o transporte de gás natural é essencial para conectar a produção às distribuidoras e, em última instância, aos consumidores."
+data_023,8,False,Apoiou o uso de biometano e GNV na matriz energética nacional.
+data_023,9,False,Ressaltou a necessidade de políticas públicas para incentivar o uso desses combustíveis.
+data_023,10,False,Comentou sobre a importância da descarbonização e do uso de biometano e gás natural para a sustentabilidade.
+data_023,11,False,Enfatizou que a integração do biometano com o sistema de transporte de gás natural é essencial para expandir o mercado.
+data_023,12,False,Discutiu o desenvolvimento de veículos movidos a biometano e sua implementação no mercado brasileiro.
+data_023,13,True,"Destacou a experiência da Iveco com veículos a gás na Europa e em outros países, garantindo a maturidade tecnológica da solução."
+data_023,14,True,Enfatizou a importância de se trabalhar com incrementos percentuais na descarbonização para expandir o uso do biometano.
+data_023,15,False,Afirmou que o biometano é compatível com o sistema de transporte de gás natural e que os investimentos devem acompanhar o crescimento da oferta.
+data_024,0,False,Defende a introdução da filosofia e da sociologia na educação fundamental como direito dos estudantes e instrumento para alcançar a igualdade social.
+data_024,1,False,"Critica a opção pelo não ensino dessas disciplinas, argumentando que isso reforça desigualdades econômicas, raciais e geográficas."
+data_024,2,False,Enfatiza que as disciplinas de filosofia e sociologia são fundamentais para o desenvolvimento do senso crítico dos estudantes.
+data_024,3,False,Critica a redução das aulas dessas disciplinas no currículo do ensino médio e fundamental em São Paulo.
+data_024,4,False,Reforça a importância da obrigatoriedade do ensino de filosofia e sociologia nos currículos de todo o Brasil.
+data_024,5,True,Apoia a realização de seminários e encontros para fortalecer a luta pela inclusão dessas disciplinas.
+data_024,6,False,Destaca o compromisso do MEC em dialogar e acolher contribuições de todos os setores da sociedade.
+data_024,7,False,"Relata os desafios enfrentados pelo MEC após o desmonte do governo anterior, mencionando a necessidade de reconstrução das políticas públicas."
+data_024,8,True,Afirma que o Ministério está à disposição para apoiar a luta pela inclusão das disciplinas de filosofia e sociologia.
+data_024,9,False,Enfatiza a importância de reconhecer o passado e o presente para construir um futuro baseado em uma perspectiva materialista marxista.
+data_024,10,False,Critica a reforma do ensino médio atual e defende a revogação dessa reforma.
+data_024,11,False,Destaca a importância da inclusão da sociologia e filosofia no ensino fundamental e médio para uma formação crítica dos estudantes.
+data_024,12,False,Defende a obrigatoriedade das disciplinas de filosofia e sociologia na educação básica.
+data_024,13,True,Ressalta a importância de uma luta contínua e participação efetiva dos professores e estudantes na defesa dessas disciplinas.
+data_025,0,False,A audiência pública foi destinada a discutir as consequências da seca em Minas Gerais.
+data_025,1,False,Destacou a importância de discutir medidas concretas para enfrentar a seca.
+data_025,2,False,"Salientou que a Comissão de Legislação Participativa é um espaço do povo, onde as propostas vêm de mais de 1.200 entidades da sociedade civil."
+data_025,3,False,Cumprimentou os participantes e enfatizou a importância do Banco do Nordeste para Minas Gerais.
+data_025,4,True,Apoiou as iniciativas discutidas e a necessidade de medidas concretas contra a seca.
+data_025,5,False,Parabenizou os participantes pela audiência pública.
+data_025,6,False,Reforçou a necessidade de cobrar ações do Governo Federal e do Governo de Minas.
+data_025,7,False,"Destacou a importância de novos financiamentos, renegociação de dívidas e fornecimento de cestas básicas e sementes."
+data_025,8,False,Reforçou a necessidade de caminhões-pipa para fornecer água às regiões afetadas.
+data_025,9,False,Reconheceu a dificuldade da Defesa Civil em entregar água devido à logística.
+data_025,10,False,Sublinhou a importância de ações emergenciais para mitigar os efeitos da seca.
+data_025,11,False,Enfatizou a necessidade de recursos financeiros imediatos para as prefeituras.
+data_025,12,False,Solicitou inclusão de barramentos e barraginhas como medidas de contenção de água.
+data_025,13,True,"Enfatizou a necessidade de fortalecer as prefeituras, pois são as primeiras a serem cobradas pela população."
+data_025,14,False,Criticou a ineficiência das políticas públicas estaduais e federais para o meio ambiente.
+data_025,15,False,"Relatou que a distribuição de sementes foi tardia, não beneficiando os produtores."
+data_025,16,False,Reforçou a necessidade de desburocratização das linhas de crédito emergenciais.
+data_025,17,False,Sublinhou a urgência na liberação de cestas básicas e na perfuração de poços artesianos.
+data_026,0,True,A economia do cuidado é um tema que deve ser desenvolvido de forma cada vez mais atuante a partir de 2024.
+data_026,1,True,O Brasil está atrasado em relação a vários países da América Latina na questão da economia do cuidado.
+data_026,2,False,Há um projeto de lei de sua autoria e da Deputada Ana Perugini sobre a economia do cuidado.
+data_026,3,False,A política pública de cuidado deve ser uma prioridade na reconstrução do Brasil.
+data_026,4,True,"É fundamental ter parcerias com o Ministério do Desenvolvimento Social, Secretaria da Mulher, Ministério das Mulheres e Ministério dos Direitos Humanos para implementar a economia do cuidado como uma política pública."
+data_026,5,False,"Todas as pessoas necessitam de cuidados ao longo da vida, e essa necessidade deve ser encarada como um direito."
+data_026,6,False,O cuidado é um trabalho invisibilizado que é fundamental para a reprodução da vida e o funcionamento da sociedade.
+data_026,7,False,"A atual organização social do cuidado no Brasil é injusta, inequitativa e insustentável."
+data_026,8,False,É necessário transformar a organização social do cuidado para alcançar a igualdade de gênero no mundo do trabalho.
+data_026,9,False,O cuidado deve ser reconhecido como um direito no marco legislativo brasileiro.
+data_026,10,False,A invisibilidade do trabalho doméstico no Brasil é um problema que precisa ser abordado através de políticas públicas.
+data_026,11,False,É fundamental debater a sustentabilidade da vida humana através do cuidado.
+data_026,12,False,"O trabalho reprodutivo feito no cotidiano das casas é realizado majoritariamente por mulheres, especialmente mulheres negras."
+data_026,13,False,É importante incorporar cálculos relativos ao trabalho não remunerado de cuidado nas contas nacionais para visibilizar e valorizar esse trabalho.
+data_026,14,False,"Um dos principais objetivos é reduzir a sobrecarga de trabalho enfrentada pelas mulheres, garantindo condições para que conquistem sua autonomia econômica e política."
+data_026,15,False,A luta das trabalhadoras domésticas remuneradas pela efetividade e garantia dos seus direitos é histórica e contínua.
+data_026,16,False,"A política de cuidado deve considerar as questões de gênero, raça e classe que atravessam as mulheres."
+data_026,17,True,O trabalho de cuidado é essencial e deve ser tratado com seriedade e responsabilidade.
+data_026,18,False,A efetiva igualdade de oportunidades para homens e mulheres no trabalho passa por uma política nacional de cuidados.
+data_026,19,False,A desvalorização do trabalho de cuidado tem impactos negativos na ascensão e retorno ao mercado de trabalho para as mulheres.
+data_026,20,False,"O trabalho de cuidado, se precificado, corresponderia a uma parte significativa do PIB."
+data_026,21,False,A mudança demográfica no Brasil coloca o tema dos cuidados como central no enfrentamento da desigualdade social.
+data_026,22,False,Há uma necessidade de construir uma agenda de política pública diferenciada para a sociedade de serviços e era digital.
+data_026,23,False,É importante a realização de uma pesquisa de uso do tempo para melhor construir políticas públicas de cuidado.
+data_026,24,False,O trabalho não remunerado deve ser incluído nas contas nacionais para melhor refletir sua importância.
+data_026,25,False,A economia do cuidado exige repensar toda a economia e a organização social do trabalho remunerado e não remunerado.
+data_026,26,False,O cuidado é uma necessidade humana fundamental e sua organização social atual é injusta.
+data_026,27,False,A política de cuidado deve enfrentar a divisão sexual do trabalho e priorizar a universalização das creches e outras políticas sociais.
+data_026,28,False,A condição das trabalhadoras domésticas deve ser central na economia do cuidado.
+data_026,29,True,O Brasil precisa assumir a sociedade do cuidado como uma política pública.
+data_026,30,False,A desvalorização do trabalho de cuidado é grave e precisa ser combatida.
+data_026,31,False,O direito ao cuidado e ao autocuidado é um direito humano fundamental.
+data_026,32,False,Há necessidade de uma bolsa salário e aposentadoria para cuidadores pelo tempo dedicado ao cuidado.
+data_027,0,False,"A Comissão de Legislação Participativa aprovou o Requerimento nº 94, de 2023, para discutir a utilização da inteligência artificial nos processos eleitorais."
+data_027,1,False,"A inteligência artificial já foi usada em eleições nos Estados Unidos e na Argentina, e há projetos de lei tramitando na Câmara dos Deputados e no Senado sobre o tema."
+data_027,2,False,Há a necessidade de regulamentação e fiscalização do uso da inteligência artificial para garantir a lisura do processo eleitoral.
+data_027,3,False,A inteligência artificial já é amplamente utilizada na vida cotidiana e nas campanhas eleitorais.
+data_027,4,True,"Há um potencial de manipulação dos resultados eleitorais antes mesmo das eleições, utilizando ferramentas de inteligência artificial."
+data_027,5,True,É crucial que a sociedade e os operadores do direito estejam atentos e informados sobre o impacto da inteligência artificial.
+data_027,6,False,A inteligência artificial apresenta riscos que precisam ser regulamentados para garantir a lisura das eleições.
+data_027,7,True,Há um convênio entre o TSE e plataformas de mídia social para monitorar disparos em massa e deepfakes.
+data_027,8,False,Os projetos de lei na Câmara dos Deputados e no Senado precisam ser aprimorados para abordar especificamente o uso de IA nas eleições.
+data_027,9,False,A inteligência artificial mapeia emoções humanas e tem um grande potencial de manipulação eleitoral.
+data_027,10,False,Há a necessidade de uma legislação urgente para regular o uso da inteligência artificial nas eleições.
+data_027,11,False,"A falta de clareza na regulamentação pode prejudicar a democracia, e é importante envolver o TSE e outras autoridades no debate."
+data_027,12,False,A desinformação é um problema crítico que precisa ser combatido com a participação da sociedade.
+data_027,13,True,A hipernormatividade do sistema eleitoral brasileiro pode ser uma barreira para a efetiva regulamentação da inteligência artificial.
+data_027,14,False,A sociedade deve estar mobilizada para garantir que a inteligência artificial seja usada de maneira ética e responsável.
+data_028,0,False,A audiência foi convocada para debater o monopólio dos softwares de reparos de veículos pelas concessionárias.
+data_028,1,False,O movimento 'right to repair' começou nos EUA em 2017 e garante o direito ao conserto de automóveis.
+data_028,2,False,A economia circular é uma base importante para a ideia do 'right to repair'.
+data_028,3,False,O Brasil ainda não tem uma legislação específica sobre o tema.
+data_028,4,False,A importância de desenvolver uma base legislativa auxiliar no Brasil.
+data_028,5,False,A discussão sobre acesso à informação para reparo de veículos começou na Europa há mais de 10 anos.
+data_028,6,False,"O tema envolve vários departamentos, incluindo propriedade intelectual e defesa da concorrência."
+data_028,7,False,Necessidade de construir um consenso interno no Ministério.
+data_028,8,False,A pauta do monopólio de softwares de reparo é discutida há bastante tempo.
+data_028,9,False,"A situação atual afronta a liberdade de escolha do consumidor, um dos pilares da defesa do consumidor."
+data_028,10,False,Impedir que o consumidor tenha acesso aos seus direitos é violar a proteção do consumidor como um direito fundamental.
+data_028,11,False,É urgente avançar na garantia da liberdade de escolha dos consumidores.
+data_028,12,False,O consumidor tem direito a ter seu carro reparado da forma correta.
+data_028,13,False,A segurança é comprometida se o reparador não tiver a informação correta.
+data_028,14,False,"Concessionárias não conseguem reparar todos os veículos por falta de peças, concessionárias e mão de obra."
+data_028,15,False,Oficinas independentes são necessárias e empregam milhares de pessoas.
+data_028,16,False,Facilitar o acesso à informação e ferramentas corretas para reparo é essencial.
+data_028,17,False,O Brasil é o quarto maior mercado de reposição automotiva do mundo.
+data_028,18,False,O consumidor tem direito à livre escolha e à liberdade para escolher onde consertar seu carro.
+data_028,19,False,A legislação americana e europeia já contempla o direito à reparação.
+data_028,20,False,A infraestrutura atual de concessionárias é insuficiente para atender toda a demanda.
+data_028,21,True,O preço e a acessibilidade dos serviços de reparo precisam ser melhorados.
+data_028,22,False,A evolução tecnológica dos veículos implica maior complexidade no reparo.
+data_028,23,False,Acesso a códigos e softwares dos veículos deve ser controlado para garantir segurança.
+data_028,24,False,"Sugere credenciamento, treinamento e controle para oficinas independentes."
+data_028,25,False,A discussão sobre direito de reparo está avançando na Europa e nos EUA.
+data_028,26,False,A venda casada é vedada pela Lei 8.078/1990.
+data_028,27,False,É necessário respeitar a liberdade de escolha e a livre concorrência garantidas pela Constituição.
+data_028,28,False,Há necessidade de alternativas para evitar longos tempos de espera por peças em concessionárias.
+data_028,29,False,As oficinas devidamente credenciadas devem poder realizar reparos sem o monopólio das concessionárias.
+data_029,0,False,A audiência pública debate a proposta de construção de um pacto republicano pela redução dos homicídios de jovens negros no Brasil.
+data_029,1,True,Enfatizou a importância das tecnologias de acessibilidade no plenário.
+data_029,2,False,"Destacou a importância da Constituição de 1988 e a luta contínua pelos direitos da classe trabalhadora, mulheres, população indígena, negra, quilombola e comunidade LGBTQIA+."
+data_029,3,False,Expressou a importância da homenagem recebida e a luta pela igualdade racial e pelos direitos humanos.
+data_029,4,False,Enfatizou a necessidade de políticas afirmativas para a população negra e a resistência às desigualdades históricas.
+data_029,5,False,Destacou o impacto da violência e da discriminação racial na juventude negra e a necessidade de ações concretas para mitigar esses problemas.
+data_029,6,False,O Programa Juventude Negra Viva deve ser prioridade devido à alta letalidade da juventude negra no Brasil.
+data_029,7,False,Apresentou dados alarmantes sobre a violência contra jovens negros e a necessidade de políticas públicas específicas.
+data_029,8,False,Destacou a importância de programas como o Prêmio Cidadania nas Periferias e o Prêmio Luiz Gama para reconhecer e valorizar iniciativas em prol dos direitos humanos.
+data_029,9,False,Ressaltou a importância da Comissão de Direitos Humanos da Câmara dos Deputados na luta pelos direitos humanos.
+data_029,10,False,Destacou os desafios enfrentados pelos defensores dos direitos humanos no Brasil e a necessidade de maior participação social nas decisões.
+data_029,11,True,Enfatizou a importância da educação e da conscientização sobre os direitos humanos e a igualdade racial.
+data_029,12,False,Destacou o compromisso com a pauta da juventude negra e a necessidade de políticas públicas transversais e multidisciplinares.
+data_029,13,False,"Enfatizou a importância de garantir não apenas a sobrevivência, mas a vida plena e digna para a juventude negra."
+data_029,14,False,Criticou a naturalização da violência e do racismo e a necessidade de uma mudança cultural e estrutural na sociedade brasileira.
+data_029,15,False,Ressaltou a construção de uma política para a juventude negra brasileira a partir de caravanas participativas e do trabalho interministerial.
+data_029,16,False,Enfatizou que a preservação da vida da juventude negra é um debate de desenvolvimento e uma pauta civilizatória.
+data_029,17,False,Destacou a importância de monitorar e garantir a efetivação das políticas públicas voltadas para a juventude negra.
+data_029,18,True,Compartilhou a importância de ressignificar a lógica da segurança pública no Brasil.
+data_029,19,False,Destacou a criação do Curso de Policiamento Antirracista e a Ronda Antirracista como medidas para melhorar o atendimento e a atuação policial.
+data_029,20,False,Enfatizou a necessidade de interseccionalidade entre segurança pública e a questão racial para uma segurança mais cidadã.
+data_030,0,False,Responsável pela abertura e condução da audiência.
+data_030,1,False,A Constituição e o Estatuto da Criança e do Adolescente garantem a proteção integral dos direitos humanos e fundamentais das crianças e adolescentes.
+data_030,2,False,"A proteção deve incluir todos os direitos, como educação, alimentação, lazer, esporte e convivência familiar e comunitária."
+data_030,3,False,"O orçamento da Secretaria Nacional da Criança e do Adolescente é de 51 milhões de reais, com prioridades em ações para a primeira infância, proteção a crianças e adolescentes ameaçados de morte, Sistema Nacional de Atendimento Socioeducativo, funcionamento dos Conselhos Tutelares e Conselhos de Dire"
+data_030,4,True,Aumentar o orçamento para 58 milhões de reais no próximo ano é necessário para fortalecer essas áreas.
+data_030,5,False,"O orçamento para 2024 inclui 24,2 bilhões de reais para a Agenda Transversal Crianças e Adolescentes."
+data_030,6,False,Houve várias inovações no processo orçamentário para aumentar a transparência e o controle social.
+data_030,7,False,"É essencial que a execução do orçamento seja acompanhada em tempo real, e um relatório sobre a execução será apresentado em 2025."
+data_030,8,False,Representa uma coalizão de 77 organizações da sociedade civil focadas em planejamento público e prevenção da violência contra crianças e adolescentes.
+data_030,9,False,É fundamental articular planos nacionais de direitos da criança e do adolescente com o Plano Plurianual 2024/2027.
+data_030,10,False,A transparência e a monitorização dos investimentos são cruciais para melhorar a qualidade executória das ações de prevenção à violência contra crianças e adolescentes.
+data_030,11,False,O UNICEF trabalha para a identificação e transparência do orçamento destinado às crianças e adolescentes.
+data_030,12,False,É importante ter uma marcação orçamentária para crianças e adolescentes no Orçamento de 2024.
+data_030,13,False,"A parcela do orçamento federal destinada às crianças variou entre 99 bilhões e 120 bilhões nos últimos 8 anos, representando uma diminuição relativa em termos de PIB."
+data_030,14,False,"A CONAETI foi recriada em abril de 2023 para combater o trabalho infantil, com participação de representantes do governo, trabalhadores, empregadores e sociedade civil."
+data_030,15,False,O trabalho infantil é uma grave violação dos direitos das crianças e deve ser combatido por meio de políticas intersetoriais e transversais.
+data_030,16,False,O orçamento público adequado é essencial para a execução do Plano Nacional de Prevenção e Erradicação do Trabalho Infantil e para alcançar a Meta 8.7 dos Objetivos de Desenvolvimento Sustentável.
+data_031,0,True,Importância de concursos públicos para a permanência dos professores na rede.
+data_031,1,True,Necessidade de garantir que professores possam frequentar e concluir o curso do PARFOR.
+data_031,2,True,Acompanhamento dos efeitos do PARFOR nos currículos da formação de professores.
+data_031,3,True,Garantia de orçamento para manutenção e ampliação dos programas da Diretoria de Formação de Professores.
+data_031,4,False,Importância do PARFOR para a qualidade da educação básica no Brasil.
+data_031,5,True,Discussão do fator amazônico para que o custo amazônico seja uma realidade.
+data_031,6,True,Compromisso com a formação de professores e apoio à continuidade do PARFOR.
+data_031,7,False,Criticou a expansão da educação a distância para a formação de professores.
+data_031,8,False,Defende a formação em nível superior para professores da educação básica.
+data_031,9,False,Apoio à política pública do PARFOR e a importância de seu financiamento.
+data_031,10,False,Necessidade de um acompanhamento sistemático dos cursos de formação de professores.
+data_031,11,False,Importância do diálogo entre entes federados para a distribuição equitativa dos recursos.
+data_031,12,False,Defende a construção de uma política nacional permanente de formação de professores.
+data_031,13,False,Reconhece a importância do PARFOR e sua continuidade.
+data_031,14,False,Necessidade de ampliação do financiamento e das vagas do PARFOR.
+data_031,15,False,Crítica às políticas educacionais feitas por programas em vez de políticas de Estado.
+data_031,16,False,Apoio à continuidade do PARFOR como política de formação de professores.
+data_031,17,False,Necessidade de um edital robusto e significativo que atenda às reais necessidades de formação das redes.
+data_031,18,False,Importância da pactuação e colaboração com os municípios.
+data_031,19,False,Reconhecimento das assimetrias regionais na formação de professores.
+data_031,20,False,Crítica à elaboração de novas diretrizes de formação de professores sem a participação das entidades e universidades.
+data_031,21,False,"Apoio à Resolução nº 2, de 2015, para a formação de professores."
+data_031,22,False,Defende uma política articulada e permanente para a formação de professores.
+data_031,23,False,Necessidade de financiamento adequado para a continuidade e expansão do PARFOR.
+data_031,24,False,Necessidade de um plano efetivo baseado em dados objetivos.
+data_031,25,False,Importância da formação de professores no local de trabalho para entender a realidade dos professores da educação básica.
+data_031,26,True,Apoio ao diálogo com os municípios para melhorar a pactuação e colaboração no PARFOR.
+data_031,27,False,Sugere que o PARFOR se torne uma política de Estado permanente e não dependente de editais periódicos.
+data_032,0,True,"Destacou a importância da transparência e do cumprimento da Lei nº 9.784, de 1999, que regula o processo administrativo."
+data_032,1,True,Enfatizou a necessidade de contratação de migrantes e refugiados como mediadores interculturais nos serviços públicos.
+data_032,2,False,Reiterou o compromisso da Comissão com a pauta migratória e a busca de soluções para os desafios apresentados.
+data_032,3,False,Propôs a realização da audiência pública e destacou a importância de continuar a construção de políticas públicas voltadas para a população migrante.
+data_032,4,True,Enfatizou a importância da educação e o papel do Ministério da Educação em garantir o acesso de crianças migrantes à educação.
+data_032,5,True,"Criticou a ausência do Ministério das Relações Exteriores na audiência, ressaltando a importância de sua participação."
+data_032,6,False,"Reconheceu as medidas do atual Governo na área de migração e refúgio, mas destacou a necessidade de mais políticas públicas para garantir os direitos dos migrantes."
+data_032,7,False,"Apelou para que a Política Nacional de Migrações, Refúgio e Apatridia não seja letra morta e que receba a devida atenção orçamentária do Parlamento."
+data_032,8,False,"Destacou a importância da regularização migratória para prevenir a violência, exploração e garantir acesso a direitos."
+data_032,9,False,Descreveu a estrutura e as competências do Departamento de Migrações.
+data_032,10,True,"Destacou a importância da Política Nacional de Migrações, Refúgio e Apatridia."
+data_032,11,False,"Afirmou o compromisso do Departamento de Migrações com a regularização migratória e mencionou a Portaria Interministerial nº 678, de 2022, em processo de revogação."
+data_032,12,False,Reforçou a importância da participação dos imigrantes nas audiências públicas.
+data_032,13,False,"Destacou os desafios enfrentados pelas mulheres imigrantes, especialmente na área da saúde."
+data_032,14,False,Apoiou a validação dos diplomas de mulheres imigrantes como uma forma de melhorar sua integração e atendimento de saúde.
+data_032,15,True,Destacou a importância do Brasil retornar ao Pacto Global para Migração.
+data_032,16,False,Reforçou a necessidade de uma política migratória inclusiva e com protagonismo dos migrantes.
+data_032,17,True,Mencionou a responsabilidade de tratar toda a documentação recebida e garantir os direitos dos migrantes.
+data_033,0,False,"Defende a obrigatoriedade do diploma de jornalismo para garantir um exercício ético, responsável e profissional da profissão."
+data_033,1,False,"Acredita que a graduação em Jornalismo demonstra uma formação específica e dedicada, garantindo o conhecimento técnico e teórico necessário para a prática jornalística."
+data_033,2,False,Argumenta que o diploma confere credibilidade e confiança tanto para veículos de comunicação quanto para o público.
+data_033,3,False,Considera o diploma um instrumento fundamental para a valorização da profissão e a inserção mais segura e justa no mercado de trabalho.
+data_033,4,False,Defende que a formação prévia é essencial para o exercício profissional do jornalismo.
+data_033,5,False,"Critica a desregulamentação da profissão que, segundo ela, descredibiliza o jornalismo."
+data_033,6,False,Apoia a PEC do Diploma como um meio de garantir a qualidade e a credibilidade da profissão.
+data_033,7,False,Afirma que a pandemia de COVID-19 mostrou a importância da informação profissionalmente orientada.
+data_033,8,False,Critica a decisão do STF de 2009 que dispensou a obrigatoriedade do diploma para jornalistas.
+data_033,9,False,Argumenta que todas as profissões regulamentadas precisam da valorização do diploma.
+data_033,10,False,Defende que a ausência de diploma prejudica a credibilidade do jornalismo em tempos de fake news.
+data_033,11,True,Relata a queda na procura por cursos de jornalismo como um impacto direto da desregulamentação.
+data_033,12,False,Defende a valorização do jornalismo profissional como antídoto à desinformação e às fake news.
+data_033,13,False,Ressalta a necessidade urgente de retomar a exigência do diploma para qualificar o jornalismo.
+data_033,14,False,Argumenta que a queda do diploma enfraqueceu o jornalismo e abriu caminho para conteúdos duvidosos.
+data_033,15,False,Afirma que a PEC 206/12 é essencial para corrigir o erro cometido pelo STF em 2009.
+data_033,16,False,Considera a retirada da exigência do diploma um retrocesso para a profissão.
+data_033,17,False,Defende a criação do Conselho Federal de Jornalismo como uma alternativa caso a PEC não seja aprovada.
+data_033,18,False,Acredita que o controle e a regulamentação do jornalismo são essenciais para combater a desinformação.
+data_033,19,False,Cita pesquisas que mostram o impacto da desinformação na sociedade e a importância de um jornalismo qualificado.
+data_033,20,True,Defende que o diploma é essencial para assegurar a qualidade e a ética no jornalismo.
+data_033,21,False,Critica a decisão do STF e apoia a mobilização pela aprovação da PEC do Diploma.
+data_034,0,False,A importância do debate sobre a saúde mental de crianças e adolescentes devido ao impacto das redes sociais.
+data_034,1,False,Parabenizou a Unilever pelo papel em melhorar a autoestima das mulheres.
+data_034,2,False,Comentou sobre sua própria experiência de infância com preocupações relacionadas à aparência física.
+data_034,3,False,Requereu a audiência pública devido à preocupação com a saúde mental das crianças e adolescentes.
+data_034,4,False,Destacou a relação entre saúde mental e padrões de beleza estabelecidos pelas redes sociais.
+data_034,5,False,Mencionou dados alarmantes sobre o aumento de doenças mentais no Brasil.
+data_034,6,False,Propôs a inclusão de educação sobre saúde mental na grade curricular da educação básica.
+data_034,7,False,"Apresentou as ações da Unilever para promover a saúde mental e autoestima, como a retirada da palavra 'normal' das embalagens."
+data_034,8,False,Destacou a importância do compromisso Dove pela Real Beleza e a exibição de mulheres reais nas campanhas.
+data_034,9,False,Comentou sobre a preocupação com o impacto das redes sociais na autoestima das jovens e a importância de criar um ambiente mais inclusivo.
+data_034,10,False,Discutiu a importância de políticas públicas para a inclusão social e representatividade.
+data_034,11,False,Abordou a responsabilidade ética e social na manipulação de imagens na publicidade.
+data_034,12,False,Destacou os altos índices de suicídio e transtornos alimentares entre os jovens devido à pressão das redes sociais.
+data_034,13,False,Enfatizou a necessidade de políticas públicas para a saúde mental dos jovens.
+data_034,14,False,Apresentou dados sobre a prevalência de transtornos mentais entre crianças e adolescentes no Brasil.
+data_034,15,False,Destacou a importância da prevenção e da intersetorialidade nas políticas de saúde mental.
+data_034,16,False,Comentou sobre a responsabilidade da Secretaria na promoção da saúde digital.
+data_034,17,False,Destacou a importância da telessaúde para atender populações vulneráveis.
+data_034,18,False,Discutiu a necessidade de notificação e coleta de dados para políticas públicas eficazes.
+data_035,0,False,Propõe que modificações no cômputo de votos apenas sejam válidas para a próxima eleição para evitar insegurança jurídica.
+data_035,1,False,Sugere antecipar as convenções para o período de 1º a 20 de junho e o prazo de registro para 1º de julho do ano da eleição para garantir tempo hábil para julgamentos.
+data_035,2,False,"Defende a liberação total da pré-campanha, permitindo todos os atos exceto a confecção de material de campanha, contratação de militância e vedação de material na rua."
+data_035,3,True,"Mencionou que algumas sugestões de Walber Agra já foram debatidas, como candidaturas coletivas e a alteração do cômputo de votos."
+data_035,4,False,Comentou sobre a divisão do Supremo Tribunal Federal quanto à modulação dos efeitos da discussão sobre o cômputo de votos.
+data_035,5,False,Propõe medidas para garantir a transparência e a segurança jurídica do processo eleitoral.
+data_035,6,False,Defende a proteção das mulheres contra a violência política e a promoção de transparência ativa na propaganda na Internet.
+data_035,7,False,Sugere o reconhecimento dos gastos com segurança e cuidados para mulheres candidatas como despesas legítimas na prestação de contas.
+data_035,8,True,Destaca a importância da transparência e a necessidade de simplificação sem perder a garantia republicana.
+data_035,9,True,Sugere acabar com a prestação de contas parciais para vereadores em cidades com até 50 mil habitantes.
+data_035,10,False,"Propõe que a propaganda eleitoral deve ser mais flexível, criticando restrições como o tamanho e a localização de adesivos."
+data_035,11,False,Levanta a necessidade de um equilíbrio entre a liberdade de expressão e a isonomia entre os competidores eleitorais.
+data_035,12,False,Defende a inclusão de temas digitais na legislação eleitoral para lidar com novos desafios como ataques online e desinformação.
+data_035,13,False,"Argumenta que, inevitavelmente, todos os partidos políticos brasileiros irão se federar para futuras eleições devido às mudanças legislativas."
+data_035,14,True,Ressalta a insegurança jurídica no sistema eleitoral e a importância de debates permanentes para buscar segurança na legislação.
+data_035,15,False,Enfatiza a importância de debates permanentes para buscar segurança na legislação eleitoral.
+data_035,16,False,Parabeniza a condução do debate e a participação de diversos especialistas na discussão.
+data_036,0,False,Destaca a necessidade de unir forças para alcançar um denominador comum em prol do povo brasileiro.
+data_036,1,False,"Esclarece que a audiência visa discutir os PLs nº 1.565, de 2019, e nº 877, de 2022, que alteram a LESTA para regulamentar o serviço de praticagem."
+data_036,2,True,"Defende o PL nº 4.392, de 2020, do Deputado Alceu Moreira, e o PL nº 757, de 2011, do Poder Executivo."
+data_036,3,True,Afirma que os práticos exercem uma posição dominante e que os reajustes estão acima dos índices de inflação.
+data_036,4,True,Ressalta que a regulação econômica é a solução mais eficaz para contrapor os efeitos do modelo monopolista e da escala de rodízio único.
+data_036,5,True,Defende a atuação da ANTAQ como regulador econômico.
+data_036,6,False,Destaca que a intervenção da agência reguladora deve acontecer na definição dos preços e na fiscalização do cumprimento dos padrões adequados para o serviço.
+data_036,7,False,Afirma que a regulação econômica não deve ocorrer apenas em caso de paralisação dos serviços.
+data_036,8,False,"Afirma que a responsabilidade da praticagem é estratégica, pois envolve a entrada e saída de navios nos portos brasileiros."
+data_036,9,False,Ressalta a importância de uma discussão equilibrada sobre a remuneração dos práticos para não prejudicar o Custo Brasil.
+data_036,10,True,Defende que a regulação econômica dos serviços de praticagem deve ser realizada por um órgão público estável de âmbito nacional.
+data_036,11,True,"Apoia a atuação da ANTAQ como regulador econômico em harmonia com a Marinha, que continuará com a regulação técnica."
+data_036,12,True,Ressalta que o serviço de praticagem no Brasil é monopolista e carece de regulação econômica para uma metodologia clara e transparente na fixação dos preços.
+data_036,13,False,Defende que a ANTAQ realize a regulação econômica dos serviços de praticagem.
+data_036,14,True,"Afirma que, durante a pandemia, o preço do frete aumentou devido ao desequilíbrio de distribuição dos contêineres, mas os preços da praticagem não acompanham os índices inflacionários."
+data_036,15,False,"Defende que os tomadores de serviços tenham uma instância para coibir abusividade na cobrança de serviços e arbitrar conflitos, apontando a ANTAQ como a melhor opção para essa regulação."
+data_037,0,False,O esporte é uma ferramenta poderosa para a transformação social e é dever assegurar acesso igualitário às práticas esportivas.
+data_037,1,False,Estimular o esporte paralímpico em ambientes educacionais promove inclusão e respeito à diversidade.
+data_037,2,False,A inclusão e o desenvolvimento do esporte para pessoas com deficiência são de grande relevância.
+data_037,3,False,A SNPAR visa democratizar o acesso das pessoas com deficiência ao paradesporto e à atividade física regular.
+data_037,4,False,O esporte é essencial para a promoção da saúde e cidadania plena das pessoas com deficiência.
+data_037,5,False,A necessidade de aumentar a visibilidade do paradesporto e apoiar modalidades não paralímpicas.
+data_037,6,False,"Enfrentar desafios institucionais, financeiros e sociais para melhorar a gestão esportiva e capacitação de gestores."
+data_037,7,False,Promover programas como TEAtivo e Paradesporto Brasil em Rede para atender pessoas com deficiência.
+data_037,8,False,A deficiência é uma característica humana e precisamos reconhecer a humanidade das pessoas com deficiência.
+data_037,9,False,O esporte resgata a pessoa com deficiência de si mesma e é uma ferramenta de inserção psicossocial.
+data_037,10,False,Há uma necessidade de ampliar a inclusão comunicacional e acessibilidade arquitetônica e programática.
+data_037,11,False,A representatividade das pessoas com deficiência na sociedade é essencial.
+data_037,12,True,A instituição da Subcomissão Permanente do Paradesporto é um passo importante para o reconhecimento e investimento no paradesporto.
+data_037,13,False,O esporte representa muletas psicológicas e sociais essenciais.
+data_037,14,False,A inclusão social se inicia com o fortalecimento pessoal das pessoas com deficiência.
+data_037,15,False,É importante valorizar os municípios que já têm políticas públicas voltadas ao paradesporto.
+data_037,16,False,A Secretaria Nacional de Paradesporto deve ser abraçada e receber um orçamento adequado.
+data_038,0,False,A criação da zona franca ajudará a criar um ambiente favorável à tributação e fortalecerá a vinicultura no Rio Grande do Sul.
+data_038,1,False,A consolidação da zona franca fortalecerá o turismo de visitação e a produção de uva e vinho na região.
+data_038,2,False,A criação da zona franca é fundamental para o desenvolvimento socioeconômico da vitivinicultura brasileira.
+data_038,3,True,"A proposta integrará mais de 30 municípios gaúchos, alavancando a isenção tributária sobre vinhos, sucos de uva e espumantes."
+data_038,4,False,O enoturismo é trabalhado como uma experiência dentro do turismo gastronômico.
+data_038,5,False,O projeto de lei incentivará o turismo e a atração de investimentos para a região.
+data_038,6,False,Apoio incondicional ao projeto da Zona Franca da Uva e do Vinho.
+data_038,7,False,A isenção da carga tributária possibilitará condições de competitividade para o vinho brasileiro.
+data_038,8,False,A criação da zona franca trará maior visibilidade ao trabalho dos enólogos e permitirá mostrar a qualidade dos vinhos brasileiros.
+data_038,9,False,O vinho nacional precisa de maior competitividade e apoio para enfrentar a concorrência dos vinhos importados.
+data_038,10,False,O setor vitivinícola brasileiro necessita de incentivos para competir de forma justa com vinhos importados.
+data_038,11,False,A criação da zona franca impulsionará o turismo e a geração de empregos na região.
+data_038,12,False,O enoturismo é fundamental para a sobrevivência das pequenas vinícolas brasileiras.
+data_038,13,False,A redução da carga tributária é crucial para a competitividade dos vinhos brasileiros frente aos importados.
+data_038,14,False,Apoiamos a criação da zona franca por sua importância para a competitividade do setor vitivinícola.
+data_038,15,False,O projeto incentivará o turismo e beneficiará a economia local e nacional.
+data_039,0,False,Abertura da audiência pública para discutir os limites constitucionais da atuação das Forças Armadas.
+data_039,1,False,Defendeu que as Forças Armadas devem estar subordinadas ao Presidente da República e não possuem poder autônomo.
+data_039,2,False,"Criticou a falta de discussão no Congresso sobre a Política Nacional de Defesa, a Estratégia Nacional de Defesa e o Livro Branco de Defesa Nacional."
+data_039,3,False,"Sugeriu que servidores públicos, ao entrarem na política, devem se desligar de suas corporações de origem para evitar contaminação política."
+data_039,4,False,Criticou a falta de atualização e revisão dos documentos normativos de defesa.
+data_039,5,False,Defendeu maior participação de mulheres e minorias na elaboração da Política Nacional de Defesa.
+data_039,6,False,"Apontou a necessidade de reestruturação do Ministério da Defesa e criticou a atribuição de tarefas não relacionadas à defesa, como o esporte de alto rendimento."
+data_039,7,False,Afirmou que a Constituição de 1988 submeteu as Forças Armadas ao poder civil.
+data_039,8,False,Reiterou que as Forças Armadas não possuem poder moderador e estão subordinadas ao Presidente da República.
+data_039,9,False,Destacou a importância de afastar militares da vida política para preservar a credibilidade das Forças Armadas.
+data_039,10,False,Afirmou que as Forças Armadas são instituições permanentes e fundamentais para a soberania nacional.
+data_039,11,False,Defendeu que as operações de garantia da lei e da ordem são conduzidas sob comando civil.
+data_039,12,False,Destacou a importância de separar as funções políticas das Forças Armadas e criticou a falta de capacidade dos Estados em garantir a segurança pública sem a intervenção das Forças Armadas.
+data_039,13,False,Defendeu uma revisão profunda dos instrumentos de força do Estado e uma nova concepção de defesa nacional.
+data_039,14,False,Criticou a primazia da força terrestre sobre a capacidade aeronaval.
+data_039,15,False,Destacou a necessidade de uma reforma simultânea da defesa nacional e da segurança pública.
+data_039,16,False,"Afirmou que as Forças Armadas brasileiras têm um distúrbio de personalidade funcional, não sabendo se são militares ou policiais."
+data_040,0,False,"Artes marciais promovem disciplina, respeito, autocontrole e superação pessoal."
+data_040,1,False,"São ferramentas importantes de inclusão social, oferecendo oportunidades de desenvolvimento pessoal e profissional para jovens em situação de vulnerabilidade."
+data_040,2,False,"As artes marciais são importantes para o Brasil nos campos educacional, competitivo e olímpico."
+data_040,3,False,"A prática de artes marciais promove valores e disciplina, sendo uma educação passada de mestre para aluno."
+data_040,4,False,A infraestrutura é essencial para a prática e desenvolvimento das artes marciais.
+data_040,5,False,"A favor do ensino de artes marciais nas escolas, acredita que toda criança deve praticá-las para uma formação cidadã qualificada."
+data_040,6,False,"Artes marciais proporcionam inclusão social, disciplina, respeito e valores."
+data_040,7,False,Projetos sociais são fundamentais para oferecer artes marciais a crianças em situação de vulnerabilidade.
+data_040,8,False,Necessidade de políticas públicas para fortalecer o esporte através das artes marciais.
+data_040,9,False,"Artes marciais promovem salubridade física e mental, além de formação de caráter."
+data_040,10,False,É importante integrar as artes marciais nas escolas e desenvolver um ambiente pedagógico.
+data_040,11,False,"As políticas públicas devem focar não só no esporte competitivo, mas também na formação cidadã."
+data_040,12,False,A parceria entre federações de artes marciais e o Conselho Regional de Educação Física pode elevar o nível de formação profissional.
+data_040,13,False,"O esporte e as artes marciais promovem inclusão e acolhimento, oferecendo novas perspectivas de vida para crianças e adolescentes."
+data_040,14,False,É essencial que os profissionais de artes marciais se qualifiquem em Educação Física para ensinar de forma correta.
+data_040,15,False,"As artes marciais educam através de valores, ensinando respeito à autoridade e resiliência."
+data_040,16,True,Políticas públicas devem oportunizar que crianças tenham acesso às artes marciais desde cedo.
+data_040,17,False,"O jiu-jítsu pode ser uma ferramenta de inclusão, especialmente para pessoas com deficiências ou necessidades especiais."
+data_040,18,False,As artes marciais devem ser vistas como instrumentos de pacificação social e integração.
+data_040,19,False,Professores de jiu-jítsu e outras artes marciais devem se qualificar em Educação Física para trabalhar nas escolas.
