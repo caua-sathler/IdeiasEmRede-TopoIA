@@ -43,7 +43,7 @@ The dashboards provide interactive visualizations for all seven key claims of th
 
 ---
 
-## Presentation Mode (for the pitch video)
+## Presentation Mode
 
 Open either page with `#slides` at the end of the URL (e.g. `pt-br-dashboard.html#slides`), click **Presentation mode** in the header, or press `P`. The same page becomes a horizontal slide deck in the order of [`../video/pitch_script.md`](../video/pitch_script.md): title, the seven modules (the forecast comes right after the combination rule) and a closing slide. Charts animate in on every visit, and each slide has scripted steps that replay the interactions of the pitch (sweeping the committee size, switching sum ↔ lexicographic, moving the review budget from 10% to 20%, etc.). Everything stays interactive with the mouse.
 
