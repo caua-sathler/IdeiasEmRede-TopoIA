@@ -42,7 +42,6 @@ The judges are four models with three prompts each, using released votes.
 
 - [Feature and metric definitions](code/FEATURES.md)
 - [Exploratory audit protocol](code/AUDIT_PROTOCOL.md)
-- [Five-minute pitch script and recording guide](video/pitch_script.md)
 
 For feature extraction / timing: `pip install -r code/requirements-full.txt`.
 The dashboards demonstrate precomputed benchmark results; they do not run live
