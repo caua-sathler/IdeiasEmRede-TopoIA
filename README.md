@@ -56,3 +56,7 @@ inference on newly supplied hearings.
 | Cauã Sathler | DCC-UFMG | cauasathler@ufmg.br |
 | Arthur Gonçalves | DCC-UFMG | afariag72@gmail.com |
 | Jordan Elias | DGEO-UFC | jordanelias@alu.ufc.br |
+
+## Transparency & AI Disclosure
+LLM's agents were used to assist with documentation, organization, code revision, and auditing in this repository. However, all core work, ideas, and implementations are original and were developed by the authors, with AI tools serving solely in a supportive capacity.
+
