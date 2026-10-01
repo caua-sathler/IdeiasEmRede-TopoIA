@@ -99,9 +99,9 @@ The `results/` and `cache/` directories contain the following key files:
 
 ## Protocol, feature vectors and provenance
 
-See [FEATURES.md](FEATURES.md), [AUDIT_PROTOCOL.md](AUDIT_PROTOCOL.md), and
-[predictions/README.md](predictions/README.md). The audit is model-annotated and
-exploratory. The primary target is support in the official four retrieved chunks.
+See [FEATURES.md](FEATURES.md) and [AUDIT_PROTOCOL.md](AUDIT_PROTOCOL.md).
+The audit is model-annotated and exploratory. The primary target is support in
+the official four retrieved chunks.
 
 `./run_all.sh --from-scratch --cost` supports both optional stages. Unknown flags
 fail immediately. `gain_forecast.py` and `simple_tiebreak_baselines.py` save summary

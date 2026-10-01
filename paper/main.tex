@@ -21,6 +21,7 @@
 % O .cls fixa os rotulos "Resumo."/"Palavras-chave:" mesmo sob a opcao [english].
 % Corrigimos aqui, a partir do main.tex, sem alterar o arquivo distribuido.
 \usepackage{etoolbox}
+\usepackage{float}
 \makeatletter
 \patchcmd{\maketitle}{Resumo.}{Abstract.}{}{\typeout{[aviso] rotulo Resumo nao encontrado}}
 \patchcmd{\maketitle}{Palavras-chave:}{Keywords:}{}{\typeout{[aviso] rotulo Palavras-chave nao encontrado}}
@@ -118,7 +119,26 @@ and keep the best match. On this task they reach an AUROC of only $0.57$
 the judges, because a plausible hallucination is on topic: the hearing did discuss the subject, so
 some sentence of the transcript resembles the opinion.
 
-\begin{figure}[t]
+Our starting observation is that the best match may belong to the wrong
+person. Figure~\ref{fig:incidencia} shows a real case, with the participants
+pseudonymised. In a hearing on press
+freedom, the summary attributes to Deputy~A the opinion
+``\emph{Destacou que todos os jornalistas presentes estavam em busca da
+verdade, independentemente de suas prefer\^encias pol\'iticas}'' (``He
+stressed that all the journalists present were seeking the truth, regardless
+of their political preferences''), and the human annotator marked it as not
+supported (a possible hallucination under the annotation protocol). The most similar sentence in the transcript has a cosine similarity
+of $0.783$, but it was spoken by Deputy~B. The most similar
+sentence among Deputy~A's own turns scores $0.386$ and concerns a different
+point. A score computed over the whole transcript sees a well-supported
+opinion; a score computed over the attributed speaker's turns sees an
+unsupported one. This case motivates a structural limitation (Section~\ref{sec:auditoria}):
+when sentence scores omit speaker identity, any score that combines sentence-level
+scores through a maximum, a mean or a similar function ignores which speaker
+produced each sentence, and therefore cannot separate the two situations
+(Observation~\ref{prop:incidencia}).
+
+\begin{figure}[H]
 \centering
 \begin{tikzpicture}[x=1cm,y=1cm,font=\scriptsize,
   seg/.style={draw,minimum height=0.5cm,minimum width=0.72cm,inner sep=0pt,anchor=west},
@@ -153,25 +173,6 @@ that support comes from another deputy (Deputy B). Restricted to the attributed 
 turns, the best match drops to $0.386$.}
 \label{fig:incidencia}
 \end{figure}
-
-Our starting observation is that the best match may belong to the wrong
-person. Figure~\ref{fig:incidencia} shows a real case, with the participants
-pseudonymised. In a hearing on press
-freedom, the summary attributes to Deputy~A the opinion
-``\emph{Destacou que todos os jornalistas presentes estavam em busca da
-verdade, independentemente de suas prefer\^encias pol\'iticas}'' (``He
-stressed that all the journalists present were seeking the truth, regardless
-of their political preferences''), and the human annotator marked it as not
-supported (a possible hallucination under the annotation protocol). The most similar sentence in the transcript has a cosine similarity
-of $0.783$, but it was spoken by Deputy~B. The most similar
-sentence among Deputy~A's own turns scores $0.386$ and concerns a different
-point. A score computed over the whole transcript sees a well-supported
-opinion; a score computed over the attributed speaker's turns sees an
-unsupported one. This case motivates a structural limitation (Section~\ref{sec:auditoria}):
-when sentence scores omit speaker identity, any score that combines sentence-level
-scores through a maximum, a mean or a similar function ignores which speaker
-produced each sentence, and therefore cannot separate the two situations
-(Observation~\ref{prop:incidencia}).
 
 This observation raises two central questions, which organise the paper.
 The first question is how much conditioning on the speaker helps, and at what cost. We compare
@@ -566,9 +567,7 @@ repeated over $20$ random assignments of hearings to folds (\emph{fold
 partitions}) and reported as median and range. Where a single value is
 reported, it comes from the deterministic five-fold reference partition.
 Feature-only models and combination models use the explicitly specified
-feature sets below. We report negative findings alongside positive ones;
-research hypotheses and their provenance are archived in
-\texttt{code/predictions/}.
+feature sets below. We report negative findings alongside positive ones.
 
 \paragraph{Speaker-incidence features.} For an opinion $o$ attributed to the
 matched speaker $a$, let $S(o,\cdot)$ be the cosine similarity between $o$ and
